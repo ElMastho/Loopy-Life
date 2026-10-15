@@ -1,0 +1,3171 @@
+{
+ "version": 1,
+ "subjects": [
+  {
+   "id": "family",
+   "name": "Family",
+   "short": "Family",
+   "emoji": "🏡",
+   "color": "#ff5c8a"
+  },
+  {
+   "id": "childhood",
+   "name": "Childhood",
+   "short": "Childhood",
+   "emoji": "🧸",
+   "color": "#ff9f1c"
+  },
+  {
+   "id": "youth",
+   "name": "School & Teen Years",
+   "short": "Teen years",
+   "emoji": "🎒",
+   "color": "#e9c46a"
+  },
+  {
+   "id": "love",
+   "name": "Love & Relationships",
+   "short": "Love",
+   "emoji": "❤️",
+   "color": "#e63946"
+  },
+  {
+   "id": "friendship",
+   "name": "Friendship & Us",
+   "short": "Us",
+   "emoji": "🤝",
+   "color": "#4cc9f0"
+  },
+  {
+   "id": "work",
+   "name": "Work & Career",
+   "short": "Work",
+   "emoji": "💼",
+   "color": "#4361ee"
+  },
+  {
+   "id": "dreams",
+   "name": "Dreams & Future",
+   "short": "Dreams",
+   "emoji": "🚀",
+   "color": "#9d4edd"
+  },
+  {
+   "id": "values",
+   "name": "Values & Beliefs",
+   "short": "Values",
+   "emoji": "🧭",
+   "color": "#2a9d8f"
+  },
+  {
+   "id": "personality",
+   "name": "Personality",
+   "short": "Me",
+   "emoji": "🪞",
+   "color": "#f72585"
+  },
+  {
+   "id": "passions",
+   "name": "Hobbies & Passions",
+   "short": "Passions",
+   "emoji": "🎨",
+   "color": "#70c050"
+  },
+  {
+   "id": "tastes",
+   "name": "Favorites & Tastes",
+   "short": "Tastes",
+   "emoji": "🍕",
+   "color": "#f3722c"
+  },
+  {
+   "id": "travel",
+   "name": "Travel & Places",
+   "short": "Travel",
+   "emoji": "✈️",
+   "color": "#277da1"
+  },
+  {
+   "id": "daily",
+   "name": "Daily Life & Habits",
+   "short": "Daily life",
+   "emoji": "☕",
+   "color": "#7b6cf6"
+  },
+  {
+   "id": "whatif",
+   "name": "What If…",
+   "short": "What if",
+   "emoji": "🔮",
+   "color": "#b5179e"
+  }
+ ],
+ "questions": [
+  {
+   "id": "family-001",
+   "subject": "family",
+   "depth": 1,
+   "text": "How many people are in your family, and who are they?"
+  },
+  {
+   "id": "family-002",
+   "subject": "family",
+   "depth": 1,
+   "text": "Do you have brothers or sisters? What are their names and ages?"
+  },
+  {
+   "id": "family-003",
+   "subject": "family",
+   "depth": 1,
+   "text": "Are you the oldest, the youngest, or somewhere in the middle?"
+  },
+  {
+   "id": "family-004",
+   "subject": "family",
+   "depth": 1,
+   "text": "What are your parents' names, and what do (or did) they do for a living?"
+  },
+  {
+   "id": "family-005",
+   "subject": "family",
+   "depth": 1,
+   "text": "Where do your parents live today?"
+  },
+  {
+   "id": "family-006",
+   "subject": "family",
+   "depth": 1,
+   "text": "Do you have grandparents who are still alive? Where do they live?"
+  },
+  {
+   "id": "family-007",
+   "subject": "family",
+   "depth": 1,
+   "text": "How often do you see your family?"
+  },
+  {
+   "id": "family-008",
+   "subject": "family",
+   "depth": 1,
+   "text": "Do you have a big extended family with lots of cousins, aunts and uncles?"
+  },
+  {
+   "id": "family-009",
+   "subject": "family",
+   "depth": 1,
+   "text": "Which family member do you talk to the most?"
+  },
+  {
+   "id": "family-010",
+   "subject": "family",
+   "depth": 1,
+   "text": "Do you have any pets in your family, now or growing up?"
+  },
+  {
+   "id": "family-011",
+   "subject": "family",
+   "depth": 1,
+   "text": "Who in your family do you look the most like?"
+  },
+  {
+   "id": "family-012",
+   "subject": "family",
+   "depth": 1,
+   "text": "What languages are spoken in your family?"
+  },
+  {
+   "id": "family-013",
+   "subject": "family",
+   "depth": 1,
+   "text": "Where does your family come from originally?"
+  },
+  {
+   "id": "family-014",
+   "subject": "family",
+   "depth": 1,
+   "text": "What's your family's typical way of celebrating birthdays?"
+  },
+  {
+   "id": "family-015",
+   "subject": "family",
+   "depth": 1,
+   "text": "Is there a family recipe or dish everyone associates with home?"
+  },
+  {
+   "id": "family-016",
+   "subject": "family",
+   "depth": 1,
+   "text": "How did your parents meet?"
+  },
+  {
+   "id": "family-017",
+   "subject": "family",
+   "depth": 1,
+   "text": "Do you have nieces, nephews, or godchildren?"
+  },
+  {
+   "id": "family-018",
+   "subject": "family",
+   "depth": 1,
+   "text": "What's a family holiday tradition you have?"
+  },
+  {
+   "id": "family-019",
+   "subject": "family",
+   "depth": 2,
+   "text": "Which of your parents are you more similar to, and in what way?"
+  },
+  {
+   "id": "family-020",
+   "subject": "family",
+   "depth": 2,
+   "text": "What is the best thing you inherited from your family?"
+  },
+  {
+   "id": "family-021",
+   "subject": "family",
+   "depth": 2,
+   "text": "What is one family habit you swore you would never repeat?"
+  },
+  {
+   "id": "family-022",
+   "subject": "family",
+   "depth": 2,
+   "text": "How would your siblings describe you as a kid?"
+  },
+  {
+   "id": "family-023",
+   "subject": "family",
+   "depth": 2,
+   "text": "What role do you play in your family: the peacemaker, the clown, the organizer, the rebel?"
+  },
+  {
+   "id": "family-024",
+   "subject": "family",
+   "depth": 2,
+   "text": "What's the funniest family story that always gets told at gatherings?"
+  },
+  {
+   "id": "family-025",
+   "subject": "family",
+   "depth": 2,
+   "text": "What did your family teach you about money?"
+  },
+  {
+   "id": "family-026",
+   "subject": "family",
+   "depth": 2,
+   "text": "What's something your parents did that you only appreciated as an adult?"
+  },
+  {
+   "id": "family-027",
+   "subject": "family",
+   "depth": 2,
+   "text": "How has your relationship with your siblings changed over the years?"
+  },
+  {
+   "id": "family-028",
+   "subject": "family",
+   "depth": 2,
+   "text": "Which family member would you call first in an emergency, and why?"
+  },
+  {
+   "id": "family-029",
+   "subject": "family",
+   "depth": 2,
+   "text": "What was dinner time like in your house growing up?"
+  },
+  {
+   "id": "family-030",
+   "subject": "family",
+   "depth": 2,
+   "text": "Is there a relative you never met but wish you had?"
+  },
+  {
+   "id": "family-031",
+   "subject": "family",
+   "depth": 2,
+   "text": "What values did your grandparents pass down to you?"
+  },
+  {
+   "id": "family-032",
+   "subject": "family",
+   "depth": 2,
+   "text": "What's a family argument that comes back again and again?"
+  },
+  {
+   "id": "family-033",
+   "subject": "family",
+   "depth": 2,
+   "text": "What does \"home\" smell like to you?"
+  },
+  {
+   "id": "family-034",
+   "subject": "family",
+   "depth": 2,
+   "text": "What do you know about your family history beyond your grandparents?"
+  },
+  {
+   "id": "family-035",
+   "subject": "family",
+   "depth": 2,
+   "text": "What's a family object or heirloom that means a lot to you?"
+  },
+  {
+   "id": "family-036",
+   "subject": "family",
+   "depth": 3,
+   "text": "What's something you've never told your parents but wish they knew?"
+  },
+  {
+   "id": "family-037",
+   "subject": "family",
+   "depth": 3,
+   "text": "Is there a conversation you wish you could have with a family member, living or not?"
+  },
+  {
+   "id": "family-038",
+   "subject": "family",
+   "depth": 3,
+   "text": "How did your family deal with difficult emotions when you were growing up?"
+  },
+  {
+   "id": "family-039",
+   "subject": "family",
+   "depth": 3,
+   "text": "In what ways are you trying to be different from your parents?"
+  },
+  {
+   "id": "family-040",
+   "subject": "family",
+   "depth": 3,
+   "text": "What's a moment when you felt really proud of a family member?"
+  },
+  {
+   "id": "family-041",
+   "subject": "family",
+   "depth": 3,
+   "text": "Is there someone in your family you feel misunderstood by?"
+  },
+  {
+   "id": "family-042",
+   "subject": "family",
+   "depth": 3,
+   "text": "What's a family wound that took you a long time to heal?"
+  },
+  {
+   "id": "family-043",
+   "subject": "family",
+   "depth": 3,
+   "text": "If you have or want children, what's the one thing you most want to give them?"
+  },
+  {
+   "id": "family-044",
+   "subject": "family",
+   "depth": 3,
+   "text": "When did you first see your parents as regular humans, with their own flaws?"
+  },
+  {
+   "id": "family-045",
+   "subject": "family",
+   "depth": 3,
+   "text": "What would you like your family to say about you in 30 years?"
+  },
+  {
+   "id": "family-046",
+   "subject": "family",
+   "depth": 3,
+   "text": "What's something your family went through that shaped who you are today?"
+  },
+  {
+   "id": "childhood-001",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "Where did you grow up?"
+  },
+  {
+   "id": "childhood-002",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "What did your childhood bedroom look like?"
+  },
+  {
+   "id": "childhood-003",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "What was your favorite toy as a kid?"
+  },
+  {
+   "id": "childhood-004",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "What was your favorite cartoon or TV show as a child?"
+  },
+  {
+   "id": "childhood-005",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "What did you want to be when you grew up?"
+  },
+  {
+   "id": "childhood-006",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "Who was your best friend when you were little?"
+  },
+  {
+   "id": "childhood-007",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "What was your favorite candy or snack as a kid?"
+  },
+  {
+   "id": "childhood-008",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "What games did you play in the playground?"
+  },
+  {
+   "id": "childhood-009",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "Did you have a nickname as a child?"
+  },
+  {
+   "id": "childhood-010",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "What was your favorite holiday or season as a kid, and why?"
+  },
+  {
+   "id": "childhood-011",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "Did you play any sports or instruments as a child?"
+  },
+  {
+   "id": "childhood-012",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "What's the earliest memory you have?"
+  },
+  {
+   "id": "childhood-013",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "What was your favorite book or story when you were little?"
+  },
+  {
+   "id": "childhood-014",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "Were you a calm kid or a little troublemaker?"
+  },
+  {
+   "id": "childhood-015",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "What did your summers look like as a child?"
+  },
+  {
+   "id": "childhood-016",
+   "subject": "childhood",
+   "depth": 1,
+   "text": "What was the best birthday present you ever got as a kid?"
+  },
+  {
+   "id": "childhood-017",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "What's a smell, song, or taste that instantly takes you back to childhood?"
+  },
+  {
+   "id": "childhood-018",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "What were you afraid of as a child?"
+  },
+  {
+   "id": "childhood-019",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "What's the naughtiest thing you did as a kid, and did you get caught?"
+  },
+  {
+   "id": "childhood-020",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "What was a big event in your childhood that you remember vividly?"
+  },
+  {
+   "id": "childhood-021",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "Which adult outside your family had a big impact on you as a kid?"
+  },
+  {
+   "id": "childhood-022",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "What did you believe as a child that turned out to be totally wrong?"
+  },
+  {
+   "id": "childhood-023",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "What's a childhood dream that you still secretly hold on to?"
+  },
+  {
+   "id": "childhood-024",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "Did you move houses or cities as a child? How did that feel?"
+  },
+  {
+   "id": "childhood-025",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "What was the atmosphere like at home when you were 8 years old?"
+  },
+  {
+   "id": "childhood-026",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "What made you feel safe as a child?"
+  },
+  {
+   "id": "childhood-027",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "What did you get punished or praised for the most?"
+  },
+  {
+   "id": "childhood-028",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "What was your hiding place or secret spot?"
+  },
+  {
+   "id": "childhood-029",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "If you could relive one day from your childhood, which one would it be?"
+  },
+  {
+   "id": "childhood-030",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "What did you collect as a kid?"
+  },
+  {
+   "id": "childhood-031",
+   "subject": "childhood",
+   "depth": 2,
+   "text": "Who did you look up to as a child?"
+  },
+  {
+   "id": "childhood-032",
+   "subject": "childhood",
+   "depth": 3,
+   "text": "What part of your childhood do you think still influences you the most?"
+  },
+  {
+   "id": "childhood-033",
+   "subject": "childhood",
+   "depth": 3,
+   "text": "Was there something you needed as a child that you didn't get?"
+  },
+  {
+   "id": "childhood-034",
+   "subject": "childhood",
+   "depth": 3,
+   "text": "What would you tell your 7-year-old self if you could talk to them for one minute?"
+  },
+  {
+   "id": "childhood-035",
+   "subject": "childhood",
+   "depth": 3,
+   "text": "When was the first time you felt truly alone?"
+  },
+  {
+   "id": "childhood-036",
+   "subject": "childhood",
+   "depth": 3,
+   "text": "What's a childhood memory that still makes you emotional?"
+  },
+  {
+   "id": "childhood-037",
+   "subject": "childhood",
+   "depth": 3,
+   "text": "Did you have to grow up faster than other kids? How?"
+  },
+  {
+   "id": "childhood-038",
+   "subject": "childhood",
+   "depth": 3,
+   "text": "What did love look like in your home when you were a child?"
+  },
+  {
+   "id": "childhood-039",
+   "subject": "childhood",
+   "depth": 3,
+   "text": "Which childhood fear do you think you still carry today?"
+  },
+  {
+   "id": "childhood-040",
+   "subject": "childhood",
+   "depth": 3,
+   "text": "What was the moment your childhood ended, in your opinion?"
+  },
+  {
+   "id": "childhood-041",
+   "subject": "childhood",
+   "depth": 3,
+   "text": "What's something from your childhood you've had to forgive?"
+  },
+  {
+   "id": "youth-001",
+   "subject": "youth",
+   "depth": 1,
+   "text": "What kind of student were you at school?"
+  },
+  {
+   "id": "youth-002",
+   "subject": "youth",
+   "depth": 1,
+   "text": "What was your favorite subject at school, and your least favorite?"
+  },
+  {
+   "id": "youth-003",
+   "subject": "youth",
+   "depth": 1,
+   "text": "Who was your favorite teacher, and why?"
+  },
+  {
+   "id": "youth-004",
+   "subject": "youth",
+   "depth": 1,
+   "text": "What music were you listening to as a teenager?"
+  },
+  {
+   "id": "youth-005",
+   "subject": "youth",
+   "depth": 1,
+   "text": "What did you do on weekends as a teenager?"
+  },
+  {
+   "id": "youth-006",
+   "subject": "youth",
+   "depth": 1,
+   "text": "What was your style like in high school?"
+  },
+  {
+   "id": "youth-007",
+   "subject": "youth",
+   "depth": 1,
+   "text": "Who was your crowd or friend group as a teen?"
+  },
+  {
+   "id": "youth-008",
+   "subject": "youth",
+   "depth": 1,
+   "text": "What was your first job or way of earning pocket money?"
+  },
+  {
+   "id": "youth-009",
+   "subject": "youth",
+   "depth": 1,
+   "text": "Did you go to university or follow another path after school? What did you study?"
+  },
+  {
+   "id": "youth-010",
+   "subject": "youth",
+   "depth": 1,
+   "text": "What was your first phone, computer, or console?"
+  },
+  {
+   "id": "youth-011",
+   "subject": "youth",
+   "depth": 1,
+   "text": "What posters did you have on your bedroom wall?"
+  },
+  {
+   "id": "youth-012",
+   "subject": "youth",
+   "depth": 1,
+   "text": "What was the first concert you went to?"
+  },
+  {
+   "id": "youth-013",
+   "subject": "youth",
+   "depth": 1,
+   "text": "Did you have a crush at school? Who was it?"
+  },
+  {
+   "id": "youth-014",
+   "subject": "youth",
+   "depth": 1,
+   "text": "What was your first trip without your parents?"
+  },
+  {
+   "id": "youth-015",
+   "subject": "youth",
+   "depth": 1,
+   "text": "What was your favorite hangout spot as a teen?"
+  },
+  {
+   "id": "youth-016",
+   "subject": "youth",
+   "depth": 2,
+   "text": "What's the most rebellious thing you did as a teenager?"
+  },
+  {
+   "id": "youth-017",
+   "subject": "youth",
+   "depth": 2,
+   "text": "What's the most embarrassing moment of your teenage years?"
+  },
+  {
+   "id": "youth-018",
+   "subject": "youth",
+   "depth": 2,
+   "text": "What were you most insecure about as a teenager?"
+  },
+  {
+   "id": "youth-019",
+   "subject": "youth",
+   "depth": 2,
+   "text": "Who was the friend that shaped your teenage years the most?"
+  },
+  {
+   "id": "youth-020",
+   "subject": "youth",
+   "depth": 2,
+   "text": "What was your relationship with your parents like when you were 16?"
+  },
+  {
+   "id": "youth-021",
+   "subject": "youth",
+   "depth": 2,
+   "text": "What did you think your life would look like at 30, back when you were 15?"
+  },
+  {
+   "id": "youth-022",
+   "subject": "youth",
+   "depth": 2,
+   "text": "What's a decision you made at 18 that changed everything?"
+  },
+  {
+   "id": "youth-023",
+   "subject": "youth",
+   "depth": 2,
+   "text": "Was there a teacher or mentor who believed in you when others didn't?"
+  },
+  {
+   "id": "youth-024",
+   "subject": "youth",
+   "depth": 2,
+   "text": "What did you want people to think of you at school?"
+  },
+  {
+   "id": "youth-025",
+   "subject": "youth",
+   "depth": 2,
+   "text": "What's the best night out you had in your youth?"
+  },
+  {
+   "id": "youth-026",
+   "subject": "youth",
+   "depth": 2,
+   "text": "How did you choose your studies or first career path?"
+  },
+  {
+   "id": "youth-027",
+   "subject": "youth",
+   "depth": 2,
+   "text": "What's a lesson you learned the hard way as a young adult?"
+  },
+  {
+   "id": "youth-028",
+   "subject": "youth",
+   "depth": 2,
+   "text": "What was your first heartbreak like?"
+  },
+  {
+   "id": "youth-029",
+   "subject": "youth",
+   "depth": 2,
+   "text": "What did your 20-year-old self worry about that now seems unimportant?"
+  },
+  {
+   "id": "youth-030",
+   "subject": "youth",
+   "depth": 3,
+   "text": "Did you ever feel like you didn't fit in? How did you deal with it?"
+  },
+  {
+   "id": "youth-031",
+   "subject": "youth",
+   "depth": 3,
+   "text": "What's something from your teenage years you're still a bit ashamed of?"
+  },
+  {
+   "id": "youth-032",
+   "subject": "youth",
+   "depth": 3,
+   "text": "When did you first feel like an adult?"
+  },
+  {
+   "id": "youth-033",
+   "subject": "youth",
+   "depth": 3,
+   "text": "Who were you trying to become in your early twenties?"
+  },
+  {
+   "id": "youth-034",
+   "subject": "youth",
+   "depth": 3,
+   "text": "What part of your younger self do you miss?"
+  },
+  {
+   "id": "youth-035",
+   "subject": "youth",
+   "depth": 3,
+   "text": "Was there a turning point in your youth where you could have gone a very different way?"
+  },
+  {
+   "id": "youth-036",
+   "subject": "youth",
+   "depth": 3,
+   "text": "What would you thank your teenage self for?"
+  },
+  {
+   "id": "youth-037",
+   "subject": "youth",
+   "depth": 3,
+   "text": "What did you need to hear at 17 that nobody told you?"
+  },
+  {
+   "id": "love-001",
+   "subject": "love",
+   "depth": 1,
+   "text": "Are you in a relationship right now?"
+  },
+  {
+   "id": "love-002",
+   "subject": "love",
+   "depth": 1,
+   "text": "How did you meet your partner, or your last partner?"
+  },
+  {
+   "id": "love-003",
+   "subject": "love",
+   "depth": 1,
+   "text": "What was your first date ever like?"
+  },
+  {
+   "id": "love-004",
+   "subject": "love",
+   "depth": 1,
+   "text": "What's your idea of a perfect date?"
+  },
+  {
+   "id": "love-005",
+   "subject": "love",
+   "depth": 1,
+   "text": "Do you believe in love at first sight?"
+  },
+  {
+   "id": "love-006",
+   "subject": "love",
+   "depth": 1,
+   "text": "Who was your first love?"
+  },
+  {
+   "id": "love-007",
+   "subject": "love",
+   "depth": 1,
+   "text": "What's the most romantic thing someone has done for you?"
+  },
+  {
+   "id": "love-008",
+   "subject": "love",
+   "depth": 1,
+   "text": "What's the most romantic thing you've done for someone?"
+  },
+  {
+   "id": "love-009",
+   "subject": "love",
+   "depth": 1,
+   "text": "What's your love language: words, gifts, time, touch, or acts of service?"
+  },
+  {
+   "id": "love-010",
+   "subject": "love",
+   "depth": 1,
+   "text": "Do you prefer staying in or going out with a partner?"
+  },
+  {
+   "id": "love-011",
+   "subject": "love",
+   "depth": 1,
+   "text": "What's a deal-breaker for you in a relationship?"
+  },
+  {
+   "id": "love-012",
+   "subject": "love",
+   "depth": 1,
+   "text": "What's the cheesiest romantic movie you secretly love?"
+  },
+  {
+   "id": "love-013",
+   "subject": "love",
+   "depth": 1,
+   "text": "Are you more of a planner or spontaneous in love?"
+  },
+  {
+   "id": "love-014",
+   "subject": "love",
+   "depth": 1,
+   "text": "What's a small gesture that makes you feel loved?"
+  },
+  {
+   "id": "love-015",
+   "subject": "love",
+   "depth": 2,
+   "text": "What did your parents' relationship teach you about love?"
+  },
+  {
+   "id": "love-016",
+   "subject": "love",
+   "depth": 2,
+   "text": "What do you think makes a relationship last?"
+  },
+  {
+   "id": "love-017",
+   "subject": "love",
+   "depth": 2,
+   "text": "What's the biggest lesson a past relationship taught you?"
+  },
+  {
+   "id": "love-018",
+   "subject": "love",
+   "depth": 2,
+   "text": "How do you usually behave when you're angry with someone you love?"
+  },
+  {
+   "id": "love-019",
+   "subject": "love",
+   "depth": 2,
+   "text": "What's something you need in a relationship that took you time to admit?"
+  },
+  {
+   "id": "love-020",
+   "subject": "love",
+   "depth": 2,
+   "text": "How do you show someone that you care, without saying it?"
+  },
+  {
+   "id": "love-021",
+   "subject": "love",
+   "depth": 2,
+   "text": "What's the hardest part of being in a relationship for you?"
+  },
+  {
+   "id": "love-022",
+   "subject": "love",
+   "depth": 2,
+   "text": "What do you find most attractive in a person, beyond looks?"
+  },
+  {
+   "id": "love-023",
+   "subject": "love",
+   "depth": 2,
+   "text": "How do you handle jealousy?"
+  },
+  {
+   "id": "love-024",
+   "subject": "love",
+   "depth": 2,
+   "text": "What does commitment mean to you?"
+  },
+  {
+   "id": "love-025",
+   "subject": "love",
+   "depth": 2,
+   "text": "How do you know when you're falling for someone?"
+  },
+  {
+   "id": "love-026",
+   "subject": "love",
+   "depth": 2,
+   "text": "What is your biggest strength as a partner?"
+  },
+  {
+   "id": "love-027",
+   "subject": "love",
+   "depth": 2,
+   "text": "How do you want to be comforted when you're sad?"
+  },
+  {
+   "id": "love-028",
+   "subject": "love",
+   "depth": 2,
+   "text": "What's a relationship pattern you've noticed in yourself?"
+  },
+  {
+   "id": "love-029",
+   "subject": "love",
+   "depth": 3,
+   "text": "What's your biggest fear when it comes to love?"
+  },
+  {
+   "id": "love-030",
+   "subject": "love",
+   "depth": 3,
+   "text": "Have you ever had your heart truly broken? How did you heal?"
+  },
+  {
+   "id": "love-031",
+   "subject": "love",
+   "depth": 3,
+   "text": "What's something you've never forgiven in love, or never forgiven yourself for?"
+  },
+  {
+   "id": "love-032",
+   "subject": "love",
+   "depth": 3,
+   "text": "When have you felt the most loved in your entire life?"
+  },
+  {
+   "id": "love-033",
+   "subject": "love",
+   "depth": 3,
+   "text": "What do you think makes you hard to love, and what makes you easy to love?"
+  },
+  {
+   "id": "love-034",
+   "subject": "love",
+   "depth": 3,
+   "text": "Is there someone you still think about who you never told how you felt?"
+  },
+  {
+   "id": "love-035",
+   "subject": "love",
+   "depth": 3,
+   "text": "Do you feel like you deserve love? Has that changed over time?"
+  },
+  {
+   "id": "love-036",
+   "subject": "love",
+   "depth": 3,
+   "text": "What does vulnerability feel like for you?"
+  },
+  {
+   "id": "love-037",
+   "subject": "love",
+   "depth": 3,
+   "text": "What would you want your future partner (or current one) to truly understand about you?"
+  },
+  {
+   "id": "friendship-001",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "How did we first meet? What do you remember about it?"
+  },
+  {
+   "id": "friendship-002",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "What was your first impression of me?"
+  },
+  {
+   "id": "friendship-003",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "Who is your oldest friend?"
+  },
+  {
+   "id": "friendship-004",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "How many close friends do you have?"
+  },
+  {
+   "id": "friendship-005",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "What do you like doing most with friends?"
+  },
+  {
+   "id": "friendship-006",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "What's the best trip you've taken with friends?"
+  },
+  {
+   "id": "friendship-007",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "Are you the one who organizes plans, or the one who joins?"
+  },
+  {
+   "id": "friendship-008",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "How do you usually keep in touch with friends: calls, texts, voice notes?"
+  },
+  {
+   "id": "friendship-009",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "What's the funniest memory you have with a friend?"
+  },
+  {
+   "id": "friendship-010",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "Do you prefer one big group or a few close friends?"
+  },
+  {
+   "id": "friendship-011",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "What's the best gift a friend has ever given you?"
+  },
+  {
+   "id": "friendship-012",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "What's a friend tradition you have?"
+  },
+  {
+   "id": "friendship-013",
+   "subject": "friendship",
+   "depth": 1,
+   "text": "What makes you laugh the hardest?"
+  },
+  {
+   "id": "friendship-014",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "What do you think I'm really good at?"
+  },
+  {
+   "id": "friendship-015",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "What's something you think I don't know about you?"
+  },
+  {
+   "id": "friendship-016",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "What do you value most in a friend?"
+  },
+  {
+   "id": "friendship-017",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "What makes someone go from a colleague or acquaintance to a real friend?"
+  },
+  {
+   "id": "friendship-018",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "Have you ever lost a friend? What happened?"
+  },
+  {
+   "id": "friendship-019",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "What's a moment where a friend really showed up for you?"
+  },
+  {
+   "id": "friendship-020",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "How do you react when a friend disappoints you?"
+  },
+  {
+   "id": "friendship-021",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "What's something about our friendship you'd like more of?"
+  },
+  {
+   "id": "friendship-022",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "What's a topic we never talk about but probably should?"
+  },
+  {
+   "id": "friendship-023",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "What do you think people get wrong about you at first?"
+  },
+  {
+   "id": "friendship-024",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "Is it easy or hard for you to ask friends for help?"
+  },
+  {
+   "id": "friendship-025",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "What's the best advice a friend has ever given you?"
+  },
+  {
+   "id": "friendship-026",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "Which friend has changed you the most?"
+  },
+  {
+   "id": "friendship-027",
+   "subject": "friendship",
+   "depth": 2,
+   "text": "What would you want to do together that we've never done?"
+  },
+  {
+   "id": "friendship-028",
+   "subject": "friendship",
+   "depth": 3,
+   "text": "What's something you've been wanting to tell me but never found the moment?"
+  },
+  {
+   "id": "friendship-029",
+   "subject": "friendship",
+   "depth": 3,
+   "text": "When have you felt lonely even when surrounded by friends?"
+  },
+  {
+   "id": "friendship-030",
+   "subject": "friendship",
+   "depth": 3,
+   "text": "What's a friendship you regret letting go?"
+  },
+  {
+   "id": "friendship-031",
+   "subject": "friendship",
+   "depth": 3,
+   "text": "What do you need from your friends right now in your life?"
+  },
+  {
+   "id": "friendship-032",
+   "subject": "friendship",
+   "depth": 3,
+   "text": "Have you ever felt like a bad friend? When?"
+  },
+  {
+   "id": "friendship-033",
+   "subject": "friendship",
+   "depth": 3,
+   "text": "What would make you trust someone completely?"
+  },
+  {
+   "id": "friendship-034",
+   "subject": "friendship",
+   "depth": 3,
+   "text": "What does our friendship mean to you, honestly?"
+  },
+  {
+   "id": "friendship-035",
+   "subject": "friendship",
+   "depth": 3,
+   "text": "Is there something I've done that hurt you, even a little, that you never mentioned?"
+  },
+  {
+   "id": "friendship-036",
+   "subject": "friendship",
+   "depth": 3,
+   "text": "How can I be a better friend to you?"
+  },
+  {
+   "id": "work-001",
+   "subject": "work",
+   "depth": 1,
+   "text": "What do you do for work, explained like I'm 10 years old?"
+  },
+  {
+   "id": "work-002",
+   "subject": "work",
+   "depth": 1,
+   "text": "How did you end up in your current job?"
+  },
+  {
+   "id": "work-003",
+   "subject": "work",
+   "depth": 1,
+   "text": "What does a typical workday look like for you?"
+  },
+  {
+   "id": "work-004",
+   "subject": "work",
+   "depth": 1,
+   "text": "What was your very first job?"
+  },
+  {
+   "id": "work-005",
+   "subject": "work",
+   "depth": 1,
+   "text": "What's the best part of your job?"
+  },
+  {
+   "id": "work-006",
+   "subject": "work",
+   "depth": 1,
+   "text": "What's the most annoying part of your job?"
+  },
+  {
+   "id": "work-007",
+   "subject": "work",
+   "depth": 1,
+   "text": "Do you prefer working from home or at the office?"
+  },
+  {
+   "id": "work-008",
+   "subject": "work",
+   "depth": 1,
+   "text": "Are you a morning worker or a night owl?"
+  },
+  {
+   "id": "work-009",
+   "subject": "work",
+   "depth": 1,
+   "text": "What's the best boss or manager you've ever had, and why?"
+  },
+  {
+   "id": "work-010",
+   "subject": "work",
+   "depth": 1,
+   "text": "What's the weirdest job you've ever had?"
+  },
+  {
+   "id": "work-011",
+   "subject": "work",
+   "depth": 1,
+   "text": "What's a skill you use at work that people wouldn't expect?"
+  },
+  {
+   "id": "work-012",
+   "subject": "work",
+   "depth": 1,
+   "text": "What's your go-to productivity trick?"
+  },
+  {
+   "id": "work-013",
+   "subject": "work",
+   "depth": 1,
+   "text": "What does your desk or workspace look like?"
+  },
+  {
+   "id": "work-014",
+   "subject": "work",
+   "depth": 1,
+   "text": "How do you switch off after work?"
+  },
+  {
+   "id": "work-015",
+   "subject": "work",
+   "depth": 1,
+   "text": "What's the best team you've ever been part of?"
+  },
+  {
+   "id": "work-016",
+   "subject": "work",
+   "depth": 2,
+   "text": "If money wasn't a factor, would you still do the same job?"
+  },
+  {
+   "id": "work-017",
+   "subject": "work",
+   "depth": 2,
+   "text": "What's the work achievement you're most proud of?"
+  },
+  {
+   "id": "work-018",
+   "subject": "work",
+   "depth": 2,
+   "text": "What's a professional failure that taught you something important?"
+  },
+  {
+   "id": "work-019",
+   "subject": "work",
+   "depth": 2,
+   "text": "What does success at work mean to you?"
+  },
+  {
+   "id": "work-020",
+   "subject": "work",
+   "depth": 2,
+   "text": "What's something you'd change about how your company works?"
+  },
+  {
+   "id": "work-021",
+   "subject": "work",
+   "depth": 2,
+   "text": "How do you deal with stress or pressure at work?"
+  },
+  {
+   "id": "work-022",
+   "subject": "work",
+   "depth": 2,
+   "text": "Have you ever thought about quitting everything and starting something else? What would it be?"
+  },
+  {
+   "id": "work-023",
+   "subject": "work",
+   "depth": 2,
+   "text": "What kind of colleague are you, honestly?"
+  },
+  {
+   "id": "work-024",
+   "subject": "work",
+   "depth": 2,
+   "text": "What's the best piece of career advice you've received?"
+  },
+  {
+   "id": "work-025",
+   "subject": "work",
+   "depth": 2,
+   "text": "What part of your work gives you energy, and what drains it?"
+  },
+  {
+   "id": "work-026",
+   "subject": "work",
+   "depth": 2,
+   "text": "Where do you see your career in 5 years?"
+  },
+  {
+   "id": "work-027",
+   "subject": "work",
+   "depth": 2,
+   "text": "What's a skill you'd love to learn for your career?"
+  },
+  {
+   "id": "work-028",
+   "subject": "work",
+   "depth": 2,
+   "text": "Who do you admire professionally, and why?"
+  },
+  {
+   "id": "work-029",
+   "subject": "work",
+   "depth": 2,
+   "text": "How much does your job define who you are?"
+  },
+  {
+   "id": "work-030",
+   "subject": "work",
+   "depth": 2,
+   "text": "What's a work situation you handled in a way you're not proud of?"
+  },
+  {
+   "id": "work-031",
+   "subject": "work",
+   "depth": 3,
+   "text": "Do you feel like your work has meaning? Why or why not?"
+  },
+  {
+   "id": "work-032",
+   "subject": "work",
+   "depth": 3,
+   "text": "Have you ever stayed in a job because of fear? What were you afraid of?"
+  },
+  {
+   "id": "work-033",
+   "subject": "work",
+   "depth": 3,
+   "text": "What would you regret not trying professionally if you stopped working tomorrow?"
+  },
+  {
+   "id": "work-034",
+   "subject": "work",
+   "depth": 3,
+   "text": "How has work affected your relationships or health?"
+  },
+  {
+   "id": "work-035",
+   "subject": "work",
+   "depth": 3,
+   "text": "What's the work-related moment you felt the most undervalued?"
+  },
+  {
+   "id": "work-036",
+   "subject": "work",
+   "depth": 3,
+   "text": "If you could build anything with no risk of failing, what would it be?"
+  },
+  {
+   "id": "work-037",
+   "subject": "work",
+   "depth": 3,
+   "text": "What do you want people to say about your work when you retire?"
+  },
+  {
+   "id": "work-038",
+   "subject": "work",
+   "depth": 3,
+   "text": "Do you feel you're living up to your potential? What's holding you back?"
+  },
+  {
+   "id": "dreams-001",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "What's on your bucket list?"
+  },
+  {
+   "id": "dreams-002",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "Where would you like to live one day?"
+  },
+  {
+   "id": "dreams-003",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "What's a skill you dream of mastering?"
+  },
+  {
+   "id": "dreams-004",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "If you won the lottery tomorrow, what's the first thing you'd do?"
+  },
+  {
+   "id": "dreams-005",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "What does your ideal weekend look like?"
+  },
+  {
+   "id": "dreams-006",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "What's a country you dream of visiting?"
+  },
+  {
+   "id": "dreams-007",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "What's a goal you have for this year?"
+  },
+  {
+   "id": "dreams-008",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "Do you want a big house, a small apartment, or something unusual?"
+  },
+  {
+   "id": "dreams-009",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "What's a hobby you'd like to start?"
+  },
+  {
+   "id": "dreams-010",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "Would you like to have kids one day, or more kids?"
+  },
+  {
+   "id": "dreams-011",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "What's a crazy dream you've never said out loud?"
+  },
+  {
+   "id": "dreams-012",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "What would your dream job title be?"
+  },
+  {
+   "id": "dreams-013",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "What's a concert, show or event you dream of attending?"
+  },
+  {
+   "id": "dreams-014",
+   "subject": "dreams",
+   "depth": 1,
+   "text": "What car, bike or vehicle would you love to own?"
+  },
+  {
+   "id": "dreams-015",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "What does a \"successful life\" look like to you?"
+  },
+  {
+   "id": "dreams-016",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "What would you do if you knew you couldn't fail?"
+  },
+  {
+   "id": "dreams-017",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "What's a dream you gave up on? Do you regret it?"
+  },
+  {
+   "id": "dreams-018",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "What's stopping you from chasing your biggest dream right now?"
+  },
+  {
+   "id": "dreams-019",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "How do you imagine yourself at 70?"
+  },
+  {
+   "id": "dreams-020",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "What would you do with one free year, fully paid?"
+  },
+  {
+   "id": "dreams-021",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "What's a goal you achieved that you once thought was impossible?"
+  },
+  {
+   "id": "dreams-022",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "What legacy would you like to leave behind?"
+  },
+  {
+   "id": "dreams-023",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "What's one thing you want to have done before you turn the next big age milestone?"
+  },
+  {
+   "id": "dreams-024",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "Is there a place where you feel you truly belong, or are still searching for?"
+  },
+  {
+   "id": "dreams-025",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "What would your perfect ordinary day look like in 10 years?"
+  },
+  {
+   "id": "dreams-026",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "What dream do you have that involves other people?"
+  },
+  {
+   "id": "dreams-027",
+   "subject": "dreams",
+   "depth": 2,
+   "text": "What are you saving up for, in money or in energy?"
+  },
+  {
+   "id": "dreams-028",
+   "subject": "dreams",
+   "depth": 3,
+   "text": "If you only had one year left to live, what would you change right now?"
+  },
+  {
+   "id": "dreams-029",
+   "subject": "dreams",
+   "depth": 3,
+   "text": "What do you want, deep down, that you rarely admit?"
+  },
+  {
+   "id": "dreams-030",
+   "subject": "dreams",
+   "depth": 3,
+   "text": "What's a dream you're scared to go after, and why?"
+  },
+  {
+   "id": "dreams-031",
+   "subject": "dreams",
+   "depth": 3,
+   "text": "What kind of person do you hope to become?"
+  },
+  {
+   "id": "dreams-032",
+   "subject": "dreams",
+   "depth": 3,
+   "text": "How will you know when you've \"made it\"?"
+  },
+  {
+   "id": "dreams-033",
+   "subject": "dreams",
+   "depth": 3,
+   "text": "What would the 10-year-old you think of your life today?"
+  },
+  {
+   "id": "dreams-034",
+   "subject": "dreams",
+   "depth": 3,
+   "text": "What future would make you feel truly at peace?"
+  },
+  {
+   "id": "dreams-035",
+   "subject": "dreams",
+   "depth": 3,
+   "text": "What are you waiting for permission to do?"
+  },
+  {
+   "id": "values-001",
+   "subject": "values",
+   "depth": 1,
+   "text": "What's one thing you absolutely can't stand in people?"
+  },
+  {
+   "id": "values-002",
+   "subject": "values",
+   "depth": 1,
+   "text": "What's one quality you admire most in others?"
+  },
+  {
+   "id": "values-003",
+   "subject": "values",
+   "depth": 1,
+   "text": "Are you religious or spiritual in any way?"
+  },
+  {
+   "id": "values-004",
+   "subject": "values",
+   "depth": 1,
+   "text": "What's a cause you care about?"
+  },
+  {
+   "id": "values-005",
+   "subject": "values",
+   "depth": 1,
+   "text": "Do you think people are mostly good?"
+  },
+  {
+   "id": "values-006",
+   "subject": "values",
+   "depth": 1,
+   "text": "What's your opinion on lying to protect someone's feelings?"
+  },
+  {
+   "id": "values-007",
+   "subject": "values",
+   "depth": 1,
+   "text": "Are you more of a logical thinker or an emotional one?"
+  },
+  {
+   "id": "values-008",
+   "subject": "values",
+   "depth": 1,
+   "text": "What does a good life mean to you, in one sentence?"
+  },
+  {
+   "id": "values-009",
+   "subject": "values",
+   "depth": 1,
+   "text": "What's your favorite quote or motto?"
+  },
+  {
+   "id": "values-010",
+   "subject": "values",
+   "depth": 1,
+   "text": "Do you vote or care about politics?"
+  },
+  {
+   "id": "values-011",
+   "subject": "values",
+   "depth": 1,
+   "text": "What's something you think is overrated?"
+  },
+  {
+   "id": "values-012",
+   "subject": "values",
+   "depth": 1,
+   "text": "What's something you think is underrated?"
+  },
+  {
+   "id": "values-013",
+   "subject": "values",
+   "depth": 1,
+   "text": "What would you never do, even for a lot of money?"
+  },
+  {
+   "id": "values-014",
+   "subject": "values",
+   "depth": 1,
+   "text": "Do you believe in luck, fate, or coincidence?"
+  },
+  {
+   "id": "values-015",
+   "subject": "values",
+   "depth": 2,
+   "text": "What's a belief you've changed your mind on over the years?"
+  },
+  {
+   "id": "values-016",
+   "subject": "values",
+   "depth": 2,
+   "text": "What's the most important lesson life has taught you so far?"
+  },
+  {
+   "id": "values-017",
+   "subject": "values",
+   "depth": 2,
+   "text": "How do you make big decisions?"
+  },
+  {
+   "id": "values-018",
+   "subject": "values",
+   "depth": 2,
+   "text": "What do you think happens after we die?"
+  },
+  {
+   "id": "values-019",
+   "subject": "values",
+   "depth": 2,
+   "text": "What's your relationship with money: saver, spender, or worrier?"
+  },
+  {
+   "id": "values-020",
+   "subject": "values",
+   "depth": 2,
+   "text": "What's something you're grateful for that you rarely say?"
+  },
+  {
+   "id": "values-021",
+   "subject": "values",
+   "depth": 2,
+   "text": "What does respect mean to you?"
+  },
+  {
+   "id": "values-022",
+   "subject": "values",
+   "depth": 2,
+   "text": "How important is honesty to you, even when it hurts?"
+  },
+  {
+   "id": "values-023",
+   "subject": "values",
+   "depth": 2,
+   "text": "What's a rule you live by?"
+  },
+  {
+   "id": "values-024",
+   "subject": "values",
+   "depth": 2,
+   "text": "Who do you consider a role model, and why?"
+  },
+  {
+   "id": "values-025",
+   "subject": "values",
+   "depth": 2,
+   "text": "What's something you strongly believe that most people disagree with?"
+  },
+  {
+   "id": "values-026",
+   "subject": "values",
+   "depth": 2,
+   "text": "Where do you find meaning in your life?"
+  },
+  {
+   "id": "values-027",
+   "subject": "values",
+   "depth": 2,
+   "text": "How do you define being a good person?"
+  },
+  {
+   "id": "values-028",
+   "subject": "values",
+   "depth": 2,
+   "text": "What's an injustice that makes you really angry?"
+  },
+  {
+   "id": "values-029",
+   "subject": "values",
+   "depth": 3,
+   "text": "What do you think is your purpose in life?"
+  },
+  {
+   "id": "values-030",
+   "subject": "values",
+   "depth": 3,
+   "text": "What's the hardest moral choice you've ever had to make?"
+  },
+  {
+   "id": "values-031",
+   "subject": "values",
+   "depth": 3,
+   "text": "When did you act against your own values? How did it feel?"
+  },
+  {
+   "id": "values-032",
+   "subject": "values",
+   "depth": 3,
+   "text": "What are you most afraid of losing?"
+  },
+  {
+   "id": "values-033",
+   "subject": "values",
+   "depth": 3,
+   "text": "What do you think you're here to learn in this life?"
+  },
+  {
+   "id": "values-034",
+   "subject": "values",
+   "depth": 3,
+   "text": "Is there something you believe in that you've never dared to say publicly?"
+  },
+  {
+   "id": "values-035",
+   "subject": "values",
+   "depth": 3,
+   "text": "What would you want to be remembered for?"
+  },
+  {
+   "id": "values-036",
+   "subject": "values",
+   "depth": 3,
+   "text": "How do you make peace with things you can't control?"
+  },
+  {
+   "id": "personality-001",
+   "subject": "personality",
+   "depth": 1,
+   "text": "How would your best friend describe you in three words?"
+  },
+  {
+   "id": "personality-002",
+   "subject": "personality",
+   "depth": 1,
+   "text": "Are you an introvert or an extrovert?"
+  },
+  {
+   "id": "personality-003",
+   "subject": "personality",
+   "depth": 1,
+   "text": "What's your star sign, and do you think it fits you?"
+  },
+  {
+   "id": "personality-004",
+   "subject": "personality",
+   "depth": 1,
+   "text": "Are you a morning person or a night person?"
+  },
+  {
+   "id": "personality-005",
+   "subject": "personality",
+   "depth": 1,
+   "text": "Are you more of a cat person or a dog person?"
+  },
+  {
+   "id": "personality-006",
+   "subject": "personality",
+   "depth": 1,
+   "text": "What's your biggest pet peeve?"
+  },
+  {
+   "id": "personality-007",
+   "subject": "personality",
+   "depth": 1,
+   "text": "What's a weird habit you have?"
+  },
+  {
+   "id": "personality-008",
+   "subject": "personality",
+   "depth": 1,
+   "text": "Are you messy or tidy?"
+  },
+  {
+   "id": "personality-009",
+   "subject": "personality",
+   "depth": 1,
+   "text": "How do you recharge after a long week?"
+  },
+  {
+   "id": "personality-010",
+   "subject": "personality",
+   "depth": 1,
+   "text": "What's your hidden talent?"
+  },
+  {
+   "id": "personality-011",
+   "subject": "personality",
+   "depth": 1,
+   "text": "Are you usually early, on time, or late?"
+  },
+  {
+   "id": "personality-012",
+   "subject": "personality",
+   "depth": 1,
+   "text": "What's something that always makes you smile?"
+  },
+  {
+   "id": "personality-013",
+   "subject": "personality",
+   "depth": 1,
+   "text": "What's your guilty pleasure?"
+  },
+  {
+   "id": "personality-014",
+   "subject": "personality",
+   "depth": 1,
+   "text": "What's your go-to karaoke song?"
+  },
+  {
+   "id": "personality-015",
+   "subject": "personality",
+   "depth": 1,
+   "text": "Do you sing in the shower?"
+  },
+  {
+   "id": "personality-016",
+   "subject": "personality",
+   "depth": 2,
+   "text": "What's the compliment you received that you still remember?"
+  },
+  {
+   "id": "personality-017",
+   "subject": "personality",
+   "depth": 2,
+   "text": "What's your biggest strength, and the flip side of it?"
+  },
+  {
+   "id": "personality-018",
+   "subject": "personality",
+   "depth": 2,
+   "text": "What's something people often misunderstand about you?"
+  },
+  {
+   "id": "personality-019",
+   "subject": "personality",
+   "depth": 2,
+   "text": "What makes you angry quicker than anything else?"
+  },
+  {
+   "id": "personality-020",
+   "subject": "personality",
+   "depth": 2,
+   "text": "How do you react when things don't go to plan?"
+  },
+  {
+   "id": "personality-021",
+   "subject": "personality",
+   "depth": 2,
+   "text": "What's something you're proud of but rarely mention?"
+  },
+  {
+   "id": "personality-022",
+   "subject": "personality",
+   "depth": 2,
+   "text": "In a group, are you the leader, the mediator, or the entertainer?"
+  },
+  {
+   "id": "personality-023",
+   "subject": "personality",
+   "depth": 2,
+   "text": "What drains your energy the most?"
+  },
+  {
+   "id": "personality-024",
+   "subject": "personality",
+   "depth": 2,
+   "text": "How do you handle criticism?"
+  },
+  {
+   "id": "personality-025",
+   "subject": "personality",
+   "depth": 2,
+   "text": "What's a recent moment where you surprised yourself?"
+  },
+  {
+   "id": "personality-026",
+   "subject": "personality",
+   "depth": 2,
+   "text": "What do you do when you can't sleep?"
+  },
+  {
+   "id": "personality-027",
+   "subject": "personality",
+   "depth": 2,
+   "text": "What's a part of your personality you've worked hard to change?"
+  },
+  {
+   "id": "personality-028",
+   "subject": "personality",
+   "depth": 2,
+   "text": "When do you feel the most like yourself?"
+  },
+  {
+   "id": "personality-029",
+   "subject": "personality",
+   "depth": 2,
+   "text": "What's your relationship with your phone, honestly?"
+  },
+  {
+   "id": "personality-030",
+   "subject": "personality",
+   "depth": 3,
+   "text": "What's your biggest insecurity today?"
+  },
+  {
+   "id": "personality-031",
+   "subject": "personality",
+   "depth": 3,
+   "text": "What's a mask you wear in front of other people?"
+  },
+  {
+   "id": "personality-032",
+   "subject": "personality",
+   "depth": 3,
+   "text": "What's something you do to protect yourself emotionally?"
+  },
+  {
+   "id": "personality-033",
+   "subject": "personality",
+   "depth": 3,
+   "text": "When was the last time you cried, and why?"
+  },
+  {
+   "id": "personality-034",
+   "subject": "personality",
+   "depth": 3,
+   "text": "What do you like most about yourself, deep down?"
+  },
+  {
+   "id": "personality-035",
+   "subject": "personality",
+   "depth": 3,
+   "text": "What's a part of you that you're still learning to accept?"
+  },
+  {
+   "id": "personality-036",
+   "subject": "personality",
+   "depth": 3,
+   "text": "What are you most afraid people would discover about you?"
+  },
+  {
+   "id": "personality-037",
+   "subject": "personality",
+   "depth": 3,
+   "text": "How kind are you to yourself, honestly?"
+  },
+  {
+   "id": "personality-038",
+   "subject": "personality",
+   "depth": 3,
+   "text": "What do you need more of in your life right now?"
+  },
+  {
+   "id": "passions-001",
+   "subject": "passions",
+   "depth": 1,
+   "text": "What do you do in your free time?"
+  },
+  {
+   "id": "passions-002",
+   "subject": "passions",
+   "depth": 1,
+   "text": "What's a hobby you've had for the longest time?"
+  },
+  {
+   "id": "passions-003",
+   "subject": "passions",
+   "depth": 1,
+   "text": "What's the last thing you learned just for fun?"
+  },
+  {
+   "id": "passions-004",
+   "subject": "passions",
+   "depth": 1,
+   "text": "Do you play any sport? Which one?"
+  },
+  {
+   "id": "passions-005",
+   "subject": "passions",
+   "depth": 1,
+   "text": "Do you play video games? Which ones?"
+  },
+  {
+   "id": "passions-006",
+   "subject": "passions",
+   "depth": 1,
+   "text": "Do you play any instrument, or wish you did?"
+  },
+  {
+   "id": "passions-007",
+   "subject": "passions",
+   "depth": 1,
+   "text": "What's the best book you've ever read?"
+  },
+  {
+   "id": "passions-008",
+   "subject": "passions",
+   "depth": 1,
+   "text": "Are you creative? Do you draw, write, build, or make things?"
+  },
+  {
+   "id": "passions-009",
+   "subject": "passions",
+   "depth": 1,
+   "text": "What's a YouTube channel or podcast you love?"
+  },
+  {
+   "id": "passions-010",
+   "subject": "passions",
+   "depth": 1,
+   "text": "What's something you could talk about for hours?"
+  },
+  {
+   "id": "passions-011",
+   "subject": "passions",
+   "depth": 1,
+   "text": "What's a hobby you tried and quickly gave up?"
+  },
+  {
+   "id": "passions-012",
+   "subject": "passions",
+   "depth": 1,
+   "text": "Do you like board games? Which one is your favorite?"
+  },
+  {
+   "id": "passions-013",
+   "subject": "passions",
+   "depth": 1,
+   "text": "Do you prefer nature or the city for your free time?"
+  },
+  {
+   "id": "passions-014",
+   "subject": "passions",
+   "depth": 1,
+   "text": "What's an activity that makes you lose track of time?"
+  },
+  {
+   "id": "passions-015",
+   "subject": "passions",
+   "depth": 2,
+   "text": "Why does your favorite hobby matter so much to you?"
+  },
+  {
+   "id": "passions-016",
+   "subject": "passions",
+   "depth": 2,
+   "text": "What's a passion you've neglected and would like to come back to?"
+  },
+  {
+   "id": "passions-017",
+   "subject": "passions",
+   "depth": 2,
+   "text": "Who introduced you to your biggest passion?"
+  },
+  {
+   "id": "passions-018",
+   "subject": "passions",
+   "depth": 2,
+   "text": "Is there a hobby you'd love to share with me?"
+  },
+  {
+   "id": "passions-019",
+   "subject": "passions",
+   "depth": 2,
+   "text": "What's something you're secretly really good at?"
+  },
+  {
+   "id": "passions-020",
+   "subject": "passions",
+   "depth": 2,
+   "text": "What's the most extreme or adventurous thing you've done?"
+  },
+  {
+   "id": "passions-021",
+   "subject": "passions",
+   "depth": 2,
+   "text": "If you had to teach a class on something, what would it be?"
+  },
+  {
+   "id": "passions-022",
+   "subject": "passions",
+   "depth": 2,
+   "text": "What's a skill you're slowly getting better at?"
+  },
+  {
+   "id": "passions-023",
+   "subject": "passions",
+   "depth": 2,
+   "text": "What did you love doing as a kid that you don't do anymore?"
+  },
+  {
+   "id": "passions-024",
+   "subject": "passions",
+   "depth": 2,
+   "text": "What's your dream project if you had unlimited time?"
+  },
+  {
+   "id": "passions-025",
+   "subject": "passions",
+   "depth": 2,
+   "text": "Which passion of yours do people around you not understand?"
+  },
+  {
+   "id": "passions-026",
+   "subject": "passions",
+   "depth": 3,
+   "text": "What would your life look like if you followed your passion fully?"
+  },
+  {
+   "id": "passions-027",
+   "subject": "passions",
+   "depth": 3,
+   "text": "Is there a passion you gave up because of what others thought?"
+  },
+  {
+   "id": "passions-028",
+   "subject": "passions",
+   "depth": 3,
+   "text": "What do you create that makes you feel most alive?"
+  },
+  {
+   "id": "passions-029",
+   "subject": "passions",
+   "depth": 3,
+   "text": "What does your passion say about who you are?"
+  },
+  {
+   "id": "passions-030",
+   "subject": "passions",
+   "depth": 3,
+   "text": "What do you do when no one is watching that makes you happy?"
+  },
+  {
+   "id": "tastes-001",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite food of all time?"
+  },
+  {
+   "id": "tastes-002",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's a food you absolutely hate?"
+  },
+  {
+   "id": "tastes-003",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "Coffee or tea? How do you take it?"
+  },
+  {
+   "id": "tastes-004",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite movie?"
+  },
+  {
+   "id": "tastes-005",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite TV series?"
+  },
+  {
+   "id": "tastes-006",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite music genre or artist?"
+  },
+  {
+   "id": "tastes-007",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What song is stuck in your head lately?"
+  },
+  {
+   "id": "tastes-008",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite season?"
+  },
+  {
+   "id": "tastes-009",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "Sweet or savory?"
+  },
+  {
+   "id": "tastes-010",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your comfort food after a bad day?"
+  },
+  {
+   "id": "tastes-011",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite restaurant around here?"
+  },
+  {
+   "id": "tastes-012",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "Beach holiday or mountain holiday?"
+  },
+  {
+   "id": "tastes-013",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite color, and has it changed over time?"
+  },
+  {
+   "id": "tastes-014",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite smell?"
+  },
+  {
+   "id": "tastes-015",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's the best meal you've ever had?"
+  },
+  {
+   "id": "tastes-016",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite dessert?"
+  },
+  {
+   "id": "tastes-017",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "Pizza: pineapple, yes or no?"
+  },
+  {
+   "id": "tastes-018",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite drink to order at a bar?"
+  },
+  {
+   "id": "tastes-019",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite word, in any language?"
+  },
+  {
+   "id": "tastes-020",
+   "subject": "tastes",
+   "depth": 1,
+   "text": "What's your favorite time of the day?"
+  },
+  {
+   "id": "tastes-021",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What's a song that reminds you of a specific moment in your life?"
+  },
+  {
+   "id": "tastes-022",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What's a movie that changed the way you see things?"
+  },
+  {
+   "id": "tastes-023",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What food reminds you of someone you love?"
+  },
+  {
+   "id": "tastes-024",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What's a taste you acquired as an adult?"
+  },
+  {
+   "id": "tastes-025",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What album would you take to a desert island?"
+  },
+  {
+   "id": "tastes-026",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What's an artist or band you're embarrassed to love?"
+  },
+  {
+   "id": "tastes-027",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What's the most beautiful place you've ever seen?"
+  },
+  {
+   "id": "tastes-028",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What's a book you'd recommend to everyone, and why?"
+  },
+  {
+   "id": "tastes-029",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What's your favorite way to spend a rainy Sunday?"
+  },
+  {
+   "id": "tastes-030",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What's a movie you can watch over and over?"
+  },
+  {
+   "id": "tastes-031",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What's the best gift you've ever given someone?"
+  },
+  {
+   "id": "tastes-032",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What kind of art moves you the most?"
+  },
+  {
+   "id": "tastes-033",
+   "subject": "tastes",
+   "depth": 2,
+   "text": "What's a cuisine you'd love to learn to cook?"
+  },
+  {
+   "id": "tastes-034",
+   "subject": "tastes",
+   "depth": 3,
+   "text": "What song would you want played at your funeral?"
+  },
+  {
+   "id": "tastes-035",
+   "subject": "tastes",
+   "depth": 3,
+   "text": "What's a piece of art, music, or film that made you cry?"
+  },
+  {
+   "id": "tastes-036",
+   "subject": "tastes",
+   "depth": 3,
+   "text": "Which song describes your life right now?"
+  },
+  {
+   "id": "tastes-037",
+   "subject": "tastes",
+   "depth": 3,
+   "text": "What's the last thing that filled you with wonder?"
+  },
+  {
+   "id": "tastes-038",
+   "subject": "tastes",
+   "depth": 3,
+   "text": "What's a sensation or moment that makes you feel completely at peace?"
+  },
+  {
+   "id": "travel-001",
+   "subject": "travel",
+   "depth": 1,
+   "text": "How many countries have you visited?"
+  },
+  {
+   "id": "travel-002",
+   "subject": "travel",
+   "depth": 1,
+   "text": "What's the best trip you've ever taken?"
+  },
+  {
+   "id": "travel-003",
+   "subject": "travel",
+   "depth": 1,
+   "text": "What's the worst travel experience you've had?"
+  },
+  {
+   "id": "travel-004",
+   "subject": "travel",
+   "depth": 1,
+   "text": "Do you prefer planning trips or improvising?"
+  },
+  {
+   "id": "travel-005",
+   "subject": "travel",
+   "depth": 1,
+   "text": "Window seat or aisle seat?"
+  },
+  {
+   "id": "travel-006",
+   "subject": "travel",
+   "depth": 1,
+   "text": "What's the farthest place from home you've been?"
+  },
+  {
+   "id": "travel-007",
+   "subject": "travel",
+   "depth": 1,
+   "text": "Have you ever lived abroad?"
+  },
+  {
+   "id": "travel-008",
+   "subject": "travel",
+   "depth": 1,
+   "text": "What's your favorite city in the world?"
+  },
+  {
+   "id": "travel-009",
+   "subject": "travel",
+   "depth": 1,
+   "text": "Road trip, train, or plane?"
+  },
+  {
+   "id": "travel-010",
+   "subject": "travel",
+   "depth": 1,
+   "text": "Backpacking, hotel, or Airbnb?"
+  },
+  {
+   "id": "travel-011",
+   "subject": "travel",
+   "depth": 1,
+   "text": "What's the first trip you remember?"
+  },
+  {
+   "id": "travel-012",
+   "subject": "travel",
+   "depth": 1,
+   "text": "What's a place near home that you love?"
+  },
+  {
+   "id": "travel-013",
+   "subject": "travel",
+   "depth": 1,
+   "text": "Do you collect anything from your travels?"
+  },
+  {
+   "id": "travel-014",
+   "subject": "travel",
+   "depth": 1,
+   "text": "What's the best street food you've had abroad?"
+  },
+  {
+   "id": "travel-015",
+   "subject": "travel",
+   "depth": 1,
+   "text": "What's your packing style: light, or everything just in case?"
+  },
+  {
+   "id": "travel-016",
+   "subject": "travel",
+   "depth": 2,
+   "text": "What's a trip that changed you?"
+  },
+  {
+   "id": "travel-017",
+   "subject": "travel",
+   "depth": 2,
+   "text": "What's a place where you felt completely out of your comfort zone?"
+  },
+  {
+   "id": "travel-018",
+   "subject": "travel",
+   "depth": 2,
+   "text": "Where would you go if you could leave tomorrow, with anyone?"
+  },
+  {
+   "id": "travel-019",
+   "subject": "travel",
+   "depth": 2,
+   "text": "What's a culture that fascinates you?"
+  },
+  {
+   "id": "travel-020",
+   "subject": "travel",
+   "depth": 2,
+   "text": "What's the most spontaneous trip you've ever taken?"
+  },
+  {
+   "id": "travel-021",
+   "subject": "travel",
+   "depth": 2,
+   "text": "What's a travel moment you'll never forget?"
+  },
+  {
+   "id": "travel-022",
+   "subject": "travel",
+   "depth": 2,
+   "text": "Would you ever move to another country for good? Where?"
+  },
+  {
+   "id": "travel-023",
+   "subject": "travel",
+   "depth": 2,
+   "text": "What place do you dream of showing someone you love?"
+  },
+  {
+   "id": "travel-024",
+   "subject": "travel",
+   "depth": 2,
+   "text": "What's something travel taught you about yourself?"
+  },
+  {
+   "id": "travel-025",
+   "subject": "travel",
+   "depth": 2,
+   "text": "Where do you feel the most at home, apart from home?"
+  },
+  {
+   "id": "travel-026",
+   "subject": "travel",
+   "depth": 3,
+   "text": "Is there a place you're afraid to go back to? Why?"
+  },
+  {
+   "id": "travel-027",
+   "subject": "travel",
+   "depth": 3,
+   "text": "What are you running toward, or away from, when you travel?"
+  },
+  {
+   "id": "travel-028",
+   "subject": "travel",
+   "depth": 3,
+   "text": "Where would you like to spend the last years of your life?"
+  },
+  {
+   "id": "travel-029",
+   "subject": "travel",
+   "depth": 3,
+   "text": "What's a place that holds a piece of your heart?"
+  },
+  {
+   "id": "daily-001",
+   "subject": "daily",
+   "depth": 1,
+   "text": "What time do you usually wake up?"
+  },
+  {
+   "id": "daily-002",
+   "subject": "daily",
+   "depth": 1,
+   "text": "What's the first thing you do in the morning?"
+  },
+  {
+   "id": "daily-003",
+   "subject": "daily",
+   "depth": 1,
+   "text": "What do you usually eat for breakfast?"
+  },
+  {
+   "id": "daily-004",
+   "subject": "daily",
+   "depth": 1,
+   "text": "How do you get to work or school?"
+  },
+  {
+   "id": "daily-005",
+   "subject": "daily",
+   "depth": 1,
+   "text": "What's your favorite part of the day?"
+  },
+  {
+   "id": "daily-006",
+   "subject": "daily",
+   "depth": 1,
+   "text": "Do you cook? What's your signature dish?"
+  },
+  {
+   "id": "daily-007",
+   "subject": "daily",
+   "depth": 1,
+   "text": "What does your evening routine look like?"
+  },
+  {
+   "id": "daily-008",
+   "subject": "daily",
+   "depth": 1,
+   "text": "How many hours of sleep do you need to feel good?"
+  },
+  {
+   "id": "daily-009",
+   "subject": "daily",
+   "depth": 1,
+   "text": "What's something you do every single day?"
+  },
+  {
+   "id": "daily-010",
+   "subject": "daily",
+   "depth": 1,
+   "text": "Do you exercise? What's your routine?"
+  },
+  {
+   "id": "daily-011",
+   "subject": "daily",
+   "depth": 1,
+   "text": "How much time do you spend on your phone per day?"
+  },
+  {
+   "id": "daily-012",
+   "subject": "daily",
+   "depth": 1,
+   "text": "What's your most-used app?"
+  },
+  {
+   "id": "daily-013",
+   "subject": "daily",
+   "depth": 1,
+   "text": "What do you do on a typical Sunday?"
+  },
+  {
+   "id": "daily-014",
+   "subject": "daily",
+   "depth": 1,
+   "text": "Do you make your bed every morning?"
+  },
+  {
+   "id": "daily-015",
+   "subject": "daily",
+   "depth": 1,
+   "text": "What's your favorite room in your home?"
+  },
+  {
+   "id": "daily-016",
+   "subject": "daily",
+   "depth": 1,
+   "text": "Do you prefer showers or baths?"
+  },
+  {
+   "id": "daily-017",
+   "subject": "daily",
+   "depth": 2,
+   "text": "What's a small daily ritual that makes you happy?"
+  },
+  {
+   "id": "daily-018",
+   "subject": "daily",
+   "depth": 2,
+   "text": "What's a habit you're trying to build right now?"
+  },
+  {
+   "id": "daily-019",
+   "subject": "daily",
+   "depth": 2,
+   "text": "What's a habit you're trying to break?"
+  },
+  {
+   "id": "daily-020",
+   "subject": "daily",
+   "depth": 2,
+   "text": "How do you take care of your mental health?"
+  },
+  {
+   "id": "daily-021",
+   "subject": "daily",
+   "depth": 2,
+   "text": "What does a \"bad day\" look like for you, and how do you recover?"
+  },
+  {
+   "id": "daily-022",
+   "subject": "daily",
+   "depth": 2,
+   "text": "What would you change about your daily routine if you could?"
+  },
+  {
+   "id": "daily-023",
+   "subject": "daily",
+   "depth": 2,
+   "text": "When do you have time just for yourself?"
+  },
+  {
+   "id": "daily-024",
+   "subject": "daily",
+   "depth": 2,
+   "text": "What's the most stressful part of your week?"
+  },
+  {
+   "id": "daily-025",
+   "subject": "daily",
+   "depth": 2,
+   "text": "How do you organize your life: lists, apps, memory, chaos?"
+  },
+  {
+   "id": "daily-026",
+   "subject": "daily",
+   "depth": 2,
+   "text": "What do you do when you feel overwhelmed?"
+  },
+  {
+   "id": "daily-027",
+   "subject": "daily",
+   "depth": 2,
+   "text": "What does a perfect lazy day look like?"
+  },
+  {
+   "id": "daily-028",
+   "subject": "daily",
+   "depth": 2,
+   "text": "How do you feel about being alone at home?"
+  },
+  {
+   "id": "daily-029",
+   "subject": "daily",
+   "depth": 3,
+   "text": "Do you feel like you're living the life you want, day to day?"
+  },
+  {
+   "id": "daily-030",
+   "subject": "daily",
+   "depth": 3,
+   "text": "What do you do to escape when life feels too much?"
+  },
+  {
+   "id": "daily-031",
+   "subject": "daily",
+   "depth": 3,
+   "text": "What's something in your daily life you're tolerating but shouldn't be?"
+  },
+  {
+   "id": "daily-032",
+   "subject": "daily",
+   "depth": 3,
+   "text": "When was the last time you felt truly rested?"
+  },
+  {
+   "id": "daily-033",
+   "subject": "daily",
+   "depth": 3,
+   "text": "What would make your everyday life feel more meaningful?"
+  },
+  {
+   "id": "whatif-001",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you could have any superpower, what would it be?"
+  },
+  {
+   "id": "whatif-002",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you could meet any famous person, alive or dead, who would it be?"
+  },
+  {
+   "id": "whatif-003",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you were an animal, which one would you be?"
+  },
+  {
+   "id": "whatif-004",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you could live in any era of history, which one?"
+  },
+  {
+   "id": "whatif-005",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you could instantly speak any language, which one?"
+  },
+  {
+   "id": "whatif-006",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you could eat only one food for the rest of your life, what would it be?"
+  },
+  {
+   "id": "whatif-007",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you were famous, what would you be famous for?"
+  },
+  {
+   "id": "whatif-008",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you had a time machine for one day, where would you go?"
+  },
+  {
+   "id": "whatif-009",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you could switch lives with someone for a week, who would it be?"
+  },
+  {
+   "id": "whatif-010",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you opened a shop or restaurant, what would it be?"
+  },
+  {
+   "id": "whatif-011",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If your life were a movie, what would the title be?"
+  },
+  {
+   "id": "whatif-012",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you could be a character from a book or movie, who would you be?"
+  },
+  {
+   "id": "whatif-013",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you could have a free plane ticket right now, where would you go?"
+  },
+  {
+   "id": "whatif-014",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you had to live on a deserted island, what three things would you bring?"
+  },
+  {
+   "id": "whatif-015",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you could master any skill instantly, what would it be?"
+  },
+  {
+   "id": "whatif-016",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you were a color, which one would you be and why?"
+  },
+  {
+   "id": "whatif-017",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "Zombie apocalypse: what's your survival strategy?"
+  },
+  {
+   "id": "whatif-018",
+   "subject": "whatif",
+   "depth": 1,
+   "text": "If you had a personal theme song, what would it be?"
+  },
+  {
+   "id": "whatif-019",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you could relive one year of your life, which one would it be?"
+  },
+  {
+   "id": "whatif-020",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you could change one decision from your past, would you? Which one?"
+  },
+  {
+   "id": "whatif-021",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you could know one truth about your future, what would you ask?"
+  },
+  {
+   "id": "whatif-022",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you had to start your life over in a new city tomorrow, where would you go?"
+  },
+  {
+   "id": "whatif-023",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you could talk to your future self, what would you ask?"
+  },
+  {
+   "id": "whatif-024",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you could fix one problem in the world, which one?"
+  },
+  {
+   "id": "whatif-025",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you could give one message to the whole world, what would it be?"
+  },
+  {
+   "id": "whatif-026",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you had to give up either music or movies forever, which one?"
+  },
+  {
+   "id": "whatif-027",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you could spend one day with someone who has passed away, who would it be?"
+  },
+  {
+   "id": "whatif-028",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you could have dinner with any three people, who would they be?"
+  },
+  {
+   "id": "whatif-029",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you could be really good at one thing you're bad at, what would it be?"
+  },
+  {
+   "id": "whatif-030",
+   "subject": "whatif",
+   "depth": 2,
+   "text": "If you had to live the same day on repeat, which day would you choose?"
+  },
+  {
+   "id": "whatif-031",
+   "subject": "whatif",
+   "depth": 3,
+   "text": "If you knew you'd die in a year, would you tell anyone? What would you do?"
+  },
+  {
+   "id": "whatif-032",
+   "subject": "whatif",
+   "depth": 3,
+   "text": "If you could erase one memory, would you? Which one?"
+  },
+  {
+   "id": "whatif-033",
+   "subject": "whatif",
+   "depth": 3,
+   "text": "If you could hear what people really think of you, would you want to?"
+  },
+  {
+   "id": "whatif-034",
+   "subject": "whatif",
+   "depth": 3,
+   "text": "If you could go back and say goodbye to someone properly, who would it be?"
+  },
+  {
+   "id": "whatif-035",
+   "subject": "whatif",
+   "depth": 3,
+   "text": "If you could give your younger self one gift, what would it be?"
+  },
+  {
+   "id": "whatif-036",
+   "subject": "whatif",
+   "depth": 3,
+   "text": "If your best friend described your biggest flaw, what do you think they'd say?"
+  },
+  {
+   "id": "whatif-037",
+   "subject": "whatif",
+   "depth": 3,
+   "text": "If everything you own burned tomorrow, what would you truly miss?"
+  }
+ ]
+}

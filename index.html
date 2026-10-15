@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Loopy Life · Know Each Other</title>
+  <meta name="description" content="A two-player game to get to know each other better: spin the wheel or grow a tree together.">
+  <meta name="theme-color" content="#1b1440">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <!-- ============ SETUP ============ -->
+  <main id="screen-setup" class="screen active">
+    <header class="hero">
+      <div class="logo">∞ Loopy Life</div>
+      <h1>Know Each Other</h1>
+      <p class="tagline">A game for two, to go beyond the usual small talk.</p>
+    </header>
+
+    <section class="panel">
+      <h2>1. Who's playing?</h2>
+      <div class="players">
+        <label class="player-input p1">
+          <span>Player 1</span>
+          <input id="name1" type="text" maxlength="20" placeholder="Your name" autocomplete="off">
+        </label>
+        <div class="heart">💞</div>
+        <label class="player-input p2">
+          <span>Player 2</span>
+          <input id="name2" type="text" maxlength="20" placeholder="Your friend's name" autocomplete="off">
+        </label>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>2. Pick your subjects</h2>
+        <div class="mini-actions">
+          <button class="link" id="sel-all" type="button">All</button>
+          <button class="link" id="sel-none" type="button">None</button>
+        </div>
+      </div>
+      <div id="subject-grid" class="subject-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>3. How deep?</h2>
+      <div class="segmented" id="depth-choice">
+        <button type="button" data-depth="light">🌤️ Light</button>
+        <button type="button" data-depth="mixed" class="on">🌗 Mixed</button>
+        <button type="button" data-depth="deep">🌊 Deep</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>4. Choose how to play</h2>
+      <div class="modes">
+        <button class="mode-card" data-mode="wheel" type="button">
+          <span class="mode-emoji">🎡</span>
+          <strong>Spin the Wheel</strong>
+          <small>Random subject, random question. Pure surprise.</small>
+        </button>
+        <button class="mode-card" data-mode="tree" type="button">
+          <span class="mode-emoji">🌳</span>
+          <strong>Grow Our Tree</strong>
+          <small>Start from the roots (family, origins) and unlock deeper questions branch by branch.</small>
+        </button>
+      </div>
+      <p id="setup-error" class="error" role="alert"></p>
+      <p id="resume-row" class="resume hidden">
+        <button id="resume-btn" class="btn ghost" type="button">↩︎ Resume last game</button>
+      </p>
+    </section>
+
+    <footer class="foot">First seed of <strong>Loopy Life</strong> · <span id="q-count">…</span> questions inside</footer>
+  </main>
+
+  <!-- ============ GAME ============ -->
+  <main id="screen-game" class="screen">
+    <header class="topbar">
+      <div class="score p1" id="score-p1">
+        <span class="who" id="label-p1">P1</span>
+        <span class="pts" id="pts-p1">0</span>
+      </div>
+      <div class="connection">
+        <div class="conn-label">Connection <span id="conn-level">Lv 1</span></div>
+        <div class="conn-bar"><div id="conn-fill"></div></div>
+      </div>
+      <div class="score p2" id="score-p2">
+        <span class="who" id="label-p2">P2</span>
+        <span class="pts" id="pts-p2">0</span>
+      </div>
+    </header>
+
+    <div class="turn-banner" id="turn-banner">…</div>
+
+    <div class="mode-switch segmented small">
+      <button type="button" data-switch="wheel">🎡 Wheel</button>
+      <button type="button" data-switch="tree">🌳 Tree</button>
+    </div>
+
+    <!-- Wheel view -->
+    <section id="view-wheel" class="view">
+      <div class="wheel-wrap">
+        <div class="pointer">▼</div>
+        <canvas id="wheel" width="640" height="640"></canvas>
+        <button id="spin-btn" class="spin-btn" type="button">SPIN</button>
+      </div>
+      <p class="hint">Tap SPIN (or the wheel) to pick a subject.</p>
+    </section>
+
+    <!-- Tree view -->
+    <section id="view-tree" class="view">
+      <div class="tree-wrap">
+        <svg id="tree" viewBox="0 0 400 420" role="img" aria-label="Your friendship tree"></svg>
+      </div>
+      <p class="hint">Choose a branch to grow. Each branch starts at its <b>roots</b> 🌱, then grows <b>leaves</b> 🌿, then <b>blooms</b> 🌸 with deeper questions.</p>
+      <div id="branch-list" class="branch-list"></div>
+      <button id="tree-surprise" class="btn ghost wide" type="button">🎲 Surprise us: grow any branch</button>
+    </section>
+
+    <div class="game-actions">
+      <button id="journal-btn" class="btn ghost" type="button">📖 Our story</button>
+      <button id="finish-btn" class="btn ghost" type="button">🏁 Finish</button>
+    </div>
+  </main>
+
+  <!-- ============ SUMMARY ============ -->
+  <main id="screen-summary" class="screen">
+    <header class="hero">
+      <div class="logo">∞ Loopy Life</div>
+      <h1>What a conversation! 🎉</h1>
+      <p class="tagline" id="summary-tagline"></p>
+    </header>
+    <section class="panel stats" id="summary-stats"></section>
+    <section class="panel">
+      <h2>Our story so far</h2>
+      <ol id="summary-journal" class="journal"></ol>
+    </section>
+    <div class="game-actions">
+      <button id="download-btn" class="btn ghost" type="button">⬇️ Save our story</button>
+      <button id="continue-btn" class="btn ghost" type="button">↩︎ Keep playing</button>
+      <button id="restart-btn" class="btn primary" type="button">✨ New game</button>
+    </div>
+  </main>
+
+  <!-- ============ QUESTION CARD ============ -->
+  <div id="card-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="q-text">
+    <div class="card" id="card">
+      <div class="card-top">
+        <span class="chip" id="q-subject">Subject</span>
+        <span class="depth" id="q-depth">🌤️ Light</span>
+      </div>
+      <p class="for-who" id="q-for">For …</p>
+      <p class="q-text" id="q-text">Question</p>
+
+      <div class="bonus-row">
+        <button type="button" class="bonus" data-bonus="guess" id="b-guess">🎯 <span>… guessed it</span></button>
+        <button type="button" class="bonus" data-bonus="wow">😮 <span>Didn't know that!</span></button>
+        <button type="button" class="bonus" data-bonus="both" id="b-both">🔁 <span>… answered too</span></button>
+      </div>
+      <p class="bonus-help">Tip: let the other person guess the answer first. Tap the bonuses that happened.</p>
+
+      <textarea id="q-note" rows="2" maxlength="280" placeholder="Something to remember? (optional)"></textarea>
+
+      <div class="card-actions">
+        <button id="skip-btn" class="btn ghost" type="button">🔄 Pass (<span id="passes">3</span> left)</button>
+        <button id="done-btn" class="btn primary" type="button">Answered! ✨</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ JOURNAL ============ -->
+  <div id="journal-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="journal-title">
+    <div class="card journal-card">
+      <div class="card-top">
+        <h2 id="journal-title">📖 Our story</h2>
+        <button id="journal-close" class="btn ghost small" type="button">Close</button>
+      </div>
+      <ol id="journal-list" class="journal"></ol>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
