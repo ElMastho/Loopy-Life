@@ -18,13 +18,11 @@
   const STR = {
     en: {
       title: "Know Each Other",
-      tagline: "A game for two, to go beyond the usual small talk.",
+      tagline: "A game for friends, to go beyond the usual small talk.",
       who: "1. Who's playing?",
       player1: "Player 1",
       player2: "Player 2",
-      yourName: "Your name",
-      friendName: "Your friend's name",
-      pickSubjects: "2. Pick your subjects",
+            pickSubjects: "2. Pick your subjects",
       all: "All",
       none: "None",
       howDeep: "3. How deep?",
@@ -54,15 +52,25 @@
       keepPlaying: "↩︎ Keep playing",
       newGame: "✨ New game",
       wow: "Didn't know that!",
-      bonusHelp: "Tip: let the other person guess the answer first. Tap the bonuses that happened.",
+      bonusHelp: "Tip: let the others guess the answer first. Tap the bonuses that happened.",
       notePh: "Something to remember? (optional)",
       pass: "Pass",
       answered: "Answered! ✨",
       close: "Close",
       langToggle: "🇫🇷 Français",
+      addPlayer: "+ Add a player",
+      playerN: "Player {n}",
+      remove: "Remove",
+      firstNamePh: "Your name",
+      otherNamePh: "A friend's name",
+      everyoneToo: "Everyone else answered too (+{n} each)",
+      rules: "Rules",
+      rulesBtn: "❓ Rules",
+      rulesTitle: "How to play",
+      rulesBody: "<h3>🎯 The goal</h3><p>Get to know each other better by answering questions you would never ask in everyday conversation. There are no wrong answers.</p><h3>👥 Players</h3><p>Two players by default. Add as many friends as you like with <b>+ Add a player</b>. Everyone takes turns answering, one after the other.</p><h3>🎡 Two ways to play</h3><ul><li><b>Spin the Wheel</b>: the wheel picks a subject, then a random question.</li><li><b>Grow Our Tree</b>: pick a subject (a branch). It starts with simple <b>roots</b> 🌱 questions, then unlocks deeper <b>leaves</b> 🌿 and <b>blooms</b> 🌸 after two answers at each level.</li></ul><h3>⭐ Points</h3><p>The player whose turn it is answers out loud and gets <b>+10</b> (🌤️ light), <b>+20</b> (🌗 deeper) or <b>+30</b> (🌊 deep) when you tap <b>Answered!</b></p><h3>🎁 Bonuses: when to tap them</h3><p>Before tapping <b>Answered!</b>, tap every bonus that happened (several can be on at once):</p><ul><li><b>🎯 [name] guessed it</b>: tap it when that friend said what the answer would be <i>before</i> it was given, and was right. They get <b>+15</b>. Best way to play: the others guess first, then the player answers.</li><li><b>😮 Didn't know that!</b>: tap it when the answer taught the listeners something they really didn't know about the player. Everyone gets <b>+5</b>.</li><li><b>🔁 [name] answered too</b> (with 3+ players: <b>everyone else answered too</b>): tap it when the others also answered the same question for themselves. They get the same points as the player.</li></ul><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p><h3>🎆 Connection level</h3><p>All your points add up to a shared connection level. Level up for fireworks. <b>📖 Our story</b> keeps every question and note, and <b>🏁 Finish</b> shows your summary.</p>",
       nQuestions: "{n} questions",
       pickOne: "Pick at least one subject 🙂",
-      resume: "↩︎ Resume {a} & {b} ({n} answered)",
+      resume: "↩︎ Resume {names} ({n} answered)",
       starts: "🎲 {name} starts!",
       turn: "{name}'s turn to answer",
       recycle: "♻️ You've seen every {s} question! Reshuffling.",
@@ -85,7 +93,7 @@
       lvl3: "Bloom",
       nAnswered: "{n} answered",
       answeredBy: "answered by {name}",
-      reached: "{a} & {b} reached connection level {n}.",
+      reached: "{names} reached connection level {n}.",
       statAnswered: "questions answered",
       statDeep: "deep moments 🌊",
       statWow: "“didn't know that!” 😮",
@@ -99,13 +107,11 @@
     },
     fr: {
       title: "Apprendre à se connaître",
-      tagline: "Un jeu à deux pour aller plus loin que les conversations habituelles.",
+      tagline: "Un jeu entre amis pour aller plus loin que les conversations habituelles.",
       who: "1. Qui joue ?",
       player1: "Joueur 1",
       player2: "Joueur 2",
-      yourName: "Ton prénom",
-      friendName: "Le prénom de ton ami",
-      pickSubjects: "2. Choisissez vos thèmes",
+            pickSubjects: "2. Choisissez vos thèmes",
       all: "Tous",
       none: "Aucun",
       howDeep: "3. Jusqu'où aller ?",
@@ -135,15 +141,25 @@
       keepPlaying: "↩︎ Continuer à jouer",
       newGame: "✨ Nouvelle partie",
       wow: "Je ne savais pas !",
-      bonusHelp: "Astuce : laisse l'autre deviner la réponse d'abord. Touche les bonus qui se sont produits.",
+      bonusHelp: "Astuce : laisse les autres deviner la réponse d'abord. Touche les bonus qui se sont produits.",
       notePh: "Quelque chose à retenir ? (facultatif)",
       pass: "Passer",
       answered: "Répondu ! ✨",
       close: "Fermer",
       langToggle: "🇬🇧 English",
+      addPlayer: "+ Ajouter un joueur",
+      playerN: "Joueur {n}",
+      remove: "Retirer",
+      firstNamePh: "Ton prénom",
+      otherNamePh: "Le prénom d'un ami",
+      everyoneToo: "Tous les autres ont répondu aussi (+{n} chacun)",
+      rules: "Règles",
+      rulesBtn: "❓ Règles",
+      rulesTitle: "Comment jouer",
+      rulesBody: "<h3>🎯 Le but</h3><p>Mieux se connaître en répondant à des questions qu'on ne se pose jamais au quotidien. Il n'y a pas de mauvaise réponse.</p><h3>👥 Joueurs</h3><p>Deux joueurs par défaut. Ajoutez autant d'amis que vous voulez avec <b>+ Ajouter un joueur</b>. Chacun répond à son tour, l'un après l'autre.</p><h3>🎡 Deux façons de jouer</h3><ul><li><b>Faire tourner la roue</b> : la roue choisit un thème, puis une question au hasard.</li><li><b>Faire pousser notre arbre</b> : choisissez un thème (une branche). On commence par des questions simples, les <b>racines</b> 🌱, puis on débloque des <b>feuilles</b> 🌿 et des <b>fleurs</b> 🌸 plus profondes après deux réponses à chaque niveau.</li></ul><h3>⭐ Points</h3><p>Le joueur dont c'est le tour répond à voix haute et gagne <b>+10</b> (🌤️ léger), <b>+20</b> (🌗 plus profond) ou <b>+30</b> (🌊 profond) quand vous touchez <b>Répondu !</b></p><h3>🎁 Les bonus : quand les toucher</h3><p>Avant de toucher <b>Répondu !</b>, touchez chaque bonus qui s'est produit (plusieurs peuvent être activés) :</p><ul><li><b>🎯 [prénom] a deviné</b> : touchez-le quand cet ami a dit quelle serait la réponse <i>avant</i> qu'elle soit donnée, et avait raison. Il gagne <b>+15</b>. Le mieux : les autres devinent d'abord, puis le joueur répond.</li><li><b>😮 Je ne savais pas !</b> : touchez-le quand la réponse a appris aux autres quelque chose qu'ils ne savaient vraiment pas sur le joueur. Tout le monde gagne <b>+5</b>.</li><li><b>🔁 [prénom] a répondu aussi</b> (à 3 joueurs ou plus : <b>tous les autres ont répondu aussi</b>) : touchez-le quand les autres ont aussi répondu à la même question pour eux-mêmes. Ils gagnent les mêmes points que le joueur.</li></ul><p>La question ne vous plaît pas ? <b>🔄 Passer</b> la remplace par une autre du même thème. Chaque joueur peut passer <b>3 fois</b>.</p><h3>🎆 Niveau de connexion</h3><p>Tous vos points s'additionnent dans un niveau de connexion commun. Chaque niveau gagné déclenche un feu d'artifice. <b>📖 Notre histoire</b> garde chaque question et note, et <b>🏁 Terminer</b> affiche votre bilan.</p>",
       nQuestions: "{n} questions",
       pickOne: "Choisissez au moins un thème 🙂",
-      resume: "↩︎ Reprendre {a} & {b} ({n} réponses)",
+      resume: "↩︎ Reprendre {names} ({n} réponses)",
       starts: "🎲 {name} commence !",
       turn: "Au tour de {name} de répondre",
       recycle: "♻️ Vous avez vu toutes les questions « {s} » ! On remélange.",
@@ -166,7 +182,7 @@
       lvl3: "Fleurs",
       nAnswered: "{n} réponses",
       answeredBy: "réponse de {name}",
-      reached: "{a} & {b} ont atteint le niveau de connexion {n}.",
+      reached: "{names} ont atteint le niveau de connexion {n}.",
       statAnswered: "questions répondues",
       statDeep: "moments profonds 🌊",
       statWow: "« je ne savais pas ! » 😮",
@@ -224,9 +240,15 @@
   /* ------------------------------------------------------------------ */
   const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const other = (p) => 1 - p;
-  const pColor = (p) => (p === 0 ? "var(--p1)" : "var(--p2)");
-  const pHex = (p) => (p === 0 ? "#ff7eb6" : "#6ee7ff");
+  const others = (p) => state.players.map((_, i) => i).filter((i) => i !== p);
+  // one colour per player (bright for the night background, dark for the light question card)
+  const PLAYER_COLORS = ["#ff7eb6", "#6ee7ff", "#ffd166", "#7ef0a8", "#b388ff", "#ff9f68", "#f9a8d4", "#93c5fd"];
+  const PLAYER_DARK = ["#d63384", "#0b8bb0", "#b7791f", "#2f855a", "#6b46c1", "#c05621", "#be185d", "#1d4ed8"];
+  const pHex = (p) => PLAYER_COLORS[p % PLAYER_COLORS.length];
+  const pDark = (p) => PLAYER_DARK[p % PLAYER_DARK.length];
+  const nPlayers = () => state.players.length;
+  const levelSize = () => (LEVEL_UP / 2) * Math.max(2, nPlayers()); // bigger groups score faster, so levels are bigger
+  const joinNames = (names) => (names.length <= 1 ? names.join("") : `${names.slice(0, -1).join(", ")} & ${names[names.length - 1]}`);
 
   function seeded(seed) {
     let s = seed >>> 0;
@@ -399,6 +421,30 @@
   /* Setup screen                                                       */
   /* ------------------------------------------------------------------ */
   let setupDepth = "mixed";
+  let setupNames = ["", ""];
+
+  function readPlayerInputs() {
+    const inputs = $$("#players-list input");
+    if (inputs.length) setupNames = inputs.map((el) => el.value);
+  }
+
+  function renderPlayersList() {
+    const list = $("#players-list");
+    list.innerHTML = "";
+    setupNames.forEach((name, i) => {
+      const row = document.createElement("div");
+      row.className = "player-row";
+      row.style.setProperty("--pc", pHex(i));
+      const label = t("playerN", { n: i + 1 });
+      row.innerHTML = `<span class="dot" aria-hidden="true"></span>
+        <input id="player-${i}" type="text" maxlength="20" autocomplete="off" aria-label="${esc(label)}"
+          placeholder="${esc(i === 0 ? t("firstNamePh") : t("otherNamePh"))}" value="${esc(name)}">
+        ${i >= 2 ? `<button type="button" class="remove" aria-label="${esc(t("remove"))}" title="${esc(t("remove"))}">✕</button>` : ""}`;
+      const rm = row.querySelector(".remove");
+      if (rm) rm.addEventListener("click", () => { readPlayerInputs(); setupNames.splice(i, 1); renderPlayersList(); });
+      list.appendChild(row);
+    });
+  }
 
   function renderSubjectGrid(selected) {
     const grid = $("#subject-grid");
@@ -422,6 +468,14 @@
 
   function initSetup() {
     renderSubjectGrid(DB.subjects.map((s) => s.id));
+    renderPlayersList();
+    $("#add-player").addEventListener("click", () => {
+      readPlayerInputs();
+      setupNames.push("");
+      renderPlayersList();
+      const inputs = $$("#players-list input");
+      inputs[inputs.length - 1].focus();
+    });
 
     $("#sel-all").addEventListener("click", () => $$("#subject-grid .subject").forEach((b) => b.classList.add("on")));
     $("#sel-none").addEventListener("click", () => $$("#subject-grid .subject").forEach((b) => b.classList.remove("on")));
@@ -441,24 +495,23 @@
           return;
         }
         $("#setup-error").textContent = "";
-        const n1 = $("#name1").value.trim() || t("player1");
-        const n2 = $("#name2").value.trim() || t("player2");
-        newGame([n1, n2], subjects, setupDepth, card.dataset.mode);
+        const names = $$("#players-list input").map((el, i) => el.value.trim() || t("playerN", { n: i + 1 }));
+        newGame(names, subjects, setupDepth, card.dataset.mode);
       })
     );
 
     const saved = loadSaved();
     if (saved && saved.version === 1 && (saved.journal?.length || 0) > 0) {
       $("#resume-row").classList.remove("hidden");
-      $("#resume-btn").textContent = t("resume", { a: saved.players[0], b: saved.players[1], n: saved.journal.length });
+      $("#resume-btn").textContent = t("resume", { names: joinNames(saved.players), n: saved.journal.length });
       $("#resume-btn").addEventListener("click", () => {
         state = saved;
         state.subjects = state.subjects.filter((id) => SUBJ[id]);
         if (!state.subjects.length) state.subjects = DB.subjects.map((s) => s.id);
         startGame();
       });
-      $("#name1").value = saved.players[0];
-      $("#name2").value = saved.players[1];
+      setupNames = saved.players.slice();
+      renderPlayersList();
     }
   }
 
@@ -469,9 +522,9 @@
     state = {
       version: 1,
       players,
-      scores: [0, 0],
-      passes: [PASSES, PASSES],
-      turn: Math.random() < 0.5 ? 0 : 1,
+      scores: players.map(() => 0),
+      passes: players.map(() => PASSES),
+      turn: Math.floor(Math.random() * players.length),
       subjects,
       depth,
       mode,
@@ -488,8 +541,7 @@
   }
 
   function startGame() {
-    $("#label-p1").textContent = state.players[0];
-    $("#label-p2").textContent = state.players[1];
+    renderScoreboard();
     showScreen("screen-game");
     updateScores(false);
     setMode(state.mode);
@@ -505,22 +557,36 @@
     else renderTree();
   }
 
-  function updateScores(animate = true) {
-    $("#pts-p1").textContent = state.scores[0];
-    $("#pts-p2").textContent = state.scores[1];
-    $("#score-p1").classList.toggle("active", state.turn === 0);
-    $("#score-p2").classList.toggle("active", state.turn === 1);
-    const lvl = Math.floor(state.connection / LEVEL_UP) + 1;
+  function renderScoreboard() {
+    const board = $("#scoreboard");
+    board.innerHTML = "";
+    state.players.forEach((name, i) => {
+      const el = document.createElement("div");
+      el.className = "score";
+      el.id = `score-${i}`;
+      el.style.setProperty("--pc", pHex(i));
+      el.innerHTML = `<span class="who">${esc(name)}</span><span class="pts">0</span>`;
+      board.appendChild(el);
+    });
+  }
+
+  function updateScores(animate = true, changed = []) {
+    state.players.forEach((_, i) => {
+      const el = $(`#score-${i}`);
+      if (!el) return;
+      el.querySelector(".pts").textContent = state.scores[i];
+      el.classList.toggle("active", state.turn === i);
+      if (animate && changed.includes(i)) {
+        const pts = el.querySelector(".pts");
+        pts.classList.remove("bump"); void pts.offsetWidth; pts.classList.add("bump");
+      }
+    });
+    const size = levelSize();
+    const lvl = Math.floor(state.connection / size) + 1;
     $("#conn-level").textContent = t("lv", { n: lvl });
-    $("#conn-fill").style.width = `${((state.connection % LEVEL_UP) / LEVEL_UP) * 100}%`;
+    $("#conn-fill").style.width = `${((state.connection % size) / size) * 100}%`;
     const name = state.players[state.turn];
-    $("#turn-banner").innerHTML = esc(t("turn", { name: "\u0000" })).replace("\u0000", `<b style="background:${pColor(state.turn)}">${esc(name)}</b>`);
-    if (animate) {
-      ["#pts-p1", "#pts-p2"].forEach((s) => {
-        const el = $(s);
-        el.classList.remove("bump"); void el.offsetWidth; el.classList.add("bump");
-      });
-    }
+    $("#turn-banner").innerHTML = esc(t("turn", { name: "\u0000" })).replace("\u0000", `<b style="background:${pHex(state.turn)}">${esc(name)}</b>`);
   }
 
   /* ------------------------------------------------------------------ */
@@ -566,16 +632,40 @@
     if (!current) return;
     const { q, player: p } = current;
     const s = SUBJ[q.subject];
-    const o = other(p);
     $("#q-subject").textContent = `${s.emoji} ${sName(s)}`;
     $("#q-depth").textContent = `${t("depth" + q.depth)} · +${POINTS[q.depth]}`;
-    $("#q-for").innerHTML = esc(t("forWho", { name: "\u0000" })).replace("\u0000", `<b style="color:${p === 0 ? "#d63384" : "#0b8bb0"}">${esc(state.players[p])}</b>`);
+    $("#q-for").innerHTML = esc(t("forWho", { name: "\u0000" })).replace("\u0000", `<b style="color:${pDark(p)}">${esc(state.players[p])}</b>`);
     $("#q-text").textContent = qText(q);
-    $("#b-guess span").textContent = t("guessed", { name: state.players[o] });
-    $("#b-both span").textContent = t("answeredToo", { name: state.players[o], n: POINTS[q.depth] });
+    renderBonuses();
     $("#pass-label").textContent = t("pass");
     $("#passes").textContent = state.passes[p];
     $("#skip-btn").disabled = state.passes[p] <= 0;
+  }
+
+  // Bonus chips: one "guessed it" per other player, plus "didn't know" and "answered too".
+  function renderBonuses() {
+    const { q, player: p, bonuses } = current;
+    const os = others(p);
+    const chips = os.map((o) => ({ key: `guess:${o}`, html: `🎯 <span>${esc(t("guessed", { name: state.players[o] }))}</span>` }));
+    chips.push({ key: "wow", html: `😮 <span>${esc(t("wow"))}</span>` });
+    const tooLabel = os.length === 1
+      ? t("answeredToo", { name: state.players[os[0]], n: POINTS[q.depth] })
+      : t("everyoneToo", { n: POINTS[q.depth] });
+    chips.push({ key: "both", html: `🔁 <span>${esc(tooLabel)}</span>` });
+    const row = $("#bonus-row");
+    row.innerHTML = "";
+    chips.forEach(({ key, html }) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "bonus" + (bonuses.has(key) ? " on" : "");
+      b.innerHTML = html;
+      b.addEventListener("click", () => {
+        b.classList.toggle("on");
+        if (b.classList.contains("on")) { bonuses.add(key); FX.sparkleEl(b); }
+        else bonuses.delete(key);
+      });
+      row.appendChild(b);
+    });
   }
 
   function openCard(q) {
@@ -584,7 +674,6 @@
 
     const card = $("#card");
     const s = SUBJ[q.subject];
-    $$(".bonus").forEach((b) => b.classList.remove("on"));
     $("#q-note").value = "";
     card.style.setProperty("--c", s.color);
     $("#card-overlay").style.setProperty("--c", s.color);
@@ -603,19 +692,20 @@
   function finishQuestion() {
     if (!current) return;
     const { q, player, bonuses } = current;
-    const o = other(player);
+    const os = others(player);
     const base = POINTS[q.depth];
-    const gained = [0, 0];
+    const gained = state.players.map(() => 0);
     gained[player] += base;
-    if (bonuses.has("guess")) gained[o] += 15;
-    if (bonuses.has("wow")) { gained[0] += 5; gained[1] += 5; }
-    if (bonuses.has("both")) gained[o] += base;
+    const guessers = os.filter((o) => bonuses.has(`guess:${o}`));
+    guessers.forEach((o) => (gained[o] += 15));
+    if (bonuses.has("wow")) gained.forEach((_, i) => (gained[i] += 5));
+    if (bonuses.has("both")) os.forEach((o) => (gained[o] += base));
 
-    const beforeLvl = Math.floor(state.connection / LEVEL_UP);
-    state.scores[0] += gained[0];
-    state.scores[1] += gained[1];
-    state.connection += gained[0] + gained[1];
-    const afterLvl = Math.floor(state.connection / LEVEL_UP);
+    const size = levelSize();
+    const beforeLvl = Math.floor(state.connection / size);
+    gained.forEach((g, i) => (state.scores[i] += g));
+    state.connection += gained.reduce((a, b) => a + b, 0);
+    const afterLvl = Math.floor(state.connection / size);
 
     state.used.push(q.id);
     counts(q.subject)[q.depth] += 1;
@@ -624,12 +714,12 @@
       player, bonuses: [...bonuses], note: $("#q-note").value.trim(),
       gained, t: Date.now(),
     });
-    state.turn = o;
+    state.turn = (player + 1) % nPlayers();
     save();
 
     FX.sparkleEl($("#done-btn"));
     closeCard();
-    updateScores(true);
+    updateScores(true, gained.map((g, i) => (g ? i : -1)).filter((i) => i >= 0));
 
     const s = SUBJ[q.subject];
     if (afterLvl > beforeLvl) {
@@ -638,13 +728,13 @@
     } else if (q.depth === 3) {
       FX.fireworks(4, [s.color, "#ffd166", "#ffffff"]);
       toast(t("deepToast"));
-    } else if (bonuses.has("guess")) {
-      FX.sparkleEl($(other(player) === 0 ? "#score-p1" : "#score-p2"), ["#ffd166", "#7ef0a8", "#ffffff"]);
-      toast(t("knowsYou", { name: state.players[o] }));
+    } else if (guessers.length) {
+      guessers.forEach((o) => FX.sparkleEl($(`#score-${o}`), ["#ffd166", "#7ef0a8", "#ffffff"]));
+      toast(t("knowsYou", { name: joinNames(guessers.map((o) => state.players[o])) }));
     } else if (bonuses.has("wow")) {
       toast(t("wowToast"));
     }
-    FX.sparkleEl($(player === 0 ? "#score-p1" : "#score-p2"), [pHex(player), "#ffd166", "#ffffff"]);
+    FX.sparkleEl($(`#score-${player}`), [pHex(player), "#ffd166", "#ffffff"]);
 
     if (state.mode === "tree") {
       renderTree();
@@ -669,14 +759,6 @@
   }
 
   function initCard() {
-    $$(".bonus").forEach((b) =>
-      b.addEventListener("click", () => {
-        b.classList.toggle("on");
-        const key = b.dataset.bonus;
-        if (b.classList.contains("on")) { current.bonuses.add(key); FX.sparkleEl(b); }
-        else current.bonuses.delete(key);
-      })
-    );
     $("#done-btn").addEventListener("click", finishQuestion);
     $("#skip-btn").addEventListener("click", passQuestion);
   }
@@ -963,16 +1045,16 @@
     j.forEach((e) => (bySubject[e.subject] = (bySubject[e.subject] || 0) + 1));
     const fav = Object.entries(bySubject).sort((a, b) => b[1] - a[1])[0];
     const deep = j.filter((e) => e.depth === 3).length;
-    const guesses = j.filter((e) => e.bonuses.includes("guess")).length;
+    const guesses = j.filter((e) => e.bonuses.some((b) => b === "guess" || b.startsWith("guess:"))).length;
     const wows = j.filter((e) => e.bonuses.includes("wow")).length;
     const mins = Math.max(1, Math.round((Date.now() - state.startedAt) / 60000));
-    const lvl = Math.floor(state.connection / LEVEL_UP) + 1;
+    const lvl = Math.floor(state.connection / levelSize()) + 1;
 
-    $("#summary-tagline").textContent = t("reached", { a: state.players[0], b: state.players[1], n: lvl });
+    $("#summary-tagline").textContent = t("reached", { names: joinNames(state.players), n: lvl });
     const stat = (v, l) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`;
     $("#summary-stats").innerHTML =
       stat(j.length, t("statAnswered")) +
-      stat(`${state.scores[0]} · ${state.scores[1]}`, `${esc(state.players[0])} · ${esc(state.players[1])}`) +
+      state.players.map((name, i) => stat(state.scores[i], esc(name))).join("") +
       stat(deep, t("statDeep")) +
       stat(wows, t("statWow")) +
       stat(guesses, t("statGuess")) +
@@ -986,8 +1068,8 @@
   function downloadStory() {
     const lines = [
       `Loopy Life · ${t("title")}`,
-      `${state.players[0]} & ${state.players[1]} · ${new Date(state.startedAt).toLocaleString()}`,
-      `Scores: ${state.players[0]} ${state.scores[0]} · ${state.players[1]} ${state.scores[1]} · ${t("connection")} ${state.connection}`,
+      `${joinNames(state.players)} · ${new Date(state.startedAt).toLocaleString()}`,
+      `Scores: ${state.players.map((n, i) => `${n} ${state.scores[i]}`).join(" · ")} · ${t("connection")} ${state.connection}`,
       "",
     ];
     state.journal.forEach((j, i) => {
@@ -999,7 +1081,7 @@
     const blob = new Blob([lines.join("\n")], { type: "text/plain" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = `${t("storyFile")}-${state.players[0]}-${state.players[1]}.txt`.replace(/\s+/g, "-");
+    a.download = `${t("storyFile")}-${state.players.join("-")}.txt`.replace(/\s+/g, "-");
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -1038,12 +1120,15 @@
     document.title = `Loopy Life · ${t("title")}`;
     $$("[data-i18n]").forEach((el) => (el.innerHTML = t(el.dataset.i18n)));
     $$("[data-i18n-ph]").forEach((el) => (el.placeholder = t(el.dataset.i18nPh)));
+    $$("[data-i18n-aria]").forEach((el) => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
     $$("[data-lang]").forEach((b) => b.classList.toggle("on", b.dataset.lang === LANG));
     $("#lang-btn").textContent = t("langToggle");
     if (!DB.questions.length) return;
     $("#q-count").textContent = t("qCount", { n: DB.questions.length });
     const selected = $$("#subject-grid .subject").length ? selectedSubjects() : DB.subjects.map((s) => s.id);
     renderSubjectGrid(selected);
+    readPlayerInputs();
+    renderPlayersList();
     if (state && $("#screen-game").classList.contains("active")) {
       updateScores(false);
       if (state.mode === "wheel") drawWheel(); else renderTree();
@@ -1062,8 +1147,12 @@
     applyLanguage();
     $$("[data-lang]").forEach((b) => b.addEventListener("click", () => setLanguage(b.dataset.lang)));
     $("#lang-btn").addEventListener("click", () => setLanguage(LANG === "fr" ? "en" : "fr"));
+    $$(".rules-open").forEach((b) => b.addEventListener("click", () => $("#rules-overlay").classList.remove("hidden")));
+    $("#rules-close").addEventListener("click", () => $("#rules-overlay").classList.add("hidden"));
+    $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=3", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {
