@@ -81,8 +81,8 @@ button { font-family: inherit; cursor: pointer; }
 .link { background: none; border: 0; color: var(--gold); font-size: .95rem; padding: 4px; }
 
 .players { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: end; }
-.heart { font-size: 1.6rem; padding-bottom: 10px; animation: beat 1.4s ease-in-out infinite; }
-@keyframes beat { 0%,100% { transform: scale(1) } 15% { transform: scale(1.2) } 30% { transform: scale(1) } }
+.versus { font-size: 1.6rem; padding-bottom: 10px; }
+.lang-switch { margin-top: 14px; }
 .player-input span { display: block; font-size: .85rem; color: var(--muted); margin-bottom: 4px; }
 .player-input input {
   width: 100%; font: inherit; font-size: 1.1rem; color: var(--text);
@@ -94,7 +94,7 @@ button { font-family: inherit; cursor: pointer; }
 
 @media (max-width: 480px) {
   .players { grid-template-columns: 1fr; }
-  .heart { text-align: center; padding: 0; }
+  .versus { text-align: center; padding: 0; }
 }
 
 /* subjects */

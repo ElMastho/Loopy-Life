@@ -7,9 +7,192 @@
 
   const STORAGE_KEY = "loopy-know-each-other-v1";
   const POINTS = { 1: 10, 2: 20, 3: 30 };
-  const DEPTH_LABEL = { 1: "🌤️ Light", 2: "🌗 Deeper", 3: "🌊 Deep" };
   const LEVEL_UP = 100; // connection points per level
   const PASSES = 3;
+
+
+  /* ------------------------------------------------------------------ */
+  /* Languages                                                          */
+  /* ------------------------------------------------------------------ */
+  const LANG_KEY = "loopy-lang";
+  const STR = {
+    en: {
+      title: "Know Each Other",
+      tagline: "A game for two, to go beyond the usual small talk.",
+      who: "1. Who's playing?",
+      player1: "Player 1",
+      player2: "Player 2",
+      yourName: "Your name",
+      friendName: "Your friend's name",
+      pickSubjects: "2. Pick your subjects",
+      all: "All",
+      none: "None",
+      howDeep: "3. How deep?",
+      light: "🌤️ Light",
+      mixed: "🌗 Mixed",
+      deep: "🌊 Deep",
+      howPlay: "4. Choose how to play",
+      wheelTitle: "Spin the Wheel",
+      wheelDesc: "Random subject, random question. Pure surprise.",
+      treeTitle: "Grow Our Tree",
+      treeDesc: "Start from the roots (family, origins) and unlock deeper questions branch by branch.",
+      footer: "First seed of <strong>Loopy Life</strong>",
+      qCount: "{n} questions inside",
+      connection: "Connection",
+      lv: "Lv {n}",
+      wheel: "🎡 Wheel",
+      tree: "🌳 Tree",
+      wheelHint: "Tap SPIN (or the wheel) to pick a subject.",
+      spin: "SPIN",
+      treeHint: "Choose a branch to grow. Each branch starts at its <b>roots</b> 🌱, then grows <b>leaves</b> 🌿, then <b>blooms</b> 🌸 with deeper questions.",
+      surprise: "🎲 Surprise us: grow any branch",
+      ourStory: "📖 Our story",
+      finish: "🏁 Finish",
+      summaryTitle: "What a conversation! 🎉",
+      storySoFar: "Our story so far",
+      save: "⬇️ Save our story",
+      keepPlaying: "↩︎ Keep playing",
+      newGame: "✨ New game",
+      wow: "Didn't know that!",
+      bonusHelp: "Tip: let the other person guess the answer first. Tap the bonuses that happened.",
+      notePh: "Something to remember? (optional)",
+      pass: "Pass",
+      answered: "Answered! ✨",
+      close: "Close",
+      langToggle: "🇫🇷 Français",
+      nQuestions: "{n} questions",
+      pickOne: "Pick at least one subject 🙂",
+      resume: "↩︎ Resume {a} & {b} ({n} answered)",
+      starts: "🎲 {name} starts!",
+      turn: "{name}'s turn to answer",
+      recycle: "♻️ You've seen every {s} question! Reshuffling.",
+      depth1: "🌤️ Light",
+      depth2: "🌗 Deeper",
+      depth3: "🌊 Deep",
+      forWho: "For {name} to answer",
+      guessed: "{name} guessed it (+15)",
+      answeredToo: "{name} answered too (+{n})",
+      levelUp: "🎆 Connection level {n}! You two are getting closer.",
+      deepToast: "🌊 That was a deep one. Thank you for sharing.",
+      knowsYou: "🎯 {name} knows you well!",
+      wowToast: "😮 Something new learned! +5 each",
+      unlockLeaves: "{s} unlocked leaves 🌿!",
+      unlockBlooms: "{s} unlocked blooms 🌸!",
+      seed: "Your tree is a seed. Answer to make it grow 🌱",
+      treeStats: "{total} answers · {roots} roots · {leaves} leaves & blooms",
+      lvl1: "Roots",
+      lvl2: "Leaves",
+      lvl3: "Bloom",
+      nAnswered: "{n} answered",
+      answeredBy: "answered by {name}",
+      reached: "{a} & {b} reached connection level {n}.",
+      statAnswered: "questions answered",
+      statDeep: "deep moments 🌊",
+      statWow: "“didn't know that!” 😮",
+      statGuess: "good guesses 🎯",
+      statFav: "favourite: {s}",
+      statFavNone: "favourite subject",
+      statTogether: "together",
+      storyFile: "our-story",
+      note: "note",
+      loadError: "Couldn't load the questions. Open this page through GitHub Pages or a local web server (not as a file).",
+    },
+    fr: {
+      title: "Apprendre à se connaître",
+      tagline: "Un jeu à deux pour aller plus loin que les conversations habituelles.",
+      who: "1. Qui joue ?",
+      player1: "Joueur 1",
+      player2: "Joueur 2",
+      yourName: "Ton prénom",
+      friendName: "Le prénom de ton ami",
+      pickSubjects: "2. Choisissez vos thèmes",
+      all: "Tous",
+      none: "Aucun",
+      howDeep: "3. Jusqu'où aller ?",
+      light: "🌤️ Léger",
+      mixed: "🌗 Mélangé",
+      deep: "🌊 Profond",
+      howPlay: "4. Choisissez comment jouer",
+      wheelTitle: "Faire tourner la roue",
+      wheelDesc: "Thème au hasard, question au hasard. Surprise totale.",
+      treeTitle: "Faire pousser notre arbre",
+      treeDesc: "Commencez par les racines (famille, origines) et débloquez des questions plus profondes, branche par branche.",
+      footer: "Première graine de <strong>Loopy Life</strong>",
+      qCount: "{n} questions à découvrir",
+      connection: "Connexion",
+      lv: "Niv. {n}",
+      wheel: "🎡 Roue",
+      tree: "🌳 Arbre",
+      wheelHint: "Appuie sur TOURNER (ou sur la roue) pour tirer un thème.",
+      spin: "TOURNER",
+      treeHint: "Choisis une branche à faire pousser. Chaque branche commence par ses <b>racines</b> 🌱, puis fait des <b>feuilles</b> 🌿, puis des <b>fleurs</b> 🌸 avec des questions plus profondes.",
+      surprise: "🎲 Surprends-nous : une branche au hasard",
+      ourStory: "📖 Notre histoire",
+      finish: "🏁 Terminer",
+      summaryTitle: "Quelle conversation ! 🎉",
+      storySoFar: "Notre histoire jusqu'ici",
+      save: "⬇️ Enregistrer notre histoire",
+      keepPlaying: "↩︎ Continuer à jouer",
+      newGame: "✨ Nouvelle partie",
+      wow: "Je ne savais pas !",
+      bonusHelp: "Astuce : laisse l'autre deviner la réponse d'abord. Touche les bonus qui se sont produits.",
+      notePh: "Quelque chose à retenir ? (facultatif)",
+      pass: "Passer",
+      answered: "Répondu ! ✨",
+      close: "Fermer",
+      langToggle: "🇬🇧 English",
+      nQuestions: "{n} questions",
+      pickOne: "Choisissez au moins un thème 🙂",
+      resume: "↩︎ Reprendre {a} & {b} ({n} réponses)",
+      starts: "🎲 {name} commence !",
+      turn: "Au tour de {name} de répondre",
+      recycle: "♻️ Vous avez vu toutes les questions « {s} » ! On remélange.",
+      depth1: "🌤️ Léger",
+      depth2: "🌗 Plus profond",
+      depth3: "🌊 Profond",
+      forWho: "À {name} de répondre",
+      guessed: "{name} a deviné (+15)",
+      answeredToo: "{name} a répondu aussi (+{n})",
+      levelUp: "🎆 Niveau de connexion {n} ! Vous vous connaissez de mieux en mieux.",
+      deepToast: "🌊 C'était une question profonde. Merci d'avoir partagé.",
+      knowsYou: "🎯 {name} te connaît bien !",
+      wowToast: "😮 Une nouvelle découverte ! +5 chacun",
+      unlockLeaves: "{s} : feuilles débloquées 🌿 !",
+      unlockBlooms: "{s} : fleurs débloquées 🌸 !",
+      seed: "Votre arbre est une graine. Répondez pour le faire pousser 🌱",
+      treeStats: "{total} réponses · {roots} racines · {leaves} feuilles & fleurs",
+      lvl1: "Racines",
+      lvl2: "Feuilles",
+      lvl3: "Fleurs",
+      nAnswered: "{n} réponses",
+      answeredBy: "réponse de {name}",
+      reached: "{a} & {b} ont atteint le niveau de connexion {n}.",
+      statAnswered: "questions répondues",
+      statDeep: "moments profonds 🌊",
+      statWow: "« je ne savais pas ! » 😮",
+      statGuess: "bonnes devinettes 🎯",
+      statFav: "thème préféré : {s}",
+      statFavNone: "thème préféré",
+      statTogether: "ensemble",
+      storyFile: "notre-histoire",
+      note: "note",
+      loadError: "Impossible de charger les questions. Ouvre cette page via GitHub Pages ou un serveur web local (pas en double-cliquant sur le fichier).",
+    },
+  };
+
+  let LANG = (() => {
+    try { const v = localStorage.getItem(LANG_KEY); if (v === "en" || v === "fr") return v; } catch (e) { /* ignore */ }
+    return (navigator.language || "en").toLowerCase().startsWith("fr") ? "fr" : "en";
+  })();
+
+  function t(key, vars = {}) {
+    const str = STR[LANG][key] ?? STR.en[key] ?? key;
+    return str.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
+  }
+  const tr = (v) => (v && typeof v === "object" ? v[LANG] ?? v.en : v); // bilingual field -> current language
+  const sName = (s) => tr(s.name);
+  const sShort = (s) => tr(s.short) || sName(s);
+  const qText = (q) => tr(q.text);
 
   const $ = (sel) => document.querySelector(sel);
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -227,7 +410,7 @@
       b.className = "subject" + (selected.includes(s.id) ? " on" : "");
       b.dataset.id = s.id;
       b.style.setProperty("--c", s.color);
-      b.innerHTML = `<span class="emo">${s.emoji}</span><span>${esc(s.name)}<small>${n} questions</small></span>`;
+      b.innerHTML = `<span class="emo">${s.emoji}</span><span>${esc(sName(s))}<small>${t("nQuestions", { n })}</small></span>`;
       b.addEventListener("click", () => b.classList.toggle("on"));
       grid.appendChild(b);
     });
@@ -239,7 +422,6 @@
 
   function initSetup() {
     renderSubjectGrid(DB.subjects.map((s) => s.id));
-    $("#q-count").textContent = DB.questions.length;
 
     $("#sel-all").addEventListener("click", () => $$("#subject-grid .subject").forEach((b) => b.classList.add("on")));
     $("#sel-none").addEventListener("click", () => $$("#subject-grid .subject").forEach((b) => b.classList.remove("on")));
@@ -255,12 +437,12 @@
       card.addEventListener("click", () => {
         const subjects = selectedSubjects();
         if (!subjects.length) {
-          $("#setup-error").textContent = "Pick at least one subject 🙂";
+          $("#setup-error").textContent = t("pickOne");
           return;
         }
         $("#setup-error").textContent = "";
-        const n1 = $("#name1").value.trim() || "Player 1";
-        const n2 = $("#name2").value.trim() || "Player 2";
+        const n1 = $("#name1").value.trim() || t("player1");
+        const n2 = $("#name2").value.trim() || t("player2");
         newGame([n1, n2], subjects, setupDepth, card.dataset.mode);
       })
     );
@@ -268,7 +450,7 @@
     const saved = loadSaved();
     if (saved && saved.version === 1 && (saved.journal?.length || 0) > 0) {
       $("#resume-row").classList.remove("hidden");
-      $("#resume-btn").textContent = `↩︎ Resume ${saved.players[0]} & ${saved.players[1]} (${saved.journal.length} answered)`;
+      $("#resume-btn").textContent = t("resume", { a: saved.players[0], b: saved.players[1], n: saved.journal.length });
       $("#resume-btn").addEventListener("click", () => {
         state = saved;
         state.subjects = state.subjects.filter((id) => SUBJ[id]);
@@ -302,7 +484,7 @@
     lastTreeCounts = {};
     save();
     startGame();
-    setTimeout(() => toast(`🎲 ${state.players[state.turn]} starts!`), 500);
+    setTimeout(() => toast(t("starts", { name: state.players[state.turn] })), 500);
   }
 
   function startGame() {
@@ -329,10 +511,10 @@
     $("#score-p1").classList.toggle("active", state.turn === 0);
     $("#score-p2").classList.toggle("active", state.turn === 1);
     const lvl = Math.floor(state.connection / LEVEL_UP) + 1;
-    $("#conn-level").textContent = `Lv ${lvl}`;
+    $("#conn-level").textContent = t("lv", { n: lvl });
     $("#conn-fill").style.width = `${((state.connection % LEVEL_UP) / LEVEL_UP) * 100}%`;
     const name = state.players[state.turn];
-    $("#turn-banner").innerHTML = `<b style="background:${pColor(state.turn)}">${esc(name)}</b>'s turn to answer`;
+    $("#turn-banner").innerHTML = esc(t("turn", { name: "\u0000" })).replace("\u0000", `<b style="background:${pColor(state.turn)}">${esc(name)}</b>`);
     if (animate) {
       ["#pts-p1", "#pts-p2"].forEach((s) => {
         const el = $(s);
@@ -360,7 +542,7 @@
   function recycle(subjectId) {
     const ids = new Set(DB.questions.filter((q) => q.subject === subjectId).map((q) => q.id));
     state.used = state.used.filter((id) => !ids.has(id));
-    toast(`♻️ You've seen every ${SUBJ[subjectId].name} question! Reshuffling.`);
+    toast(t("recycle", { s: sName(SUBJ[subjectId]) }));
   }
 
   function drawQuestion(subjectId, depths, excludeId) {
@@ -379,25 +561,33 @@
   /* ------------------------------------------------------------------ */
   /* Question card                                                      */
   /* ------------------------------------------------------------------ */
-  function openCard(q) {
+  // Writes the current question into the card, in the current language.
+  function fillCard() {
+    if (!current) return;
+    const { q, player: p } = current;
     const s = SUBJ[q.subject];
-    const p = state.turn;
     const o = other(p);
-    current = { q, player: p, bonuses: new Set() };
-
-    const card = $("#card");
-    card.style.setProperty("--c", s.color);
-    $("#card-overlay").style.setProperty("--c", s.color);
-    $("#q-subject").textContent = `${s.emoji} ${s.name}`;
-    $("#q-depth").textContent = `${DEPTH_LABEL[q.depth]} · +${POINTS[q.depth]}`;
-    $("#q-for").innerHTML = `For <b style="color:${pHex(p) === "#ff7eb6" ? "#d63384" : "#0b8bb0"}">${esc(state.players[p])}</b> to answer`;
-    $("#q-text").textContent = q.text;
-    $("#b-guess span").textContent = `${state.players[o]} guessed it (+15)`;
-    $("#b-both span").textContent = `${state.players[o]} answered too (+${POINTS[q.depth]})`;
-    $$(".bonus").forEach((b) => b.classList.remove("on"));
-    $("#q-note").value = "";
+    $("#q-subject").textContent = `${s.emoji} ${sName(s)}`;
+    $("#q-depth").textContent = `${t("depth" + q.depth)} · +${POINTS[q.depth]}`;
+    $("#q-for").innerHTML = esc(t("forWho", { name: "\u0000" })).replace("\u0000", `<b style="color:${p === 0 ? "#d63384" : "#0b8bb0"}">${esc(state.players[p])}</b>`);
+    $("#q-text").textContent = qText(q);
+    $("#b-guess span").textContent = t("guessed", { name: state.players[o] });
+    $("#b-both span").textContent = t("answeredToo", { name: state.players[o], n: POINTS[q.depth] });
+    $("#pass-label").textContent = t("pass");
     $("#passes").textContent = state.passes[p];
     $("#skip-btn").disabled = state.passes[p] <= 0;
+  }
+
+  function openCard(q) {
+    current = { q, player: state.turn, bonuses: new Set() };
+    fillCard();
+
+    const card = $("#card");
+    const s = SUBJ[q.subject];
+    $$(".bonus").forEach((b) => b.classList.remove("on"));
+    $("#q-note").value = "";
+    card.style.setProperty("--c", s.color);
+    $("#card-overlay").style.setProperty("--c", s.color);
 
     $("#card-overlay").classList.remove("hidden");
     // restart the flip animation
@@ -444,15 +634,15 @@
     const s = SUBJ[q.subject];
     if (afterLvl > beforeLvl) {
       FX.fireworks(8);
-      toast(`🎆 Connection level ${afterLvl + 1}! You two are getting closer.`, 3200);
+      toast(t("levelUp", { n: afterLvl + 1 }), 3200);
     } else if (q.depth === 3) {
       FX.fireworks(4, [s.color, "#ffd166", "#ffffff"]);
-      toast("🌊 That was a deep one. Thank you for sharing.");
+      toast(t("deepToast"));
     } else if (bonuses.has("guess")) {
       FX.sparkleEl($(other(player) === 0 ? "#score-p1" : "#score-p2"), ["#ffd166", "#7ef0a8", "#ffffff"]);
-      toast(`🎯 ${state.players[o]} knows you well!`);
+      toast(t("knowsYou", { name: state.players[o] }));
     } else if (bonuses.has("wow")) {
-      toast("😮 Something new learned! +5 each");
+      toast(t("wowToast"));
     }
     FX.sparkleEl($(player === 0 ? "#score-p1" : "#score-p2"), [pHex(player), "#ffd166", "#ffffff"]);
 
@@ -460,7 +650,7 @@
       renderTree();
       const c = counts(q.subject);
       if ((q.depth === 1 && c[1] === 2) || (q.depth === 2 && c[2] === 2)) {
-        setTimeout(() => toast(`${s.emoji} ${s.name} unlocked ${q.depth === 1 ? "leaves 🌿" : "blooms 🌸"}!`), 900);
+        setTimeout(() => toast(t(q.depth === 1 ? "unlockLeaves" : "unlockBlooms", { s: `${s.emoji} ${sName(s)}` })), 900);
       }
     } else {
       drawWheel();
@@ -534,7 +724,7 @@
         ctx.fillStyle = "#fff";
         ctx.shadowColor = "rgba(0,0,0,.45)";
         ctx.shadowBlur = 4;
-        ctx.fillText(s.short || s.name, R - 26 - emojiSize, 1);
+        ctx.fillText(sShort(s), R - 26 - emojiSize, 1);
       }
       ctx.restore();
     });
@@ -590,7 +780,7 @@
         const s = SUBJ[subjectId];
         const r = $(".pointer").getBoundingClientRect();
         FX.burst(r.left + r.width / 2, r.top + r.height, { count: 50, speed: 5, colors: [s.color, "#ffd166", "#ffffff"], stars: true, gravity: 0.05 });
-        toast(`${s.emoji} ${s.name}!`, 1200);
+        toast(`${s.emoji} ${sName(s)}!`, 1200);
         setTimeout(() => openCard(drawQuestion(subjectId, depthsFor(state.depth))), 650);
       }
     }
@@ -706,9 +896,9 @@
     parts.push(`<g class="sway">${sway.join("")}</g>`);
 
     if (total === 0) {
-      parts.push(`<text x="${CX}" y="${GROUND + 60}" text-anchor="middle" fill="#c9bfe0" font-size="14" font-family="Fredoka, sans-serif">Your tree is a seed. Answer to make it grow 🌱</text>`);
+      parts.push(`<text x="${CX}" y="${GROUND + 60}" text-anchor="middle" fill="#c9bfe0" font-size="14" font-family="Fredoka, sans-serif">${esc(t("seed"))}</text>`);
     } else {
-      parts.push(`<text x="${CX}" y="${GROUND + 70}" text-anchor="middle" fill="#c9bfe0" font-size="13" font-family="Fredoka, sans-serif">${total} answer${total > 1 ? "s" : ""} · ${rootsN} roots · ${total - rootsN} leaves &amp; blooms</text>`);
+      parts.push(`<text x="${CX}" y="${GROUND + 70}" text-anchor="middle" fill="#c9bfe0" font-size="13" font-family="Fredoka, sans-serif">${esc(t("treeStats", { total, roots: rootsN, leaves: total - rootsN }))}</text>`);
     }
 
     svg.innerHTML = parts.join("");
@@ -725,7 +915,6 @@
     const list = $("#branch-list");
     list.innerHTML = "";
     const icons = { 1: "🌱", 2: "🌿", 3: "🌸" };
-    const names = { 1: "Roots", 2: "Leaves", 3: "Bloom" };
     state.subjects.forEach((id) => {
       const s = SUBJ[id];
       const c = counts(id);
@@ -735,7 +924,7 @@
       b.type = "button";
       b.className = "branch";
       b.style.setProperty("--c", s.color);
-      b.innerHTML = `<span class="emo">${s.emoji}</span><span>${esc(s.name)}<small>${names[lvl]} · ${answered} answered</small></span><span class="lvl">${icons[lvl]}</span>`;
+      b.innerHTML = `<span class="emo">${s.emoji}</span><span>${esc(sName(s))}<small>${t("lvl" + lvl)} · ${t("nAnswered", { n: answered })}</small></span><span class="lvl">${icons[lvl]}</span>`;
       b.addEventListener("click", () => growBranch(id, b));
       list.appendChild(b);
     });
@@ -755,9 +944,10 @@
     return state.journal
       .map((j) => {
         const s = SUBJ[j.subject] || { emoji: "•", name: j.subject };
+        const text = QBYID[j.qid] ? qText(QBYID[j.qid]) : tr(j.text);
         const pts = j.gained[0] + j.gained[1];
         const note = j.note ? `<span class="j-note">“${esc(j.note)}”</span>` : "";
-        return `<li><b>${esc(j.text)}</b><br><span class="j-meta">${s.emoji} ${esc(s.name)} · answered by ${esc(state.players[j.player])} · +${pts}</span>${note}</li>`;
+        return `<li><b>${esc(text)}</b><br><span class="j-meta">${s.emoji} ${esc(sName(s))} · ${esc(t("answeredBy", { name: state.players[j.player] }))} · +${pts}</span>${note}</li>`;
       })
       .join("");
   }
@@ -778,16 +968,16 @@
     const mins = Math.max(1, Math.round((Date.now() - state.startedAt) / 60000));
     const lvl = Math.floor(state.connection / LEVEL_UP) + 1;
 
-    $("#summary-tagline").textContent = `${state.players[0]} & ${state.players[1]} reached connection level ${lvl}.`;
+    $("#summary-tagline").textContent = t("reached", { a: state.players[0], b: state.players[1], n: lvl });
     const stat = (v, l) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`;
     $("#summary-stats").innerHTML =
-      stat(j.length, "questions answered") +
+      stat(j.length, t("statAnswered")) +
       stat(`${state.scores[0]} · ${state.scores[1]}`, `${esc(state.players[0])} · ${esc(state.players[1])}`) +
-      stat(deep, "deep moments 🌊") +
-      stat(wows, "“didn't know that!” 😮") +
-      stat(guesses, "good guesses 🎯") +
-      stat(fav ? SUBJ[fav[0]].emoji : "–", fav ? `favourite: ${esc(SUBJ[fav[0]].name)}` : "favourite subject") +
-      stat(`${mins}′`, "together");
+      stat(deep, t("statDeep")) +
+      stat(wows, t("statWow")) +
+      stat(guesses, t("statGuess")) +
+      stat(fav ? SUBJ[fav[0]].emoji : "–", fav ? esc(t("statFav", { s: sName(SUBJ[fav[0]]) })) : t("statFavNone")) +
+      stat(`${mins}′`, t("statTogether"));
     $("#summary-journal").innerHTML = journalHTML();
     showScreen("screen-summary");
     setTimeout(() => FX.fireworks(10), 300);
@@ -795,20 +985,21 @@
 
   function downloadStory() {
     const lines = [
-      `Loopy Life · Know Each Other`,
+      `Loopy Life · ${t("title")}`,
       `${state.players[0]} & ${state.players[1]} · ${new Date(state.startedAt).toLocaleString()}`,
-      `Scores: ${state.players[0]} ${state.scores[0]} · ${state.players[1]} ${state.scores[1]} · Connection ${state.connection}`,
+      `Scores: ${state.players[0]} ${state.scores[0]} · ${state.players[1]} ${state.scores[1]} · ${t("connection")} ${state.connection}`,
       "",
     ];
     state.journal.forEach((j, i) => {
       const s = SUBJ[j.subject] || { name: j.subject };
-      lines.push(`${i + 1}. [${s.name}] ${j.text}`);
-      lines.push(`   answered by ${state.players[j.player]}${j.note ? ` · note: ${j.note}` : ""}`);
+      const text = QBYID[j.qid] ? qText(QBYID[j.qid]) : tr(j.text);
+      lines.push(`${i + 1}. [${sName(s)}] ${text}`);
+      lines.push(`   ${t("answeredBy", { name: state.players[j.player] })}${j.note ? ` · ${t("note")}: ${j.note}` : ""}`);
     });
     const blob = new Blob([lines.join("\n")], { type: "text/plain" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = `our-story-${state.players[0]}-${state.players[1]}.txt`.replace(/\s+/g, "-");
+    a.download = `${t("storyFile")}-${state.players[0]}-${state.players[1]}.txt`.replace(/\s+/g, "-");
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -842,13 +1033,41 @@
     });
   }
 
+  function applyLanguage() {
+    document.documentElement.lang = LANG;
+    document.title = `Loopy Life · ${t("title")}`;
+    $$("[data-i18n]").forEach((el) => (el.innerHTML = t(el.dataset.i18n)));
+    $$("[data-i18n-ph]").forEach((el) => (el.placeholder = t(el.dataset.i18nPh)));
+    $$("[data-lang]").forEach((b) => b.classList.toggle("on", b.dataset.lang === LANG));
+    $("#lang-btn").textContent = t("langToggle");
+    if (!DB.questions.length) return;
+    $("#q-count").textContent = t("qCount", { n: DB.questions.length });
+    const selected = $$("#subject-grid .subject").length ? selectedSubjects() : DB.subjects.map((s) => s.id);
+    renderSubjectGrid(selected);
+    if (state && $("#screen-game").classList.contains("active")) {
+      updateScores(false);
+      if (state.mode === "wheel") drawWheel(); else renderTree();
+    }
+    if (state && $("#screen-summary").classList.contains("active")) showSummary();
+    fillCard();
+  }
+
+  function setLanguage(lang) {
+    LANG = lang;
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* ignore */ }
+    applyLanguage();
+  }
+
   async function boot() {
+    applyLanguage();
+    $$("[data-lang]").forEach((b) => b.addEventListener("click", () => setLanguage(b.dataset.lang)));
+    $("#lang-btn").addEventListener("click", () => setLanguage(LANG === "fr" ? "en" : "fr"));
     try {
       const res = await fetch("data/questions.json", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {
-      $("#setup-error").textContent = "Couldn't load the questions. Open this page through GitHub Pages or a local web server (not as a file).";
+      $("#setup-error").textContent = t("loadError");
       return;
     }
     DB.subjects.forEach((s) => (SUBJ[s.id] = s));
@@ -856,6 +1075,7 @@
     initSetup();
     initCard();
     initGame();
+    applyLanguage();
     setTimeout(() => FX.sparkleEl($(".hero h1")), 400);
   }
 

@@ -19,57 +19,61 @@
   <main id="screen-setup" class="screen active">
     <header class="hero">
       <div class="logo">∞ Loopy Life</div>
-      <h1>Know Each Other</h1>
-      <p class="tagline">A game for two, to go beyond the usual small talk.</p>
+      <h1 data-i18n="title">Know Each Other</h1>
+      <p class="tagline" data-i18n="tagline">A game for two, to go beyond the usual small talk.</p>
+      <div class="lang-switch segmented small" role="group" aria-label="Language">
+        <button type="button" data-lang="en">🇬🇧 English</button>
+        <button type="button" data-lang="fr">🇫🇷 Français</button>
+      </div>
     </header>
 
     <section class="panel">
-      <h2>1. Who's playing?</h2>
+      <h2 data-i18n="who">1. Who's playing?</h2>
       <div class="players">
         <label class="player-input p1">
-          <span>Player 1</span>
-          <input id="name1" type="text" maxlength="20" placeholder="Your name" autocomplete="off">
+          <span data-i18n="player1">Player 1</span>
+          <input id="name1" type="text" maxlength="20" placeholder="Your name" data-i18n-ph="yourName" autocomplete="off">
         </label>
-        <div class="heart">💞</div>
+        <div class="versus">🤝</div>
         <label class="player-input p2">
-          <span>Player 2</span>
-          <input id="name2" type="text" maxlength="20" placeholder="Your friend's name" autocomplete="off">
+          <span data-i18n="player2">Player 2</span>
+          <input id="name2" type="text" maxlength="20" placeholder="Your friend's name" data-i18n-ph="friendName" autocomplete="off">
         </label>
       </div>
     </section>
 
     <section class="panel">
       <div class="panel-head">
-        <h2>2. Pick your subjects</h2>
+        <h2 data-i18n="pickSubjects">2. Pick your subjects</h2>
         <div class="mini-actions">
-          <button class="link" id="sel-all" type="button">All</button>
-          <button class="link" id="sel-none" type="button">None</button>
+          <button class="link" id="sel-all" type="button" data-i18n="all">All</button>
+          <button class="link" id="sel-none" type="button" data-i18n="none">None</button>
         </div>
       </div>
       <div id="subject-grid" class="subject-grid"></div>
     </section>
 
     <section class="panel">
-      <h2>3. How deep?</h2>
+      <h2 data-i18n="howDeep">3. How deep?</h2>
       <div class="segmented" id="depth-choice">
-        <button type="button" data-depth="light">🌤️ Light</button>
-        <button type="button" data-depth="mixed" class="on">🌗 Mixed</button>
-        <button type="button" data-depth="deep">🌊 Deep</button>
+        <button type="button" data-depth="light" data-i18n="light">🌤️ Light</button>
+        <button type="button" data-depth="mixed" class="on" data-i18n="mixed">🌗 Mixed</button>
+        <button type="button" data-depth="deep" data-i18n="deep">🌊 Deep</button>
       </div>
     </section>
 
     <section class="panel">
-      <h2>4. Choose how to play</h2>
+      <h2 data-i18n="howPlay">4. Choose how to play</h2>
       <div class="modes">
         <button class="mode-card" data-mode="wheel" type="button">
           <span class="mode-emoji">🎡</span>
-          <strong>Spin the Wheel</strong>
-          <small>Random subject, random question. Pure surprise.</small>
+          <strong data-i18n="wheelTitle">Spin the Wheel</strong>
+          <small data-i18n="wheelDesc">Random subject, random question. Pure surprise.</small>
         </button>
         <button class="mode-card" data-mode="tree" type="button">
           <span class="mode-emoji">🌳</span>
-          <strong>Grow Our Tree</strong>
-          <small>Start from the roots (family, origins) and unlock deeper questions branch by branch.</small>
+          <strong data-i18n="treeTitle">Grow Our Tree</strong>
+          <small data-i18n="treeDesc">Start from the roots (family, origins) and unlock deeper questions branch by branch.</small>
         </button>
       </div>
       <p id="setup-error" class="error" role="alert"></p>
@@ -78,7 +82,7 @@
       </p>
     </section>
 
-    <footer class="foot">First seed of <strong>Loopy Life</strong> · <span id="q-count">…</span> questions inside</footer>
+    <footer class="foot"><span data-i18n="footer">First seed of <strong>Loopy Life</strong></span> · <span id="q-count">…</span></footer>
   </main>
 
   <!-- ============ GAME ============ -->
@@ -89,7 +93,7 @@
         <span class="pts" id="pts-p1">0</span>
       </div>
       <div class="connection">
-        <div class="conn-label">Connection <span id="conn-level">Lv 1</span></div>
+        <div class="conn-label"><span data-i18n="connection">Connection</span> <span id="conn-level">Lv 1</span></div>
         <div class="conn-bar"><div id="conn-fill"></div></div>
       </div>
       <div class="score p2" id="score-p2">
@@ -101,8 +105,8 @@
     <div class="turn-banner" id="turn-banner">…</div>
 
     <div class="mode-switch segmented small">
-      <button type="button" data-switch="wheel">🎡 Wheel</button>
-      <button type="button" data-switch="tree">🌳 Tree</button>
+      <button type="button" data-switch="wheel" data-i18n="wheel">🎡 Wheel</button>
+      <button type="button" data-switch="tree" data-i18n="tree">🌳 Tree</button>
     </div>
 
     <!-- Wheel view -->
@@ -110,9 +114,9 @@
       <div class="wheel-wrap">
         <div class="pointer">▼</div>
         <canvas id="wheel" width="640" height="640"></canvas>
-        <button id="spin-btn" class="spin-btn" type="button">SPIN</button>
+        <button id="spin-btn" class="spin-btn" type="button" data-i18n="spin">SPIN</button>
       </div>
-      <p class="hint">Tap SPIN (or the wheel) to pick a subject.</p>
+      <p class="hint" data-i18n="wheelHint">Tap SPIN (or the wheel) to pick a subject.</p>
     </section>
 
     <!-- Tree view -->
@@ -120,14 +124,15 @@
       <div class="tree-wrap">
         <svg id="tree" viewBox="0 0 400 420" role="img" aria-label="Your friendship tree"></svg>
       </div>
-      <p class="hint">Choose a branch to grow. Each branch starts at its <b>roots</b> 🌱, then grows <b>leaves</b> 🌿, then <b>blooms</b> 🌸 with deeper questions.</p>
+      <p class="hint" data-i18n="treeHint">Choose a branch to grow. Each branch starts at its <b>roots</b> 🌱, then grows <b>leaves</b> 🌿, then <b>blooms</b> 🌸 with deeper questions.</p>
       <div id="branch-list" class="branch-list"></div>
-      <button id="tree-surprise" class="btn ghost wide" type="button">🎲 Surprise us: grow any branch</button>
+      <button id="tree-surprise" class="btn ghost wide" type="button" data-i18n="surprise">🎲 Surprise us: grow any branch</button>
     </section>
 
     <div class="game-actions">
-      <button id="journal-btn" class="btn ghost" type="button">📖 Our story</button>
-      <button id="finish-btn" class="btn ghost" type="button">🏁 Finish</button>
+      <button id="journal-btn" class="btn ghost" type="button" data-i18n="ourStory">📖 Our story</button>
+      <button id="finish-btn" class="btn ghost" type="button" data-i18n="finish">🏁 Finish</button>
+      <button id="lang-btn" class="btn ghost" type="button">🇫🇷 Français</button>
     </div>
   </main>
 
@@ -135,18 +140,18 @@
   <main id="screen-summary" class="screen">
     <header class="hero">
       <div class="logo">∞ Loopy Life</div>
-      <h1>What a conversation! 🎉</h1>
+      <h1 data-i18n="summaryTitle">What a conversation! 🎉</h1>
       <p class="tagline" id="summary-tagline"></p>
     </header>
     <section class="panel stats" id="summary-stats"></section>
     <section class="panel">
-      <h2>Our story so far</h2>
+      <h2 data-i18n="storySoFar">Our story so far</h2>
       <ol id="summary-journal" class="journal"></ol>
     </section>
     <div class="game-actions">
-      <button id="download-btn" class="btn ghost" type="button">⬇️ Save our story</button>
-      <button id="continue-btn" class="btn ghost" type="button">↩︎ Keep playing</button>
-      <button id="restart-btn" class="btn primary" type="button">✨ New game</button>
+      <button id="download-btn" class="btn ghost" type="button" data-i18n="save">⬇️ Save our story</button>
+      <button id="continue-btn" class="btn ghost" type="button" data-i18n="keepPlaying">↩︎ Keep playing</button>
+      <button id="restart-btn" class="btn primary" type="button" data-i18n="newGame">✨ New game</button>
     </div>
   </main>
 
@@ -162,16 +167,16 @@
 
       <div class="bonus-row">
         <button type="button" class="bonus" data-bonus="guess" id="b-guess">🎯 <span>… guessed it</span></button>
-        <button type="button" class="bonus" data-bonus="wow">😮 <span>Didn't know that!</span></button>
+        <button type="button" class="bonus" data-bonus="wow">😮 <span data-i18n="wow">Didn't know that!</span></button>
         <button type="button" class="bonus" data-bonus="both" id="b-both">🔁 <span>… answered too</span></button>
       </div>
-      <p class="bonus-help">Tip: let the other person guess the answer first. Tap the bonuses that happened.</p>
+      <p class="bonus-help" data-i18n="bonusHelp">Tip: let the other person guess the answer first. Tap the bonuses that happened.</p>
 
-      <textarea id="q-note" rows="2" maxlength="280" placeholder="Something to remember? (optional)"></textarea>
+      <textarea id="q-note" rows="2" maxlength="280" placeholder="Something to remember? (optional)" data-i18n-ph="notePh"></textarea>
 
       <div class="card-actions">
-        <button id="skip-btn" class="btn ghost" type="button">🔄 Pass (<span id="passes">3</span> left)</button>
-        <button id="done-btn" class="btn primary" type="button">Answered! ✨</button>
+        <button id="skip-btn" class="btn ghost" type="button">🔄 <span id="pass-label">Pass</span> (<span id="passes">3</span>)</button>
+        <button id="done-btn" class="btn primary" type="button" data-i18n="answered">Answered! ✨</button>
       </div>
     </div>
   </div>
@@ -180,8 +185,8 @@
   <div id="journal-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="journal-title">
     <div class="card journal-card">
       <div class="card-top">
-        <h2 id="journal-title">📖 Our story</h2>
-        <button id="journal-close" class="btn ghost small" type="button">Close</button>
+        <h2 id="journal-title" data-i18n="ourStory">📖 Our story</h2>
+        <button id="journal-close" class="btn ghost small" type="button" data-i18n="close">Close</button>
       </div>
       <ol id="journal-list" class="journal"></ol>
     </div>
