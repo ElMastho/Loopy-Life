@@ -1,6 +1,6 @@
 # Loopy Life · Know Each Other
 
-A small two-player game to get to know a friend better, beyond work and small talk.
+A small two-player game to get to know a friend better, beyond work and small talk. Available in English and French (switch on the home screen or during the game).
 It is the first seed of **Loopy Life**, the life-organization extension of Loopy Lines.
 
 ## How to play
@@ -22,13 +22,15 @@ The game saves itself in the browser, so you can close the page and resume later
 
 ## The question bank
 
-All questions live in [`data/questions.json`](data/questions.json): 14 subjects, 500+ questions, each with a depth from 1 (light) to 3 (deep).
+All questions live in [`data/questions.json`](data/questions.json): 14 subjects, 500+ questions in English and French, each with a depth from 1 (light) to 3 (deep).
 
 ```json
-{ "id": "family-001", "subject": "family", "depth": 1, "text": "How many people are in your family, and who are they?" }
+{ "id": "family-001", "subject": "family", "depth": 1,
+  "text": { "en": "How many people are in your family, and who are they?",
+            "fr": "Combien de personnes compte ta famille, et qui sont-elles ?" } }
 ```
 
-To add questions, add entries with a unique `id`, an existing `subject` id, and a `depth` of 1, 2 or 3.
+To add questions, add entries with a unique `id`, an existing `subject` id, a `depth` of 1, 2 or 3, and the text in both languages. Interface texts are in the `STR` table at the top of `app.js`.
 
 ## Run locally
 
