@@ -1063,7 +1063,7 @@
     $$("[data-lang]").forEach((b) => b.addEventListener("click", () => setLanguage(b.dataset.lang)));
     $("#lang-btn").addEventListener("click", () => setLanguage(LANG === "fr" ? "en" : "fr"));
     try {
-      const res = await fetch("data/questions.json", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=2", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {

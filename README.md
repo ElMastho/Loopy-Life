@@ -44,3 +44,5 @@ python3 -m http.server 8000
 ## Hosting
 
 Plain HTML, CSS and JavaScript with no build step, served by GitHub Pages from the `main` branch root.
+
+When you change `app.js`, `style.css` or `data/questions.json`, bump the `?v=` number in `index.html` and in the `fetch` call in `app.js`, so browsers load the new files instead of a cached copy.
