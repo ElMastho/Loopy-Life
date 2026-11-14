@@ -12,6 +12,16 @@
   const GUESS_POINTS = 15; // "guessed it" bonus in the normal game
   const GUESS_MODE_POINTS = 25; // a right guess in "guess for each other" mode
   const SURPRISE_POINTS = 10; // the player's bonus when nobody guessed, in that mode
+  const VOTE_POINTS = 5; // everyone, for each "who of us?" vote
+  const CHOSEN_POINTS = 10; // the player(s) the group voted for
+  const DARE_POINTS = 20; // a challenge done
+  const COMPACT_FROM = 5; // from this many players, the card and scoreboard switch to a compact layout
+  // "Who of us?" votes and challenges behave like extra subjects on the wheel and under the tree.
+  const EXTRAS = {
+    __who: { id: "__who", kind: "who", emoji: "🗳️", color: "#9b7bff", name: { en: "Who of us?", fr: "Qui de nous ?" }, short: { en: "Who of us?", fr: "Qui de nous ?" } },
+    __dare: { id: "__dare", kind: "dare", emoji: "🎭", color: "#ff6b6b", name: { en: "Challenge", fr: "Défi" }, short: { en: "Challenge", fr: "Défi" } },
+  };
+  const isExtra = (id) => !!EXTRAS[id];
 
 
   /* ------------------------------------------------------------------ */
@@ -61,6 +71,45 @@
       answered: "Answered! ✨",
       close: "Close",
       langToggle: "🇫🇷 Français",
+      everyoneElse: "everyone else",
+      whoModeTitle: "🗳️ Who of us? cards",
+      whoModeDesc: "Sometimes the wheel lands on a vote: on 3, everyone points at a player. Everyone plays, great for big groups.",
+      dareModeTitle: "🎭 Challenges",
+      dareModeDesc: "Sometimes a small challenge to do instead of a question.",
+      randomTurnTitle: "🎲 Random next player",
+      randomTurnDesc: "Nobody knows who's next, so everyone stays alert. Handy for big groups.",
+      whoName: "Who of us?",
+      dareName: "Challenge",
+      whoFor: "Everyone votes: on 3, point at a player!",
+      whoPts: "+5 each",
+      dareFor: "Challenge for {name}",
+      darePts: "+20",
+      another: "Another one",
+      next: "Next ✨",
+      whoChosenLabel: "🏆 Who got the most votes? (+10)",
+      whoUnanimous: "🤝 Unanimous (+5 each)",
+      dareDone: "✅ Challenge done (+20 for {name})",
+      dareLaugh: "😂 Everyone laughed (+5 each)",
+      guessWhoLabel: "🎯 Who guessed it? (+{n} each)",
+      whoToast: "🗳️ The group has spoken: {name}!",
+      unanimousToast: "🤝 Unanimous! +5 each",
+      dareToast: "🎭 Challenge done, bravo {name}!",
+      allVoted: "everyone voted",
+      dareBy: "challenge for {name}",
+      statWho: "votes 🗳️",
+      statDares: "challenges done 🎭",
+      badgesBtn: "🏅 Badges",
+      badgesTitle: "🏅 Badges",
+      badgesCount: "{n} of {total} badges unlocked",
+      badgeToast: "🏅 Badge unlocked: {name}",
+      shareImage: "🖼️ Share a picture",
+      imgLevel: "Connection level {n}",
+      imgQuestions: "questions",
+      imgBadges: "badges",
+      imgMinutes: "minutes",
+      imgBest: "Best moment",
+      installApp: "📲 Install the app",
+      installed: "📲 Installed! Open Loopy Life from your home screen.",
       optionsTitle: "Options",
       guessModeTitle: "🔮 Guess for each other",
       guessModeDesc: "Before each answer, the others say out loud what they think the player will answer. Right guesses earn more, and the player gets a bonus when nobody guessed.",
@@ -83,7 +132,7 @@
       rules: "Rules",
       rulesBtn: "❓ Rules",
       rulesTitle: "How to play",
-      rulesBody: "<h3>🎯 The goal</h3><p>Get to know each other better by answering questions you would never ask in everyday conversation. There are no wrong answers.</p><h3>👥 Players</h3><p>Two players by default. Add as many friends as you like with <b>+ Add a player</b>. Everyone takes turns answering, one after the other.</p><h3>🎡 Two ways to play</h3><ul><li><b>Spin the Wheel</b>: the wheel picks a subject, then a random question.</li><li><b>Grow Our Tree</b>: pick a subject (a branch). It starts with simple <b>roots</b> 🌱 questions, then unlocks deeper <b>leaves</b> 🌿 and <b>blooms</b> 🌸 after two answers at each level.</li></ul><h3>⭐ Points</h3><p>The player whose turn it is answers out loud and gets <b>+10</b> (🌤️ light), <b>+20</b> (🌗 deeper) or <b>+30</b> (🌊 deep) when you tap <b>Answered!</b></p><h3>🎁 Bonuses: when to tap them</h3><p>Before tapping <b>Answered!</b>, tap every bonus that happened (several can be on at once):</p><ul><li><b>🎯 [name] guessed it</b>: tap it when that friend said what the answer would be <i>before</i> it was given, and was right. They get <b>+15</b>. Best way to play: the others guess first, then the player answers.</li><li><b>😮 Didn't know that!</b>: tap it when the answer taught the listeners something they really didn't know about the player. Everyone gets <b>+5</b>.</li><li><b>🔁 [name] answered too</b> (with 3+ players: <b>everyone else answered too</b>): tap it when the others also answered the same question for themselves. They get the same points as the player.</li></ul><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p><h3>🎆 Connection level</h3><p>All your points add up to a shared connection level. Level up for fireworks. <b>📖 Our story</b> keeps every question and note, and <b>🏁 Finish</b> shows your summary.</p><h3>🔮 Guess for each other (option)</h3><p>Turn it on at the start of a story. Before the player answers, everyone else says out loud what they think the answer will be. Then the player answers. Tap <b>🎯 [name] guessed right</b> for each friend who got it (<b>+25</b> each). If nobody got it, tap <b>😏 Nobody guessed</b>: the player gets <b>+10</b> for surprising everyone.</p><h3>💾 Saving a story</h3><p>Each group of friends has its own story. Tap <b>💾 Save the story</b> (in the game or at the end) to download a <b>.loopy</b> file. Next time, tap <b>📂 Continue a saved story</b> on the home screen and pick that file: names, scores, your tree and the questions already asked all come back. Questions already asked on this device, in any story, come last, so a new story starts with fresh questions.</p>",
+      rulesBody: "<h3>🎯 The goal</h3><p>Get to know each other better by answering questions you would never ask in everyday conversation. There are no wrong answers.</p><h3>👥 Players</h3><p>Two players by default. Add as many friends as you like with <b>+ Add a player</b>. Everyone takes turns answering, one after the other.</p><h3>🎡 Two ways to play</h3><ul><li><b>Spin the Wheel</b>: the wheel picks a subject, then a random question.</li><li><b>Grow Our Tree</b>: pick a subject (a branch). It starts with simple <b>roots</b> 🌱 questions, then unlocks deeper <b>leaves</b> 🌿 and <b>blooms</b> 🌸 after two answers at each level.</li></ul><h3>⭐ Points</h3><p>The player whose turn it is answers out loud and gets <b>+10</b> (🌤️ light), <b>+20</b> (🌗 deeper) or <b>+30</b> (🌊 deep) when you tap <b>Answered!</b></p><h3>🎁 Bonuses: when to tap them</h3><p>Before tapping <b>Answered!</b>, tap every bonus that happened (several can be on at once):</p><ul><li><b>🎯 [name] guessed it</b>: tap it when that friend said what the answer would be <i>before</i> it was given, and was right. They get <b>+15</b>. Best way to play: the others guess first, then the player answers.</li><li><b>😮 Didn't know that!</b>: tap it when the answer taught the listeners something they really didn't know about the player. Everyone gets <b>+5</b>.</li><li><b>🔁 [name] answered too</b> (with 3+ players: <b>everyone else answered too</b>): tap it when the others also answered the same question for themselves. They get the same points as the player.</li></ul><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p><h3>🎆 Connection level</h3><p>All your points add up to a shared connection level. Level up for fireworks. <b>📖 Our story</b> keeps every question and note, and <b>🏁 Finish</b> shows your summary.</p><h3>🔮 Guess for each other (option)</h3><p>Turn it on at the start of a story. Before the player answers, everyone else says out loud what they think the answer will be. Then the player answers. Tap <b>🎯 [name] guessed right</b> for each friend who got it (<b>+25</b> each). If nobody got it, tap <b>😏 Nobody guessed</b>: the player gets <b>+10</b> for surprising everyone.</p><h3>🗳️ Who of us? (option)</h3><p>Sometimes the wheel (or the 🗳️ button under the tree) gives a vote instead of a question. Count to 3 and everyone points at the player who fits best. Everyone gets <b>+5</b> for voting. Tap the player(s) with the most votes (<b>+10</b> each), and <b>🤝 Unanimous</b> if everyone pointed at the same person (<b>+5</b> each).</p><h3>🎭 Challenges (option)</h3><p>Sometimes the player gets a small challenge instead of a question. Tap <b>✅ Challenge done</b> if they did it (<b>+20</b>), and <b>😂 Everyone laughed</b> if it was a hit (<b>+5</b> each). Don't like it? <b>🔄 Another one</b> is free.</p><h3>👥 Big groups</h3><p>From 5 players, the card shows one <b>🎯 Who guessed it?</b> row with everyone's names. With <b>🎲 Random next player</b>, nobody knows who answers next. Votes and challenges keep everyone in the game.</p><h3>🏅 Badges</h3><p>Unlock badges together as you play: deep moments, good guesses, votes, challenges, a tree in full bloom… See them with <b>🏅 Badges</b>.</p><h3>🖼️ Share a picture</h3><p>At the end, <b>🖼️ Share a picture</b> makes an image of your tree, your level and your best moment to send to the group.</p><h3>📲 Install the app</h3><p>On Android or a computer, tap <b>📲 Install the app</b> on the home screen. On iPhone, tap Share, then <b>Add to Home Screen</b>. It then works without a connection.</p><h3>💾 Saving a story</h3><p>Each group of friends has its own story. Tap <b>💾 Save the story</b> (in the game or at the end) to download a <b>.loopy</b> file. Next time, tap <b>📂 Continue a saved story</b> on the home screen and pick that file: names, scores, your tree and the questions already asked all come back. Questions already asked on this device, in any story, come last, so a new story starts with fresh questions.</p>",
       nQuestions: "{n} questions",
       pickOne: "Pick at least one subject 🙂",
       resume: "↩︎ Resume {names} ({n} answered)",
@@ -163,6 +212,45 @@
       answered: "Répondu ! ✨",
       close: "Fermer",
       langToggle: "🇬🇧 English",
+      everyoneElse: "tous les autres",
+      whoModeTitle: "🗳️ Cartes « Qui de nous ? »",
+      whoModeDesc: "Parfois la roue tombe sur un vote : à 3, tout le monde pointe un joueur. Tout le monde joue, idéal en grand groupe.",
+      dareModeTitle: "🎭 Défis",
+      dareModeDesc: "Parfois un petit défi à faire à la place d'une question.",
+      randomTurnTitle: "🎲 Joueur suivant au hasard",
+      randomTurnDesc: "Personne ne sait qui sera le prochain, donc tout le monde reste attentif. Pratique en grand groupe.",
+      whoName: "Qui de nous ?",
+      dareName: "Défi",
+      whoFor: "Tout le monde vote : à 3, pointez un joueur !",
+      whoPts: "+5 chacun",
+      dareFor: "Défi pour {name}",
+      darePts: "+20",
+      another: "Une autre",
+      next: "Suivant ✨",
+      whoChosenLabel: "🏆 Qui a eu le plus de votes ? (+10)",
+      whoUnanimous: "🤝 Unanimité (+5 chacun)",
+      dareDone: "✅ Défi réussi (+20 pour {name})",
+      dareLaugh: "😂 Tout le monde a ri (+5 chacun)",
+      guessWhoLabel: "🎯 Qui a deviné ? (+{n} chacun)",
+      whoToast: "🗳️ Le groupe a parlé : {name} !",
+      unanimousToast: "🤝 Unanimité ! +5 chacun",
+      dareToast: "🎭 Défi réussi, bravo {name} !",
+      allVoted: "tout le monde a voté",
+      dareBy: "défi pour {name}",
+      statWho: "votes 🗳️",
+      statDares: "défis réussis 🎭",
+      badgesBtn: "🏅 Badges",
+      badgesTitle: "🏅 Badges",
+      badgesCount: "{n} badges débloqués sur {total}",
+      badgeToast: "🏅 Badge débloqué : {name}",
+      shareImage: "🖼️ Partager une image",
+      imgLevel: "Niveau de connexion {n}",
+      imgQuestions: "questions",
+      imgBadges: "badges",
+      imgMinutes: "minutes",
+      imgBest: "Meilleur moment",
+      installApp: "📲 Installer l'appli",
+      installed: "📲 Installée ! Ouvre Loopy Life depuis ton écran d'accueil.",
       optionsTitle: "Options",
       guessModeTitle: "🔮 Devine pour l'autre",
       guessModeDesc: "Avant chaque réponse, les autres disent à voix haute ce que le joueur va répondre selon eux. Les bonnes devinettes rapportent plus, et le joueur gagne un bonus si personne n'a deviné.",
@@ -185,7 +273,7 @@
       rules: "Règles",
       rulesBtn: "❓ Règles",
       rulesTitle: "Comment jouer",
-      rulesBody: "<h3>🎯 Le but</h3><p>Mieux se connaître en répondant à des questions qu'on ne se pose jamais au quotidien. Il n'y a pas de mauvaise réponse.</p><h3>👥 Joueurs</h3><p>Deux joueurs par défaut. Ajoutez autant d'amis que vous voulez avec <b>+ Ajouter un joueur</b>. Chacun répond à son tour, l'un après l'autre.</p><h3>🎡 Deux façons de jouer</h3><ul><li><b>Faire tourner la roue</b> : la roue choisit un thème, puis une question au hasard.</li><li><b>Faire pousser notre arbre</b> : choisissez un thème (une branche). On commence par des questions simples, les <b>racines</b> 🌱, puis on débloque des <b>feuilles</b> 🌿 et des <b>fleurs</b> 🌸 plus profondes après deux réponses à chaque niveau.</li></ul><h3>⭐ Points</h3><p>Le joueur dont c'est le tour répond à voix haute et gagne <b>+10</b> (🌤️ léger), <b>+20</b> (🌗 plus profond) ou <b>+30</b> (🌊 profond) quand vous touchez <b>Répondu !</b></p><h3>🎁 Les bonus : quand les toucher</h3><p>Avant de toucher <b>Répondu !</b>, touchez chaque bonus qui s'est produit (plusieurs peuvent être activés) :</p><ul><li><b>🎯 [prénom] a deviné</b> : touchez-le quand cet ami a dit quelle serait la réponse <i>avant</i> qu'elle soit donnée, et avait raison. Il gagne <b>+15</b>. Le mieux : les autres devinent d'abord, puis le joueur répond.</li><li><b>😮 Je ne savais pas !</b> : touchez-le quand la réponse a appris aux autres quelque chose qu'ils ne savaient vraiment pas sur le joueur. Tout le monde gagne <b>+5</b>.</li><li><b>🔁 [prénom] a répondu aussi</b> (à 3 joueurs ou plus : <b>tous les autres ont répondu aussi</b>) : touchez-le quand les autres ont aussi répondu à la même question pour eux-mêmes. Ils gagnent les mêmes points que le joueur.</li></ul><p>La question ne vous plaît pas ? <b>🔄 Passer</b> la remplace par une autre du même thème. Chaque joueur peut passer <b>3 fois</b>.</p><h3>🎆 Niveau de connexion</h3><p>Tous vos points s'additionnent dans un niveau de connexion commun. Chaque niveau gagné déclenche un feu d'artifice. <b>📖 Notre histoire</b> garde chaque question et note, et <b>🏁 Terminer</b> affiche votre bilan.</p><h3>🔮 Devine pour l'autre (option)</h3><p>À activer au début d'une histoire. Avant que le joueur réponde, tous les autres disent à voix haute ce qu'il va répondre selon eux. Ensuite, le joueur répond. Touchez <b>🎯 [prénom] a bien deviné</b> pour chaque ami qui avait raison (<b>+25</b> chacun). Si personne n'a trouvé, touchez <b>😏 Personne n'a deviné</b> : le joueur gagne <b>+10</b> pour avoir surpris tout le monde.</p><h3>💾 Sauvegarder une histoire</h3><p>Chaque groupe d'amis a sa propre histoire. Touchez <b>💾 Sauvegarder l'histoire</b> (pendant la partie ou à la fin) pour télécharger un fichier <b>.loopy</b>. La prochaine fois, touchez <b>📂 Reprendre une histoire sauvegardée</b> sur l'écran d'accueil et choisissez ce fichier : prénoms, scores, votre arbre et les questions déjà posées reviennent. Les questions déjà posées sur cet appareil, dans n'importe quelle histoire, passent en dernier : une nouvelle histoire commence avec des questions inédites.</p>",
+      rulesBody: "<h3>🎯 Le but</h3><p>Mieux se connaître en répondant à des questions qu'on ne se pose jamais au quotidien. Il n'y a pas de mauvaise réponse.</p><h3>👥 Joueurs</h3><p>Deux joueurs par défaut. Ajoutez autant d'amis que vous voulez avec <b>+ Ajouter un joueur</b>. Chacun répond à son tour, l'un après l'autre.</p><h3>🎡 Deux façons de jouer</h3><ul><li><b>Faire tourner la roue</b> : la roue choisit un thème, puis une question au hasard.</li><li><b>Faire pousser notre arbre</b> : choisissez un thème (une branche). On commence par des questions simples, les <b>racines</b> 🌱, puis on débloque des <b>feuilles</b> 🌿 et des <b>fleurs</b> 🌸 plus profondes après deux réponses à chaque niveau.</li></ul><h3>⭐ Points</h3><p>Le joueur dont c'est le tour répond à voix haute et gagne <b>+10</b> (🌤️ léger), <b>+20</b> (🌗 plus profond) ou <b>+30</b> (🌊 profond) quand vous touchez <b>Répondu !</b></p><h3>🎁 Les bonus : quand les toucher</h3><p>Avant de toucher <b>Répondu !</b>, touchez chaque bonus qui s'est produit (plusieurs peuvent être activés) :</p><ul><li><b>🎯 [prénom] a deviné</b> : touchez-le quand cet ami a dit quelle serait la réponse <i>avant</i> qu'elle soit donnée, et avait raison. Il gagne <b>+15</b>. Le mieux : les autres devinent d'abord, puis le joueur répond.</li><li><b>😮 Je ne savais pas !</b> : touchez-le quand la réponse a appris aux autres quelque chose qu'ils ne savaient vraiment pas sur le joueur. Tout le monde gagne <b>+5</b>.</li><li><b>🔁 [prénom] a répondu aussi</b> (à 3 joueurs ou plus : <b>tous les autres ont répondu aussi</b>) : touchez-le quand les autres ont aussi répondu à la même question pour eux-mêmes. Ils gagnent les mêmes points que le joueur.</li></ul><p>La question ne vous plaît pas ? <b>🔄 Passer</b> la remplace par une autre du même thème. Chaque joueur peut passer <b>3 fois</b>.</p><h3>🎆 Niveau de connexion</h3><p>Tous vos points s'additionnent dans un niveau de connexion commun. Chaque niveau gagné déclenche un feu d'artifice. <b>📖 Notre histoire</b> garde chaque question et note, et <b>🏁 Terminer</b> affiche votre bilan.</p><h3>🔮 Devine pour l'autre (option)</h3><p>À activer au début d'une histoire. Avant que le joueur réponde, tous les autres disent à voix haute ce qu'il va répondre selon eux. Ensuite, le joueur répond. Touchez <b>🎯 [prénom] a bien deviné</b> pour chaque ami qui avait raison (<b>+25</b> chacun). Si personne n'a trouvé, touchez <b>😏 Personne n'a deviné</b> : le joueur gagne <b>+10</b> pour avoir surpris tout le monde.</p><h3>🗳️ Qui de nous ? (option)</h3><p>Parfois la roue (ou le bouton 🗳️ sous l'arbre) donne un vote à la place d'une question. Comptez jusqu'à 3 et tout le monde pointe le joueur qui correspond le mieux. Tout le monde gagne <b>+5</b> pour avoir voté. Touchez le ou les joueurs qui ont eu le plus de votes (<b>+10</b> chacun), et <b>🤝 Unanimité</b> si tout le monde a pointé la même personne (<b>+5</b> chacun).</p><h3>🎭 Défis (option)</h3><p>Parfois le joueur reçoit un petit défi à la place d'une question. Touchez <b>✅ Défi réussi</b> s'il l'a fait (<b>+20</b>), et <b>😂 Tout le monde a ri</b> si ça a marché (<b>+5</b> chacun). Le défi ne plaît pas ? <b>🔄 Une autre</b> est gratuit.</p><h3>👥 Grands groupes</h3><p>À partir de 5 joueurs, la carte affiche une seule ligne <b>🎯 Qui a deviné ?</b> avec les prénoms de tout le monde. Avec <b>🎲 Joueur suivant au hasard</b>, personne ne sait qui répond ensuite. Les votes et les défis font participer tout le monde.</p><h3>🏅 Badges</h3><p>Débloquez des badges ensemble en jouant : moments profonds, bonnes devinettes, votes, défis, arbre en fleurs… Retrouvez-les avec <b>🏅 Badges</b>.</p><h3>🖼️ Partager une image</h3><p>À la fin, <b>🖼️ Partager une image</b> crée une image de votre arbre, de votre niveau et de votre meilleur moment à envoyer au groupe.</p><h3>📲 Installer l'appli</h3><p>Sur Android ou un ordinateur, touchez <b>📲 Installer l'appli</b> sur l'écran d'accueil. Sur iPhone, touchez Partager, puis <b>Sur l'écran d'accueil</b>. Elle marche ensuite sans connexion.</p><h3>💾 Sauvegarder une histoire</h3><p>Chaque groupe d'amis a sa propre histoire. Touchez <b>💾 Sauvegarder l'histoire</b> (pendant la partie ou à la fin) pour télécharger un fichier <b>.loopy</b>. La prochaine fois, touchez <b>📂 Reprendre une histoire sauvegardée</b> sur l'écran d'accueil et choisissez ce fichier : prénoms, scores, votre arbre et les questions déjà posées reviennent. Les questions déjà posées sur cet appareil, dans n'importe quelle histoire, passent en dernier : une nouvelle histoire commence avec des questions inédites.</p>",
       nQuestions: "{n} questions",
       pickOne: "Choisissez au moins un thème 🙂",
       resume: "↩︎ Reprendre {names} ({n} réponses)",
@@ -292,8 +380,8 @@
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const others = (p) => state.players.map((_, i) => i).filter((i) => i !== p);
   // one colour per player (bright for the night background, dark for the light question card)
-  const PLAYER_COLORS = ["#ff7eb6", "#6ee7ff", "#ffd166", "#7ef0a8", "#b388ff", "#ff9f68", "#f9a8d4", "#93c5fd"];
-  const PLAYER_DARK = ["#d63384", "#0b8bb0", "#b7791f", "#2f855a", "#6b46c1", "#c05621", "#be185d", "#1d4ed8"];
+  const PLAYER_COLORS = ["#ff7eb6", "#6ee7ff", "#ffd166", "#7ef0a8", "#b388ff", "#ff9f68", "#c4f135", "#ff6b6b", "#93a5ff", "#e7c6a1"];
+  const PLAYER_DARK = ["#d63384", "#0b8bb0", "#b7791f", "#2f855a", "#6b46c1", "#c05621", "#5f7a0a", "#c53030", "#3b4fd1", "#8a5a2b"];
   const pHex = (p) => PLAYER_COLORS[p % PLAYER_COLORS.length];
   const pDark = (p) => PLAYER_DARK[p % PLAYER_DARK.length];
   const nPlayers = () => state.players.length;
@@ -581,6 +669,10 @@
       depth,
       mode,
       guessMode: setupGuessMode,
+      whoMode: $("#who-mode").checked,
+      dareMode: $("#dare-mode").checked,
+      randomTurn: $("#random-turn").checked,
+      badges: [],
       used: [],
       journal: [],
       tree: {},
@@ -613,6 +705,7 @@
   function renderScoreboard() {
     const board = $("#scoreboard");
     board.innerHTML = "";
+    board.classList.toggle("compact", nPlayers() >= COMPACT_FROM);
     state.players.forEach((name, i) => {
       const el = document.createElement("div");
       el.className = "score";
@@ -629,6 +722,9 @@
       if (!el) return;
       el.querySelector(".pts").textContent = state.scores[i];
       el.classList.toggle("active", state.turn === i);
+      if (state.turn === i && nPlayers() >= COMPACT_FROM && el.scrollIntoView) {
+        try { el.scrollIntoView({ block: "nearest", inline: "center", behavior: animate ? "smooth" : "auto" }); } catch (e) { /* ignore */ }
+      }
       if (animate && changed.includes(i)) {
         const pts = el.querySelector(".pts");
         pts.classList.remove("bump"); void pts.offsetWidth; pts.classList.add("bump");
@@ -686,33 +782,69 @@
   // Writes the current question into the card, in the current language.
   function fillCard() {
     if (!current) return;
-    const { q, player: p } = current;
+    const { q, player: p, kind } = current;
     const s = SUBJ[q.subject];
+    const who = `<b style="color:${pDark(p)}">${esc(state.players[p])}</b>`;
     $("#q-subject").textContent = `${s.emoji} ${sName(s)}`;
-    $("#q-depth").textContent = `${t("depth" + q.depth)} · +${POINTS[q.depth]}`;
-    $("#q-for").innerHTML = esc(t("forWho", { name: "\u0000" })).replace("\u0000", `<b style="color:${pDark(p)}">${esc(state.players[p])}</b>`);
     $("#q-text").textContent = qText(q);
+    $("#passes-wrap").hidden = !!kind;
+    $("#bonus-help").hidden = !!kind;
+    if (kind === "who") {
+      $("#q-depth").textContent = t("whoPts");
+      $("#q-for").textContent = t("whoFor");
+    } else if (kind === "dare") {
+      $("#q-depth").textContent = t("darePts");
+      $("#q-for").innerHTML = esc(t("dareFor", { name: "\u0000" })).replace("\u0000", who);
+    } else {
+      $("#q-depth").textContent = `${t("depth" + q.depth)} · +${POINTS[q.depth]}`;
+      $("#q-for").innerHTML = esc(t("forWho", { name: "\u0000" })).replace("\u0000", who);
+    }
     renderBonuses();
-    $("#pass-label").textContent = t("pass");
+    $("#pass-label").textContent = kind ? t("another") : t("pass");
+    $("#done-btn").textContent = kind ? t("next") : t("answered");
     $("#passes").textContent = state.passes[p];
-    $("#skip-btn").disabled = state.passes[p] <= 0;
+    $("#skip-btn").disabled = !kind && state.passes[p] <= 0;
   }
+
+  // A chip with a player's colour dot and name, for compact rows.
+  const nameChip = (o) => `<span class="pdot" style="background:${pHex(o)}"></span><span>${esc(state.players[o])}</span>`;
 
   // Bonus chips: one "guessed it" per other player, plus "didn't know" and "answered too".
   function renderBonuses() {
-    const { q, player: p, bonuses } = current;
+    const { q, player: p, bonuses, kind } = current;
     const os = others(p);
     const step = $("#guess-step");
-    step.hidden = !state.guessMode;
-    if (state.guessMode) {
-      step.textContent = t("guessStep", { names: joinNames(os.map((o) => state.players[o])), name: state.players[p] });
+    step.hidden = !state.guessMode || !!kind;
+    if (state.guessMode && !kind) {
+      const names = os.length >= COMPACT_FROM - 1 ? t("everyoneElse") : joinNames(os.map((o) => state.players[o]));
+      step.textContent = t("guessStep", { names, name: state.players[p] });
     }
-    const chips = os.map((o) => ({
-      key: `guess:${o}`,
-      html: `🎯 <span>${esc(state.guessMode
-        ? t("guessedRight", { name: state.players[o], n: GUESS_MODE_POINTS })
-        : t("guessed", { name: state.players[o] }))}</span>`,
-    }));
+    const groups = []; // [{ label, chips }]
+    if (kind === "who") {
+      groups.push({ label: t("whoChosenLabel"), chips: state.players.map((_, o) => ({ key: `chosen:${o}`, html: nameChip(o), small: true })) });
+      groups.push({ chips: [{ key: "unanimous", html: `<span>${esc(t("whoUnanimous"))}</span>` }] });
+      return paintBonuses(groups);
+    }
+    if (kind === "dare") {
+      groups.push({ chips: [
+        { key: "dare", html: `<span>${esc(t("dareDone", { name: state.players[p] }))}</span>` },
+        { key: "laugh", html: `<span>${esc(t("dareLaugh"))}</span>` },
+      ] });
+      return paintBonuses(groups);
+    }
+    const compact = nPlayers() >= COMPACT_FROM;
+    const guessPts = state.guessMode ? GUESS_MODE_POINTS : GUESS_POINTS;
+    const chips = [];
+    if (compact) {
+      groups.push({ label: t("guessWhoLabel", { n: guessPts }), chips: os.map((o) => ({ key: `guess:${o}`, html: nameChip(o), small: true })) });
+    } else {
+      os.forEach((o) => chips.push({
+        key: `guess:${o}`,
+        html: `🎯 <span>${esc(state.guessMode
+          ? t("guessedRight", { name: state.players[o], n: GUESS_MODE_POINTS })
+          : t("guessed", { name: state.players[o] }))}</span>`,
+      }));
+    }
     if (state.guessMode) {
       chips.push({ key: "nobody", html: `<span>${esc(t("nobodyGuessed", { n: SURPRISE_POINTS, name: state.players[p] }))}</span>` });
     }
@@ -721,24 +853,43 @@
       ? t("answeredToo", { name: state.players[os[0]], n: POINTS[q.depth] })
       : t("everyoneToo", { n: POINTS[q.depth] });
     chips.push({ key: "both", html: `🔁 <span>${esc(tooLabel)}</span>` });
+    groups.push({ chips });
+    paintBonuses(groups);
+  }
+
+  function paintBonuses(groups) {
+    const { bonuses } = current;
     const row = $("#bonus-row");
     row.innerHTML = "";
-    chips.forEach(({ key, html }) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "bonus" + (bonuses.has(key) ? " on" : "");
-      b.innerHTML = html;
-      b.addEventListener("click", () => {
-        b.classList.toggle("on");
-        if (b.classList.contains("on")) { bonuses.add(key); FX.sparkleEl(b); }
-        else bonuses.delete(key);
+    groups.forEach(({ label, chips }, gi) => {
+      if (!label && gi > 0) {
+        const br = document.createElement("span");
+        br.className = "bonus-break";
+        row.appendChild(br);
+      }
+      if (label) {
+        const l = document.createElement("p");
+        l.className = "bonus-label";
+        l.textContent = label;
+        row.appendChild(l);
+      }
+      chips.forEach(({ key, html, small }) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "bonus" + (small ? " name" : "") + (bonuses.has(key) ? " on" : "");
+        b.innerHTML = html;
+        b.addEventListener("click", () => {
+          b.classList.toggle("on");
+          if (b.classList.contains("on")) { bonuses.add(key); FX.sparkleEl(b); }
+          else bonuses.delete(key);
+        });
+        row.appendChild(b);
       });
-      row.appendChild(b);
     });
   }
 
-  function openCard(q) {
-    current = { q, player: state.turn, bonuses: new Set() };
+  function openCard(q, kind) {
+    current = { q, player: state.turn, bonuses: new Set(kind === "dare" ? ["dare"] : []), kind };
     fillCard();
 
     const card = $("#card");
@@ -758,8 +909,95 @@
     current = null;
   }
 
+  // Whose turn after `player`: the next one, or anyone else at random with that option.
+  function nextTurn(player) {
+    const n = nPlayers();
+    if (state.randomTurn && n > 2) {
+      const os = others(player);
+      return os[randInt(os.length)];
+    }
+    return (player + 1) % n;
+  }
+
+  // Picks a vote or a challenge not used in this story, preferring ones never seen on this device.
+  function drawExtra(kind, excludeId) {
+    const list = kind === "who" ? DB.who || [] : DB.challenges || [];
+    const used = new Set(state.used);
+    let pool = list.filter((x) => !used.has(x.id) && x.id !== excludeId);
+    if (!pool.length) {
+      const ids = new Set(list.map((x) => x.id));
+      state.used = state.used.filter((id) => !ids.has(id));
+      pool = list.filter((x) => x.id !== excludeId);
+    }
+    const seen = seenSet();
+    const fresh = pool.filter((x) => !seen.has(x.id));
+    const x = pick(fresh.length ? fresh : pool);
+    return QBYID[x.id] || x;
+  }
+
+  function openExtra(id) {
+    const kind = EXTRAS[id].kind;
+    openCard(drawExtra(kind), kind);
+  }
+
+  function finishExtra() {
+    const { q, player, bonuses, kind } = current;
+    const gained = state.players.map(() => 0);
+    let chosen = [];
+    if (kind === "who") {
+      chosen = state.players.map((_, i) => i).filter((i) => bonuses.has(`chosen:${i}`));
+      gained.forEach((_, i) => (gained[i] += VOTE_POINTS));
+      chosen.forEach((i) => (gained[i] += CHOSEN_POINTS));
+      if (bonuses.has("unanimous")) gained.forEach((_, i) => (gained[i] += 5));
+    } else {
+      if (bonuses.has("dare")) gained[player] += DARE_POINTS;
+      if (bonuses.has("laugh")) gained.forEach((_, i) => (gained[i] += 5));
+    }
+    const size = levelSize();
+    const beforeLvl = Math.floor(state.connection / size);
+    gained.forEach((g, i) => (state.scores[i] += g));
+    state.connection += gained.reduce((a, b) => a + b, 0);
+    const afterLvl = Math.floor(state.connection / size);
+
+    state.used.push(q.id);
+    markSeen([q.id]);
+    state.journal.push({
+      qid: q.id, text: q.text, subject: kind === "who" ? "__who" : "__dare", depth: 0, kind,
+      player, bonuses: [...bonuses], note: $("#q-note").value.trim(),
+      gained, t: Date.now(),
+    });
+    state.turn = nextTurn(player);
+    save();
+
+    FX.sparkleEl($("#done-btn"));
+    closeCard();
+    updateScores(true, gained.map((g, i) => (g ? i : -1)).filter((i) => i >= 0));
+    if (afterLvl > beforeLvl) {
+      FX.fireworks(8);
+      toast(t("levelUp", { n: afterLvl + 1 }), 3200);
+    } else if (kind === "who" && bonuses.has("unanimous")) {
+      FX.fireworks(4);
+      toast(t("unanimousToast"));
+    } else if (kind === "who" && chosen.length) {
+      chosen.forEach((o) => FX.sparkleEl($(`#score-${o}`), [pHex(o), "#ffd166", "#ffffff"]));
+      toast(t("whoToast", { name: joinNames(chosen.map((o) => state.players[o])) }));
+    } else if (kind === "dare" && bonuses.has("dare")) {
+      FX.sparkleEl($(`#score-${player}`), [pHex(player), "#ffd166", "#ffffff"]);
+      toast(t("dareToast", { name: state.players[player] }));
+    }
+    afterTurn();
+  }
+
+  // Redraws the current view and checks badges, after any card.
+  function afterTurn() {
+    if (state.mode === "tree") renderTree();
+    else drawWheel();
+    checkBadges();
+  }
+
   function finishQuestion() {
     if (!current) return;
+    if (current.kind) return finishExtra();
     const { q, player, bonuses } = current;
     const os = others(player);
     const base = POINTS[q.depth];
@@ -786,7 +1024,7 @@
       player, bonuses: [...bonuses], note: $("#q-note").value.trim(),
       gained, t: Date.now(),
     });
-    state.turn = (player + 1) % nPlayers();
+    state.turn = nextTurn(player);
     save();
 
     FX.sparkleEl($("#done-btn"));
@@ -819,10 +1057,20 @@
     } else {
       drawWheel();
     }
+    checkBadges();
   }
 
   function passQuestion() {
     if (!current) return;
+    if (current.kind) {
+      // another vote or challenge: free, same player
+      const { kind, q: old } = current;
+      state.used.push(old.id);
+      markSeen([old.id]);
+      save();
+      openCard(drawExtra(kind, old.id), kind);
+      return;
+    }
     const p = current.player;
     if (state.passes[p] <= 0) return;
     state.passes[p] -= 1;
@@ -841,12 +1089,32 @@
   /* ------------------------------------------------------------------ */
   /* Wheel                                                              */
   /* ------------------------------------------------------------------ */
+  // Wheel segments: the chosen subjects, with votes and challenges spread between them.
+  function wheelIds() {
+    const extras = [];
+    if (state.whoMode) extras.push("__who");
+    if (state.dareMode) extras.push("__dare");
+    if (!extras.length) return state.subjects.slice();
+    const reps = Math.max(1, Math.ceil(state.subjects.length / 6)); // about 1 extra per 3 subjects
+    const slots = [];
+    for (let r = 0; r < reps; r++) slots.push(...extras);
+    const ids = [];
+    const every = state.subjects.length / slots.length;
+    let k = 0;
+    state.subjects.forEach((id, i) => {
+      ids.push(id);
+      while (k < slots.length && i + 1 >= Math.round(every * (k + 1))) ids.push(slots[k++]);
+    });
+    while (k < slots.length) ids.push(slots[k++]);
+    return ids;
+  }
+
   function drawWheel() {
     const canvas = $("#wheel");
     const ctx = canvas.getContext("2d");
     const size = canvas.width;
     const cx = size / 2, cy = size / 2, R = size / 2 - 6;
-    const subs = state.subjects.map((id) => SUBJ[id]);
+    const subs = wheelIds().map((id) => SUBJ[id]);
     const n = subs.length;
     const seg = (Math.PI * 2) / n;
 
@@ -907,9 +1175,10 @@
     if (spinning || current) return;
     spinning = true;
     $("#spin-btn").disabled = true;
-    const n = state.subjects.length;
+    const ids = wheelIds();
+    const n = ids.length;
     const seg = (Math.PI * 2) / n;
-    const idx = Math.floor(Math.random() * n);
+    const idx = randInt(n);
     const jitter = (Math.random() - 0.5) * seg * 0.7;
     const target = -Math.PI / 2 - (idx + 0.5) * seg + jitter;
     const TAU = Math.PI * 2;
@@ -933,12 +1202,12 @@
         wheelAngle = to % TAU;
         spinning = false;
         $("#spin-btn").disabled = false;
-        const subjectId = state.subjects[idx];
+        const subjectId = ids[idx];
         const s = SUBJ[subjectId];
         const r = $(".pointer").getBoundingClientRect();
         FX.burst(r.left + r.width / 2, r.top + r.height, { count: 50, speed: 5, colors: [s.color, "#ffd166", "#ffffff"], stars: true, gravity: 0.05 });
         toast(`${s.emoji} ${sName(s)}!`, 1200);
-        setTimeout(() => openCard(drawQuestion(subjectId, depthsFor(state.depth))), 650);
+        setTimeout(() => (isExtra(subjectId) ? openExtra(subjectId) : openCard(drawQuestion(subjectId, depthsFor(state.depth)))), 650);
       }
     }
     requestAnimationFrame(frame);
@@ -1085,6 +1354,17 @@
       b.addEventListener("click", () => growBranch(id, b));
       list.appendChild(b);
     });
+    Object.values(EXTRAS).forEach((x) => {
+      if (!(x.kind === "who" ? state.whoMode : state.dareMode)) return;
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "branch extra";
+      b.style.setProperty("--c", x.color);
+      const n = state.journal.filter((j) => j.subject === x.id).length;
+      b.innerHTML = `<span class="emo">${x.emoji}</span><span>${esc(sName(x))}<small>${esc(t("nAnswered", { n }))}</small></span>`;
+      b.addEventListener("click", () => { if (current) return; FX.sparkleEl(b, [x.color, "#ffffff"]); setTimeout(() => openExtra(x.id), 200); });
+      list.appendChild(b);
+    });
   }
 
   function growBranch(subjectId, el) {
@@ -1102,9 +1382,10 @@
       .map((j) => {
         const s = SUBJ[j.subject] || { emoji: "•", name: j.subject };
         const text = QBYID[j.qid] ? qText(QBYID[j.qid]) : tr(j.text);
-        const pts = j.gained[0] + j.gained[1];
+        const pts = j.gained.reduce((a, b) => a + b, 0);
         const note = j.note ? `<span class="j-note">“${esc(j.note)}”</span>` : "";
-        return `<li><b>${esc(text)}</b><br><span class="j-meta">${s.emoji} ${esc(sName(s))} · ${esc(t("answeredBy", { name: state.players[j.player] }))} · +${pts}</span>${note}</li>`;
+        const by = j.kind === "who" ? t("allVoted") : j.kind === "dare" ? t("dareBy", { name: state.players[j.player] }) : t("answeredBy", { name: state.players[j.player] });
+        return `<li><b>${esc(text)}</b><br><span class="j-meta">${s.emoji} ${esc(sName(s))} · ${esc(by)} · +${pts}</span>${note}</li>`;
       })
       .join("");
   }
@@ -1115,7 +1396,10 @@
   }
 
   function showSummary() {
-    const j = state.journal;
+    const all = state.journal;
+    const j = all.filter((e) => !e.kind);
+    const votes = all.filter((e) => e.kind === "who").length;
+    const dares = all.filter((e) => e.kind === "dare" && e.bonuses.includes("dare")).length;
     const bySubject = {};
     j.forEach((e) => (bySubject[e.subject] = (bySubject[e.subject] || 0) + 1));
     const fav = Object.entries(bySubject).sort((a, b) => b[1] - a[1])[0];
@@ -1133,6 +1417,9 @@
       stat(deep, t("statDeep")) +
       stat(wows, t("statWow")) +
       stat(guesses, t("statGuess")) +
+      (votes ? stat(votes, t("statWho")) : "") +
+      (dares ? stat(dares, t("statDares")) : "") +
+      stat(`🏅 ${(state.badges || []).length}`, esc(t("badgesBtn").replace("🏅 ", ""))) +
       stat(fav ? SUBJ[fav[0]].emoji : "–", fav ? esc(t("statFav", { s: sName(SUBJ[fav[0]]) })) : t("statFavNone")) +
       stat(`${mins}′`, t("statTogether"));
     $("#summary-journal").innerHTML = journalHTML();
@@ -1164,7 +1451,7 @@
   }
 
   function downloadFile(content, filename, type) {
-    const blob = new Blob([content], { type });
+    const blob = content instanceof Blob ? content : new Blob([content], { type });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = filename;
@@ -1200,6 +1487,7 @@
       st.tree = st.tree || {};
       st.connection = Number(st.connection) || 0;
       st.mode = st.mode === "tree" ? "tree" : "wheel";
+      st.badges = Array.isArray(st.badges) ? st.badges : [];
       st.startedAt = st.startedAt || Date.now();
       state = st;
       lastTreeCounts = {};
@@ -1209,6 +1497,183 @@
       setTimeout(() => { toast(t("loaded", { names: joinNames(state.players) }), 3200); FX.fireworks(4); }, 400);
     };
     reader.readAsText(file);
+  }
+
+
+  /* ------------------------------------------------------------------ */
+  /* Badges                                                             */
+  /* ------------------------------------------------------------------ */
+  const qs = (st) => st.journal.filter((e) => !e.kind);
+  const countBonus = (st, test) => st.journal.reduce((n, e) => n + e.bonuses.filter(test).length, 0);
+  const BADGES = [
+    { id: "first", emoji: "🌱", name: { en: "First step", fr: "Premier pas" }, desc: { en: "Answer a first question", fr: "Répondre à une première question" }, test: (st) => qs(st).length >= 1 },
+    { id: "ten", emoji: "🔥", name: { en: "Warming up", fr: "Ça chauffe" }, desc: { en: "Answer 10 questions", fr: "Répondre à 10 questions" }, test: (st) => qs(st).length >= 10 },
+    { id: "everyone", emoji: "👥", name: { en: "Everyone's in", fr: "Tout le monde y passe" }, desc: { en: "Every player has answered a question", fr: "Chaque joueur a répondu à une question" }, test: (st) => st.players.every((_, i) => qs(st).some((e) => e.player === i)) },
+    { id: "explorer", emoji: "🧭", name: { en: "Explorers", fr: "Explorateurs" }, desc: { en: "Questions in 5 different subjects", fr: "Des questions dans 5 thèmes différents" }, test: (st) => new Set(qs(st).map((e) => e.subject)).size >= 5 },
+    { id: "deep", emoji: "🌊", name: { en: "Deep divers", fr: "Plongeurs" }, desc: { en: "5 deep questions", fr: "5 questions profondes" }, test: (st) => qs(st).filter((e) => e.depth === 3).length >= 5 },
+    { id: "telepath", emoji: "🎯", name: { en: "Telepaths", fr: "Télépathes" }, desc: { en: "10 right guesses", fr: "10 bonnes devinettes" }, test: (st) => countBonus(st, (b) => b === "guess" || b.startsWith("guess:")) >= 10 },
+    { id: "surprise", emoji: "😏", name: { en: "Unpredictable", fr: "Imprévisibles" }, desc: { en: "Nobody guessed, 3 times", fr: "Personne n'a deviné, 3 fois" }, test: (st) => countBonus(st, (b) => b === "nobody") >= 3 },
+    { id: "wow", emoji: "😮", name: { en: "Mind blown", fr: "Bouche bée" }, desc: { en: "5 “didn't know that!”", fr: "5 « je ne savais pas ! »" }, test: (st) => countBonus(st, (b) => b === "wow") >= 5 },
+    { id: "memory", emoji: "🐘", name: { en: "Elephant memory", fr: "Mémoire d'éléphant" }, desc: { en: "Write 5 notes", fr: "Écrire 5 notes" }, test: (st) => st.journal.filter((e) => e.note).length >= 5 },
+    { id: "bloom", emoji: "🌸", name: { en: "First bloom", fr: "Première fleur" }, desc: { en: "A branch of the tree blooms", fr: "Une branche de l'arbre fleurit" }, test: (st) => Object.values(st.tree || {}).some((c) => c[1] >= 2 && c[2] >= 2) },
+    { id: "fulltree", emoji: "🌳", name: { en: "Full bloom", fr: "Arbre en fleurs" }, desc: { en: "Every branch of the tree blooms", fr: "Toutes les branches de l'arbre fleurissent" }, test: (st) => st.subjects.length > 0 && st.subjects.every((id) => { const c = (st.tree || {})[id]; return c && c[1] >= 2 && c[2] >= 2 && c[3] >= 1; }) },
+    { id: "vote", emoji: "🗳️", name: { en: "Democracy", fr: "Démocratie" }, desc: { en: "5 “Who of us?” votes", fr: "5 votes « Qui de nous ? »" }, test: (st) => st.journal.filter((e) => e.kind === "who").length >= 5 },
+    { id: "unanimous", emoji: "🤝", name: { en: "Unanimous", fr: "Unanimité" }, desc: { en: "Everyone pointed at the same person", fr: "Tout le monde a pointé la même personne" }, test: (st) => countBonus(st, (b) => b === "unanimous") >= 1 },
+    { id: "daredevil", emoji: "🎭", name: { en: "Daredevils", fr: "Casse-cou" }, desc: { en: "5 challenges done", fr: "5 défis réussis" }, test: (st) => st.journal.filter((e) => e.kind === "dare" && e.bonuses.includes("dare")).length >= 5 },
+    { id: "level5", emoji: "🎆", name: { en: "Inseparable", fr: "Inséparables" }, desc: { en: "Reach connection level 5", fr: "Atteindre le niveau de connexion 5" }, test: (st) => Math.floor(st.connection / levelSize()) + 1 >= 5 },
+    { id: "fifty", emoji: "🏔️", name: { en: "Marathon", fr: "Marathon" }, desc: { en: "Play 50 cards", fr: "Jouer 50 cartes" }, test: (st) => st.journal.length >= 50 },
+  ];
+
+  function checkBadges() {
+    if (!Array.isArray(state.badges)) state.badges = [];
+    const got = BADGES.filter((b) => !state.badges.includes(b.id) && b.test(state));
+    if (!got.length) return;
+    got.forEach((b) => state.badges.push(b.id));
+    save();
+    got.forEach((b, i) => setTimeout(() => {
+      toast(t("badgeToast", { name: `${b.emoji} ${tr(b.name)}` }), 2800);
+      FX.fireworks(3, ["#ffd166", "#ffffff", "#9b7bff"]);
+    }, 1300 + i * 2900));
+  }
+
+  function openBadges() {
+    const have = new Set(state.badges || []);
+    $("#badges-count").textContent = t("badgesCount", { n: have.size, total: BADGES.length });
+    $("#badges-list").innerHTML = BADGES.map((b) => `<li class="badge${have.has(b.id) ? " on" : ""}"><span class="b-emo">${b.emoji}</span><span><b>${esc(tr(b.name))}</b><small>${esc(tr(b.desc))}</small></span></li>`).join("");
+    $("#badges-overlay").classList.remove("hidden");
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Shareable picture of the story                                     */
+  /* ------------------------------------------------------------------ */
+  function wrapText(ctx, text, x, y, maxW, lineH, maxLines = 3) {
+    const words = String(text).split(/\s+/);
+    const lines = [];
+    let line = "";
+    words.forEach((w) => {
+      const tryLine = line ? `${line} ${w}` : w;
+      if (ctx.measureText(tryLine).width > maxW && line) { lines.push(line); line = w; } else line = tryLine;
+    });
+    if (line) lines.push(line);
+    if (lines.length > maxLines) { lines.length = maxLines; lines[maxLines - 1] = lines[maxLines - 1].replace(/\s*\S*$/, "") + "…"; }
+    lines.forEach((l, i) => ctx.fillText(l, x, y + i * lineH));
+    return y + lines.length * lineH;
+  }
+
+  function treeImage() {
+    renderTree();
+    const svg = $("#tree").cloneNode(true);
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("width", "400");
+    svg.setAttribute("height", "420");
+    const src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(new XMLSerializer().serializeToString(svg));
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => resolve(null);
+      img.src = src;
+    });
+  }
+
+  async function makeStoryImage() {
+    const W = 1080, H = 1350;
+    const c = document.createElement("canvas");
+    c.width = W; c.height = H;
+    const ctx = c.getContext("2d");
+    try { await document.fonts.load("700 40px Fredoka"); } catch (e) { /* ignore */ }
+    const F = (w, px) => `${w} ${px}px Fredoka, "Segoe UI", system-ui, sans-serif`;
+
+    const bg = ctx.createLinearGradient(0, 0, 0, H);
+    bg.addColorStop(0, "#1b1440"); bg.addColorStop(1, "#43206e");
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+    const rnd = seeded(42);
+    for (let i = 0; i < 90; i++) {
+      ctx.fillStyle = `rgba(255,255,255,${0.15 + rnd() * 0.5})`;
+      ctx.beginPath(); ctx.arc(rnd() * W, rnd() * H, 1 + rnd() * 2.2, 0, Math.PI * 2); ctx.fill();
+    }
+
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#ffd166"; ctx.font = F(600, 38);
+    ctx.fillText("∞ Loopy Life", W / 2, 90);
+    ctx.fillStyle = "#ffffff"; ctx.font = F(700, 64);
+    ctx.fillText(t("title"), W / 2, 170);
+    ctx.fillStyle = "#c9bfe0"; ctx.font = F(500, 38);
+    wrapText(ctx, joinNames(state.players), W / 2, 230, W - 160, 46, 2);
+
+    const img = await treeImage();
+    if (img) ctx.drawImage(img, (W - 600) / 2, 300, 600, 630);
+
+    const lvl = Math.floor(state.connection / levelSize()) + 1;
+    ctx.fillStyle = "#ffd166"; ctx.font = F(700, 52);
+    ctx.fillText(`🎆 ${t("imgLevel", { n: lvl })}`, W / 2, 985);
+
+    const j = state.journal.filter((e) => !e.kind);
+    const mins = Math.max(1, Math.round((Date.now() - state.startedAt) / 60000));
+    const stats = [[j.length, t("imgQuestions")], [(state.badges || []).length, t("imgBadges")], [mins, t("imgMinutes")]];
+    const bw = 280, gap = 30, x0 = (W - (bw * 3 + gap * 2)) / 2;
+    stats.forEach(([v, l], i) => {
+      const x = x0 + i * (bw + gap);
+      ctx.fillStyle = "rgba(255,255,255,.1)";
+      ctx.beginPath();
+      if (ctx.roundRect) ctx.roundRect(x, 1020, bw, 120, 24); else ctx.rect(x, 1020, bw, 120);
+      ctx.fill();
+      ctx.fillStyle = "#ffffff"; ctx.font = F(700, 50);
+      ctx.fillText(String(v), x + bw / 2, 1080);
+      ctx.fillStyle = "#c9bfe0"; ctx.font = F(500, 28);
+      ctx.fillText(l, x + bw / 2, 1120);
+    });
+
+    const best = [...state.journal].reverse().find((e) => e.bonuses.includes("wow") || e.bonuses.includes("unanimous") || e.note)
+      || [...j].reverse().find((e) => e.depth === 3) || state.journal[state.journal.length - 1];
+    if (best) {
+      const text = QBYID[best.qid] ? qText(QBYID[best.qid]) : tr(best.text);
+      ctx.fillStyle = "#ffd166"; ctx.font = F(600, 28);
+      ctx.fillText(`✨ ${t("imgBest")}`, W / 2, 1195);
+      ctx.fillStyle = "#ffffff"; ctx.font = F(500, 34);
+      wrapText(ctx, `“${text}”`, W / 2, 1240, W - 160, 42, 2);
+    }
+    ctx.fillStyle = "rgba(255,255,255,.55)"; ctx.font = F(500, 26);
+    ctx.fillText("elmastho.github.io/Loopy-Life", W / 2, H - 28);
+    return new Promise((resolve) => c.toBlob(resolve, "image/png"));
+  }
+
+  async function shareStoryImage() {
+    const blob = await makeStoryImage();
+    if (!blob) return;
+    const name = `${fileBase()}.png`;
+    try {
+      const file = new File([blob], name, { type: "image/png" });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: `Loopy Life · ${t("title")}` });
+        return;
+      }
+    } catch (e) {
+      if (e && e.name === "AbortError") return;
+    }
+    downloadFile(blob, name, "image/png");
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Install as an app (works offline through sw.js)                    */
+  /* ------------------------------------------------------------------ */
+  let installEvent = null;
+  function initInstall() {
+    if ("serviceWorker" in navigator && location.protocol !== "file:") {
+      window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+    }
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      installEvent = e;
+      $("#install-btn").hidden = false;
+    });
+    window.addEventListener("appinstalled", () => { $("#install-btn").hidden = true; toast(t("installed"), 3200); });
+    $("#install-btn").addEventListener("click", async () => {
+      if (!installEvent) return;
+      installEvent.prompt();
+      try { await installEvent.userChoice; } catch (e) { /* ignore */ }
+      installEvent = null;
+      $("#install-btn").hidden = true;
+    });
   }
 
   function downloadStory() {
@@ -1222,7 +1687,8 @@
       const s = SUBJ[j.subject] || { name: j.subject };
       const text = QBYID[j.qid] ? qText(QBYID[j.qid]) : tr(j.text);
       lines.push(`${i + 1}. [${sName(s)}] ${text}`);
-      lines.push(`   ${t("answeredBy", { name: state.players[j.player] })}${j.note ? ` · ${t("note")}: ${j.note}` : ""}`);
+      const by = j.kind === "who" ? t("allVoted") : j.kind === "dare" ? t("dareBy", { name: state.players[j.player] }) : t("answeredBy", { name: state.players[j.player] });
+      lines.push(`   ${by}${j.note ? ` · ${t("note")}: ${j.note}` : ""}`);
     });
     downloadFile(lines.join("\n"), `${fileBase()}.txt`, "text/plain");
   }
@@ -1245,6 +1711,10 @@
       showScreen("screen-setup");
     });
     $("#download-btn").addEventListener("click", downloadStory);
+    $("#share-img-btn").addEventListener("click", shareStoryImage);
+    $$(".badges-open").forEach((b) => b.addEventListener("click", openBadges));
+    $("#badges-close").addEventListener("click", () => $("#badges-overlay").classList.add("hidden"));
+    $("#badges-overlay").addEventListener("click", (e) => { if (e.target.id === "badges-overlay") $("#badges-overlay").classList.add("hidden"); });
     $$(".save-story").forEach((b) => b.addEventListener("click", saveStoryFile));
     $("#load-story").addEventListener("click", () => $("#story-file").click());
     $("#story-file").addEventListener("change", (e) => {
@@ -1253,7 +1723,7 @@
       e.target.value = "";
     });
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") $("#journal-overlay").classList.add("hidden");
+      if (e.key === "Escape") { $("#journal-overlay").classList.add("hidden"); $("#badges-overlay").classList.add("hidden"); }
       if ((e.key === " " || e.key === "Enter") && $("#screen-game").classList.contains("active") && !current && state.mode === "wheel" && document.activeElement === document.body) {
         e.preventDefault();
         spin();
@@ -1291,6 +1761,7 @@
 
   async function boot() {
     applyLanguage();
+    initInstall();
     $$("[data-lang]").forEach((b) => b.addEventListener("click", () => setLanguage(b.dataset.lang)));
     $("#lang-btn").addEventListener("click", () => setLanguage(LANG === "fr" ? "en" : "fr"));
     $$(".rules-open").forEach((b) => b.addEventListener("click", () => $("#rules-overlay").classList.remove("hidden")));
@@ -1298,7 +1769,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=5", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=6", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {
@@ -1307,6 +1778,9 @@
     }
     DB.subjects.forEach((s) => (SUBJ[s.id] = s));
     DB.questions.forEach((q) => (QBYID[q.id] = q));
+    Object.values(EXTRAS).forEach((x) => (SUBJ[x.id] = x));
+    (DB.who || []).forEach((q) => (QBYID[q.id] = { ...q, subject: "__who" }));
+    (DB.challenges || []).forEach((q) => (QBYID[q.id] = { ...q, subject: "__dare" }));
     initSetup();
     initCard();
     initGame();
