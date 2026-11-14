@@ -17,7 +17,7 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; overscroll-behavior-y: none; } /* no pull-to-refresh */
 html { background: var(--bg1); }
 body {
   min-height: 100vh;
