@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -32,92 +32,150 @@
       </div>
     </header>
 
-    <section class="panel">
-      <h2 data-i18n="who">1. Who's playing?</h2>
-      <div id="players-list" class="players-list"></div>
-      <button id="add-player" class="btn ghost small add-player" type="button" data-i18n="addPlayer">+ Add a player</button>
-    </section>
+    <ol class="steps" id="steps" aria-label="Steps">
+      <li data-step="1"><span>1</span> <b data-i18n="stepPlayers">Players</b></li>
+      <li data-step="2"><span>2</span> <b data-i18n="stepGame">Game</b></li>
+      <li data-step="3"><span>3</span> <b data-i18n="stepSettings">Settings</b></li>
+    </ol>
 
-    <section class="panel">
-      <div class="panel-head">
-        <h2 data-i18n="pickSubjects">2. Pick your subjects</h2>
-        <div class="mini-actions">
-          <button class="link" id="sel-all" type="button" data-i18n="all">All</button>
-          <button class="link" id="sel-none" type="button" data-i18n="none">None</button>
+    <!-- step 1: who is playing, or continue a story -->
+    <div class="step" data-step="1">
+      <section class="panel">
+        <h2 data-i18n="who">Who's playing?</h2>
+        <div id="players-list" class="players-list"></div>
+        <button id="add-player" class="btn ghost small add-player" type="button" data-i18n="addPlayer">+ Add a player</button>
+      </section>
+      <div class="step-nav">
+        <button class="btn primary next-step" type="button" data-go="2" data-i18n="nextStep">Next →</button>
+      </div>
+      <section class="panel continue-panel">
+        <h2 data-i18n="continueTitle">Or continue a story</h2>
+        <p id="resume-row" class="resume hidden">
+          <button id="resume-btn" class="btn ghost" type="button">↩︎ Resume last game</button>
+        </p>
+        <p class="resume">
+          <button id="load-story" class="btn ghost" type="button" data-i18n="loadStory">📂 Continue a saved story</button>
+          <input id="story-file" type="file" accept=".loopy" hidden>
+          <button id="install-btn" class="btn ghost" type="button" data-i18n="installApp" hidden>📲 Install the app</button>
+        </p>
+      </section>
+    </div>
+
+    <!-- step 2: which game -->
+    <div class="step" data-step="2" hidden>
+      <section class="panel">
+        <h2 data-i18n="gamesDiscover">🌱 Get to know each other</h2>
+        <div class="games">
+          <button class="game-card" data-game="wheel" type="button">
+            <span class="mode-emoji">🎡</span>
+            <strong data-i18n="g_wheel"></strong>
+            <small data-i18n="g_wheelDesc"></small>
+            <span class="g-players" data-i18n="g_wheelPlayers"></span>
+          </button>
+          <button class="game-card" data-game="tree" type="button">
+            <span class="mode-emoji">🌳</span>
+            <strong data-i18n="g_tree"></strong>
+            <small data-i18n="g_treeDesc"></small>
+            <span class="g-players" data-i18n="g_treePlayers"></span>
+          </button>
         </div>
+        <h2 class="games-fun" data-i18n="gamesFun">🎉 Just for fun</h2>
+        <div class="games">
+          <button class="game-card" data-game="bluff" type="button">
+            <span class="mode-emoji">🎭</span>
+            <strong data-i18n="g_bluff"></strong>
+            <small data-i18n="g_bluffDesc"></small>
+            <span class="g-players" data-i18n="g_bluffPlayers"></span>
+          </button>
+          <button class="game-card" data-game="duel" type="button">
+            <span class="mode-emoji">⚔️</span>
+            <strong data-i18n="g_duel"></strong>
+            <small data-i18n="g_duelDesc"></small>
+            <span class="g-players" data-i18n="g_duelPlayers"></span>
+          </button>
+          <button class="game-card" data-game="bet" type="button">
+            <span class="mode-emoji">🎲</span>
+            <strong data-i18n="g_bet"></strong>
+            <small data-i18n="g_betDesc"></small>
+            <span class="g-players" data-i18n="g_betPlayers"></span>
+          </button>
+        </div>
+      </section>
+      <div class="step-nav">
+        <button class="btn ghost" type="button" data-go="1" data-i18n="backStep">← Back</button>
       </div>
-      <div id="subject-grid" class="subject-grid"></div>
-    </section>
+    </div>
 
-    <section class="panel">
-      <h2 data-i18n="howDeep">3. How deep?</h2>
-      <div class="segmented" id="depth-choice">
-        <button type="button" data-depth="light" data-i18n="light">🌤️ Light</button>
-        <button type="button" data-depth="mixed" class="on" data-i18n="mixed">🌗 Mixed</button>
-        <button type="button" data-depth="deep" data-i18n="deep">🌊 Deep</button>
-      </div>
-    </section>
+    <!-- step 3: settings for that game -->
+    <div class="step" data-step="3" hidden>
+      <section class="panel chosen-panel">
+        <div id="chosen-game" class="chosen-game"></div>
+        <button class="link" type="button" data-go="2" data-i18n="changeGame">Change</button>
+      </section>
 
-    <section class="panel">
-      <h2 data-i18n="optionsTitle">Options</h2>
-      <label class="option-row" for="guess-mode">
-        <input id="guess-mode" type="checkbox">
-        <span class="switch" aria-hidden="true"></span>
-        <span class="option-text">
-          <strong data-i18n="guessModeTitle">🔮 Guess for each other</strong>
-          <small data-i18n="guessModeDesc">Before each answer, the others say out loud what they think the player will answer.</small>
-        </span>
-      </label>
-      <label class="option-row" for="who-mode">
-        <input id="who-mode" type="checkbox" checked>
-        <span class="switch" aria-hidden="true"></span>
-        <span class="option-text">
-          <strong data-i18n="whoModeTitle"></strong>
-          <small data-i18n="whoModeDesc"></small>
-        </span>
-      </label>
-      <label class="option-row" for="dare-mode">
-        <input id="dare-mode" type="checkbox" checked>
-        <span class="switch" aria-hidden="true"></span>
-        <span class="option-text">
-          <strong data-i18n="dareModeTitle"></strong>
-          <small data-i18n="dareModeDesc"></small>
-        </span>
-      </label>
-      <label class="option-row" for="random-turn">
-        <input id="random-turn" type="checkbox">
-        <span class="switch" aria-hidden="true"></span>
-        <span class="option-text">
-          <strong data-i18n="randomTurnTitle"></strong>
-          <small data-i18n="randomTurnDesc"></small>
-        </span>
-      </label>
-    </section>
+      <section class="panel">
+        <div class="panel-head">
+          <h2 data-i18n="pickSubjects">Subjects</h2>
+          <div class="mini-actions" id="subject-actions" hidden>
+            <button class="link" id="sel-all" type="button" data-i18n="all">All</button>
+            <button class="link" id="sel-none" type="button" data-i18n="none">None</button>
+          </div>
+        </div>
+        <p class="subjects-summary"><span id="subjects-summary"></span> <button class="link" id="edit-subjects" type="button" data-i18n="editSubjects">Choose</button></p>
+        <div id="subject-grid" class="subject-grid" hidden></div>
+      </section>
 
-    <section class="panel">
-      <h2 data-i18n="howPlay">4. Choose how to play</h2>
-      <div class="modes">
-        <button class="mode-card" data-mode="wheel" type="button">
-          <span class="mode-emoji">🎡</span>
-          <strong data-i18n="wheelTitle">Spin the Wheel</strong>
-          <small data-i18n="wheelDesc">Random subject, random question. Pure surprise.</small>
-        </button>
-        <button class="mode-card" data-mode="tree" type="button">
-          <span class="mode-emoji">🌳</span>
-          <strong data-i18n="treeTitle">Grow Our Tree</strong>
-          <small data-i18n="treeDesc">Start from the roots (family, origins) and unlock deeper questions branch by branch.</small>
-        </button>
-      </div>
+      <section class="panel" id="depth-panel">
+        <h2 data-i18n="howDeep">How deep?</h2>
+        <div class="segmented" id="depth-choice">
+          <button type="button" data-depth="light" data-i18n="light">🌤️ Light</button>
+          <button type="button" data-depth="mixed" class="on" data-i18n="mixed">🌗 Mixed</button>
+          <button type="button" data-depth="deep" data-i18n="deep">🌊 Deep</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 data-i18n="optionsTitle">Options</h2>
+        <label class="option-row" for="guess-mode" id="guess-option">
+          <input id="guess-mode" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+          <span class="option-text">
+            <strong data-i18n="guessModeTitle"></strong>
+            <small data-i18n="guessModeDesc"></small>
+          </span>
+        </label>
+        <label class="option-row" for="who-mode">
+          <input id="who-mode" type="checkbox" checked>
+          <span class="switch" aria-hidden="true"></span>
+          <span class="option-text">
+            <strong data-i18n="whoModeTitle"></strong>
+            <small data-i18n="whoModeDesc"></small>
+          </span>
+        </label>
+        <label class="option-row" for="dare-mode">
+          <input id="dare-mode" type="checkbox" checked>
+          <span class="switch" aria-hidden="true"></span>
+          <span class="option-text">
+            <strong data-i18n="dareModeTitle"></strong>
+            <small data-i18n="dareModeDesc"></small>
+          </span>
+        </label>
+        <label class="option-row" for="random-turn">
+          <input id="random-turn" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+          <span class="option-text">
+            <strong data-i18n="randomTurnTitle"></strong>
+            <small data-i18n="randomTurnDesc"></small>
+          </span>
+        </label>
+      </section>
+
       <p id="setup-error" class="error" role="alert"></p>
-      <p class="resume">
-        <button id="load-story" class="btn ghost" type="button" data-i18n="loadStory">📂 Continue a saved story</button>
-        <button id="install-btn" class="btn ghost" type="button" data-i18n="installApp" hidden>📲 Install the app</button>
-        <input id="story-file" type="file" accept=".loopy" hidden>
-      </p>
-      <p id="resume-row" class="resume hidden">
-        <button id="resume-btn" class="btn ghost" type="button">↩︎ Resume last game</button>
-      </p>
-    </section>
+      <div class="step-nav">
+        <button class="btn ghost" type="button" data-go="2" data-i18n="backStep">← Back</button>
+        <button id="start-btn" class="btn primary big" type="button" data-i18n="startGame">🚀 Let's go!</button>
+      </div>
+    </div>
 
     <footer class="foot"><span data-i18n="footer">First seed of <strong>Loopy Life</strong></span> · <span id="q-count">…</span></footer>
   </main>
@@ -132,9 +190,10 @@
       </div>
     </header>
 
+    <div class="game-name" id="game-name"></div>
     <div class="turn-banner" id="turn-banner">…</div>
 
-    <div class="mode-switch segmented small">
+    <div class="mode-switch segmented small" id="mode-switch">
       <button type="button" data-switch="wheel" data-i18n="wheel">🎡 Wheel</button>
       <button type="button" data-switch="tree" data-i18n="tree">🌳 Tree</button>
     </div>
@@ -250,6 +309,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>

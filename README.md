@@ -5,10 +5,12 @@ It is the first seed of **Loopy Life**, the life-organization extension of Loopy
 
 ## How to play
 
-1. Enter the players' names (tap **+ Add a player** for groups), pick the subjects you want, and choose how deep to go (Light, Mixed, Deep).
-2. Pick a mode:
-   - **Spin the Wheel**: the wheel picks a subject, then you get a random question.
-   - **Grow Our Tree**: every subject is a branch. It starts with fundamental "roots" questions (family, origins...), then unlocks deeper "leaves" and finally "bloom" questions. Every answer makes your tree grow.
+Starting a game takes three steps: **1. Players** (or continue a saved story), **2. Game**, **3. Settings** (subjects, depth and the options that fit that game).
+
+1. Enter the players' names (tap **+ Add a player** for groups).
+2. Pick a game:
+   - To get to know each other: **🎡 The wheel** (random subject, random question) or **🌳 The tree** (every subject is a branch, from "roots" questions to "leaves" and "blooms"; every answer makes the tree grow).
+   - Just for fun (best with 3 to 6): **🎭 Truth or bluff** (the app secretly tells the player to answer honestly or to bluff; +15 for each friend who saw through it, +10 to the player per friend fooled), **⚔️ Duel** (two players answer the same question, the others pick the best answer: +20, or +10 each for a tie), **🎲 The bet** (friends bet 1 to 3 on guessing the answer: +10 per point if right, -5 per point if wrong).
 3. Players take turns answering. Before answering, the others can try to guess. The **?** button explains the rules and every bonus.
 4. Tap the bonuses that happened, then **Answered!**
    - Answer: +10 (light), +20 (deeper), +30 (deep)
@@ -20,7 +22,7 @@ It is the first seed of **Loopy Life**, the life-organization extension of Loopy
 7. Option **🗳️ Who of us?** (on by default): some wheel segments, and a button under the tree, give a vote instead of a question. On 3, everyone points at a player: +5 each for voting, +10 for the player(s) with the most votes, +5 each if it was unanimous.
 8. Option **🎭 Challenges** (on by default): sometimes a small challenge instead of a question. +20 when done, +5 each if everyone laughed. "Another one" is free.
 9. Option **🎲 Random next player**: nobody knows who answers next. From 5 players the card shows a single "Who guessed it?" row of names and the scoreboard scrolls sideways.
-10. **🏅 Badges**: 16 badges to unlock together during a story (saved in the `.loopy` file).
+10. **🏅 Badges**: 19 badges to unlock together during a story (saved in the `.loopy` file).
 11. **Our story** keeps every question you answered and your notes. **Finish** shows a summary, a **🖼️ Share a picture** image (tree, level, best moment) and a text version.
 
 The site can be installed as an app (📲 button on Android and computers, Share > Add to Home Screen on iPhone) and then works offline.
