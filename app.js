@@ -803,18 +803,21 @@
     goStep(1);
 
     const saved = loadSaved();
-    if (saved && saved.version === 1 && (saved.journal?.length || 0) > 0) {
+    if (saved && saved.version === 1 && ((saved.journal?.length || 0) > 0 || saved.active)) {
       $("#resume-row").classList.remove("hidden");
       $("#resume-btn").textContent = t("resume", { names: joinNames(saved.players), n: saved.journal.length });
-      $("#resume-btn").addEventListener("click", () => {
-        state = saved;
-        state.subjects = state.subjects.filter((id) => SUBJ[id]);
-        if (!state.subjects.length) state.subjects = DB.subjects.map((s) => s.id);
-        startGame();
-      });
+      $("#resume-btn").addEventListener("click", () => resumeSaved(saved));
       setupNames = saved.players.slice();
       renderPlayersList();
     }
+  }
+
+  function resumeSaved(saved) {
+    state = saved;
+    state.subjects = state.subjects.filter((id) => SUBJ[id]);
+    if (!state.subjects.length) state.subjects = DB.subjects.map((s) => s.id);
+    if (!Array.isArray(state.badges)) state.badges = [];
+    startGame();
   }
 
   /* ------------------------------------------------------------------ */
@@ -850,6 +853,8 @@
   }
 
   function startGame() {
+    state.active = true; // reopening or reloading the page comes back to this game
+    save();
     const g = gameOf(state);
     $("#mode-switch").hidden = FUN_GAMES.includes(g);
     $("#game-name").textContent = FUN_GAMES.includes(g) ? `${GAME_EMOJI[g]} ${t("g_" + g)}` : "";
@@ -1464,14 +1469,22 @@
       const emojiSize = Math.max(20, Math.min(46, 260 / n));
       ctx.font = `${emojiSize}px system-ui, "Apple Color Emoji", "Segoe UI Emoji"`;
       ctx.fillText(s.emoji, R - 16, 0);
-      if (n <= 16) {
-        const fs = Math.max(15, Math.min(26, 300 / n));
+      // name, between the centre button and the emoji: shrink it, then shorten it, to fit
+      const end = R - 26 - emojiSize;
+      const room = end - R * 0.36;
+      const maxH = 2 * Math.sin(seg / 2) * (end - room * 0.5) * 0.8; // segment height where the text sits
+      let fs = Math.max(13, Math.min(26, 380 / n, maxH));
+      let label = sShort(s);
+      ctx.font = `600 ${fs}px Fredoka, system-ui, sans-serif`;
+      while (ctx.measureText(label).width > room && fs > 13) {
+        fs -= 1;
         ctx.font = `600 ${fs}px Fredoka, system-ui, sans-serif`;
-        ctx.fillStyle = "#fff";
-        ctx.shadowColor = "rgba(0,0,0,.45)";
-        ctx.shadowBlur = 4;
-        ctx.fillText(sShort(s), R - 26 - emojiSize, 1);
       }
+      while (ctx.measureText(label).width > room && label.length > 3) label = label.slice(0, -2).trimEnd() + "…";
+      ctx.fillStyle = "#fff";
+      ctx.shadowColor = "rgba(0,0,0,.45)";
+      ctx.shadowBlur = 4;
+      ctx.fillText(label, end, 1);
       ctx.restore();
     });
 
@@ -2036,6 +2049,7 @@
     $("#finish-btn").addEventListener("click", showSummary);
     $("#continue-btn").addEventListener("click", () => { showScreen("screen-game"); setMode(state.mode); });
     $("#restart-btn").addEventListener("click", () => {
+      if (state) { state.active = false; save(); }
       $("#resume-row").classList.add("hidden");
       showScreen("screen-setup");
       goStep(1);
@@ -2102,7 +2116,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=7", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=8", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {
@@ -2118,6 +2132,9 @@
     initCard();
     initGame();
     applyLanguage();
+    // a game that was still going when the page closed or reloaded comes straight back
+    const saved = loadSaved();
+    if (saved && saved.version === 1 && saved.active && Array.isArray(saved.players)) resumeSaved(saved);
     setTimeout(() => FX.sparkleEl($(".hero h1")), 400);
   }
 
