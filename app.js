@@ -9,6 +9,9 @@
   const POINTS = { 1: 10, 2: 20, 3: 30 };
   const LEVEL_UP = 100; // connection points per level
   const PASSES = 3;
+  const GUESS_POINTS = 15; // "guessed it" bonus in the normal game
+  const GUESS_MODE_POINTS = 25; // a right guess in "guess for each other" mode
+  const SURPRISE_POINTS = 10; // the player's bonus when nobody guessed, in that mode
 
 
   /* ------------------------------------------------------------------ */
@@ -58,6 +61,13 @@
       answered: "Answered! ✨",
       close: "Close",
       langToggle: "🇫🇷 Français",
+      optionsTitle: "Options",
+      guessModeTitle: "🔮 Guess for each other",
+      guessModeDesc: "Before each answer, the others say out loud what they think the player will answer. Right guesses earn more, and the player gets a bonus when nobody guessed.",
+      guessStep: "🔮 First, {names}: guess what {name} will answer. Then {name} gives the real answer.",
+      guessedRight: "{name} guessed right (+{n})",
+      nobodyGuessed: "😏 Nobody guessed (+{n} for {name})",
+      surprised: "😏 {name} surprised everyone!",
       saveStory: "💾 Save the story",
       saveText: "📄 Text version",
       loadStory: "📂 Continue a saved story",
@@ -73,7 +83,7 @@
       rules: "Rules",
       rulesBtn: "❓ Rules",
       rulesTitle: "How to play",
-      rulesBody: "<h3>🎯 The goal</h3><p>Get to know each other better by answering questions you would never ask in everyday conversation. There are no wrong answers.</p><h3>👥 Players</h3><p>Two players by default. Add as many friends as you like with <b>+ Add a player</b>. Everyone takes turns answering, one after the other.</p><h3>🎡 Two ways to play</h3><ul><li><b>Spin the Wheel</b>: the wheel picks a subject, then a random question.</li><li><b>Grow Our Tree</b>: pick a subject (a branch). It starts with simple <b>roots</b> 🌱 questions, then unlocks deeper <b>leaves</b> 🌿 and <b>blooms</b> 🌸 after two answers at each level.</li></ul><h3>⭐ Points</h3><p>The player whose turn it is answers out loud and gets <b>+10</b> (🌤️ light), <b>+20</b> (🌗 deeper) or <b>+30</b> (🌊 deep) when you tap <b>Answered!</b></p><h3>🎁 Bonuses: when to tap them</h3><p>Before tapping <b>Answered!</b>, tap every bonus that happened (several can be on at once):</p><ul><li><b>🎯 [name] guessed it</b>: tap it when that friend said what the answer would be <i>before</i> it was given, and was right. They get <b>+15</b>. Best way to play: the others guess first, then the player answers.</li><li><b>😮 Didn't know that!</b>: tap it when the answer taught the listeners something they really didn't know about the player. Everyone gets <b>+5</b>.</li><li><b>🔁 [name] answered too</b> (with 3+ players: <b>everyone else answered too</b>): tap it when the others also answered the same question for themselves. They get the same points as the player.</li></ul><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p><h3>🎆 Connection level</h3><p>All your points add up to a shared connection level. Level up for fireworks. <b>📖 Our story</b> keeps every question and note, and <b>🏁 Finish</b> shows your summary.</p><h3>💾 Saving a story</h3><p>Each group of friends has its own story. Tap <b>💾 Save the story</b> (in the game or at the end) to download a <b>.loopy</b> file. Next time, tap <b>📂 Continue a saved story</b> on the home screen and pick that file: names, scores, your tree and the questions already asked all come back. Questions already asked on this device, in any story, come last, so a new story starts with fresh questions.</p>",
+      rulesBody: "<h3>🎯 The goal</h3><p>Get to know each other better by answering questions you would never ask in everyday conversation. There are no wrong answers.</p><h3>👥 Players</h3><p>Two players by default. Add as many friends as you like with <b>+ Add a player</b>. Everyone takes turns answering, one after the other.</p><h3>🎡 Two ways to play</h3><ul><li><b>Spin the Wheel</b>: the wheel picks a subject, then a random question.</li><li><b>Grow Our Tree</b>: pick a subject (a branch). It starts with simple <b>roots</b> 🌱 questions, then unlocks deeper <b>leaves</b> 🌿 and <b>blooms</b> 🌸 after two answers at each level.</li></ul><h3>⭐ Points</h3><p>The player whose turn it is answers out loud and gets <b>+10</b> (🌤️ light), <b>+20</b> (🌗 deeper) or <b>+30</b> (🌊 deep) when you tap <b>Answered!</b></p><h3>🎁 Bonuses: when to tap them</h3><p>Before tapping <b>Answered!</b>, tap every bonus that happened (several can be on at once):</p><ul><li><b>🎯 [name] guessed it</b>: tap it when that friend said what the answer would be <i>before</i> it was given, and was right. They get <b>+15</b>. Best way to play: the others guess first, then the player answers.</li><li><b>😮 Didn't know that!</b>: tap it when the answer taught the listeners something they really didn't know about the player. Everyone gets <b>+5</b>.</li><li><b>🔁 [name] answered too</b> (with 3+ players: <b>everyone else answered too</b>): tap it when the others also answered the same question for themselves. They get the same points as the player.</li></ul><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p><h3>🎆 Connection level</h3><p>All your points add up to a shared connection level. Level up for fireworks. <b>📖 Our story</b> keeps every question and note, and <b>🏁 Finish</b> shows your summary.</p><h3>🔮 Guess for each other (option)</h3><p>Turn it on at the start of a story. Before the player answers, everyone else says out loud what they think the answer will be. Then the player answers. Tap <b>🎯 [name] guessed right</b> for each friend who got it (<b>+25</b> each). If nobody got it, tap <b>😏 Nobody guessed</b>: the player gets <b>+10</b> for surprising everyone.</p><h3>💾 Saving a story</h3><p>Each group of friends has its own story. Tap <b>💾 Save the story</b> (in the game or at the end) to download a <b>.loopy</b> file. Next time, tap <b>📂 Continue a saved story</b> on the home screen and pick that file: names, scores, your tree and the questions already asked all come back. Questions already asked on this device, in any story, come last, so a new story starts with fresh questions.</p>",
       nQuestions: "{n} questions",
       pickOne: "Pick at least one subject 🙂",
       resume: "↩︎ Resume {names} ({n} answered)",
@@ -153,6 +163,13 @@
       answered: "Répondu ! ✨",
       close: "Fermer",
       langToggle: "🇬🇧 English",
+      optionsTitle: "Options",
+      guessModeTitle: "🔮 Devine pour l'autre",
+      guessModeDesc: "Avant chaque réponse, les autres disent à voix haute ce que le joueur va répondre selon eux. Les bonnes devinettes rapportent plus, et le joueur gagne un bonus si personne n'a deviné.",
+      guessStep: "🔮 D'abord, {names} : devinez ce que {name} va répondre. Ensuite, {name} donne sa vraie réponse.",
+      guessedRight: "{name} a bien deviné (+{n})",
+      nobodyGuessed: "😏 Personne n'a deviné (+{n} pour {name})",
+      surprised: "😏 {name} a surpris tout le monde !",
       saveStory: "💾 Sauvegarder l'histoire",
       saveText: "📄 Version texte",
       loadStory: "📂 Reprendre une histoire sauvegardée",
@@ -168,7 +185,7 @@
       rules: "Règles",
       rulesBtn: "❓ Règles",
       rulesTitle: "Comment jouer",
-      rulesBody: "<h3>🎯 Le but</h3><p>Mieux se connaître en répondant à des questions qu'on ne se pose jamais au quotidien. Il n'y a pas de mauvaise réponse.</p><h3>👥 Joueurs</h3><p>Deux joueurs par défaut. Ajoutez autant d'amis que vous voulez avec <b>+ Ajouter un joueur</b>. Chacun répond à son tour, l'un après l'autre.</p><h3>🎡 Deux façons de jouer</h3><ul><li><b>Faire tourner la roue</b> : la roue choisit un thème, puis une question au hasard.</li><li><b>Faire pousser notre arbre</b> : choisissez un thème (une branche). On commence par des questions simples, les <b>racines</b> 🌱, puis on débloque des <b>feuilles</b> 🌿 et des <b>fleurs</b> 🌸 plus profondes après deux réponses à chaque niveau.</li></ul><h3>⭐ Points</h3><p>Le joueur dont c'est le tour répond à voix haute et gagne <b>+10</b> (🌤️ léger), <b>+20</b> (🌗 plus profond) ou <b>+30</b> (🌊 profond) quand vous touchez <b>Répondu !</b></p><h3>🎁 Les bonus : quand les toucher</h3><p>Avant de toucher <b>Répondu !</b>, touchez chaque bonus qui s'est produit (plusieurs peuvent être activés) :</p><ul><li><b>🎯 [prénom] a deviné</b> : touchez-le quand cet ami a dit quelle serait la réponse <i>avant</i> qu'elle soit donnée, et avait raison. Il gagne <b>+15</b>. Le mieux : les autres devinent d'abord, puis le joueur répond.</li><li><b>😮 Je ne savais pas !</b> : touchez-le quand la réponse a appris aux autres quelque chose qu'ils ne savaient vraiment pas sur le joueur. Tout le monde gagne <b>+5</b>.</li><li><b>🔁 [prénom] a répondu aussi</b> (à 3 joueurs ou plus : <b>tous les autres ont répondu aussi</b>) : touchez-le quand les autres ont aussi répondu à la même question pour eux-mêmes. Ils gagnent les mêmes points que le joueur.</li></ul><p>La question ne vous plaît pas ? <b>🔄 Passer</b> la remplace par une autre du même thème. Chaque joueur peut passer <b>3 fois</b>.</p><h3>🎆 Niveau de connexion</h3><p>Tous vos points s'additionnent dans un niveau de connexion commun. Chaque niveau gagné déclenche un feu d'artifice. <b>📖 Notre histoire</b> garde chaque question et note, et <b>🏁 Terminer</b> affiche votre bilan.</p><h3>💾 Sauvegarder une histoire</h3><p>Chaque groupe d'amis a sa propre histoire. Touchez <b>💾 Sauvegarder l'histoire</b> (pendant la partie ou à la fin) pour télécharger un fichier <b>.loopy</b>. La prochaine fois, touchez <b>📂 Reprendre une histoire sauvegardée</b> sur l'écran d'accueil et choisissez ce fichier : prénoms, scores, votre arbre et les questions déjà posées reviennent. Les questions déjà posées sur cet appareil, dans n'importe quelle histoire, passent en dernier : une nouvelle histoire commence avec des questions inédites.</p>",
+      rulesBody: "<h3>🎯 Le but</h3><p>Mieux se connaître en répondant à des questions qu'on ne se pose jamais au quotidien. Il n'y a pas de mauvaise réponse.</p><h3>👥 Joueurs</h3><p>Deux joueurs par défaut. Ajoutez autant d'amis que vous voulez avec <b>+ Ajouter un joueur</b>. Chacun répond à son tour, l'un après l'autre.</p><h3>🎡 Deux façons de jouer</h3><ul><li><b>Faire tourner la roue</b> : la roue choisit un thème, puis une question au hasard.</li><li><b>Faire pousser notre arbre</b> : choisissez un thème (une branche). On commence par des questions simples, les <b>racines</b> 🌱, puis on débloque des <b>feuilles</b> 🌿 et des <b>fleurs</b> 🌸 plus profondes après deux réponses à chaque niveau.</li></ul><h3>⭐ Points</h3><p>Le joueur dont c'est le tour répond à voix haute et gagne <b>+10</b> (🌤️ léger), <b>+20</b> (🌗 plus profond) ou <b>+30</b> (🌊 profond) quand vous touchez <b>Répondu !</b></p><h3>🎁 Les bonus : quand les toucher</h3><p>Avant de toucher <b>Répondu !</b>, touchez chaque bonus qui s'est produit (plusieurs peuvent être activés) :</p><ul><li><b>🎯 [prénom] a deviné</b> : touchez-le quand cet ami a dit quelle serait la réponse <i>avant</i> qu'elle soit donnée, et avait raison. Il gagne <b>+15</b>. Le mieux : les autres devinent d'abord, puis le joueur répond.</li><li><b>😮 Je ne savais pas !</b> : touchez-le quand la réponse a appris aux autres quelque chose qu'ils ne savaient vraiment pas sur le joueur. Tout le monde gagne <b>+5</b>.</li><li><b>🔁 [prénom] a répondu aussi</b> (à 3 joueurs ou plus : <b>tous les autres ont répondu aussi</b>) : touchez-le quand les autres ont aussi répondu à la même question pour eux-mêmes. Ils gagnent les mêmes points que le joueur.</li></ul><p>La question ne vous plaît pas ? <b>🔄 Passer</b> la remplace par une autre du même thème. Chaque joueur peut passer <b>3 fois</b>.</p><h3>🎆 Niveau de connexion</h3><p>Tous vos points s'additionnent dans un niveau de connexion commun. Chaque niveau gagné déclenche un feu d'artifice. <b>📖 Notre histoire</b> garde chaque question et note, et <b>🏁 Terminer</b> affiche votre bilan.</p><h3>🔮 Devine pour l'autre (option)</h3><p>À activer au début d'une histoire. Avant que le joueur réponde, tous les autres disent à voix haute ce qu'il va répondre selon eux. Ensuite, le joueur répond. Touchez <b>🎯 [prénom] a bien deviné</b> pour chaque ami qui avait raison (<b>+25</b> chacun). Si personne n'a trouvé, touchez <b>😏 Personne n'a deviné</b> : le joueur gagne <b>+10</b> pour avoir surpris tout le monde.</p><h3>💾 Sauvegarder une histoire</h3><p>Chaque groupe d'amis a sa propre histoire. Touchez <b>💾 Sauvegarder l'histoire</b> (pendant la partie ou à la fin) pour télécharger un fichier <b>.loopy</b>. La prochaine fois, touchez <b>📂 Reprendre une histoire sauvegardée</b> sur l'écran d'accueil et choisissez ce fichier : prénoms, scores, votre arbre et les questions déjà posées reviennent. Les questions déjà posées sur cet appareil, dans n'importe quelle histoire, passent en dernier : une nouvelle histoire commence avec des questions inédites.</p>",
       nQuestions: "{n} questions",
       pickOne: "Choisissez au moins un thème 🙂",
       resume: "↩︎ Reprendre {names} ({n} réponses)",
@@ -454,6 +471,7 @@
   /* Setup screen                                                       */
   /* ------------------------------------------------------------------ */
   let setupDepth = "mixed";
+  let setupGuessMode = false;
   let setupNames = ["", ""];
 
   function readPlayerInputs() {
@@ -513,6 +531,7 @@
     $("#sel-all").addEventListener("click", () => $$("#subject-grid .subject").forEach((b) => b.classList.add("on")));
     $("#sel-none").addEventListener("click", () => $$("#subject-grid .subject").forEach((b) => b.classList.remove("on")));
 
+    $("#guess-mode").addEventListener("change", (e) => (setupGuessMode = e.target.checked));
     $$("#depth-choice button").forEach((b) =>
       b.addEventListener("click", () => {
         setupDepth = b.dataset.depth;
@@ -561,6 +580,7 @@
       subjects,
       depth,
       mode,
+      guessMode: setupGuessMode,
       used: [],
       journal: [],
       tree: {},
@@ -682,7 +702,20 @@
   function renderBonuses() {
     const { q, player: p, bonuses } = current;
     const os = others(p);
-    const chips = os.map((o) => ({ key: `guess:${o}`, html: `🎯 <span>${esc(t("guessed", { name: state.players[o] }))}</span>` }));
+    const step = $("#guess-step");
+    step.hidden = !state.guessMode;
+    if (state.guessMode) {
+      step.textContent = t("guessStep", { names: joinNames(os.map((o) => state.players[o])), name: state.players[p] });
+    }
+    const chips = os.map((o) => ({
+      key: `guess:${o}`,
+      html: `🎯 <span>${esc(state.guessMode
+        ? t("guessedRight", { name: state.players[o], n: GUESS_MODE_POINTS })
+        : t("guessed", { name: state.players[o] }))}</span>`,
+    }));
+    if (state.guessMode) {
+      chips.push({ key: "nobody", html: `<span>${esc(t("nobodyGuessed", { n: SURPRISE_POINTS, name: state.players[p] }))}</span>` });
+    }
     chips.push({ key: "wow", html: `😮 <span>${esc(t("wow"))}</span>` });
     const tooLabel = os.length === 1
       ? t("answeredToo", { name: state.players[os[0]], n: POINTS[q.depth] })
@@ -733,7 +766,9 @@
     const gained = state.players.map(() => 0);
     gained[player] += base;
     const guessers = os.filter((o) => bonuses.has(`guess:${o}`));
-    guessers.forEach((o) => (gained[o] += 15));
+    guessers.forEach((o) => (gained[o] += state.guessMode ? GUESS_MODE_POINTS : GUESS_POINTS));
+    const surprised = state.guessMode && bonuses.has("nobody") && !guessers.length;
+    if (surprised) gained[player] += SURPRISE_POINTS;
     if (bonuses.has("wow")) gained.forEach((_, i) => (gained[i] += 5));
     if (bonuses.has("both")) os.forEach((o) => (gained[o] += base));
 
@@ -768,6 +803,8 @@
     } else if (guessers.length) {
       guessers.forEach((o) => FX.sparkleEl($(`#score-${o}`), ["#ffd166", "#7ef0a8", "#ffffff"]));
       toast(t("knowsYou", { name: joinNames(guessers.map((o) => state.players[o])) }));
+    } else if (surprised) {
+      toast(t("surprised", { name: state.players[player] }));
     } else if (bonuses.has("wow")) {
       toast(t("wowToast"));
     }
@@ -1261,7 +1298,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=4", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=5", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -52,6 +52,18 @@
         <button type="button" data-depth="mixed" class="on" data-i18n="mixed">🌗 Mixed</button>
         <button type="button" data-depth="deep" data-i18n="deep">🌊 Deep</button>
       </div>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="optionsTitle">Options</h2>
+      <label class="option-row" for="guess-mode">
+        <input id="guess-mode" type="checkbox">
+        <span class="switch" aria-hidden="true"></span>
+        <span class="option-text">
+          <strong data-i18n="guessModeTitle">🔮 Guess for each other</strong>
+          <small data-i18n="guessModeDesc">Before each answer, the others say out loud what they think the player will answer.</small>
+        </span>
+      </label>
     </section>
 
     <section class="panel">
@@ -157,6 +169,7 @@
       <p class="for-who" id="q-for">For …</p>
       <p class="q-text" id="q-text">Question</p>
 
+      <p class="guess-step" id="guess-step" hidden></p>
       <div class="bonus-row" id="bonus-row"></div>
       <p class="bonus-help" data-i18n="bonusHelp">Tip: let the other person guess the answer first. Tap the bonuses that happened.</p>
 
@@ -193,6 +206,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

@@ -302,3 +302,26 @@ button { font-family: inherit; cursor: pointer; }
 
 /* buttons inside the light cards (Close on rules and journal) */
 .card .card-top .btn.ghost { background: #efe6fa; color: #4a3570; }
+
+/* options: "guess for each other" switch */
+.option-row { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+.option-row input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.option-row .switch {
+  flex: none; width: 50px; height: 28px; border-radius: 999px; background: rgba(0,0,0,.35);
+  position: relative; transition: background .2s; margin-top: 2px;
+}
+.option-row .switch::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--text); transition: transform .2s;
+}
+.option-row input:checked + .switch { background: var(--accent); }
+.option-row input:checked + .switch::after { transform: translateX(22px); }
+.option-row input:focus-visible + .switch { outline: 2px solid var(--gold); outline-offset: 2px; }
+.option-text strong { display: block; font-size: 1.05rem; }
+.option-text small { display: block; color: var(--muted); font-size: .9rem; margin-top: 2px; }
+
+/* card: the guessing step */
+.guess-step {
+  margin: 0 0 12px; padding: 10px 12px; border-radius: 14px;
+  background: #efe6fa; color: #4a3570; font-size: .95rem; line-height: 1.35;
+}
