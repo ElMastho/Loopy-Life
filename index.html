@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -255,7 +255,10 @@
     <div class="card" id="card">
       <div class="card-top">
         <span class="chip" id="q-subject">Subject</span>
-        <span class="depth" id="q-depth">🌤️ Light</span>
+        <span class="card-top-right">
+          <span class="depth" id="q-depth">🌤️ Light</span>
+          <button class="card-help rules-open" type="button" data-i18n-aria="rules" aria-label="Rules">?</button>
+        </span>
       </div>
       <p class="for-who" id="q-for">For …</p>
       <p class="q-text" id="q-text">Question</p>
@@ -303,12 +306,13 @@
         <h2 id="rules-title" data-i18n="rulesTitle">How to play</h2>
         <button id="rules-close" class="btn ghost small" type="button" data-i18n="close">Close</button>
       </div>
-      <div class="rules-body" data-i18n="rulesBody"></div>
+      <div class="rules-body" id="rules-body"></div>
+      <p class="rules-more"><button id="rules-all" class="btn ghost small" type="button" data-i18n="rulesAll">📜 All the rules</button></p>
     </div>
   </div>
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=8"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>
