@@ -58,6 +58,12 @@
       answered: "Answered! ✨",
       close: "Close",
       langToggle: "🇫🇷 Français",
+      saveStory: "💾 Save the story",
+      saveText: "📄 Text version",
+      loadStory: "📂 Continue a saved story",
+      loaded: "📂 Welcome back {names}! Picking up where you left off.",
+      loadBad: "This file isn't a Loopy Life story (.loopy).",
+      savedToast: "💾 Story saved. Open this file next time to continue.",
       addPlayer: "+ Add a player",
       playerN: "Player {n}",
       remove: "Remove",
@@ -67,7 +73,7 @@
       rules: "Rules",
       rulesBtn: "❓ Rules",
       rulesTitle: "How to play",
-      rulesBody: "<h3>🎯 The goal</h3><p>Get to know each other better by answering questions you would never ask in everyday conversation. There are no wrong answers.</p><h3>👥 Players</h3><p>Two players by default. Add as many friends as you like with <b>+ Add a player</b>. Everyone takes turns answering, one after the other.</p><h3>🎡 Two ways to play</h3><ul><li><b>Spin the Wheel</b>: the wheel picks a subject, then a random question.</li><li><b>Grow Our Tree</b>: pick a subject (a branch). It starts with simple <b>roots</b> 🌱 questions, then unlocks deeper <b>leaves</b> 🌿 and <b>blooms</b> 🌸 after two answers at each level.</li></ul><h3>⭐ Points</h3><p>The player whose turn it is answers out loud and gets <b>+10</b> (🌤️ light), <b>+20</b> (🌗 deeper) or <b>+30</b> (🌊 deep) when you tap <b>Answered!</b></p><h3>🎁 Bonuses: when to tap them</h3><p>Before tapping <b>Answered!</b>, tap every bonus that happened (several can be on at once):</p><ul><li><b>🎯 [name] guessed it</b>: tap it when that friend said what the answer would be <i>before</i> it was given, and was right. They get <b>+15</b>. Best way to play: the others guess first, then the player answers.</li><li><b>😮 Didn't know that!</b>: tap it when the answer taught the listeners something they really didn't know about the player. Everyone gets <b>+5</b>.</li><li><b>🔁 [name] answered too</b> (with 3+ players: <b>everyone else answered too</b>): tap it when the others also answered the same question for themselves. They get the same points as the player.</li></ul><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p><h3>🎆 Connection level</h3><p>All your points add up to a shared connection level. Level up for fireworks. <b>📖 Our story</b> keeps every question and note, and <b>🏁 Finish</b> shows your summary.</p>",
+      rulesBody: "<h3>🎯 The goal</h3><p>Get to know each other better by answering questions you would never ask in everyday conversation. There are no wrong answers.</p><h3>👥 Players</h3><p>Two players by default. Add as many friends as you like with <b>+ Add a player</b>. Everyone takes turns answering, one after the other.</p><h3>🎡 Two ways to play</h3><ul><li><b>Spin the Wheel</b>: the wheel picks a subject, then a random question.</li><li><b>Grow Our Tree</b>: pick a subject (a branch). It starts with simple <b>roots</b> 🌱 questions, then unlocks deeper <b>leaves</b> 🌿 and <b>blooms</b> 🌸 after two answers at each level.</li></ul><h3>⭐ Points</h3><p>The player whose turn it is answers out loud and gets <b>+10</b> (🌤️ light), <b>+20</b> (🌗 deeper) or <b>+30</b> (🌊 deep) when you tap <b>Answered!</b></p><h3>🎁 Bonuses: when to tap them</h3><p>Before tapping <b>Answered!</b>, tap every bonus that happened (several can be on at once):</p><ul><li><b>🎯 [name] guessed it</b>: tap it when that friend said what the answer would be <i>before</i> it was given, and was right. They get <b>+15</b>. Best way to play: the others guess first, then the player answers.</li><li><b>😮 Didn't know that!</b>: tap it when the answer taught the listeners something they really didn't know about the player. Everyone gets <b>+5</b>.</li><li><b>🔁 [name] answered too</b> (with 3+ players: <b>everyone else answered too</b>): tap it when the others also answered the same question for themselves. They get the same points as the player.</li></ul><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p><h3>🎆 Connection level</h3><p>All your points add up to a shared connection level. Level up for fireworks. <b>📖 Our story</b> keeps every question and note, and <b>🏁 Finish</b> shows your summary.</p><h3>💾 Saving a story</h3><p>Each group of friends has its own story. Tap <b>💾 Save the story</b> (in the game or at the end) to download a <b>.loopy</b> file. Next time, tap <b>📂 Continue a saved story</b> on the home screen and pick that file: names, scores, your tree and the questions already asked all come back. Questions already asked on this device, in any story, come last, so a new story starts with fresh questions.</p>",
       nQuestions: "{n} questions",
       pickOne: "Pick at least one subject 🙂",
       resume: "↩︎ Resume {names} ({n} answered)",
@@ -147,6 +153,12 @@
       answered: "Répondu ! ✨",
       close: "Fermer",
       langToggle: "🇬🇧 English",
+      saveStory: "💾 Sauvegarder l'histoire",
+      saveText: "📄 Version texte",
+      loadStory: "📂 Reprendre une histoire sauvegardée",
+      loaded: "📂 Re-bonjour {names} ! On reprend là où vous en étiez.",
+      loadBad: "Ce fichier n'est pas une histoire Loopy Life (.loopy).",
+      savedToast: "💾 Histoire sauvegardée. Ouvrez ce fichier la prochaine fois pour continuer.",
       addPlayer: "+ Ajouter un joueur",
       playerN: "Joueur {n}",
       remove: "Retirer",
@@ -156,7 +168,7 @@
       rules: "Règles",
       rulesBtn: "❓ Règles",
       rulesTitle: "Comment jouer",
-      rulesBody: "<h3>🎯 Le but</h3><p>Mieux se connaître en répondant à des questions qu'on ne se pose jamais au quotidien. Il n'y a pas de mauvaise réponse.</p><h3>👥 Joueurs</h3><p>Deux joueurs par défaut. Ajoutez autant d'amis que vous voulez avec <b>+ Ajouter un joueur</b>. Chacun répond à son tour, l'un après l'autre.</p><h3>🎡 Deux façons de jouer</h3><ul><li><b>Faire tourner la roue</b> : la roue choisit un thème, puis une question au hasard.</li><li><b>Faire pousser notre arbre</b> : choisissez un thème (une branche). On commence par des questions simples, les <b>racines</b> 🌱, puis on débloque des <b>feuilles</b> 🌿 et des <b>fleurs</b> 🌸 plus profondes après deux réponses à chaque niveau.</li></ul><h3>⭐ Points</h3><p>Le joueur dont c'est le tour répond à voix haute et gagne <b>+10</b> (🌤️ léger), <b>+20</b> (🌗 plus profond) ou <b>+30</b> (🌊 profond) quand vous touchez <b>Répondu !</b></p><h3>🎁 Les bonus : quand les toucher</h3><p>Avant de toucher <b>Répondu !</b>, touchez chaque bonus qui s'est produit (plusieurs peuvent être activés) :</p><ul><li><b>🎯 [prénom] a deviné</b> : touchez-le quand cet ami a dit quelle serait la réponse <i>avant</i> qu'elle soit donnée, et avait raison. Il gagne <b>+15</b>. Le mieux : les autres devinent d'abord, puis le joueur répond.</li><li><b>😮 Je ne savais pas !</b> : touchez-le quand la réponse a appris aux autres quelque chose qu'ils ne savaient vraiment pas sur le joueur. Tout le monde gagne <b>+5</b>.</li><li><b>🔁 [prénom] a répondu aussi</b> (à 3 joueurs ou plus : <b>tous les autres ont répondu aussi</b>) : touchez-le quand les autres ont aussi répondu à la même question pour eux-mêmes. Ils gagnent les mêmes points que le joueur.</li></ul><p>La question ne vous plaît pas ? <b>🔄 Passer</b> la remplace par une autre du même thème. Chaque joueur peut passer <b>3 fois</b>.</p><h3>🎆 Niveau de connexion</h3><p>Tous vos points s'additionnent dans un niveau de connexion commun. Chaque niveau gagné déclenche un feu d'artifice. <b>📖 Notre histoire</b> garde chaque question et note, et <b>🏁 Terminer</b> affiche votre bilan.</p>",
+      rulesBody: "<h3>🎯 Le but</h3><p>Mieux se connaître en répondant à des questions qu'on ne se pose jamais au quotidien. Il n'y a pas de mauvaise réponse.</p><h3>👥 Joueurs</h3><p>Deux joueurs par défaut. Ajoutez autant d'amis que vous voulez avec <b>+ Ajouter un joueur</b>. Chacun répond à son tour, l'un après l'autre.</p><h3>🎡 Deux façons de jouer</h3><ul><li><b>Faire tourner la roue</b> : la roue choisit un thème, puis une question au hasard.</li><li><b>Faire pousser notre arbre</b> : choisissez un thème (une branche). On commence par des questions simples, les <b>racines</b> 🌱, puis on débloque des <b>feuilles</b> 🌿 et des <b>fleurs</b> 🌸 plus profondes après deux réponses à chaque niveau.</li></ul><h3>⭐ Points</h3><p>Le joueur dont c'est le tour répond à voix haute et gagne <b>+10</b> (🌤️ léger), <b>+20</b> (🌗 plus profond) ou <b>+30</b> (🌊 profond) quand vous touchez <b>Répondu !</b></p><h3>🎁 Les bonus : quand les toucher</h3><p>Avant de toucher <b>Répondu !</b>, touchez chaque bonus qui s'est produit (plusieurs peuvent être activés) :</p><ul><li><b>🎯 [prénom] a deviné</b> : touchez-le quand cet ami a dit quelle serait la réponse <i>avant</i> qu'elle soit donnée, et avait raison. Il gagne <b>+15</b>. Le mieux : les autres devinent d'abord, puis le joueur répond.</li><li><b>😮 Je ne savais pas !</b> : touchez-le quand la réponse a appris aux autres quelque chose qu'ils ne savaient vraiment pas sur le joueur. Tout le monde gagne <b>+5</b>.</li><li><b>🔁 [prénom] a répondu aussi</b> (à 3 joueurs ou plus : <b>tous les autres ont répondu aussi</b>) : touchez-le quand les autres ont aussi répondu à la même question pour eux-mêmes. Ils gagnent les mêmes points que le joueur.</li></ul><p>La question ne vous plaît pas ? <b>🔄 Passer</b> la remplace par une autre du même thème. Chaque joueur peut passer <b>3 fois</b>.</p><h3>🎆 Niveau de connexion</h3><p>Tous vos points s'additionnent dans un niveau de connexion commun. Chaque niveau gagné déclenche un feu d'artifice. <b>📖 Notre histoire</b> garde chaque question et note, et <b>🏁 Terminer</b> affiche votre bilan.</p><h3>💾 Sauvegarder une histoire</h3><p>Chaque groupe d'amis a sa propre histoire. Touchez <b>💾 Sauvegarder l'histoire</b> (pendant la partie ou à la fin) pour télécharger un fichier <b>.loopy</b>. La prochaine fois, touchez <b>📂 Reprendre une histoire sauvegardée</b> sur l'écran d'accueil et choisissez ce fichier : prénoms, scores, votre arbre et les questions déjà posées reviennent. Les questions déjà posées sur cet appareil, dans n'importe quelle histoire, passent en dernier : une nouvelle histoire commence avec des questions inédites.</p>",
       nQuestions: "{n} questions",
       pickOne: "Choisissez au moins un thème 🙂",
       resume: "↩︎ Reprendre {names} ({n} réponses)",
@@ -238,7 +250,28 @@
   /* ------------------------------------------------------------------ */
   /* Helpers                                                            */
   /* ------------------------------------------------------------------ */
-  const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  // Uniform random index; uses the crypto generator when available.
+  function randInt(n) {
+    try {
+      const buf = new Uint32Array(1);
+      crypto.getRandomValues(buf);
+      return buf[0] % n;
+    } catch (e) {
+      return Math.floor(Math.random() * n);
+    }
+  }
+  const pick = (arr) => arr[randInt(arr.length)];
+
+  // Questions already asked on this device, in any story. New draws prefer the others.
+  const SEEN_KEY = "loopy-seen-v1";
+  function seenSet() {
+    try { return new Set(JSON.parse(localStorage.getItem(SEEN_KEY) || "[]")); } catch (e) { return new Set(); }
+  }
+  function markSeen(ids) {
+    const seen = seenSet();
+    ids.forEach((id) => seen.add(id));
+    try { localStorage.setItem(SEEN_KEY, JSON.stringify([...seen])); } catch (e) { /* ignore */ }
+  }
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const others = (p) => state.players.map((_, i) => i).filter((i) => i !== p);
   // one colour per player (bright for the night background, dark for the light question card)
@@ -621,7 +654,10 @@
       const sorted = [...pool].sort((a, b) => Math.abs(a.depth - target) - Math.abs(b.depth - target));
       filtered = sorted.filter((q) => q.depth === sorted[0].depth);
     }
-    return pick(filtered);
+    // prefer questions never asked on this device, in any story
+    const seen = seenSet();
+    const fresh = filtered.filter((q) => !seen.has(q.id));
+    return pick(fresh.length ? fresh : filtered);
   }
 
   /* ------------------------------------------------------------------ */
@@ -708,6 +744,7 @@
     const afterLvl = Math.floor(state.connection / size);
 
     state.used.push(q.id);
+    markSeen([q.id]);
     counts(q.subject)[q.depth] += 1;
     state.journal.push({
       qid: q.id, text: q.text, subject: q.subject, depth: q.depth,
@@ -753,6 +790,7 @@
     if (state.passes[p] <= 0) return;
     state.passes[p] -= 1;
     state.used.push(current.q.id);
+    markSeen([current.q.id]);
     save();
     const q = drawQuestion(current.q.subject, [current.q.depth], current.q.id);
     openCard(q);
@@ -1065,6 +1103,77 @@
     setTimeout(() => FX.fireworks(10), 300);
   }
 
+  // A story file is the game state as JSON, base64-encoded behind a header, saved as .loopy.
+  const STORY_HEADER = "LOOPY-LIFE-STORY:1\n";
+
+  function encodeStory(st) {
+    const json = JSON.stringify({ app: "loopy-life-know-each-other", savedAt: new Date().toISOString(), state: st });
+    const bytes = new TextEncoder().encode(json);
+    let bin = "";
+    bytes.forEach((b) => (bin += String.fromCharCode(b)));
+    return STORY_HEADER + btoa(bin);
+  }
+
+  function decodeStory(text) {
+    if (!text.startsWith(STORY_HEADER)) throw new Error("not a story");
+    const bin = atob(text.slice(STORY_HEADER.length).trim());
+    const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
+    const data = JSON.parse(new TextDecoder().decode(bytes));
+    const st = data && data.state;
+    const ok = st && Array.isArray(st.players) && st.players.length >= 2 && Array.isArray(st.scores)
+      && Array.isArray(st.journal) && Array.isArray(st.used) && Array.isArray(st.subjects);
+    if (!ok) throw new Error("bad story");
+    return st;
+  }
+
+  function downloadFile(content, filename, type) {
+    const blob = new Blob([content], { type });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+
+  const fileBase = () => `${t("storyFile")}-${state.players.join("-")}`.replace(/[\\/:*?"<>|\s]+/g, "-");
+
+  function saveStoryFile() {
+    downloadFile(encodeStory(state), `${fileBase()}.loopy`, "application/octet-stream");
+    toast(t("savedToast"), 3200);
+  }
+
+  function loadStoryFile(file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      let st;
+      try { st = decodeStory(String(reader.result)); } catch (e) {
+        $("#setup-error").textContent = t("loadBad");
+        return;
+      }
+      $("#setup-error").textContent = "";
+      const n = st.players.length;
+      st.version = 1;
+      st.scores = st.players.map((_, i) => Number(st.scores[i]) || 0);
+      st.passes = st.players.map((_, i) => (Array.isArray(st.passes) && st.passes[i] != null ? st.passes[i] : PASSES));
+      st.turn = Number.isInteger(st.turn) && st.turn >= 0 && st.turn < n ? st.turn : 0;
+      st.subjects = st.subjects.filter((id) => SUBJ[id]);
+      if (!st.subjects.length) st.subjects = DB.subjects.map((x) => x.id);
+      st.tree = st.tree || {};
+      st.connection = Number(st.connection) || 0;
+      st.mode = st.mode === "tree" ? "tree" : "wheel";
+      st.startedAt = st.startedAt || Date.now();
+      state = st;
+      lastTreeCounts = {};
+      markSeen(state.used);
+      save();
+      startGame();
+      setTimeout(() => { toast(t("loaded", { names: joinNames(state.players) }), 3200); FX.fireworks(4); }, 400);
+    };
+    reader.readAsText(file);
+  }
+
   function downloadStory() {
     const lines = [
       `Loopy Life · ${t("title")}`,
@@ -1078,14 +1187,7 @@
       lines.push(`${i + 1}. [${sName(s)}] ${text}`);
       lines.push(`   ${t("answeredBy", { name: state.players[j.player] })}${j.note ? ` · ${t("note")}: ${j.note}` : ""}`);
     });
-    const blob = new Blob([lines.join("\n")], { type: "text/plain" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = `${t("storyFile")}-${state.players.join("-")}.txt`.replace(/\s+/g, "-");
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    downloadFile(lines.join("\n"), `${fileBase()}.txt`, "text/plain");
   }
 
   /* ------------------------------------------------------------------ */
@@ -1106,6 +1208,13 @@
       showScreen("screen-setup");
     });
     $("#download-btn").addEventListener("click", downloadStory);
+    $$(".save-story").forEach((b) => b.addEventListener("click", saveStoryFile));
+    $("#load-story").addEventListener("click", () => $("#story-file").click());
+    $("#story-file").addEventListener("change", (e) => {
+      const f = e.target.files && e.target.files[0];
+      if (f) loadStoryFile(f);
+      e.target.value = "";
+    });
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") $("#journal-overlay").classList.add("hidden");
       if ((e.key === " " || e.key === "Enter") && $("#screen-game").classList.contains("active") && !current && state.mode === "wheel" && document.activeElement === document.body) {
@@ -1152,7 +1261,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=3", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=4", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {

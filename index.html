@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -69,6 +69,10 @@
         </button>
       </div>
       <p id="setup-error" class="error" role="alert"></p>
+      <p class="resume">
+        <button id="load-story" class="btn ghost" type="button" data-i18n="loadStory">📂 Continue a saved story</button>
+        <input id="story-file" type="file" accept=".loopy" hidden>
+      </p>
       <p id="resume-row" class="resume hidden">
         <button id="resume-btn" class="btn ghost" type="button">↩︎ Resume last game</button>
       </p>
@@ -116,6 +120,7 @@
 
     <div class="game-actions">
       <button id="journal-btn" class="btn ghost" type="button" data-i18n="ourStory">📖 Our story</button>
+      <button class="btn ghost save-story" type="button" data-i18n="saveStory">💾 Save the story</button>
       <button class="btn ghost rules-open" type="button" data-i18n="rulesBtn">❓ Rules</button>
       <button id="finish-btn" class="btn ghost" type="button" data-i18n="finish">🏁 Finish</button>
       <button id="lang-btn" class="btn ghost" type="button">🇫🇷 Français</button>
@@ -135,7 +140,8 @@
       <ol id="summary-journal" class="journal"></ol>
     </section>
     <div class="game-actions">
-      <button id="download-btn" class="btn ghost" type="button" data-i18n="save">⬇️ Save our story</button>
+      <button class="btn ghost save-story" type="button" data-i18n="saveStory">💾 Save the story</button>
+      <button id="download-btn" class="btn ghost" type="button" data-i18n="saveText">📄 Text version</button>
       <button id="continue-btn" class="btn ghost" type="button" data-i18n="keepPlaying">↩︎ Keep playing</button>
       <button id="restart-btn" class="btn primary" type="button" data-i18n="newGame">✨ New game</button>
     </div>
@@ -187,6 +193,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>

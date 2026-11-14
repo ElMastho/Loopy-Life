@@ -20,9 +20,11 @@ It is the first seed of **Loopy Life**, the life-organization extension of Loopy
 
 The game saves itself in the browser, so you can close the page and resume later.
 
+Each group of friends can keep its own story: **💾 Save the story** downloads a `.loopy` file (the game state, encoded so it isn't meant to be read by hand), and **📂 Continue a saved story** on the home screen loads it back with names, scores, tree and questions already asked. Questions already asked on a device, in any story, are drawn last, so a new story starts with fresh questions.
+
 ## The question bank
 
-All questions live in [`data/questions.json`](data/questions.json): 14 subjects, 500+ questions in English and French, each with a depth from 1 (light) to 3 (deep).
+All questions live in [`data/questions.json`](data/questions.json): 15 subjects (including Imagination & Scenarios), 700+ questions in English and French, each with a depth from 1 (light) to 3 (deep).
 
 ```json
 { "id": "family-001", "subject": "family", "depth": 1,
