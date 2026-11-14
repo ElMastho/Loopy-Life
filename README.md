@@ -16,13 +16,16 @@ It is the first seed of **Loopy Life**, the life-organization extension of Loopy
    - 😮 "Didn't know that!": +5 each
    - 🔁 The others answered the same question too: same points for them
 5. Each player has 3 passes. Every 50 points per player together raises your **connection level** (with fireworks).
-6. **Our story** keeps every question you answered and your notes. **Finish** shows a summary you can save as a text file.
+6. Option **🔮 Guess for each other** (on the home screen): before each answer, the others guess out loud what the player will say. A right guess earns +25, and the player gets +10 when nobody guessed.
+7. **Our story** keeps every question you answered and your notes. **Finish** shows a summary you can save as a text file.
 
 The game saves itself in the browser, so you can close the page and resume later.
 
+Each group of friends can keep its own story: **💾 Save the story** downloads a `.loopy` file (the game state, encoded so it isn't meant to be read by hand), and **📂 Continue a saved story** on the home screen loads it back with names, scores, tree and questions already asked. Questions already asked on a device, in any story, are drawn last, so a new story starts with fresh questions.
+
 ## The question bank
 
-All questions live in [`data/questions.json`](data/questions.json): 14 subjects, 500+ questions in English and French, each with a depth from 1 (light) to 3 (deep).
+All questions live in [`data/questions.json`](data/questions.json): 15 subjects (including Imagination & Scenarios), 700+ questions in English and French, each with a depth from 1 (light) to 3 (deep).
 
 ```json
 { "id": "family-001", "subject": "family", "depth": 1,

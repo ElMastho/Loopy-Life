@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "languages": [
   "en",
   "fr"
@@ -186,6 +186,19 @@
    },
    "emoji": "🔮",
    "color": "#b5179e"
+  },
+  {
+   "id": "imagination",
+   "name": {
+    "en": "Imagination & Scenarios",
+    "fr": "Imaginaire & scénarios"
+   },
+   "short": {
+    "en": "Imagine",
+    "fr": "Imaginaire"
+   },
+   "emoji": "🌈",
+   "color": "#06d6a0"
   }
  ],
  "questions": [
@@ -4786,6 +4799,1959 @@
    "text": {
     "en": "If everything you own burned tomorrow, what would you truly miss?",
     "fr": "Si tout ce que tu possèdes brûlait demain, qu'est-ce qui te manquerait vraiment ?"
+   }
+  },
+  {
+   "id": "family-047",
+   "subject": "family",
+   "depth": 1,
+   "text": {
+    "en": "What's your earliest memory of your grandparents?",
+    "fr": "Quel est ton plus ancien souvenir de tes grands-parents ?"
+   }
+  },
+  {
+   "id": "family-048",
+   "subject": "family",
+   "depth": 1,
+   "text": {
+    "en": "What's a typical family Sunday like for you?",
+    "fr": "À quoi ressemble un dimanche typique en famille pour toi ?"
+   }
+  },
+  {
+   "id": "family-049",
+   "subject": "family",
+   "depth": 1,
+   "text": {
+    "en": "Who's the funniest person in your family?",
+    "fr": "Qui est la personne la plus drôle de ta famille ?"
+   }
+  },
+  {
+   "id": "family-050",
+   "subject": "family",
+   "depth": 1,
+   "text": {
+    "en": "What's a word or expression only your family uses?",
+    "fr": "Quel mot ou quelle expression seule ta famille utilise ?"
+   }
+  },
+  {
+   "id": "family-051",
+   "subject": "family",
+   "depth": 1,
+   "text": {
+    "en": "Who cooks best in your family?",
+    "fr": "Qui cuisine le mieux dans ta famille ?"
+   }
+  },
+  {
+   "id": "family-052",
+   "subject": "family",
+   "depth": 2,
+   "text": {
+    "en": "Which family member are you most like when you're angry?",
+    "fr": "À quel membre de ta famille ressembles-tu le plus quand tu es en colère ?"
+   }
+  },
+  {
+   "id": "family-053",
+   "subject": "family",
+   "depth": 2,
+   "text": {
+    "en": "What did your parents get right that you want to keep?",
+    "fr": "Qu'est-ce que tes parents ont bien fait et que tu veux garder ?"
+   }
+  },
+  {
+   "id": "family-054",
+   "subject": "family",
+   "depth": 2,
+   "text": {
+    "en": "Which family celebration do you remember most, and why?",
+    "fr": "Quelle fête de famille t'a le plus marqué, et pourquoi ?"
+   }
+  },
+  {
+   "id": "family-055",
+   "subject": "family",
+   "depth": 2,
+   "text": {
+    "en": "What question would you like to ask your grandparents about their youth?",
+    "fr": "Quelle question aimerais-tu poser à tes grands-parents sur leur jeunesse ?"
+   }
+  },
+  {
+   "id": "family-056",
+   "subject": "family",
+   "depth": 3,
+   "text": {
+    "en": "What do you think your parents sacrificed for you?",
+    "fr": "Qu'est-ce que tes parents ont sacrifié pour toi, selon toi ?"
+   }
+  },
+  {
+   "id": "family-057",
+   "subject": "family",
+   "depth": 3,
+   "text": {
+    "en": "What would you like to repair in your family if you could?",
+    "fr": "Qu'aimerais-tu réparer dans ta famille si tu le pouvais ?"
+   }
+  },
+  {
+   "id": "family-058",
+   "subject": "family",
+   "depth": 3,
+   "text": {
+    "en": "How has your idea of \"family\" changed since you were a child?",
+    "fr": "Comment ton idée de la « famille » a-t-elle changé depuis ton enfance ?"
+   }
+  },
+  {
+   "id": "childhood-042",
+   "subject": "childhood",
+   "depth": 1,
+   "text": {
+    "en": "What was your favorite game to play alone?",
+    "fr": "Quel était ton jeu préféré quand tu jouais seul ?"
+   }
+  },
+  {
+   "id": "childhood-043",
+   "subject": "childhood",
+   "depth": 1,
+   "text": {
+    "en": "What did you do on Wednesday afternoons or days off school?",
+    "fr": "Que faisais-tu le mercredi après-midi ou les jours sans école ?"
+   }
+  },
+  {
+   "id": "childhood-044",
+   "subject": "childhood",
+   "depth": 1,
+   "text": {
+    "en": "Which smell from your childhood home do you remember?",
+    "fr": "Quelle odeur de ta maison d'enfance te revient ?"
+   }
+  },
+  {
+   "id": "childhood-045",
+   "subject": "childhood",
+   "depth": 1,
+   "text": {
+    "en": "What was the first movie you saw at the cinema?",
+    "fr": "Quel est le premier film que tu as vu au cinéma ?"
+   }
+  },
+  {
+   "id": "childhood-046",
+   "subject": "childhood",
+   "depth": 1,
+   "text": {
+    "en": "What did you dress up as for carnival or Halloween?",
+    "fr": "En quoi te déguisais-tu pour le carnaval ou Halloween ?"
+   }
+  },
+  {
+   "id": "childhood-047",
+   "subject": "childhood",
+   "depth": 2,
+   "text": {
+    "en": "What's a rule at home you didn't understand as a kid?",
+    "fr": "Quelle règle à la maison ne comprenais-tu pas quand tu étais enfant ?"
+   }
+  },
+  {
+   "id": "childhood-048",
+   "subject": "childhood",
+   "depth": 2,
+   "text": {
+    "en": "Which childhood friend would you love to see again?",
+    "fr": "Quel ami d'enfance aimerais-tu revoir ?"
+   }
+  },
+  {
+   "id": "childhood-049",
+   "subject": "childhood",
+   "depth": 2,
+   "text": {
+    "en": "What made you laugh the most as a child?",
+    "fr": "Qu'est-ce qui te faisait le plus rire quand tu étais enfant ?"
+   }
+  },
+  {
+   "id": "childhood-050",
+   "subject": "childhood",
+   "depth": 2,
+   "text": {
+    "en": "What did you imagine the adult world was like?",
+    "fr": "Comment imaginais-tu le monde des adultes ?"
+   }
+  },
+  {
+   "id": "childhood-051",
+   "subject": "childhood",
+   "depth": 3,
+   "text": {
+    "en": "When did you feel really proud of yourself as a child?",
+    "fr": "Quand t'es-tu senti vraiment fier de toi quand tu étais enfant ?"
+   }
+  },
+  {
+   "id": "childhood-052",
+   "subject": "childhood",
+   "depth": 3,
+   "text": {
+    "en": "What did the child you were need to hear more often?",
+    "fr": "Qu'avait besoin d'entendre plus souvent l'enfant que tu étais ?"
+   }
+  },
+  {
+   "id": "childhood-053",
+   "subject": "childhood",
+   "depth": 3,
+   "text": {
+    "en": "Is there something from your childhood you have never told anyone?",
+    "fr": "Y a-t-il quelque chose de ton enfance que tu n'as jamais raconté à personne ?"
+   }
+  },
+  {
+   "id": "youth-038",
+   "subject": "youth",
+   "depth": 1,
+   "text": {
+    "en": "What was your first mobile phone ringtone or wallpaper?",
+    "fr": "Quelle était la sonnerie ou le fond d'écran de ton premier portable ?"
+   }
+  },
+  {
+   "id": "youth-039",
+   "subject": "youth",
+   "depth": 1,
+   "text": {
+    "en": "What was the best school trip you went on?",
+    "fr": "Quelle a été la meilleure sortie ou le meilleur voyage scolaire ?"
+   }
+  },
+  {
+   "id": "youth-040",
+   "subject": "youth",
+   "depth": 1,
+   "text": {
+    "en": "Which TV show did everyone talk about at school?",
+    "fr": "De quelle série tout le monde parlait-il à l'école ?"
+   }
+  },
+  {
+   "id": "youth-041",
+   "subject": "youth",
+   "depth": 1,
+   "text": {
+    "en": "What was your favorite place to hang out after class?",
+    "fr": "Où aimais-tu traîner après les cours ?"
+   }
+  },
+  {
+   "id": "youth-042",
+   "subject": "youth",
+   "depth": 1,
+   "text": {
+    "en": "Which subject were you surprisingly good at?",
+    "fr": "Dans quelle matière étais-tu étonnamment bon ?"
+   }
+  },
+  {
+   "id": "youth-043",
+   "subject": "youth",
+   "depth": 2,
+   "text": {
+    "en": "What did you and your friends dream of doing \"later\"?",
+    "fr": "De quoi rêviez-vous, tes amis et toi, pour « plus tard » ?"
+   }
+  },
+  {
+   "id": "youth-044",
+   "subject": "youth",
+   "depth": 2,
+   "text": {
+    "en": "What's a song that sums up your teenage years?",
+    "fr": "Quelle chanson résume ton adolescence ?"
+   }
+  },
+  {
+   "id": "youth-045",
+   "subject": "youth",
+   "depth": 2,
+   "text": {
+    "en": "Which adult did you rebel against the most?",
+    "fr": "Contre quel adulte t'es-tu le plus rebellé ?"
+   }
+  },
+  {
+   "id": "youth-046",
+   "subject": "youth",
+   "depth": 2,
+   "text": {
+    "en": "What's the biggest risk you took before 20?",
+    "fr": "Quel est le plus gros risque que tu as pris avant 20 ans ?"
+   }
+  },
+  {
+   "id": "youth-047",
+   "subject": "youth",
+   "depth": 3,
+   "text": {
+    "en": "Who were you trying to impress as a teenager, and why?",
+    "fr": "Qui essayais-tu d'impressionner quand tu étais ado, et pourquoi ?"
+   }
+  },
+  {
+   "id": "youth-048",
+   "subject": "youth",
+   "depth": 3,
+   "text": {
+    "en": "What did you lose when you stopped being a teenager?",
+    "fr": "Qu'as-tu perdu en arrêtant d'être ado ?"
+   }
+  },
+  {
+   "id": "youth-049",
+   "subject": "youth",
+   "depth": 3,
+   "text": {
+    "en": "Which teenage friendship would you like to have kept?",
+    "fr": "Quelle amitié d'adolescence aurais-tu aimé garder ?"
+   }
+  },
+  {
+   "id": "love-038",
+   "subject": "love",
+   "depth": 1,
+   "text": {
+    "en": "What's the worst date you've ever been on?",
+    "fr": "Quel est le pire rendez-vous que tu aies eu ?"
+   }
+  },
+  {
+   "id": "love-039",
+   "subject": "love",
+   "depth": 1,
+   "text": {
+    "en": "What's your idea of a perfect lazy day as a couple?",
+    "fr": "C'est quoi pour toi la journée parfaite à ne rien faire en couple ?"
+   }
+  },
+  {
+   "id": "love-040",
+   "subject": "love",
+   "depth": 1,
+   "text": {
+    "en": "Which couple (real or fictional) do you admire?",
+    "fr": "Quel couple (réel ou fictif) admires-tu ?"
+   }
+  },
+  {
+   "id": "love-041",
+   "subject": "love",
+   "depth": 1,
+   "text": {
+    "en": "How do you usually meet new people?",
+    "fr": "Comment rencontres-tu de nouvelles personnes d'habitude ?"
+   }
+  },
+  {
+   "id": "love-042",
+   "subject": "love",
+   "depth": 2,
+   "text": {
+    "en": "What does a healthy relationship look like to you?",
+    "fr": "À quoi ressemble une relation saine pour toi ?"
+   }
+  },
+  {
+   "id": "love-043",
+   "subject": "love",
+   "depth": 2,
+   "text": {
+    "en": "What's something small that would make you lose interest in someone?",
+    "fr": "Quel petit détail te ferait perdre l'intérêt pour quelqu'un ?"
+   }
+  },
+  {
+   "id": "love-044",
+   "subject": "love",
+   "depth": 2,
+   "text": {
+    "en": "How important is it that your partner gets along with your friends?",
+    "fr": "À quel point est-ce important que ton ou ta partenaire s'entende avec tes amis ?"
+   }
+  },
+  {
+   "id": "love-045",
+   "subject": "love",
+   "depth": 2,
+   "text": {
+    "en": "How do you handle a disagreement with someone close to you?",
+    "fr": "Comment gères-tu un désaccord avec un proche ?"
+   }
+  },
+  {
+   "id": "love-046",
+   "subject": "love",
+   "depth": 3,
+   "text": {
+    "en": "What did your most important relationship teach you about yourself?",
+    "fr": "Qu'est-ce que ta relation la plus importante t'a appris sur toi ?"
+   }
+  },
+  {
+   "id": "love-047",
+   "subject": "love",
+   "depth": 3,
+   "text": {
+    "en": "What are you most afraid to show the people you love?",
+    "fr": "Qu'as-tu le plus peur de montrer aux gens que tu aimes ?"
+   }
+  },
+  {
+   "id": "love-048",
+   "subject": "love",
+   "depth": 3,
+   "text": {
+    "en": "Do you find it easier to give love or to receive it?",
+    "fr": "Trouves-tu plus facile de donner de l'amour ou d'en recevoir ?"
+   }
+  },
+  {
+   "id": "friendship-037",
+   "subject": "friendship",
+   "depth": 1,
+   "text": {
+    "en": "What's the best thing we've done together so far?",
+    "fr": "Quelle est la meilleure chose qu'on ait faite ensemble jusqu'ici ?"
+   }
+  },
+  {
+   "id": "friendship-038",
+   "subject": "friendship",
+   "depth": 1,
+   "text": {
+    "en": "Which of your friends is the most different from you?",
+    "fr": "Lequel de tes amis est le plus différent de toi ?"
+   }
+  },
+  {
+   "id": "friendship-039",
+   "subject": "friendship",
+   "depth": 1,
+   "text": {
+    "en": "What's the longest you've gone without talking to a close friend?",
+    "fr": "Combien de temps es-tu resté au maximum sans parler à un ami proche ?"
+   }
+  },
+  {
+   "id": "friendship-040",
+   "subject": "friendship",
+   "depth": 1,
+   "text": {
+    "en": "What would be your ideal weekend with friends?",
+    "fr": "Quel serait ton week-end idéal entre amis ?"
+   }
+  },
+  {
+   "id": "friendship-041",
+   "subject": "friendship",
+   "depth": 1,
+   "text": {
+    "en": "What's an inside joke you still laugh about?",
+    "fr": "Quelle blague entre amis te fait encore rire ?"
+   }
+  },
+  {
+   "id": "friendship-042",
+   "subject": "friendship",
+   "depth": 2,
+   "text": {
+    "en": "What's one thing you'd like me to know about you that I probably don't?",
+    "fr": "Qu'aimerais-tu que je sache sur toi et que je ne sais probablement pas ?"
+   }
+  },
+  {
+   "id": "friendship-043",
+   "subject": "friendship",
+   "depth": 2,
+   "text": {
+    "en": "What do you think we have most in common?",
+    "fr": "Qu'est-ce qu'on a le plus en commun, selon toi ?"
+   }
+  },
+  {
+   "id": "friendship-044",
+   "subject": "friendship",
+   "depth": 2,
+   "text": {
+    "en": "In what way are we most different?",
+    "fr": "En quoi sommes-nous le plus différents ?"
+   }
+  },
+  {
+   "id": "friendship-045",
+   "subject": "friendship",
+   "depth": 2,
+   "text": {
+    "en": "What's the best way to cheer you up when you're down?",
+    "fr": "Quelle est la meilleure façon de te remonter le moral quand ça ne va pas ?"
+   }
+  },
+  {
+   "id": "friendship-046",
+   "subject": "friendship",
+   "depth": 3,
+   "text": {
+    "en": "What would you want me to do if you were going through a hard time?",
+    "fr": "Que voudrais-tu que je fasse si tu traversais une période difficile ?"
+   }
+  },
+  {
+   "id": "friendship-047",
+   "subject": "friendship",
+   "depth": 3,
+   "text": {
+    "en": "What do you think I don't see about myself?",
+    "fr": "Qu'est-ce que je ne vois pas chez moi, selon toi ?"
+   }
+  },
+  {
+   "id": "friendship-048",
+   "subject": "friendship",
+   "depth": 3,
+   "text": {
+    "en": "When did you feel closest to me?",
+    "fr": "Quand t'es-tu senti le plus proche de moi ?"
+   }
+  },
+  {
+   "id": "work-039",
+   "subject": "work",
+   "depth": 1,
+   "text": {
+    "en": "What's the first thing you do when you arrive at work?",
+    "fr": "Quelle est la première chose que tu fais en arrivant au travail ?"
+   }
+  },
+  {
+   "id": "work-040",
+   "subject": "work",
+   "depth": 1,
+   "text": {
+    "en": "What's the funniest thing that happened to you at work?",
+    "fr": "Quelle est la chose la plus drôle qui te soit arrivée au travail ?"
+   }
+  },
+  {
+   "id": "work-041",
+   "subject": "work",
+   "depth": 1,
+   "text": {
+    "en": "Who at work would you invite to your birthday?",
+    "fr": "Qui au travail inviterais-tu à ton anniversaire ?"
+   }
+  },
+  {
+   "id": "work-042",
+   "subject": "work",
+   "depth": 1,
+   "text": {
+    "en": "What's your favorite day of the work week, and why?",
+    "fr": "Quel est ton jour préféré de la semaine de travail, et pourquoi ?"
+   }
+  },
+  {
+   "id": "work-043",
+   "subject": "work",
+   "depth": 1,
+   "text": {
+    "en": "What tool or object could you not work without?",
+    "fr": "Sans quel outil ou objet ne pourrais-tu pas travailler ?"
+   }
+  },
+  {
+   "id": "work-044",
+   "subject": "work",
+   "depth": 2,
+   "text": {
+    "en": "What would you do if you had to change careers tomorrow?",
+    "fr": "Que ferais-tu si tu devais changer de métier demain ?"
+   }
+  },
+  {
+   "id": "work-045",
+   "subject": "work",
+   "depth": 2,
+   "text": {
+    "en": "What did your first job teach you that you still use?",
+    "fr": "Qu'est-ce que ton premier job t'a appris et que tu utilises encore ?"
+   }
+  },
+  {
+   "id": "work-046",
+   "subject": "work",
+   "depth": 2,
+   "text": {
+    "en": "What's the hardest feedback you've received, and was it fair?",
+    "fr": "Quel est le retour le plus dur que tu as reçu, et était-il juste ?"
+   }
+  },
+  {
+   "id": "work-047",
+   "subject": "work",
+   "depth": 2,
+   "text": {
+    "en": "Do you prefer to lead or to be part of a team?",
+    "fr": "Tu préfères diriger ou faire partie d'une équipe ?"
+   }
+  },
+  {
+   "id": "work-048",
+   "subject": "work",
+   "depth": 3,
+   "text": {
+    "en": "What part of yourself do you hide at work?",
+    "fr": "Quelle partie de toi caches-tu au travail ?"
+   }
+  },
+  {
+   "id": "work-049",
+   "subject": "work",
+   "depth": 3,
+   "text": {
+    "en": "What would a job that makes you proud every day look like?",
+    "fr": "À quoi ressemblerait un travail qui te rendrait fier chaque jour ?"
+   }
+  },
+  {
+   "id": "work-050",
+   "subject": "work",
+   "depth": 3,
+   "text": {
+    "en": "What have you given up for your career?",
+    "fr": "À quoi as-tu renoncé pour ta carrière ?"
+   }
+  },
+  {
+   "id": "dreams-036",
+   "subject": "dreams",
+   "depth": 1,
+   "text": {
+    "en": "What's a place you'd love to see before you turn 50?",
+    "fr": "Quel endroit aimerais-tu voir avant tes 50 ans ?"
+   }
+  },
+  {
+   "id": "dreams-037",
+   "subject": "dreams",
+   "depth": 1,
+   "text": {
+    "en": "What's a skill you'd learn if you had one free hour every day?",
+    "fr": "Quelle compétence apprendrais-tu si tu avais une heure libre chaque jour ?"
+   }
+  },
+  {
+   "id": "dreams-038",
+   "subject": "dreams",
+   "depth": 1,
+   "text": {
+    "en": "What would your dream house have that normal houses don't?",
+    "fr": "Qu'aurait ta maison de rêve que les maisons normales n'ont pas ?"
+   }
+  },
+  {
+   "id": "dreams-039",
+   "subject": "dreams",
+   "depth": 1,
+   "text": {
+    "en": "Which famous event would you love to attend once in your life?",
+    "fr": "À quel grand événement aimerais-tu assister une fois dans ta vie ?"
+   }
+  },
+  {
+   "id": "dreams-040",
+   "subject": "dreams",
+   "depth": 1,
+   "text": {
+    "en": "What's a small dream you could realize this month?",
+    "fr": "Quel petit rêve pourrais-tu réaliser ce mois-ci ?"
+   }
+  },
+  {
+   "id": "dreams-041",
+   "subject": "dreams",
+   "depth": 2,
+   "text": {
+    "en": "What does your life look like in five years, if everything goes well?",
+    "fr": "À quoi ressemble ta vie dans cinq ans, si tout se passe bien ?"
+   }
+  },
+  {
+   "id": "dreams-042",
+   "subject": "dreams",
+   "depth": 2,
+   "text": {
+    "en": "What adventure would you like to have with me?",
+    "fr": "Quelle aventure aimerais-tu vivre avec moi ?"
+   }
+  },
+  {
+   "id": "dreams-043",
+   "subject": "dreams",
+   "depth": 2,
+   "text": {
+    "en": "What would you create if you had the time and money?",
+    "fr": "Que créerais-tu si tu avais le temps et l'argent ?"
+   }
+  },
+  {
+   "id": "dreams-044",
+   "subject": "dreams",
+   "depth": 2,
+   "text": {
+    "en": "Which dream do you keep postponing?",
+    "fr": "Quel rêve repousses-tu sans cesse ?"
+   }
+  },
+  {
+   "id": "dreams-045",
+   "subject": "dreams",
+   "depth": 3,
+   "text": {
+    "en": "What would you regret not having tried at the end of your life?",
+    "fr": "Que regretterais-tu de ne pas avoir tenté à la fin de ta vie ?"
+   }
+  },
+  {
+   "id": "dreams-046",
+   "subject": "dreams",
+   "depth": 3,
+   "text": {
+    "en": "What dream did someone else have for you that you didn't want?",
+    "fr": "Quel rêve quelqu'un avait-il pour toi et que tu ne voulais pas ?"
+   }
+  },
+  {
+   "id": "dreams-047",
+   "subject": "dreams",
+   "depth": 3,
+   "text": {
+    "en": "What would make you feel your life was a success, honestly?",
+    "fr": "Qu'est-ce qui te ferait sentir que ta vie est réussie, honnêtement ?"
+   }
+  },
+  {
+   "id": "values-037",
+   "subject": "values",
+   "depth": 1,
+   "text": {
+    "en": "What's a small daily gesture that you find really respectful?",
+    "fr": "Quel petit geste quotidien trouves-tu vraiment respectueux ?"
+   }
+  },
+  {
+   "id": "values-038",
+   "subject": "values",
+   "depth": 1,
+   "text": {
+    "en": "Would you rather be right or be at peace?",
+    "fr": "Tu préfères avoir raison ou être en paix ?"
+   }
+  },
+  {
+   "id": "values-039",
+   "subject": "values",
+   "depth": 1,
+   "text": {
+    "en": "Which value would you want written on your family crest?",
+    "fr": "Quelle valeur voudrais-tu voir sur ton blason de famille ?"
+   }
+  },
+  {
+   "id": "values-040",
+   "subject": "values",
+   "depth": 1,
+   "text": {
+    "en": "What's something you'll always defend, even alone?",
+    "fr": "Qu'est-ce que tu défendras toujours, même seul ?"
+   }
+  },
+  {
+   "id": "values-041",
+   "subject": "values",
+   "depth": 1,
+   "text": {
+    "en": "What makes you trust someone quickly?",
+    "fr": "Qu'est-ce qui te fait faire rapidement confiance à quelqu'un ?"
+   }
+  },
+  {
+   "id": "values-042",
+   "subject": "values",
+   "depth": 2,
+   "text": {
+    "en": "What's a lesson you learned from someone you didn't like?",
+    "fr": "Quelle leçon as-tu apprise de quelqu'un que tu n'aimais pas ?"
+   }
+  },
+  {
+   "id": "values-043",
+   "subject": "values",
+   "depth": 2,
+   "text": {
+    "en": "Is it ever OK to break a promise? When?",
+    "fr": "Est-il parfois acceptable de rompre une promesse ? Quand ?"
+   }
+  },
+  {
+   "id": "values-044",
+   "subject": "values",
+   "depth": 2,
+   "text": {
+    "en": "What does freedom mean to you?",
+    "fr": "Que signifie la liberté pour toi ?"
+   }
+  },
+  {
+   "id": "values-045",
+   "subject": "values",
+   "depth": 2,
+   "text": {
+    "en": "What would you teach a child about life in three sentences?",
+    "fr": "Qu'enseignerais-tu de la vie à un enfant en trois phrases ?"
+   }
+  },
+  {
+   "id": "values-046",
+   "subject": "values",
+   "depth": 3,
+   "text": {
+    "en": "When was the last time you changed your mind on something important?",
+    "fr": "Quand as-tu changé d'avis sur quelque chose d'important pour la dernière fois ?"
+   }
+  },
+  {
+   "id": "values-047",
+   "subject": "values",
+   "depth": 3,
+   "text": {
+    "en": "What would you be ready to give up everything for?",
+    "fr": "Pour quoi serais-tu prêt à tout abandonner ?"
+   }
+  },
+  {
+   "id": "values-048",
+   "subject": "values",
+   "depth": 3,
+   "text": {
+    "en": "What do you think you owe to others?",
+    "fr": "Que penses-tu devoir aux autres ?"
+   }
+  },
+  {
+   "id": "personality-039",
+   "subject": "personality",
+   "depth": 1,
+   "text": {
+    "en": "What's your go-to mood-booster?",
+    "fr": "Qu'est-ce qui te remonte le moral à coup sûr ?"
+   }
+  },
+  {
+   "id": "personality-040",
+   "subject": "personality",
+   "depth": 1,
+   "text": {
+    "en": "What emoji do you use the most?",
+    "fr": "Quel emoji utilises-tu le plus ?"
+   }
+  },
+  {
+   "id": "personality-041",
+   "subject": "personality",
+   "depth": 1,
+   "text": {
+    "en": "Are you more of a planner or improviser in everyday life?",
+    "fr": "Au quotidien, es-tu plutôt du genre à planifier ou à improviser ?"
+   }
+  },
+  {
+   "id": "personality-042",
+   "subject": "personality",
+   "depth": 1,
+   "text": {
+    "en": "What's a compliment people often give you?",
+    "fr": "Quel compliment te fait-on souvent ?"
+   }
+  },
+  {
+   "id": "personality-043",
+   "subject": "personality",
+   "depth": 1,
+   "text": {
+    "en": "What's the most \"you\" thing you own?",
+    "fr": "Quel objet que tu possèdes te ressemble le plus ?"
+   }
+  },
+  {
+   "id": "personality-044",
+   "subject": "personality",
+   "depth": 2,
+   "text": {
+    "en": "What do you do when you need to be alone?",
+    "fr": "Que fais-tu quand tu as besoin d'être seul ?"
+   }
+  },
+  {
+   "id": "personality-045",
+   "subject": "personality",
+   "depth": 2,
+   "text": {
+    "en": "What's something you've become better at with age?",
+    "fr": "Dans quoi es-tu devenu meilleur avec l'âge ?"
+   }
+  },
+  {
+   "id": "personality-046",
+   "subject": "personality",
+   "depth": 2,
+   "text": {
+    "en": "What's a first impression of you that turned out wrong?",
+    "fr": "Quelle première impression de toi s'est révélée fausse ?"
+   }
+  },
+  {
+   "id": "personality-047",
+   "subject": "personality",
+   "depth": 2,
+   "text": {
+    "en": "What are you stubborn about?",
+    "fr": "Sur quoi es-tu têtu ?"
+   }
+  },
+  {
+   "id": "personality-048",
+   "subject": "personality",
+   "depth": 3,
+   "text": {
+    "en": "What's a part of your personality you'd like others to notice more?",
+    "fr": "Quelle partie de ta personnalité aimerais-tu que les autres remarquent davantage ?"
+   }
+  },
+  {
+   "id": "personality-049",
+   "subject": "personality",
+   "depth": 3,
+   "text": {
+    "en": "When do you feel like an impostor?",
+    "fr": "Quand te sens-tu comme un imposteur ?"
+   }
+  },
+  {
+   "id": "personality-050",
+   "subject": "personality",
+   "depth": 3,
+   "text": {
+    "en": "What do you hide behind humor or a smile?",
+    "fr": "Qu'est-ce que tu caches derrière l'humour ou un sourire ?"
+   }
+  },
+  {
+   "id": "passions-031",
+   "subject": "passions",
+   "depth": 1,
+   "text": {
+    "en": "What's a hobby you'd like to try with me?",
+    "fr": "Quel loisir aimerais-tu essayer avec moi ?"
+   }
+  },
+  {
+   "id": "passions-032",
+   "subject": "passions",
+   "depth": 1,
+   "text": {
+    "en": "What's the last thing you made with your hands?",
+    "fr": "Quelle est la dernière chose que tu as faite de tes mains ?"
+   }
+  },
+  {
+   "id": "passions-033",
+   "subject": "passions",
+   "depth": 1,
+   "text": {
+    "en": "What's your favorite way to spend a free evening?",
+    "fr": "Quelle est ta façon préférée de passer une soirée libre ?"
+   }
+  },
+  {
+   "id": "passions-034",
+   "subject": "passions",
+   "depth": 1,
+   "text": {
+    "en": "Which sport do you love watching?",
+    "fr": "Quel sport adores-tu regarder ?"
+   }
+  },
+  {
+   "id": "passions-035",
+   "subject": "passions",
+   "depth": 1,
+   "text": {
+    "en": "What's a game you're unbeatable at?",
+    "fr": "À quel jeu es-tu imbattable ?"
+   }
+  },
+  {
+   "id": "passions-036",
+   "subject": "passions",
+   "depth": 1,
+   "text": {
+    "en": "Which artist would you love to meet?",
+    "fr": "Quel artiste aimerais-tu rencontrer ?"
+   }
+  },
+  {
+   "id": "passions-037",
+   "subject": "passions",
+   "depth": 2,
+   "text": {
+    "en": "How did you discover your favorite hobby?",
+    "fr": "Comment as-tu découvert ton loisir préféré ?"
+   }
+  },
+  {
+   "id": "passions-038",
+   "subject": "passions",
+   "depth": 2,
+   "text": {
+    "en": "What would you do with a whole free week, alone?",
+    "fr": "Que ferais-tu d'une semaine entière de libre, seul ?"
+   }
+  },
+  {
+   "id": "passions-039",
+   "subject": "passions",
+   "depth": 2,
+   "text": {
+    "en": "What's something you're passionate about that bores others?",
+    "fr": "Quelle passion as-tu qui ennuie les autres ?"
+   }
+  },
+  {
+   "id": "passions-040",
+   "subject": "passions",
+   "depth": 2,
+   "text": {
+    "en": "Which passion would you like to pass on to someone?",
+    "fr": "Quelle passion aimerais-tu transmettre à quelqu'un ?"
+   }
+  },
+  {
+   "id": "passions-041",
+   "subject": "passions",
+   "depth": 3,
+   "text": {
+    "en": "When did you last feel completely absorbed by something?",
+    "fr": "Quand t'es-tu senti complètement absorbé par quelque chose pour la dernière fois ?"
+   }
+  },
+  {
+   "id": "passions-042",
+   "subject": "passions",
+   "depth": 3,
+   "text": {
+    "en": "What passion helped you through a difficult time?",
+    "fr": "Quelle passion t'a aidé à traverser une période difficile ?"
+   }
+  },
+  {
+   "id": "passions-043",
+   "subject": "passions",
+   "depth": 3,
+   "text": {
+    "en": "What would you do all day if nobody judged you?",
+    "fr": "Que ferais-tu toute la journée si personne ne te jugeait ?"
+   }
+  },
+  {
+   "id": "tastes-039",
+   "subject": "tastes",
+   "depth": 1,
+   "text": {
+    "en": "What's your favorite breakfast?",
+    "fr": "Quel est ton petit-déjeuner préféré ?"
+   }
+  },
+  {
+   "id": "tastes-040",
+   "subject": "tastes",
+   "depth": 1,
+   "text": {
+    "en": "What's your go-to order at a fast-food place?",
+    "fr": "Que commandes-tu toujours dans un fast-food ?"
+   }
+  },
+  {
+   "id": "tastes-041",
+   "subject": "tastes",
+   "depth": 1,
+   "text": {
+    "en": "What's a food you loved as a child but not anymore?",
+    "fr": "Quel aliment adorais-tu enfant mais plus maintenant ?"
+   }
+  },
+  {
+   "id": "tastes-042",
+   "subject": "tastes",
+   "depth": 1,
+   "text": {
+    "en": "What's your favorite snack while watching a movie?",
+    "fr": "Quel est ton grignotage préféré devant un film ?"
+   }
+  },
+  {
+   "id": "tastes-043",
+   "subject": "tastes",
+   "depth": 1,
+   "text": {
+    "en": "What's your favorite city to eat in?",
+    "fr": "Quelle est ta ville préférée pour bien manger ?"
+   }
+  },
+  {
+   "id": "tastes-044",
+   "subject": "tastes",
+   "depth": 2,
+   "text": {
+    "en": "What's the most unusual thing you've ever eaten?",
+    "fr": "Quelle est la chose la plus insolite que tu aies mangée ?"
+   }
+  },
+  {
+   "id": "tastes-045",
+   "subject": "tastes",
+   "depth": 2,
+   "text": {
+    "en": "Which song do you always skip, and which one do you never skip?",
+    "fr": "Quelle chanson zappes-tu toujours, et laquelle ne zappes-tu jamais ?"
+   }
+  },
+  {
+   "id": "tastes-046",
+   "subject": "tastes",
+   "depth": 2,
+   "text": {
+    "en": "What's a movie everyone loves that you don't?",
+    "fr": "Quel film tout le monde adore mais pas toi ?"
+   }
+  },
+  {
+   "id": "tastes-047",
+   "subject": "tastes",
+   "depth": 2,
+   "text": {
+    "en": "What do you cook when you want to impress someone?",
+    "fr": "Que cuisines-tu quand tu veux impressionner quelqu'un ?"
+   }
+  },
+  {
+   "id": "tastes-048",
+   "subject": "tastes",
+   "depth": 3,
+   "text": {
+    "en": "What taste or smell brings back a person you miss?",
+    "fr": "Quel goût ou quelle odeur te rappelle une personne qui te manque ?"
+   }
+  },
+  {
+   "id": "tastes-049",
+   "subject": "tastes",
+   "depth": 3,
+   "text": {
+    "en": "What piece of music would describe who you are?",
+    "fr": "Quel morceau de musique décrirait qui tu es ?"
+   }
+  },
+  {
+   "id": "tastes-050",
+   "subject": "tastes",
+   "depth": 3,
+   "text": {
+    "en": "What's a beautiful thing you saw recently that nobody else noticed?",
+    "fr": "Quelle belle chose as-tu vue récemment que personne d'autre n'a remarquée ?"
+   }
+  },
+  {
+   "id": "travel-030",
+   "subject": "travel",
+   "depth": 1,
+   "text": {
+    "en": "Which country's food would you travel just to taste?",
+    "fr": "Pour la cuisine de quel pays voyagerais-tu juste pour goûter ?"
+   }
+  },
+  {
+   "id": "travel-031",
+   "subject": "travel",
+   "depth": 1,
+   "text": {
+    "en": "What's the most beautiful sunrise or sunset you've seen?",
+    "fr": "Quel est le plus beau lever ou coucher de soleil que tu aies vu ?"
+   }
+  },
+  {
+   "id": "travel-032",
+   "subject": "travel",
+   "depth": 1,
+   "text": {
+    "en": "Have you ever got lost while traveling? What happened?",
+    "fr": "T'es-tu déjà perdu en voyage ? Que s'est-il passé ?"
+   }
+  },
+  {
+   "id": "travel-033",
+   "subject": "travel",
+   "depth": 1,
+   "text": {
+    "en": "What's your favorite souvenir from a trip?",
+    "fr": "Quel est ton souvenir rapporté de voyage préféré ?"
+   }
+  },
+  {
+   "id": "travel-034",
+   "subject": "travel",
+   "depth": 1,
+   "text": {
+    "en": "City break or nature escape?",
+    "fr": "Escapade en ville ou évasion dans la nature ?"
+   }
+  },
+  {
+   "id": "travel-035",
+   "subject": "travel",
+   "depth": 1,
+   "text": {
+    "en": "What's the next trip you'd like to take?",
+    "fr": "Quel est le prochain voyage que tu aimerais faire ?"
+   }
+  },
+  {
+   "id": "travel-036",
+   "subject": "travel",
+   "depth": 2,
+   "text": {
+    "en": "Who's the best person you met while traveling?",
+    "fr": "Quelle est la plus belle rencontre que tu aies faite en voyage ?"
+   }
+  },
+  {
+   "id": "travel-037",
+   "subject": "travel",
+   "depth": 2,
+   "text": {
+    "en": "What place surprised you the most compared to what you expected?",
+    "fr": "Quel endroit t'a le plus surpris par rapport à ce que tu imaginais ?"
+   }
+  },
+  {
+   "id": "travel-038",
+   "subject": "travel",
+   "depth": 2,
+   "text": {
+    "en": "Would you travel alone? Why or why not?",
+    "fr": "Voyagerais-tu seul ? Pourquoi ?"
+   }
+  },
+  {
+   "id": "travel-039",
+   "subject": "travel",
+   "depth": 2,
+   "text": {
+    "en": "Where would we go if we left together tomorrow?",
+    "fr": "Où irions-nous si on partait ensemble demain ?"
+   }
+  },
+  {
+   "id": "travel-040",
+   "subject": "travel",
+   "depth": 2,
+   "text": {
+    "en": "What's the most adventurous trip you'd dare to take?",
+    "fr": "Quel est le voyage le plus aventureux que tu oserais faire ?"
+   }
+  },
+  {
+   "id": "travel-041",
+   "subject": "travel",
+   "depth": 3,
+   "text": {
+    "en": "What trip would you like to take with someone you love before it's too late?",
+    "fr": "Quel voyage aimerais-tu faire avec quelqu'un que tu aimes avant qu'il ne soit trop tard ?"
+   }
+  },
+  {
+   "id": "travel-042",
+   "subject": "travel",
+   "depth": 3,
+   "text": {
+    "en": "Where did you feel the most free in your life?",
+    "fr": "Où t'es-tu senti le plus libre de ta vie ?"
+   }
+  },
+  {
+   "id": "travel-043",
+   "subject": "travel",
+   "depth": 3,
+   "text": {
+    "en": "Is there a place you associate with a turning point in your life?",
+    "fr": "Y a-t-il un lieu que tu associes à un tournant de ta vie ?"
+   }
+  },
+  {
+   "id": "daily-034",
+   "subject": "daily",
+   "depth": 1,
+   "text": {
+    "en": "What's your favorite moment of the weekend?",
+    "fr": "Quel est ton moment préféré du week-end ?"
+   }
+  },
+  {
+   "id": "daily-035",
+   "subject": "daily",
+   "depth": 1,
+   "text": {
+    "en": "What's the last thing you do before sleeping?",
+    "fr": "Quelle est la dernière chose que tu fais avant de dormir ?"
+   }
+  },
+  {
+   "id": "daily-036",
+   "subject": "daily",
+   "depth": 1,
+   "text": {
+    "en": "What's in your bag or pockets right now?",
+    "fr": "Qu'y a-t-il dans ton sac ou tes poches en ce moment ?"
+   }
+  },
+  {
+   "id": "daily-037",
+   "subject": "daily",
+   "depth": 1,
+   "text": {
+    "en": "How do you like to start your day?",
+    "fr": "Comment aimes-tu commencer ta journée ?"
+   }
+  },
+  {
+   "id": "daily-038",
+   "subject": "daily",
+   "depth": 1,
+   "text": {
+    "en": "What's a chore you actually enjoy?",
+    "fr": "Quelle corvée aimes-tu vraiment faire ?"
+   }
+  },
+  {
+   "id": "daily-039",
+   "subject": "daily",
+   "depth": 1,
+   "text": {
+    "en": "What's your favorite drink to start the day?",
+    "fr": "Quelle est ta boisson préférée pour commencer la journée ?"
+   }
+  },
+  {
+   "id": "daily-040",
+   "subject": "daily",
+   "depth": 2,
+   "text": {
+    "en": "What would your ideal week look like?",
+    "fr": "À quoi ressemblerait ta semaine idéale ?"
+   }
+  },
+  {
+   "id": "daily-041",
+   "subject": "daily",
+   "depth": 2,
+   "text": {
+    "en": "What's a small thing that ruins your day?",
+    "fr": "Quel petit truc peut te gâcher la journée ?"
+   }
+  },
+  {
+   "id": "daily-042",
+   "subject": "daily",
+   "depth": 2,
+   "text": {
+    "en": "What's a routine you've kept for years?",
+    "fr": "Quelle routine gardes-tu depuis des années ?"
+   }
+  },
+  {
+   "id": "daily-043",
+   "subject": "daily",
+   "depth": 2,
+   "text": {
+    "en": "Who do you talk to most often during the day?",
+    "fr": "À qui parles-tu le plus souvent dans la journée ?"
+   }
+  },
+  {
+   "id": "daily-044",
+   "subject": "daily",
+   "depth": 3,
+   "text": {
+    "en": "What would you change tomorrow morning if you could change only one thing?",
+    "fr": "Que changerais-tu demain matin si tu ne pouvais changer qu'une seule chose ?"
+   }
+  },
+  {
+   "id": "daily-045",
+   "subject": "daily",
+   "depth": 3,
+   "text": {
+    "en": "When during the day do you feel most like yourself?",
+    "fr": "À quel moment de la journée te sens-tu le plus toi-même ?"
+   }
+  },
+  {
+   "id": "daily-046",
+   "subject": "daily",
+   "depth": 3,
+   "text": {
+    "en": "What do you do every day only out of habit, not because you want to?",
+    "fr": "Que fais-tu chaque jour par habitude, sans vraiment en avoir envie ?"
+   }
+  },
+  {
+   "id": "whatif-038",
+   "subject": "whatif",
+   "depth": 1,
+   "text": {
+    "en": "If you could have any animal as a pet, what would it be?",
+    "fr": "Si tu pouvais avoir n'importe quel animal de compagnie, lequel serait-ce ?"
+   }
+  },
+  {
+   "id": "whatif-039",
+   "subject": "whatif",
+   "depth": 1,
+   "text": {
+    "en": "If you could add one subject to schools, what would it be?",
+    "fr": "Si tu pouvais ajouter une matière à l'école, laquelle serait-ce ?"
+   }
+  },
+  {
+   "id": "whatif-040",
+   "subject": "whatif",
+   "depth": 1,
+   "text": {
+    "en": "If you won a free trip to space, would you go?",
+    "fr": "Si tu gagnais un voyage gratuit dans l'espace, irais-tu ?"
+   }
+  },
+  {
+   "id": "whatif-041",
+   "subject": "whatif",
+   "depth": 1,
+   "text": {
+    "en": "If you could be invisible for a day, what would you do?",
+    "fr": "Si tu pouvais être invisible une journée, que ferais-tu ?"
+   }
+  },
+  {
+   "id": "whatif-042",
+   "subject": "whatif",
+   "depth": 1,
+   "text": {
+    "en": "If you could live inside a video game, which one?",
+    "fr": "Si tu pouvais vivre dans un jeu vidéo, lequel ?"
+   }
+  },
+  {
+   "id": "whatif-043",
+   "subject": "whatif",
+   "depth": 1,
+   "text": {
+    "en": "If you could only keep five apps on your phone, which ones?",
+    "fr": "Si tu ne pouvais garder que cinq applis sur ton téléphone, lesquelles ?"
+   }
+  },
+  {
+   "id": "whatif-044",
+   "subject": "whatif",
+   "depth": 2,
+   "text": {
+    "en": "If you had to leave your country forever, where would you go?",
+    "fr": "Si tu devais quitter ton pays pour toujours, où irais-tu ?"
+   }
+  },
+  {
+   "id": "whatif-045",
+   "subject": "whatif",
+   "depth": 2,
+   "text": {
+    "en": "If you could meet yourself at 15, what would you show them?",
+    "fr": "Si tu pouvais rencontrer ton toi de 15 ans, que lui montrerais-tu ?"
+   }
+  },
+  {
+   "id": "whatif-046",
+   "subject": "whatif",
+   "depth": 2,
+   "text": {
+    "en": "If money didn't exist, how would you spend your days?",
+    "fr": "Si l'argent n'existait pas, comment passerais-tu tes journées ?"
+   }
+  },
+  {
+   "id": "whatif-047",
+   "subject": "whatif",
+   "depth": 2,
+   "text": {
+    "en": "If you could switch talents with someone you know, whose would you take?",
+    "fr": "Si tu pouvais échanger un talent avec quelqu'un que tu connais, lequel prendrais-tu ?"
+   }
+  },
+  {
+   "id": "whatif-048",
+   "subject": "whatif",
+   "depth": 3,
+   "text": {
+    "en": "If you could know the date of your death, would you want to?",
+    "fr": "Si tu pouvais connaître la date de ta mort, voudrais-tu la savoir ?"
+   }
+  },
+  {
+   "id": "whatif-049",
+   "subject": "whatif",
+   "depth": 3,
+   "text": {
+    "en": "If you could live your life again with your current memory, what would you do differently?",
+    "fr": "Si tu pouvais revivre ta vie en gardant tes souvenirs actuels, que ferais-tu différemment ?"
+   }
+  },
+  {
+   "id": "whatif-050",
+   "subject": "whatif",
+   "depth": 3,
+   "text": {
+    "en": "If you had to write a letter to be opened by your children in 30 years, what would you say?",
+    "fr": "Si tu devais écrire une lettre que tes enfants ouvriraient dans 30 ans, que dirais-tu ?"
+   }
+  },
+  {
+   "id": "imagination-001",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You wake up tomorrow in 1995 with everything you know now. What's the first thing you do?",
+    "fr": "Tu te réveilles demain en 1995 avec tout ce que tu sais aujourd'hui. Quelle est la première chose que tu fais ?"
+   }
+  },
+  {
+   "id": "imagination-002",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You can live one week as any fictional character. Who, and what do you do?",
+    "fr": "Tu peux vivre une semaine dans la peau d'un personnage de fiction. Lequel, et que fais-tu ?"
+   }
+  },
+  {
+   "id": "imagination-003",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You open a tiny café that only sells three things. What are they?",
+    "fr": "Tu ouvres un tout petit café qui ne vend que trois choses. Lesquelles ?"
+   }
+  },
+  {
+   "id": "imagination-004",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "A genie gives you three wishes, but none can be for money. What do you wish for?",
+    "fr": "Un génie t'accorde trois vœux, mais aucun ne peut concerner l'argent. Que souhaites-tu ?"
+   }
+  },
+  {
+   "id": "imagination-005",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You can talk with animals for one day. Which animal do you interview first?",
+    "fr": "Tu peux parler aux animaux pendant une journée. Quel animal interviewes-tu en premier ?"
+   }
+  },
+  {
+   "id": "imagination-006",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You're the main character of a movie. What genre is it, and who plays you?",
+    "fr": "Tu es le héros d'un film. Quel genre de film, et qui joue ton rôle ?"
+   }
+  },
+  {
+   "id": "imagination-007",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You can teleport once a day. Where do you go every morning?",
+    "fr": "Tu peux te téléporter une fois par jour. Où vas-tu chaque matin ?"
+   }
+  },
+  {
+   "id": "imagination-008",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You're invited to a dinner with any five people from history. Who's at the table?",
+    "fr": "Tu es invité à un dîner avec cinq personnes de l'histoire de ton choix. Qui est à table ?"
+   }
+  },
+  {
+   "id": "imagination-009",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You can add one magical object to your home. What does it do?",
+    "fr": "Tu peux ajouter un objet magique chez toi. Que fait-il ?"
+   }
+  },
+  {
+   "id": "imagination-010",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You become the mayor of your city for a week. What's your first decision?",
+    "fr": "Tu deviens maire de ta ville pendant une semaine. Quelle est ta première décision ?"
+   }
+  },
+  {
+   "id": "imagination-011",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You have a free day in any city in the world, with unlimited budget. Plan it.",
+    "fr": "Tu as une journée libre dans n'importe quelle ville du monde, budget illimité. Raconte-la."
+   }
+  },
+  {
+   "id": "imagination-012",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You can freeze time for one hour. What do you do with it?",
+    "fr": "Tu peux arrêter le temps pendant une heure. Qu'en fais-tu ?"
+   }
+  },
+  {
+   "id": "imagination-013",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You're a superhero with a very useless power. What is it?",
+    "fr": "Tu es un super-héros avec un pouvoir totalement inutile. Lequel ?"
+   }
+  },
+  {
+   "id": "imagination-014",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You can instantly become an expert in one job for a day. Which one?",
+    "fr": "Tu peux devenir expert dans un métier pendant une journée. Lequel ?"
+   }
+  },
+  {
+   "id": "imagination-015",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You're stuck in a lift with a celebrity for an hour. Who would you like it to be?",
+    "fr": "Tu es coincé une heure dans un ascenseur avec une célébrité. Avec qui aimerais-tu que ce soit ?"
+   }
+  },
+  {
+   "id": "imagination-016",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You can redesign the banknotes: whose portrait goes on them?",
+    "fr": "Tu peux redessiner les billets : quel portrait mets-tu dessus ?"
+   }
+  },
+  {
+   "id": "imagination-017",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You live in a world without phones for a month. What changes for you?",
+    "fr": "Tu vis un mois dans un monde sans téléphone. Qu'est-ce qui change pour toi ?"
+   }
+  },
+  {
+   "id": "imagination-018",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You get a robot assistant. What's the first thing you ask it to do every day?",
+    "fr": "Tu reçois un robot assistant. Quelle est la première chose que tu lui demandes chaque jour ?"
+   }
+  },
+  {
+   "id": "imagination-019",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You can live in any house from a movie or series. Which one?",
+    "fr": "Tu peux vivre dans n'importe quelle maison d'un film ou d'une série. Laquelle ?"
+   }
+  },
+  {
+   "id": "imagination-020",
+   "subject": "imagination",
+   "depth": 1,
+   "text": {
+    "en": "You're on a desert island with me. What role does each of us take?",
+    "fr": "Tu es sur une île déserte avec moi. Quel rôle chacun de nous prend ?"
+   }
+  },
+  {
+   "id": "imagination-021",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You have one week left to live and you're in perfect health. How do you spend it?",
+    "fr": "Il te reste une semaine à vivre et tu es en parfaite santé. Comment la passes-tu ?"
+   }
+  },
+  {
+   "id": "imagination-022",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You can relive any day of your life, but only as a spectator. Which day do you choose?",
+    "fr": "Tu peux revivre n'importe quel jour de ta vie, mais seulement en spectateur. Lequel choisis-tu ?"
+   }
+  },
+  {
+   "id": "imagination-023",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "Someone writes your biography. What's the title, and what's chapter one about?",
+    "fr": "Quelqu'un écrit ta biographie. Quel est le titre, et de quoi parle le premier chapitre ?"
+   }
+  },
+  {
+   "id": "imagination-024",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You receive a letter from yourself in 20 years. What do you hope it says?",
+    "fr": "Tu reçois une lettre de toi dans 20 ans. Qu'espères-tu qu'elle dise ?"
+   }
+  },
+  {
+   "id": "imagination-025",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You can swap lives with me for a month. What would you do with my life?",
+    "fr": "Tu peux échanger ta vie avec la mienne pendant un mois. Que ferais-tu de ma vie ?"
+   }
+  },
+  {
+   "id": "imagination-026",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You start a completely new life in another country tomorrow. Where, and what job do you take?",
+    "fr": "Tu recommences une toute nouvelle vie dans un autre pays demain. Où, et quel métier fais-tu ?"
+   }
+  },
+  {
+   "id": "imagination-027",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You find a door in your home that leads to one place of your choice. Where does it open?",
+    "fr": "Tu trouves chez toi une porte qui mène à l'endroit de ton choix. Sur quoi s'ouvre-t-elle ?"
+   }
+  },
+  {
+   "id": "imagination-028",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You can ask the universe one question and get the true answer. What do you ask?",
+    "fr": "Tu peux poser une question à l'univers et obtenir la vraie réponse. Que demandes-tu ?"
+   }
+  },
+  {
+   "id": "imagination-029",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "A museum opens about your life. What are the three objects in the main room?",
+    "fr": "Un musée ouvre sur ta vie. Quels sont les trois objets dans la salle principale ?"
+   }
+  },
+  {
+   "id": "imagination-030",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You can erase one invention from history. Which one, and why?",
+    "fr": "Tu peux effacer une invention de l'histoire. Laquelle, et pourquoi ?"
+   }
+  },
+  {
+   "id": "imagination-031",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You can spend one day inside someone else's mind. Whose?",
+    "fr": "Tu peux passer une journée dans la tête de quelqu'un d'autre. De qui ?"
+   }
+  },
+  {
+   "id": "imagination-032",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You're given a free year to learn anything, anywhere. What and where?",
+    "fr": "On t'offre une année libre pour apprendre ce que tu veux, où tu veux. Quoi et où ?"
+   }
+  },
+  {
+   "id": "imagination-033",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You can send one sentence to everyone on Earth. What do you write?",
+    "fr": "Tu peux envoyer une phrase à tous les habitants de la Terre. Qu'écris-tu ?"
+   }
+  },
+  {
+   "id": "imagination-034",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You meet a version of yourself who made every opposite choice. What do you ask them?",
+    "fr": "Tu rencontres une version de toi qui a fait tous les choix inverses. Que lui demandes-tu ?"
+   }
+  },
+  {
+   "id": "imagination-035",
+   "subject": "imagination",
+   "depth": 2,
+   "text": {
+    "en": "You can bring back one thing from your childhood, exactly as it was. What is it?",
+    "fr": "Tu peux faire revenir une chose de ton enfance, exactement comme elle était. Laquelle ?"
+   }
+  },
+  {
+   "id": "imagination-036",
+   "subject": "imagination",
+   "depth": 3,
+   "text": {
+    "en": "You can say one last thing to someone you lost. What do you say?",
+    "fr": "Tu peux dire une dernière chose à quelqu'un que tu as perdu. Que lui dis-tu ?"
+   }
+  },
+  {
+   "id": "imagination-037",
+   "subject": "imagination",
+   "depth": 3,
+   "text": {
+    "en": "You learn that tomorrow everyone will forget you. What do you do today?",
+    "fr": "Tu apprends que demain tout le monde t'aura oublié. Que fais-tu aujourd'hui ?"
+   }
+  },
+  {
+   "id": "imagination-038",
+   "subject": "imagination",
+   "depth": 3,
+   "text": {
+    "en": "You can see your life from the outside, like a film. Which scene do you want to rewrite?",
+    "fr": "Tu peux voir ta vie de l'extérieur, comme un film. Quelle scène voudrais-tu réécrire ?"
+   }
+  },
+  {
+   "id": "imagination-039",
+   "subject": "imagination",
+   "depth": 3,
+   "text": {
+    "en": "You can feel exactly what one person feels about you for one minute. Who do you choose?",
+    "fr": "Tu peux ressentir pendant une minute exactement ce qu'une personne ressent pour toi. Qui choisis-tu ?"
+   }
+  },
+  {
+   "id": "imagination-040",
+   "subject": "imagination",
+   "depth": 3,
+   "text": {
+    "en": "You're 90 and telling your grandchildren about today. What do you say about this period of your life?",
+    "fr": "Tu as 90 ans et tu racontes aujourd'hui à tes petits-enfants. Que dis-tu de cette période de ta vie ?"
+   }
+  },
+  {
+   "id": "imagination-041",
+   "subject": "imagination",
+   "depth": 3,
+   "text": {
+    "en": "You get one more hour with your younger self. Where do you take them, and what do you tell them?",
+    "fr": "Tu as une heure de plus avec ton toi plus jeune. Où l'emmènes-tu, et que lui dis-tu ?"
+   }
+  },
+  {
+   "id": "imagination-042",
+   "subject": "imagination",
+   "depth": 3,
+   "text": {
+    "en": "You can live without one fear forever. Which one do you choose?",
+    "fr": "Tu peux vivre sans une de tes peurs pour toujours. Laquelle choisis-tu ?"
+   }
+  },
+  {
+   "id": "imagination-043",
+   "subject": "imagination",
+   "depth": 3,
+   "text": {
+    "en": "You wake up and your biggest regret never happened. What's different in your life?",
+    "fr": "Tu te réveilles et ton plus grand regret n'a jamais eu lieu. Qu'est-ce qui est différent dans ta vie ?"
+   }
+  },
+  {
+   "id": "imagination-044",
+   "subject": "imagination",
+   "depth": 3,
+   "text": {
+    "en": "You have one day where everyone tells you the truth. Who do you go see?",
+    "fr": "Pendant une journée, tout le monde te dit la vérité. Qui vas-tu voir ?"
+   }
+  },
+  {
+   "id": "imagination-045",
+   "subject": "imagination",
+   "depth": 3,
+   "text": {
+    "en": "You can plant one memory in my mind forever. Which one do you choose?",
+    "fr": "Tu peux planter un souvenir dans ma tête pour toujours. Lequel choisis-tu ?"
    }
   }
  ]
