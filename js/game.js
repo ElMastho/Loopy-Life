@@ -6,6 +6,7 @@
 /* Game state                                                         */
 /* ------------------------------------------------------------------ */
 function newGame(players, subjects, depth, game) {
+  markPlayed();
   const mode = game === "tree" ? "tree" : game === "speed" ? "speed" : game === "team" ? "team" : "wheel";
   state = {
     version: 1,

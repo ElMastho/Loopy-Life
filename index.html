@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=1.1.2">
+  <link rel="stylesheet" href="style.css?v=1.2.0">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -59,8 +59,10 @@
         <input id="story-name" class="text-input" type="text" maxlength="40" autocomplete="off" data-i18n-ph="storyNamePh">
       </section>
       <div class="step-nav">
+        <button id="quick-btn" class="btn ghost quick-btn" type="button" data-i18n="quickStart">⚡ Play now</button>
         <button class="btn primary next-step" type="button" data-go="2" data-i18n="nextStep">Next →</button>
       </div>
+      <p class="quick-hint" id="quick-hint" data-i18n="quickHint" hidden></p>
       <section class="panel continue-panel">
         <h2 data-i18n="continueTitle">Or continue a story</h2>
         <p class="resume">
@@ -232,8 +234,8 @@
         <div id="driver-choice" class="driver-choice"></div>
       </section>
 
-      <section class="panel">
-        <h2 data-i18n="optionsTitle">Options</h2>
+      <details class="panel more-options" id="more-options">
+        <summary><h2 data-i18n="optionsTitle">Options</h2> <small class="more-hint" data-i18n="moreOptionsHint"></small></summary>
         <label class="option-row adult-row" for="adult-mode" id="adult-option" hidden>
           <input id="adult-mode" type="checkbox">
           <span class="switch" aria-hidden="true"></span>
@@ -282,7 +284,7 @@
             <small data-i18n="randomTurnDesc"></small>
           </span>
         </label>
-      </section>
+      </details>
 
       <p id="setup-error" class="error" role="alert"></p>
       <div class="step-nav">
@@ -291,7 +293,7 @@
       </div>
     </div>
 
-    <footer class="foot"><span data-i18n="footer">First seed of <strong>Loopy Life</strong></span> · <span id="q-count">…</span> · <button id="version-btn" class="link version-btn" type="button" data-i18n-aria="updTitle" aria-label="App version">v</button></footer>
+    <footer class="foot"><span data-i18n="footer">First seed of <strong>Loopy Life</strong></span> · <span id="q-count">…</span> · <button class="link text-size-btn" type="button" data-i18n-aria="textSize" aria-label="Text size">🔠 <span class="text-size-val">100 %</span></button> · <button id="version-btn" class="link version-btn" type="button" data-i18n-aria="updTitle" aria-label="App version">v</button></footer>
   </main>
 
   <!-- ============ GAME ============ -->
@@ -384,7 +386,10 @@
       <button id="home-btn" class="btn ghost" type="button" data-i18n="home">🏠 Home</button>
       <button id="finish-btn" class="btn ghost" type="button" data-i18n="finish">🏁 Finish</button>
       <button id="lang-btn" class="btn ghost" type="button">🇫🇷 Français</button>
+      <button id="full-btn" class="btn ghost" type="button" data-i18n="fullScreen" hidden>⛶ Full screen</button>
+      <button class="btn ghost text-size-btn" type="button" data-i18n-aria="textSize" aria-label="Text size">🔠 <span class="text-size-val">100 %</span></button>
     </div>
+    <p class="hint keys-hint" id="keys-hint" data-i18n="keysHint"></p>
   </main>
 
   <!-- ============ SUMMARY ============ -->
@@ -425,6 +430,7 @@
         <span class="card-top-right">
           <span class="depth" id="q-depth">🌤️ Light</span>
           <button class="card-help" id="pause-btn" type="button" data-i18n-aria="pause" aria-label="Pause" hidden>⏸</button>
+          <button class="card-help" id="flip-btn" type="button" data-i18n-aria="flipCard" aria-label="Turn the card around">🔃</button>
           <button class="card-help" id="speak-btn" type="button" data-i18n-aria="readAloud" aria-label="Read aloud" hidden>🔊</button>
           <button class="card-help rules-open" type="button" data-i18n-aria="rules" aria-label="Rules">?</button>
         </span>
@@ -549,29 +555,30 @@
   <div id="toast" class="toast" aria-live="polite"></div>
 
   <!-- the game, in load order (see js/README.md) -->
-  <script src="js/config.js?v=1.1.2"></script>
-  <script src="js/i18n.js?v=1.1.2"></script>
-  <script src="js/i18n/en.js?v=1.1.2"></script>
-  <script src="js/i18n/fr.js?v=1.1.2"></script>
-  <script src="js/state.js?v=1.1.2"></script>
-  <script src="js/helpers.js?v=1.1.2"></script>
-  <script src="js/storage.js?v=1.1.2"></script>
-  <script src="js/fx.js?v=1.1.2"></script>
-  <script src="js/setup.js?v=1.1.2"></script>
-  <script src="js/game.js?v=1.1.2"></script>
-  <script src="js/card.js?v=1.1.2"></script>
-  <script src="js/turns.js?v=1.1.2"></script>
-  <script src="js/speed.js?v=1.1.2"></script>
-  <script src="js/team.js?v=1.1.2"></script>
-  <script src="js/wheel.js?v=1.1.2"></script>
-  <script src="js/tree.js?v=1.1.2"></script>
-  <script src="js/journal.js?v=1.1.2"></script>
-  <script src="js/stories.js?v=1.1.2"></script>
-  <script src="js/badges.js?v=1.1.2"></script>
-  <script src="js/share.js?v=1.1.2"></script>
-  <script src="js/install.js?v=1.1.2"></script>
-  <script src="js/rules.js?v=1.1.2"></script>
-  <script src="js/update.js?v=1.1.2"></script>
-  <script src="js/main.js?v=1.1.2"></script>
+  <script src="js/config.js?v=1.2.0"></script>
+  <script src="js/i18n.js?v=1.2.0"></script>
+  <script src="js/i18n/en.js?v=1.2.0"></script>
+  <script src="js/i18n/fr.js?v=1.2.0"></script>
+  <script src="js/state.js?v=1.2.0"></script>
+  <script src="js/helpers.js?v=1.2.0"></script>
+  <script src="js/storage.js?v=1.2.0"></script>
+  <script src="js/fx.js?v=1.2.0"></script>
+  <script src="js/setup.js?v=1.2.0"></script>
+  <script src="js/game.js?v=1.2.0"></script>
+  <script src="js/card.js?v=1.2.0"></script>
+  <script src="js/turns.js?v=1.2.0"></script>
+  <script src="js/speed.js?v=1.2.0"></script>
+  <script src="js/team.js?v=1.2.0"></script>
+  <script src="js/wheel.js?v=1.2.0"></script>
+  <script src="js/tree.js?v=1.2.0"></script>
+  <script src="js/journal.js?v=1.2.0"></script>
+  <script src="js/stories.js?v=1.2.0"></script>
+  <script src="js/badges.js?v=1.2.0"></script>
+  <script src="js/share.js?v=1.2.0"></script>
+  <script src="js/install.js?v=1.2.0"></script>
+  <script src="js/rules.js?v=1.2.0"></script>
+  <script src="js/update.js?v=1.2.0"></script>
+  <script src="js/devices.js?v=1.2.0"></script>
+  <script src="js/main.js?v=1.2.0"></script>
 </body>
 </html>

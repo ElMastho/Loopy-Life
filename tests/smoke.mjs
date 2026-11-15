@@ -32,8 +32,8 @@ const fails = [];
 const check = (ok, what) => { console.log(`${ok ? "ok  " : "FAIL"} ${what}`); if (!ok) fails.push(what); };
 const browser = await playwright.chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 
-async function newPage(viewport) {
-  const ctx = await browser.newContext({ locale: "fr-FR", viewport });
+async function newPage(viewport, extra = {}) {
+  const ctx = await browser.newContext({ locale: "fr-FR", viewport, ...extra });
   // Google Fonts may be out of reach in CI: never wait for it.
   await ctx.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
   const p = await ctx.newPage();
@@ -102,6 +102,29 @@ await desk.keyboard.press("s");
 check((await desk.textContent("#team-progress")).includes("3"), "icebreaker: 3 answers counted");
 await desk.keyboard.press("ArrowLeft"); await desk.keyboard.press("Space"); await desk.waitForTimeout(100);
 check((await desk.textContent("#team-progress")).includes("4"), "icebreaker: going back then answering");
+
+// Quick start from step 1, then the keyboard on a computer: Space spins, Enter answers.
+await desk.goto(BASE); await desk.evaluate(() => localStorage.clear());
+await desk.goto(BASE); await desk.waitForSelector(".subject", { state: "attached" });
+check(await desk.isVisible("#quick-hint"), "first visit: the quick start is suggested");
+await desk.click("#quick-btn"); await desk.waitForTimeout(400);
+check(await desk.isVisible("#view-wheel"), "quick start opens the wheel");
+await desk.keyboard.press("Space");
+await desk.waitForSelector("#card-overlay:not(.hidden)", { timeout: 10000 });
+check(true, "Space spins the wheel");
+await desk.keyboard.press("Enter"); await desk.waitForTimeout(600);
+check((await desk.evaluate(() => state.journal.length)) === 1, "Enter means answered");
+await desk.click(".game-actions .text-size-btn");
+check((await desk.evaluate(() => document.documentElement.style.fontSize)) === "115%", "text size grows");
+await desk.goto(BASE); await desk.waitForSelector(".subject", { state: "attached" });
+check(!(await desk.isVisible("#quick-hint")), "the quick start hint goes away once played");
+
+// A tablet: the card turns around for the person across.
+const tablet = await newPage({ width: 820, height: 1180 }, { hasTouch: true, isMobile: true });
+await setup(tablet, "wheel", ["Thomas", "Maya"]);
+await tablet.click("#spin-btn"); await tablet.waitForSelector("#card-overlay:not(.hidden)", { timeout: 10000 });
+await tablet.click("#flip-btn");
+check(await tablet.evaluate(() => document.querySelector("#card").classList.contains("flipped")), "tablet: the card turns around");
 
 // Panels and language.
 const home = async () => { await phone.goto(BASE); await phone.waitForSelector(".subject", { state: "attached" }); await phone.waitForTimeout(300); if (await phone.isVisible("#home-btn")) { await phone.click("#home-btn"); await phone.waitForTimeout(300); } };

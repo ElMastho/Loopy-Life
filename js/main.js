@@ -53,10 +53,6 @@ function initGame() {
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") { $("#journal-overlay").classList.add("hidden"); $("#badges-overlay").classList.add("hidden"); }
-    if ((e.key === " " || e.key === "Enter") && $("#screen-game").classList.contains("active") && !current && state.mode === "wheel" && document.activeElement === document.body) {
-      e.preventDefault();
-      spin();
-    }
   });
 }
 
@@ -86,6 +82,7 @@ async function boot() {
   initSetup();
   initCard();
   initGame();
+  initDevices();
   applyLanguage();
   // a game that was still going when the page closed or reloaded comes straight back
   const saved = loadSaved();
