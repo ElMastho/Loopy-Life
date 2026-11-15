@@ -448,3 +448,18 @@ button { font-family: inherit; cursor: pointer; }
 .suggest-opt.on { border-style: solid; border-color: #2a1b4a; background: #f3ecfd; }
 .suggest-opt.on .tick { background: #2a1b4a; border-color: #2a1b4a; box-shadow: inset 0 0 0 4px #f3ecfd; }
 .suggest-card .card-actions { margin-top: 16px; }
+
+/* new games */
+.game-card[data-game="date"] { background: linear-gradient(135deg, #ffd6e0, #ffc6a8); }
+.game-card[data-game="couple"] { background: linear-gradient(135deg, #f7c6e0, #d9c8ff); }
+.game-card[data-game="car"] { background: linear-gradient(135deg, #bde0fe, #c8f7dc); }
+.panel-hint { margin: -6px 0 12px; color: var(--muted); font-size: .9rem; }
+.driver-choice { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.driver { border: 2px solid var(--panel-border); background: rgba(0,0,0,.2); color: var(--text); border-radius: 999px; padding: 8px 14px; font-size: .95rem; }
+.driver.on { background: var(--text); color: var(--bg1); border-color: var(--text); font-weight: 600; }
+.adult-row strong { color: #ff9aa2; }
+.adult-text { color: #2a1b4a; line-height: 1.45; }
+.adult-text ul { padding-left: 1.2em; margin: 6px 0; }
+.adult-text .disclaimer { font-size: .85rem; color: #6b5a8e; border-left: 3px solid #e8505b; padding-left: 10px; }
+.adult-card h2 { margin: 0 0 8px; color: #c53030; }
+.adult-card .card-actions { margin-top: 16px; }

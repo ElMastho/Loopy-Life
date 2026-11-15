@@ -1,7 +1,7 @@
 // Offline support: always try the network first (so updates show up at once),
 // and fall back to the last copy saved here when there is no connection.
-const CACHE = "loopy-life-v10";
-const CORE = ["./", "index.html", "style.css?v=10", "app.js?v=10", "data/questions.json?v=10", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png"];
+const CACHE = "loopy-life-v11";
+const CORE = ["./", "index.html", "style.css?v=11", "app.js?v=11", "data/questions.json?v=11", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));
