@@ -492,3 +492,8 @@ button { font-family: inherit; cursor: pointer; }
 .scoreboard.no-pts .pts { display: none; }
 .scoreboard.no-pts .score .who { font-size: 1rem; color: var(--text, #fff); }
 .scoreboard.no-pts .score.active .who { color: var(--pc); font-weight: 600; }
+
+/* badges you can't win in this game, listed below the others */
+.badges-sep { list-style: none; margin: 14px 0 6px; font-size: .85rem; opacity: .7; font-weight: 600; }
+.badge.elsewhere { opacity: .4; }
+#depth-hint + .segmented[hidden] { display: none !important; }
