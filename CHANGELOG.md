@@ -2,6 +2,12 @@
 
 Versions follow [semantic versioning](https://semver.org/): major.minor.patch. `python3 tools/release.py patch|minor|major` sets the next one and adds its heading here.
 
+## 1.1.2
+
+- Automatic tests on every change: the question bank, the version and offline files, and a browser that plays every game.
+- A preview image and description when the link is shared (WhatsApp, Discord, Messenger…).
+- Licence: free to play, all rights reserved.
+
 ## 1.1.1
 
 - Smoother wheel: its face is drawn once and turned by the graphics card, instead of being repainted on every frame (it shook on some computers).
