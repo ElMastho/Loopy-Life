@@ -41,5 +41,13 @@
   {"id": "travel-040", "subject": "travel", "depth": 2, "text": {"en": "What's the most adventurous trip you'd dare to take?", "fr": "Quel est le voyage le plus aventureux que tu oserais faire ?"}},
   {"id": "travel-041", "subject": "travel", "depth": 3, "text": {"en": "What trip would you like to take with someone you love before it's too late?", "fr": "Quel voyage aimerais-tu faire avec quelqu'un que tu aimes avant qu'il ne soit trop tard ?"}},
   {"id": "travel-042", "subject": "travel", "depth": 3, "text": {"en": "Where did you feel the most free in your life?", "fr": "Où t'es-tu senti le plus libre de ta vie ?"}},
-  {"id": "travel-043", "subject": "travel", "depth": 3, "text": {"en": "Is there a place you associate with a turning point in your life?", "fr": "Y a-t-il un lieu que tu associes à un tournant de ta vie ?"}}
+  {"id": "travel-043", "subject": "travel", "depth": 3, "text": {"en": "Is there a place you associate with a turning point in your life?", "fr": "Y a-t-il un lieu que tu associes à un tournant de ta vie ?"}},
+  {"id": "travel-044", "subject": "travel", "depth": 1, "text": {"en": "What's your best tip for a long journey?", "fr": "Quel est ton meilleur conseil pour un long trajet ?"}},
+  {"id": "travel-045", "subject": "travel", "depth": 1, "text": {"en": "Hotel breakfast: sweet or savory, and how many plates?", "fr": "Petit-déjeuner à l'hôtel : sucré ou salé, et combien d'assiettes ?"}},
+  {"id": "travel-046", "subject": "travel", "depth": 2, "text": {"en": "What did a trip make you appreciate about home?", "fr": "Qu'est-ce qu'un voyage t'a fait apprécier chez toi ?"}},
+  {"id": "travel-047", "subject": "travel", "depth": 2, "text": {"en": "Which trip went wrong but became a great memory?", "fr": "Quel voyage a mal tourné mais est devenu un super souvenir ?"}},
+  {"id": "travel-048", "subject": "travel", "depth": 2, "text": {"en": "Is there a place you dream of because of someone's stories?", "fr": "Y a-t-il un endroit dont tu rêves à cause des récits de quelqu'un ?"}},
+  {"id": "travel-049", "subject": "travel", "depth": 3, "text": {"en": "Which trip would you take to understand your roots better?", "fr": "Quel voyage ferais-tu pour mieux comprendre tes racines ?"}},
+  {"id": "travel-050", "subject": "travel", "depth": 3, "text": {"en": "What do you leave behind when you travel, and what do you find again?", "fr": "Qu'est-ce que tu laisses derrière toi quand tu voyages, et qu'est-ce que tu retrouves ?"}},
+  {"id": "travel-051", "subject": "travel", "depth": 3, "text": {"en": "Which journey changed the way you look at other people?", "fr": "Quel voyage a changé ta façon de regarder les autres ?"}}
 ]

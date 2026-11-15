@@ -48,5 +48,12 @@
   {"id": "tastes-047", "subject": "tastes", "depth": 2, "text": {"en": "What do you cook when you want to impress someone?", "fr": "Que cuisines-tu quand tu veux impressionner quelqu'un ?"}},
   {"id": "tastes-048", "subject": "tastes", "depth": 3, "text": {"en": "What taste or smell brings back a person you miss?", "fr": "Quel goût ou quelle odeur te rappelle une personne qui te manque ?"}},
   {"id": "tastes-049", "subject": "tastes", "depth": 3, "text": {"en": "What piece of music would describe who you are?", "fr": "Quel morceau de musique décrirait qui tu es ?"}},
-  {"id": "tastes-050", "subject": "tastes", "depth": 3, "text": {"en": "What's a beautiful thing you saw recently that nobody else noticed?", "fr": "Quelle belle chose as-tu vue récemment que personne d'autre n'a remarquée ?"}}
+  {"id": "tastes-050", "subject": "tastes", "depth": 3, "text": {"en": "What's a beautiful thing you saw recently that nobody else noticed?", "fr": "Quelle belle chose as-tu vue récemment que personne d'autre n'a remarquée ?"}},
+  {"id": "tastes-051", "subject": "tastes", "depth": 1, "text": {"en": "Which smell do you love that others find strange?", "fr": "Quelle odeur aimes-tu alors que les autres la trouvent bizarre ?"}},
+  {"id": "tastes-052", "subject": "tastes", "depth": 1, "text": {"en": "Crunchy or melting? Crusty bread or soft brioche?", "fr": "Croustillant ou fondant ? Baguette croustillante ou brioche moelleuse ?"}},
+  {"id": "tastes-053", "subject": "tastes", "depth": 2, "text": {"en": "Which song did you discover thanks to someone special?", "fr": "Quelle chanson as-tu découverte grâce à quelqu'un de spécial ?"}},
+  {"id": "tastes-054", "subject": "tastes", "depth": 2, "text": {"en": "Which dish would you cook for someone to cheer them up?", "fr": "Quel plat cuisinerais-tu à quelqu'un pour lui remonter le moral ?"}},
+  {"id": "tastes-055", "subject": "tastes", "depth": 3, "text": {"en": "Which film or book made you feel less alone?", "fr": "Quel film ou quel livre t'a fait te sentir moins seul ?"}},
+  {"id": "tastes-056", "subject": "tastes", "depth": 3, "text": {"en": "Which meal will you never forget because of who was at the table?", "fr": "Quel repas n'oublieras-tu jamais à cause des personnes autour de la table ?"}},
+  {"id": "tastes-057", "subject": "tastes", "depth": 3, "text": {"en": "Which song can't you listen to anymore, and why?", "fr": "Quelle chanson ne peux-tu plus écouter, et pourquoi ?"}}
 ]

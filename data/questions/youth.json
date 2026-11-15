@@ -47,5 +47,14 @@
   {"id": "youth-046", "subject": "youth", "depth": 2, "text": {"en": "What's the biggest risk you took before 20?", "fr": "Quel est le plus gros risque que tu as pris avant 20 ans ?"}},
   {"id": "youth-047", "subject": "youth", "depth": 3, "text": {"en": "Who were you trying to impress as a teenager, and why?", "fr": "Qui essayais-tu d'impressionner quand tu étais ado, et pourquoi ?"}},
   {"id": "youth-048", "subject": "youth", "depth": 3, "text": {"en": "What did you lose when you stopped being a teenager?", "fr": "Qu'as-tu perdu en arrêtant d'être ado ?"}},
-  {"id": "youth-049", "subject": "youth", "depth": 3, "text": {"en": "Which teenage friendship would you like to have kept?", "fr": "Quelle amitié d'adolescence aurais-tu aimé garder ?"}}
+  {"id": "youth-049", "subject": "youth", "depth": 3, "text": {"en": "Which teenage friendship would you like to have kept?", "fr": "Quelle amitié d'adolescence aurais-tu aimé garder ?"}},
+  {"id": "youth-050", "subject": "youth", "depth": 1, "text": {"en": "Which trend did everyone follow at your school?", "fr": "Quelle mode tout le monde suivait-il dans ton école ?"}},
+  {"id": "youth-051", "subject": "youth", "depth": 1, "text": {"en": "What was your best excuse for unfinished homework?", "fr": "Quelle était ta meilleure excuse pour des devoirs pas faits ?"}},
+  {"id": "youth-052", "subject": "youth", "depth": 1, "text": {"en": "What did you write in your diary or on your pencil case?", "fr": "Qu'écrivais-tu dans ton journal intime ou sur ta trousse ?"}},
+  {"id": "youth-053", "subject": "youth", "depth": 2, "text": {"en": "What was your first real party like?", "fr": "Comment s'est passée ta première vraie soirée ?"}},
+  {"id": "youth-054", "subject": "youth", "depth": 2, "text": {"en": "Which old classmate would you like to see again, to find out what became of them?", "fr": "Quel ancien camarade de classe aimerais-tu revoir pour savoir ce qu'il est devenu ?"}},
+  {"id": "youth-055", "subject": "youth", "depth": 2, "text": {"en": "Which of your teenage passions did others find strange?", "fr": "Quelle passion d'ado les autres trouvaient-ils bizarre chez toi ?"}},
+  {"id": "youth-056", "subject": "youth", "depth": 3, "text": {"en": "When did you stand up for yourself for the first time?", "fr": "Quand t'es-tu affirmé pour la première fois ?"}},
+  {"id": "youth-057", "subject": "youth", "depth": 3, "text": {"en": "What did school teach you about yourself, beyond the lessons?", "fr": "Qu'est-ce que l'école t'a appris sur toi, au-delà des cours ?"}},
+  {"id": "youth-058", "subject": "youth", "depth": 3, "text": {"en": "What did you pretend to like as a teenager to fit in?", "fr": "Qu'as-tu fait semblant d'aimer, ado, pour être accepté ?"}}
 ]

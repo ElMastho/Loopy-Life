@@ -44,5 +44,14 @@
   {"id": "daily-043", "subject": "daily", "depth": 2, "text": {"en": "Who do you talk to most often during the day?", "fr": "À qui parles-tu le plus souvent dans la journée ?"}},
   {"id": "daily-044", "subject": "daily", "depth": 3, "text": {"en": "What would you change tomorrow morning if you could change only one thing?", "fr": "Que changerais-tu demain matin si tu ne pouvais changer qu'une seule chose ?"}},
   {"id": "daily-045", "subject": "daily", "depth": 3, "text": {"en": "When during the day do you feel most like yourself?", "fr": "À quel moment de la journée te sens-tu le plus toi-même ?"}},
-  {"id": "daily-046", "subject": "daily", "depth": 3, "text": {"en": "What do you do every day only out of habit, not because you want to?", "fr": "Que fais-tu chaque jour par habitude, sans vraiment en avoir envie ?"}}
+  {"id": "daily-046", "subject": "daily", "depth": 3, "text": {"en": "What do you do every day only out of habit, not because you want to?", "fr": "Que fais-tu chaque jour par habitude, sans vraiment en avoir envie ?"}},
+  {"id": "daily-047", "subject": "daily", "depth": 1, "text": {"en": "What do you do while waiting for the kettle or the microwave?", "fr": "Que fais-tu en attendant que l'eau bouille ou que le micro-ondes sonne ?"}},
+  {"id": "daily-048", "subject": "daily", "depth": 1, "text": {"en": "Do you hit snooze? How many times?", "fr": "Tu appuies sur « snooze » ? Combien de fois ?"}},
+  {"id": "daily-049", "subject": "daily", "depth": 1, "text": {"en": "What's always in your fridge?", "fr": "Qu'y a-t-il toujours dans ton frigo ?"}},
+  {"id": "daily-050", "subject": "daily", "depth": 2, "text": {"en": "What little luxury do you treat yourself to every week?", "fr": "Quel petit luxe t'offres-tu chaque semaine ?"}},
+  {"id": "daily-051", "subject": "daily", "depth": 2, "text": {"en": "What do you do differently from most people in your daily life?", "fr": "Que fais-tu différemment de la plupart des gens au quotidien ?"}},
+  {"id": "daily-052", "subject": "daily", "depth": 2, "text": {"en": "What would your neighbors say about you?", "fr": "Que diraient tes voisins de toi ?"}},
+  {"id": "daily-053", "subject": "daily", "depth": 3, "text": {"en": "Which small habit has changed your life the most?", "fr": "Quelle petite habitude a le plus changé ta vie ?"}},
+  {"id": "daily-054", "subject": "daily", "depth": 3, "text": {"en": "What does a day when you're proud of yourself look like?", "fr": "À quoi ressemble une journée où tu es fier de toi ?"}},
+  {"id": "daily-055", "subject": "daily", "depth": 3, "text": {"en": "What do you rush through that you'd like to savor?", "fr": "Qu'est-ce que tu fais en courant alors que tu aimerais le savourer ?"}}
 ]

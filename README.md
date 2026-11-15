@@ -38,8 +38,8 @@ Each group of friends can keep its own story: **💾 Save the story** downloads 
 
 The questions live in [`data/`](data/), one file per subject and per kind, so a subject can be read and extended on its own:
 
-- [`data/subjects.json`](data/subjects.json): the languages, the list of pools and the 15 subjects (name, emoji, colour).
-- `data/questions/<subject>.json`: that subject's questions (700+ in all), each with a depth from 1 (light) to 3 (deep).
+- [`data/subjects.json`](data/subjects.json): the languages, the list of pools and the 19 subjects (name, emoji, colour).
+- `data/questions/<subject>.json`: that subject's questions (nearly 1,000 in all), each with a depth from 1 (light) to 3 (deep).
 - `data/pools/`: `date`, `couple`, `spicy` (+18) and `speed` questions, the `who` votes and the `challenges`.
 
 Each file is a list with one entry per line:

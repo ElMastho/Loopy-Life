@@ -48,5 +48,14 @@
   {"id": "personality-047", "subject": "personality", "depth": 2, "text": {"en": "What are you stubborn about?", "fr": "Sur quoi es-tu têtu ?"}},
   {"id": "personality-048", "subject": "personality", "depth": 3, "text": {"en": "What's a part of your personality you'd like others to notice more?", "fr": "Quelle partie de ta personnalité aimerais-tu que les autres remarquent davantage ?"}},
   {"id": "personality-049", "subject": "personality", "depth": 3, "text": {"en": "When do you feel like an impostor?", "fr": "Quand te sens-tu comme un imposteur ?"}},
-  {"id": "personality-050", "subject": "personality", "depth": 3, "text": {"en": "What do you hide behind humor or a smile?", "fr": "Qu'est-ce que tu caches derrière l'humour ou un sourire ?"}}
+  {"id": "personality-050", "subject": "personality", "depth": 3, "text": {"en": "What do you hide behind humor or a smile?", "fr": "Qu'est-ce que tu caches derrière l'humour ou un sourire ?"}},
+  {"id": "personality-051", "subject": "personality", "depth": 1, "text": {"en": "How do you react to a surprise party?", "fr": "Comment réagis-tu à une fête surprise ?"}},
+  {"id": "personality-052", "subject": "personality", "depth": 1, "text": {"en": "Which phrase do you say all the time?", "fr": "Quelle phrase répètes-tu tout le temps ?"}},
+  {"id": "personality-053", "subject": "personality", "depth": 1, "text": {"en": "In life, are you more of a sprinter or a marathon runner?", "fr": "Dans la vie, tu es plutôt sprinteur ou marathonien ?"}},
+  {"id": "personality-054", "subject": "personality", "depth": 2, "text": {"en": "What do you do when you're nervous?", "fr": "Que fais-tu quand tu es nerveux ?"}},
+  {"id": "personality-055", "subject": "personality", "depth": 2, "text": {"en": "What's a contradiction in your personality?", "fr": "Quelle contradiction y a-t-il dans ta personnalité ?"}},
+  {"id": "personality-056", "subject": "personality", "depth": 2, "text": {"en": "How do you behave in a group of strangers?", "fr": "Comment te comportes-tu dans un groupe d'inconnus ?"}},
+  {"id": "personality-057", "subject": "personality", "depth": 3, "text": {"en": "Which part of you do people only see once they know you well?", "fr": "Quelle part de toi ne voit-on qu'une fois qu'on te connaît bien ?"}},
+  {"id": "personality-058", "subject": "personality", "depth": 3, "text": {"en": "When did you last feel truly proud of who you are?", "fr": "Quand t'es-tu senti vraiment fier de qui tu es pour la dernière fois ?"}},
+  {"id": "personality-059", "subject": "personality", "depth": 3, "text": {"en": "What are you still trying to prove, and to whom?", "fr": "Qu'essaies-tu encore de prouver, et à qui ?"}}
 ]

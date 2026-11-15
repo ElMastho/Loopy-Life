@@ -46,5 +46,14 @@
   {"id": "values-045", "subject": "values", "depth": 2, "text": {"en": "What would you teach a child about life in three sentences?", "fr": "Qu'enseignerais-tu de la vie à un enfant en trois phrases ?"}},
   {"id": "values-046", "subject": "values", "depth": 3, "text": {"en": "When was the last time you changed your mind on something important?", "fr": "Quand as-tu changé d'avis sur quelque chose d'important pour la dernière fois ?"}},
   {"id": "values-047", "subject": "values", "depth": 3, "text": {"en": "What would you be ready to give up everything for?", "fr": "Pour quoi serais-tu prêt à tout abandonner ?"}},
-  {"id": "values-048", "subject": "values", "depth": 3, "text": {"en": "What do you think you owe to others?", "fr": "Que penses-tu devoir aux autres ?"}}
+  {"id": "values-048", "subject": "values", "depth": 3, "text": {"en": "What do you think you owe to others?", "fr": "Que penses-tu devoir aux autres ?"}},
+  {"id": "values-049", "subject": "values", "depth": 1, "text": {"en": "Would you hand back a wallet you found, even one full of cash?", "fr": "Rendrais-tu un portefeuille trouvé, même plein de billets ?"}},
+  {"id": "values-050", "subject": "values", "depth": 1, "text": {"en": "Which promise have you always kept?", "fr": "Quelle promesse as-tu toujours tenue ?"}},
+  {"id": "values-051", "subject": "values", "depth": 1, "text": {"en": "Would you rather be admired or loved?", "fr": "Tu préfères être admiré ou aimé ?"}},
+  {"id": "values-052", "subject": "values", "depth": 2, "text": {"en": "Where's the line between generosity and naivety for you?", "fr": "Où est la limite entre générosité et naïveté pour toi ?"}},
+  {"id": "values-053", "subject": "values", "depth": 2, "text": {"en": "Is there a little lie you tell often?", "fr": "Y a-t-il un petit mensonge que tu dis souvent ?"}},
+  {"id": "values-054", "subject": "values", "depth": 2, "text": {"en": "Which rule do you find unfair but follow anyway?", "fr": "Quelle règle trouves-tu injuste mais respectes-tu quand même ?"}},
+  {"id": "values-055", "subject": "values", "depth": 3, "text": {"en": "What would you forgive anyone, and what would you never forgive?", "fr": "Que pardonnerais-tu à n'importe qui, et que ne pardonnerais-tu jamais ?"}},
+  {"id": "values-056", "subject": "values", "depth": 3, "text": {"en": "Who taught you what kindness is?", "fr": "Qui t'a appris ce qu'est la gentillesse ?"}},
+  {"id": "values-057", "subject": "values", "depth": 3, "text": {"en": "When were you brave to stand up for something you believed in?", "fr": "Quand as-tu eu le courage de défendre une idée à laquelle tu croyais ?"}}
 ]

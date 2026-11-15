@@ -48,5 +48,14 @@
   {"id": "work-047", "subject": "work", "depth": 2, "text": {"en": "Do you prefer to lead or to be part of a team?", "fr": "Tu préfères diriger ou faire partie d'une équipe ?"}},
   {"id": "work-048", "subject": "work", "depth": 3, "text": {"en": "What part of yourself do you hide at work?", "fr": "Quelle partie de toi caches-tu au travail ?"}},
   {"id": "work-049", "subject": "work", "depth": 3, "text": {"en": "What would a job that makes you proud every day look like?", "fr": "À quoi ressemblerait un travail qui te rendrait fier chaque jour ?"}},
-  {"id": "work-050", "subject": "work", "depth": 3, "text": {"en": "What have you given up for your career?", "fr": "À quoi as-tu renoncé pour ta carrière ?"}}
+  {"id": "work-050", "subject": "work", "depth": 3, "text": {"en": "What have you given up for your career?", "fr": "À quoi as-tu renoncé pour ta carrière ?"}},
+  {"id": "work-051", "subject": "work", "depth": 1, "text": {"en": "What's the strangest request you've ever had at work?", "fr": "Quelle est la demande la plus étrange qu'on t'ait faite au travail ?"}},
+  {"id": "work-052", "subject": "work", "depth": 1, "text": {"en": "Lunch at your desk, in the canteen or outside?", "fr": "Déjeuner à ton bureau, à la cantine ou dehors ?"}},
+  {"id": "work-053", "subject": "work", "depth": 1, "text": {"en": "Which job would you be a disaster at?", "fr": "Dans quel métier serais-tu une catastrophe ?"}},
+  {"id": "work-054", "subject": "work", "depth": 2, "text": {"en": "What's an unwritten rule where you work?", "fr": "Quelle est une règle non écrite là où tu travailles ?"}},
+  {"id": "work-055", "subject": "work", "depth": 2, "text": {"en": "What would surprise your colleagues if they learned it about you?", "fr": "Qu'est-ce qui surprendrait tes collègues s'ils l'apprenaient sur toi ?"}},
+  {"id": "work-056", "subject": "work", "depth": 2, "text": {"en": "Which job do you secretly envy?", "fr": "Quel métier envies-tu en secret ?"}},
+  {"id": "work-057", "subject": "work", "depth": 3, "text": {"en": "When did you feel truly useful at work?", "fr": "Quand t'es-tu senti vraiment utile au travail ?"}},
+  {"id": "work-058", "subject": "work", "depth": 3, "text": {"en": "What does work give you that nothing else does?", "fr": "Qu'est-ce que le travail t'apporte que rien d'autre ne t'apporte ?"}},
+  {"id": "work-059", "subject": "work", "depth": 3, "text": {"en": "What are you afraid of becoming professionally?", "fr": "Qu'as-tu peur de devenir professionnellement ?"}}
 ]

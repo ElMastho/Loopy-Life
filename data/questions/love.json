@@ -46,5 +46,14 @@
   {"id": "love-045", "subject": "love", "depth": 2, "text": {"en": "How do you handle a disagreement with someone close to you?", "fr": "Comment gères-tu un désaccord avec un proche ?"}},
   {"id": "love-046", "subject": "love", "depth": 3, "text": {"en": "What did your most important relationship teach you about yourself?", "fr": "Qu'est-ce que ta relation la plus importante t'a appris sur toi ?"}},
   {"id": "love-047", "subject": "love", "depth": 3, "text": {"en": "What are you most afraid to show the people you love?", "fr": "Qu'as-tu le plus peur de montrer aux gens que tu aimes ?"}},
-  {"id": "love-048", "subject": "love", "depth": 3, "text": {"en": "Do you find it easier to give love or to receive it?", "fr": "Trouves-tu plus facile de donner de l'amour ou d'en recevoir ?"}}
+  {"id": "love-048", "subject": "love", "depth": 3, "text": {"en": "Do you find it easier to give love or to receive it?", "fr": "Trouves-tu plus facile de donner de l'amour ou d'en recevoir ?"}},
+  {"id": "love-049", "subject": "love", "depth": 1, "text": {"en": "What's the most beautiful love song ever written?", "fr": "Quelle est la plus belle chanson d'amour jamais écrite ?"}},
+  {"id": "love-050", "subject": "love", "depth": 1, "text": {"en": "What's the funniest pickup line you've ever heard?", "fr": "Quelle est la phrase de drague la plus drôle que tu aies entendue ?"}},
+  {"id": "love-051", "subject": "love", "depth": 1, "text": {"en": "Would you rather receive a love letter or a surprise trip?", "fr": "Tu préfères recevoir une lettre d'amour ou un voyage surprise ?"}},
+  {"id": "love-052", "subject": "love", "depth": 2, "text": {"en": "Where or how did you meet someone important in the most unexpected way?", "fr": "Où ou comment as-tu rencontré quelqu'un d'important de la façon la plus inattendue ?"}},
+  {"id": "love-053", "subject": "love", "depth": 2, "text": {"en": "Have you ever had a crush on someone you really shouldn't have? Tell me (no names needed).", "fr": "As-tu déjà craqué pour quelqu'un qu'il ne fallait vraiment pas ? Raconte (pas besoin de noms)."}},
+  {"id": "love-054", "subject": "love", "depth": 2, "text": {"en": "What do you think love becomes after many years together?", "fr": "Que devient l'amour, selon toi, après de nombreuses années ensemble ?"}},
+  {"id": "love-055", "subject": "love", "depth": 3, "text": {"en": "What has love given you the courage to do?", "fr": "Qu'est-ce que l'amour t'a donné le courage de faire ?"}},
+  {"id": "love-056", "subject": "love", "depth": 3, "text": {"en": "What did you give up for love, and was it worth it?", "fr": "À quoi as-tu renoncé par amour, et est-ce que ça en valait la peine ?"}},
+  {"id": "love-057", "subject": "love", "depth": 3, "text": {"en": "What kind of love have you never experienced but would like to?", "fr": "Quel genre d'amour n'as-tu jamais vécu et aimerais-tu connaître ?"}}
 ]
