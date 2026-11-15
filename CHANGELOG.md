@@ -2,6 +2,10 @@
 
 Versions follow [semantic versioning](https://semver.org/): major.minor.patch. `python3 tools/release.py patch|minor|major` sets the next one and adds its heading here.
 
+## 1.1.1
+
+- Smoother wheel: its face is drawn once and turned by the graphics card, instead of being repainted on every frame (it shook on some computers).
+
 ## 1.1.0
 
 - New "💼 Between colleagues" games: ☕ Coffee break (2 to 8 colleagues, the wheel with work-life questions) and 🎤 Icebreaker (a whole team on a shared screen, in a video call or a meeting room: one question, everyone answers in turn, driven from the keyboard, optional countdown per person, full screen).

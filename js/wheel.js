@@ -37,7 +37,18 @@ function wheelIds() {
   return ids;
 }
 
+// The wheel face is drawn once (at angle 0) and turned with a CSS transform, so a spin only
+// moves an image on the GPU instead of repainting gradients and text on every frame.
+function setWheelRotation() {
+  $("#wheel").style.transform = `rotate(${wheelAngle}rad)`;
+}
+
 function drawWheel() {
+  drawWheelFace();
+  setWheelRotation();
+}
+
+function drawWheelFace() {
   const canvas = $("#wheel");
   const ctx = canvas.getContext("2d");
   const size = canvas.width;
@@ -48,7 +59,7 @@ function drawWheel() {
 
   ctx.clearRect(0, 0, size, size);
   subs.forEach((s, i) => {
-    const a0 = wheelAngle + i * seg, a1 = a0 + seg;
+    const a0 = i * seg, a1 = a0 + seg;
     ctx.beginPath();
     ctx.moveTo(cx, cy);
     ctx.arc(cx, cy, R, a0, a1);
@@ -129,7 +140,7 @@ function spin() {
   function frame(now) {
     const t = Math.min(1, (now - t0) / dur);
     wheelAngle = from + (to - from) * ease(t);
-    drawWheel();
+    setWheelRotation();
     // little haptic tick when a new segment passes the pointer
     const under = Math.floor(((((-Math.PI / 2 - wheelAngle) % TAU) + TAU) % TAU) / seg);
     if (under !== lastSeg) { lastSeg = under; if (navigator.vibrate && t < 0.9) try { navigator.vibrate(4); } catch (e) {} }
