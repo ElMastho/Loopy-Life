@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -80,6 +80,21 @@
             <span class="g-players" data-i18n="g_treePlayers"></span>
           </button>
         </div>
+        <h2 class="games-fun" data-i18n="gamesTwo">🥂 For two</h2>
+        <div class="games">
+          <button class="game-card" data-game="date" type="button">
+            <span class="mode-emoji">🥂</span>
+            <strong data-i18n="g_date"></strong>
+            <small data-i18n="g_dateDesc"></small>
+            <span class="g-players" data-i18n="g_datePlayers"></span>
+          </button>
+          <button class="game-card" data-game="couple" type="button">
+            <span class="mode-emoji">💑</span>
+            <strong data-i18n="g_couple"></strong>
+            <small data-i18n="g_coupleDesc"></small>
+            <span class="g-players" data-i18n="g_couplePlayers"></span>
+          </button>
+        </div>
         <h2 class="games-fun" data-i18n="gamesFun">🎉 Just for fun</h2>
         <div class="games">
           <button class="game-card" data-game="bluff" type="button">
@@ -99,6 +114,15 @@
             <strong data-i18n="g_bet"></strong>
             <small data-i18n="g_betDesc"></small>
             <span class="g-players" data-i18n="g_betPlayers"></span>
+          </button>
+        </div>
+        <h2 class="games-fun" data-i18n="gamesRoad">🚗 On the road</h2>
+        <div class="games">
+          <button class="game-card" data-game="car" type="button">
+            <span class="mode-emoji">🚗</span>
+            <strong data-i18n="g_car"></strong>
+            <small data-i18n="g_carDesc"></small>
+            <span class="g-players" data-i18n="g_carPlayers"></span>
           </button>
         </div>
       </section>
@@ -135,8 +159,30 @@
         </div>
       </section>
 
+      <section class="panel" id="car-panel" hidden>
+        <h2 data-i18n="driverTitle">🚗 Who's driving?</h2>
+        <p class="panel-hint" data-i18n="driverHint">The driver answers out loud and never touches the phone.</p>
+        <div id="driver-choice" class="driver-choice"></div>
+        <label class="option-row" for="voice-mode">
+          <input id="voice-mode" type="checkbox" checked>
+          <span class="switch" aria-hidden="true"></span>
+          <span class="option-text">
+            <strong data-i18n="voiceTitle"></strong>
+            <small data-i18n="voiceDesc"></small>
+          </span>
+        </label>
+      </section>
+
       <section class="panel">
         <h2 data-i18n="optionsTitle">Options</h2>
+        <label class="option-row adult-row" for="adult-mode" id="adult-option" hidden>
+          <input id="adult-mode" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+          <span class="option-text">
+            <strong data-i18n="adultTitle"></strong>
+            <small data-i18n="adultDesc"></small>
+          </span>
+        </label>
         <label class="option-row" for="guess-mode" id="guess-option">
           <input id="guess-mode" type="checkbox">
           <span class="switch" aria-hidden="true"></span>
@@ -145,7 +191,7 @@
             <small data-i18n="guessModeDesc"></small>
           </span>
         </label>
-        <label class="option-row" for="who-mode">
+        <label class="option-row" for="who-mode" id="who-option">
           <input id="who-mode" type="checkbox">
           <span class="switch" aria-hidden="true"></span>
           <span class="option-text">
@@ -153,7 +199,7 @@
             <small data-i18n="whoModeDesc"></small>
           </span>
         </label>
-        <label class="option-row" for="dare-mode">
+        <label class="option-row" for="dare-mode" id="dare-option">
           <input id="dare-mode" type="checkbox">
           <span class="switch" aria-hidden="true"></span>
           <span class="option-text">
@@ -161,7 +207,7 @@
             <small data-i18n="dareModeDesc"></small>
           </span>
         </label>
-        <label class="option-row" for="random-turn">
+        <label class="option-row" for="random-turn" id="random-option">
           <input id="random-turn" type="checkbox">
           <span class="switch" aria-hidden="true"></span>
           <span class="option-text">
@@ -258,6 +304,7 @@
         <span class="chip" id="q-subject">Subject</span>
         <span class="card-top-right">
           <span class="depth" id="q-depth">🌤️ Light</span>
+          <button class="card-help" id="speak-btn" type="button" data-i18n-aria="readAloud" aria-label="Read aloud" hidden>🔊</button>
           <button class="card-help rules-open" type="button" data-i18n-aria="rules" aria-label="Rules">?</button>
         </span>
       </div>
@@ -313,6 +360,18 @@
     </div>
   </div>
 
+  <!-- ============ +18 CONFIRMATION ============ -->
+  <div id="adult-overlay" class="overlay hidden" role="alertdialog" aria-modal="true" aria-labelledby="adult-title">
+    <div class="card journal-card adult-card">
+      <h2 id="adult-title" data-i18n="adultWarnTitle">⚠️ Adults only</h2>
+      <div class="adult-text" data-i18n="adultWarnText"></div>
+      <div class="card-actions">
+        <button id="adult-cancel" class="btn ghost" type="button" data-i18n="adultCancel">Cancel</button>
+        <button id="adult-ok" class="btn primary" type="button" data-i18n="adultOk">We're adults and we agree</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ RULES ============ -->
   <div id="rules-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="rules-title">
     <div class="card journal-card rules-card">
@@ -327,6 +386,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=10"></script>
+  <script src="app.js?v=11"></script>
 </body>
 </html>

@@ -10,6 +10,9 @@ Starting a game takes three steps: **1. Players** (or continue a saved story), *
 1. Enter the players' names (tap **+ Add a player** for groups).
 2. Pick a game:
    - To get to know each other: **🎡 The wheel** (random subject, random question) or **🌳 The tree** (every subject is a branch, from "roots" questions to "leaves" and "blooms"; every answer makes the tree grow).
+   - For two: **🥂 First date** (questions that warm up slowly, mixing date questions with regular ones, and a free **🙈 Joker** to skip without a word) and **💑 Couple** (memories, the two of you, the future; the partner guesses each answer first).
+   - On the road: **🚗 Car** (a passenger holds the phone, the driver answers out loud; questions can be read aloud; no challenges).
+   - Optional **🔥 +18 questions** in First date and Couple: off by default, suggestive but never explicit, behind an adults-only confirmation with a disclaimer.
    - Just for fun (best with 3 to 6): **🎭 Truth or bluff** (the app secretly tells the player to answer honestly or to bluff; +15 for each friend who saw through it, +10 to the player per friend fooled), **⚔️ Duel** (two players answer the same question, the others pick the best answer: +20, or +10 each for a tie), **🎲 The bet** (friends bet 1 to 3 on guessing the answer: +10 per point if right, -5 per point if wrong).
 3. Players take turns answering. Before answering, the others can try to guess. The **?** button explains the rules and every bonus.
 4. Tap the bonuses that happened, then **Answered!**
@@ -33,7 +36,7 @@ Each group of friends can keep its own story: **💾 Save the story** downloads 
 
 ## The question bank
 
-All questions live in [`data/questions.json`](data/questions.json): 15 subjects (including Imagination & Scenarios), 700+ questions in English and French, each with a depth from 1 (light) to 3 (deep). The same file holds the `who` votes and the `challenges` (`{ "id", "text": { "en", "fr" } }`).
+All questions live in [`data/questions.json`](data/questions.json): 15 subjects (including Imagination & Scenarios), 700+ questions in English and French, each with a depth from 1 (light) to 3 (deep). The same file holds the `date`, `couple` and `spicy` (+18, with the `modes` they appear in) pools, the `who` votes and the `challenges` (`{ "id", "text": { "en", "fr" } }`).
 
 ```json
 { "id": "family-001", "subject": "family", "depth": 1,
