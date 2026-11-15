@@ -34,6 +34,7 @@ function fillCard() {
   }
   const g = gameOf(state);
   const joker = !kind && (g === "date" || q.subject === "__spicy");
+  if (g === "honor" && p === state.star && !kind) $("#q-for").innerHTML = esc(t("starFor", { name: "\u0000" })).replace("\u0000", who);
   if (g === "car" && p === state.driver) $("#q-for").innerHTML = esc(t("driverFor", { name: "\u0000" })).replace("\u0000", who);
   $("#bonus-help").hidden = !!kind || !!current.game || g === "car";
   $("#q-note").hidden = g === "car" || g === "speed";

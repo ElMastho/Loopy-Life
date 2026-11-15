@@ -193,6 +193,7 @@ function loadStoryFile(file) {
     st.connection = Number(st.connection) || 0;
     st.mode = ["tree", "speed", "team"].includes(st.mode) ? st.mode : "wheel";
     st.game = ALL_GAMES.includes(st.game) ? st.game : st.mode;
+    if (st.game === "honor" && !(st.star >= 0)) st.star = 0;
     st.badges = Array.isArray(st.badges) ? st.badges : [];
     st.startedAt = st.startedAt || Date.now();
     st.id = st.id || newId();

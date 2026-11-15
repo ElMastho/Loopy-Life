@@ -80,7 +80,22 @@ for (const [game, names] of [
   ["wheel", ["Thomas", "Maya"]], ["tree", ["Thomas", "Maya"]], ["bluff", ["A", "B", "C"]],
   ["duel", ["A", "B", "C"]], ["bet", ["A", "B", "C"]], ["date", ["Thomas", "Maya"]],
   ["couple", ["Thomas", "Maya"]], ["car", ["A", "B", "C"]], ["speed", ["A", "B"]], ["coffee", ["A", "B", "C", "D"]],
+  ["honor", ["Lou", "Sam", "Noa"]],
 ]) await play(phone, game, names);
+
+// In the spotlight: the others get questions about that person, who gets their own.
+const spot = await phone.evaluate(() => {
+  const out = { others: true, own: true, named: true };
+  for (let k = 0; k < 60; k++) {
+    state.turn = k % state.players.length;
+    const q = drawQuestion("__honor", [1, 2, 3]);
+    if (state.turn === state.star ? !q.star : q.star) (state.turn === state.star ? (out.own = false) : (out.others = false));
+    if (!q.star && !qText(q).includes(state.players[state.star])) out.named = false;
+  }
+  return out;
+});
+check(spot.others && spot.own, "spotlight: the others talk about them, they get their own questions");
+check(spot.named, "spotlight: questions name the person in the spotlight");
 
 // The wheel stops on the subject of the card it opens.
 await setup(phone, "wheel", ["Thomas", "Maya"]);

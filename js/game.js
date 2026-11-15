@@ -30,6 +30,7 @@ function newGame(players, subjects, depth, game) {
     adult: DUO_GAMES.includes(game) && $("#adult-mode").checked,
     family: !FAMILY_GAMES_OFF.includes(game) && $("#family-mode").checked,
     driver: game === "car" ? setupDriver : -1,
+    star: game === "honor" ? Math.min(setupStar, players.length - 1) : -1,
     voice: $("#voice-mode").checked && "speechSynthesis" in window,
     badges: [],
     used: [],
@@ -145,6 +146,7 @@ function recycle(subjectId) {
 function drawPool(poolId, depths, excludeId) {
   let list = (DB[POOL_KEY[poolId]] || []).filter(allowedQ);
   if (poolId === "__spicy") list = list.filter((q) => q.modes.includes(gameOf(state)));
+  if (poolId === "__honor") list = list.filter((q) => !!q.star === (state.turn === state.star)); // the others talk about them, they get their own
   const used = new Set(state.used);
   let pool = list.filter((q) => !used.has(q.id) && q.id !== excludeId);
   if (!pool.length) {

@@ -3,7 +3,7 @@
 "use strict";
 
 const STORAGE_KEY = "loopy-know-each-other-v1";
-const APP_VERSION = "1.4.0"; // semantic version (major.minor.patch); set by tools/release.py with version.json
+const APP_VERSION = "1.5.0"; // semantic version (major.minor.patch); set by tools/release.py with version.json
 const POINTS = { 1: 10, 2: 20, 3: 30 };
 const LEVEL_UP = 100; // connection points per level
 const PASSES = 3;
@@ -21,10 +21,10 @@ const DUEL_TIE = 10;
 const BET_WIN = 10; // per point bet
 const BET_LOSS = 5; // per point bet
 const FUN_GAMES = ["bluff", "duel", "bet"];
-const GAME_EMOJI = { speed: "⚡", wheel: "🎡", tree: "🌳", bluff: "🎭", duel: "⚔️", bet: "🎲", date: "🥂", couple: "💑", car: "🚗", coffee: "☕", team: "🎤" };
+const GAME_EMOJI = { speed: "⚡", wheel: "🎡", tree: "🌳", bluff: "🎭", duel: "⚔️", bet: "🎲", date: "🥂", couple: "💑", car: "🚗", coffee: "☕", team: "🎤", honor: "🎂" };
 const DUO_GAMES = ["date", "couple"];
 const competitive = () => FUN_GAMES.includes(gameOf(state)); // only the fun games keep a per-player score
-const ALL_GAMES = ["wheel", "tree", "bluff", "duel", "bet", "date", "couple", "car", "speed", "coffee", "team"];
+const ALL_GAMES = ["wheel", "tree", "bluff", "duel", "bet", "date", "couple", "car", "speed", "coffee", "team", "honor"];
 // Between colleagues: light and medium questions only, from the work pack and a few safe subjects.
 // With children (the all-ages option): love stays out, and so do the date, couple and +18 pools.
 const FAMILY_OFF_SUBJECTS = ["love", "__date", "__couple", "__spicy"];
@@ -41,9 +41,10 @@ const POOLS = {
   __couple: { id: "__couple", emoji: "💑", color: "#e07a9f", name: { en: "Us two", fr: "Nous deux" }, short: { en: "Us two", fr: "Nous deux" } },
   __speed: { id: "__speed", emoji: "⚡", color: "#ffb703", name: { en: "Speed", fr: "Rapidité" }, short: { en: "Speed", fr: "Rapidité" } },
   __work: { id: "__work", emoji: "☕", color: "#c08552", name: { en: "Work life", fr: "Vie de bureau" }, short: { en: "Work life", fr: "Vie de bureau" } },
+  __honor: { id: "__honor", emoji: "🎂", color: "#f4a261", name: { en: "In the spotlight", fr: "À l'honneur" }, short: { en: "Spotlight", fr: "À l'honneur" } },
   __spicy: { id: "__spicy", emoji: "🔥", color: "#e8505b", name: { en: "+18", fr: "+18" }, short: { en: "+18", fr: "+18" } },
 };
-const POOL_KEY = { __date: "date", __couple: "couple", __spicy: "spicy", __speed: "speed", __work: "work" };
+const POOL_KEY = { __date: "date", __couple: "couple", __spicy: "spicy", __speed: "speed", __work: "work", __honor: "honor" };
 const gameOf = (st) => st.game || st.mode || "wheel"; // from this many players, the card and scoreboard switch to a compact layout
 // "Who of us?" votes and challenges behave like extra subjects on the wheel and under the tree.
 const EXTRAS = {

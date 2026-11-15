@@ -77,7 +77,7 @@ async function boot() {
   DB.questions.forEach((q) => (QBYID[q.id] = q));
   Object.values(EXTRAS).forEach((x) => (SUBJ[x.id] = x));
   Object.values(POOLS).forEach((x) => (SUBJ[x.id] = x));
-  ["date", "couple", "spicy", "speed", "work"].forEach((k) => (DB[k] || []).forEach((q) => (QBYID[q.id] = q)));
+  ["date", "couple", "spicy", "speed", "work", "honor"].forEach((k) => (DB[k] || []).forEach((q) => (QBYID[q.id] = q)));
   (DB.who || []).forEach((q) => (QBYID[q.id] = { ...q, subject: "__who" }));
   (DB.challenges || []).forEach((q) => (QBYID[q.id] = { ...q, subject: "__dare" }));
   initSetup();
