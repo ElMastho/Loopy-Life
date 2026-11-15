@@ -463,3 +463,14 @@ button { font-family: inherit; cursor: pointer; }
 .adult-text .disclaimer { font-size: .85rem; color: #6b5a8e; border-left: 3px solid #e8505b; padding-left: 10px; }
 .adult-card h2 { margin: 0 0 8px; color: #c53030; }
 .adult-card .card-actions { margin-top: 16px; }
+
+/* step 2: games sorted and filtered by the number of players */
+.game-groups { display: flex; flex-direction: column; gap: 22px; }
+.game-group h2 { margin-bottom: 10px !important; }
+.group-note { margin: -4px 0 10px; color: var(--muted); font-size: .9rem; }
+.game-card.best { box-shadow: 0 0 0 3px var(--gold), 0 8px 24px rgba(0,0,0,.3); }
+.game-card.best .g-players { opacity: 1; color: #6b3d00; }
+.game-card.off { filter: grayscale(1); opacity: .45; cursor: not-allowed; box-shadow: none; }
+.game-card.off:hover, .game-card.off:active { transform: none; }
+.game-card.off .g-players { opacity: 1; }
+.group-off h2 { opacity: .6; }

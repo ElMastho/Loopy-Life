@@ -90,6 +90,11 @@
       close: "Close",
       langToggle: "🇫🇷 Français",
       gamesTwo: "🥂 For two",
+      bestFor: "⭐ Ideal for {n}",
+      onlyTwo: "Only for 2 players",
+      minThree: "From 3 players: two duelists and a judge",
+      carMax: "More than 7 in one car? 😉",
+      groupTwoOff: "Only when you are 2.",
       gamesRoad: "🚗 On the road",
       g_date: "First date",
       g_dateDesc: "Just met? Questions that start light and slowly go deeper, with a discreet joker.",
@@ -320,6 +325,11 @@
       close: "Fermer",
       langToggle: "🇬🇧 English",
       gamesTwo: "🥂 À deux",
+      bestFor: "⭐ Idéal à {n}",
+      onlyTwo: "Uniquement à 2",
+      minThree: "Dès 3 joueurs : deux duellistes et un juge",
+      carMax: "Plus de 7 dans une voiture ? 😉",
+      groupTwoOff: "Seulement quand vous êtes 2.",
       gamesRoad: "🚗 En route",
       g_date: "Premier rendez-vous",
       g_dateDesc: "Vous venez de vous rencontrer ? Des questions légères qui montent doucement, avec un joker discret.",
@@ -758,6 +768,7 @@
   let setupGame = null;
 
   function goStep(n) {
+    if (n === 3 && setupGame && !gameAllowed(setupGame, $$("#players-list input").length)) setupGame = null;
     if (n === 3 && !setupGame) n = 2;
     $$(".step").forEach((el) => (el.hidden = Number(el.dataset.step) !== n));
     $$("#steps li").forEach((li) => {
@@ -765,8 +776,50 @@
       li.classList.toggle("on", k === n);
       li.classList.toggle("done", k < n);
     });
+    if (n === 2) renderGameChoice();
     if (n === 3) renderChosenGame();
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // Which games fit how many players: min/max allowed, and the range where a game shines.
+  const GAME_FIT = {
+    wheel: { min: 2, best: [7, 99] },
+    tree: { min: 2, best: [0, 0] },
+    date: { min: 2, max: 2, best: [2, 2], why: "onlyTwo" },
+    couple: { min: 2, max: 2, best: [2, 2], why: "onlyTwo" },
+    bluff: { min: 2, best: [3, 6] },
+    duel: { min: 3, best: [3, 8], why: "minThree" },
+    bet: { min: 2, best: [3, 6] },
+    car: { min: 2, max: 7, best: [0, 0], why: "carMax" },
+  };
+  const gameAllowed = (g, n) => n >= GAME_FIT[g].min && n <= (GAME_FIT[g].max || 99);
+  const gameBest = (g, n) => n >= GAME_FIT[g].best[0] && n <= GAME_FIT[g].best[1];
+  // Section order on step 2: what suits the group comes first, what doesn't apply goes last.
+  const GROUP_ORDER = (n) => (n === 2 ? ["two", "discover", "fun", "road"] : n <= 7 ? ["fun", "discover", "road", "two"] : ["discover", "fun", "road", "two"]);
+
+  function renderGameChoice() {
+    const n = $$("#players-list input").length;
+    if (setupGame && !gameAllowed(setupGame, n)) setupGame = null;
+    GROUP_ORDER(n).forEach((g, i) => { const el = $(`.game-group[data-group="${g}"]`); if (el) el.style.order = i; });
+    $$(".game-card").forEach((card) => {
+      const g = card.dataset.game;
+      const ok = gameAllowed(g, n);
+      const best = ok && gameBest(g, n);
+      card.classList.toggle("on", g === setupGame);
+      card.classList.toggle("off", !ok);
+      card.classList.toggle("best", best);
+      card.setAttribute("aria-disabled", String(!ok));
+      card.querySelector(".g-players").textContent = !ok ? `🚫 ${t(GAME_FIT[g].why)}` : best ? t("bestFor", { n }) : t(`g_${g}Players`);
+    });
+    $$(".game-group").forEach((grp) => {
+      const cards = grp.querySelectorAll(".game-card");
+      const allOff = [...cards].every((c) => c.classList.contains("off"));
+      grp.classList.toggle("group-off", allOff);
+      const note = grp.querySelector(".group-note");
+      note.hidden = !allOff;
+      if (allOff) note.textContent = grp.dataset.group === "two" ? t("groupTwoOff") : "";
+      note.hidden = !allOff || !note.textContent;
+    });
   }
 
   function renderChosenGame() {
@@ -908,6 +961,7 @@
     $$("[data-go]").forEach((b) => b.addEventListener("click", () => goStep(Number(b.dataset.go))));
     $$(".game-card").forEach((card) =>
       card.addEventListener("click", () => {
+        if (card.classList.contains("off")) { FX.sparkleEl(card.querySelector(".g-players"), ["#ff9aa2", "#ffffff"]); return; }
         setupGame = card.dataset.game;
         FX.sparkleEl(card);
         goStep(3);
@@ -2372,6 +2426,7 @@
     }
     if (state && $("#screen-summary").classList.contains("active")) showSummary();
     renderChosenGame();
+    if (!$(".step[data-step=\"2\"]").hidden) renderGameChoice();
     if (!$("#rules-overlay").classList.contains("hidden")) renderRules();
     if (state && !["wheel", "tree"].includes(gameOf(state))) $("#game-name").textContent = `${GAME_EMOJI[gameOf(state)]} ${t("g_" + gameOf(state))}${state.adult ? " · 🔥 +18" : ""}`;
     fillCard();
@@ -2394,7 +2449,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=11", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=12", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {

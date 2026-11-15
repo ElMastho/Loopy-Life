@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -64,8 +64,10 @@
 
     <!-- step 2: which game -->
     <div class="step" data-step="2" hidden>
-      <section class="panel">
+      <section class="panel game-groups">
+        <div class="game-group" data-group="discover">
         <h2 data-i18n="gamesDiscover">🌱 Get to know each other</h2>
+        <p class="group-note" hidden></p>
         <div class="games">
           <button class="game-card" data-game="wheel" type="button">
             <span class="mode-emoji">🎡</span>
@@ -80,7 +82,10 @@
             <span class="g-players" data-i18n="g_treePlayers"></span>
           </button>
         </div>
-        <h2 class="games-fun" data-i18n="gamesTwo">🥂 For two</h2>
+        </div>
+        <div class="game-group" data-group="two">
+        <h2 data-i18n="gamesTwo">🥂 For two</h2>
+        <p class="group-note" hidden></p>
         <div class="games">
           <button class="game-card" data-game="date" type="button">
             <span class="mode-emoji">🥂</span>
@@ -95,7 +100,10 @@
             <span class="g-players" data-i18n="g_couplePlayers"></span>
           </button>
         </div>
-        <h2 class="games-fun" data-i18n="gamesFun">🎉 Just for fun</h2>
+        </div>
+        <div class="game-group" data-group="fun">
+        <h2 data-i18n="gamesFun">🎉 Just for fun</h2>
+        <p class="group-note" hidden></p>
         <div class="games">
           <button class="game-card" data-game="bluff" type="button">
             <span class="mode-emoji">🎭</span>
@@ -116,7 +124,10 @@
             <span class="g-players" data-i18n="g_betPlayers"></span>
           </button>
         </div>
-        <h2 class="games-fun" data-i18n="gamesRoad">🚗 On the road</h2>
+        </div>
+        <div class="game-group" data-group="road">
+        <h2 data-i18n="gamesRoad">🚗 On the road</h2>
+        <p class="group-note" hidden></p>
         <div class="games">
           <button class="game-card" data-game="car" type="button">
             <span class="mode-emoji">🚗</span>
@@ -124,6 +135,7 @@
             <small data-i18n="g_carDesc"></small>
             <span class="g-players" data-i18n="g_carPlayers"></span>
           </button>
+        </div>
         </div>
       </section>
       <div class="step-nav">
@@ -386,6 +398,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=11"></script>
+  <script src="app.js?v=12"></script>
 </body>
 </html>
