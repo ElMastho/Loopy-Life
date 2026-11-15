@@ -6,7 +6,7 @@
   "use strict";
 
   const STORAGE_KEY = "loopy-know-each-other-v1";
-  const APP_VERSION = 20; // bump with version.json and the ?v= of the files on every release
+  const APP_VERSION = 21; // bump with version.json and the ?v= of the files on every release
   const POINTS = { 1: 10, 2: 20, 3: 30 };
   const LEVEL_UP = 100; // connection points per level
   const PASSES = 3;
@@ -1049,11 +1049,17 @@
     $("#suggest-opts-box").hidden = !list.children.length;
     $("#suggest-overlay").classList.remove("hidden");
   }
-  let setupNames = ["", ""];
+  // The names typed on step 1 are remembered as typed (empty ones too), so what was erased stays erased.
+  const NAMES_KEY = "loopy-setup-names";
+  let setupNames = (() => {
+    try { const v = JSON.parse(localStorage.getItem(NAMES_KEY)); if (Array.isArray(v) && v.length >= 2) return v.map(String); } catch (e) { /* ignore */ }
+    return ["", ""];
+  })();
 
   function readPlayerInputs() {
     const inputs = $$("#players-list input");
     if (inputs.length) setupNames = inputs.map((el) => el.value);
+    try { localStorage.setItem(NAMES_KEY, JSON.stringify(setupNames)); } catch (e) { /* ignore */ }
   }
 
   function renderPlayersList() {
@@ -1069,7 +1075,7 @@
           placeholder="${esc(i === 0 ? t("firstNamePh") : t("otherNamePh"))}" value="${esc(name)}">
         ${i >= 2 ? `<button type="button" class="remove" aria-label="${esc(t("remove"))}" title="${esc(t("remove"))}">✕</button>` : ""}`;
       const rm = row.querySelector(".remove");
-      if (rm) rm.addEventListener("click", () => { readPlayerInputs(); setupNames.splice(i, 1); renderPlayersList(); });
+      if (rm) rm.addEventListener("click", () => { readPlayerInputs(); setupNames.splice(i, 1); renderPlayersList(); readPlayerInputs(); });
       list.appendChild(row);
     });
   }
@@ -1104,6 +1110,7 @@
   function initSetup() {
     renderSubjectGrid(DB.subjects.map((s) => s.id));
     renderPlayersList();
+    $("#players-list").addEventListener("input", readPlayerInputs);
     $("#add-player").addEventListener("click", () => {
       readPlayerInputs();
       setupNames.push("");
@@ -1184,9 +1191,8 @@
     if (saved && saved.version === 1 && ((saved.journal?.length || 0) > 0 || saved.active)) showResume(saved);
   }
 
-  // Back on the home screen: the last game's players are filled in (the game itself is in "Our stories").
-  function showResume(saved) {
-    setupNames = saved.players.slice();
+  // Back on the home screen: step 1 keeps the names as they were typed (the game itself is in "Our stories").
+  function showResume() {
     renderPlayersList();
   }
 
@@ -2807,8 +2813,9 @@
     $("#finish-btn").addEventListener("click", () => { speedPaused = true; clearTimeout(speedNext); showSummary(); });
     $("#home-btn").addEventListener("click", () => {
       speedPaused = true; clearTimeout(speedNext);
+      state.active = false; // reopening the app now lands on the home screen; the game stays in "Our stories"
       save();
-      showResume(state);
+      showResume();
       showScreen("screen-setup");
       goStep(1);
     });
@@ -2981,7 +2988,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=20", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=21", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {
