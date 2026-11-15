@@ -94,7 +94,7 @@ async function boot() {
   }
   if (saved && saved.version === 1 && saved.active && Array.isArray(saved.players)) resumeSaved(saved);
   setTimeout(() => FX.sparkleEl($(".hero h1")), 400);
-  $("#version-btn").textContent = `v${APP_VERSION}`;
+  $("#version-btn").textContent = `v${APP_VERSION}`; // e.g. v1.2.0
   $("#version-btn").addEventListener("click", openUpdate);
   $("#upd-close").addEventListener("click", () => $("#update-overlay").classList.add("hidden"));
   $("#update-overlay").addEventListener("click", (e) => { if (e.target.id === "update-overlay") $("#update-overlay").classList.add("hidden"); });
