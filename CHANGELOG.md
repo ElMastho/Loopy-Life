@@ -2,6 +2,12 @@
 
 Versions follow [semantic versioning](https://semver.org/): major.minor.patch. `python3 tools/release.py patch|minor|major` sets the next one and adds its heading here.
 
+## 1.3.1
+
+- 🔠 Text size: a bar slides up from the bottom, with a slider (80 to 200 %) and one-tap sizes (100, 125, 150, 200 %); 100 % is always one tap away.
+- The 🔊 and ? buttons on the card have their icon centred.
+- The SPIN button keeps its size when the text is bigger.
+
 ## 1.3.0
 
 - Five new subjects, 140 questions: 🎬 Pop culture, ⚽ Sport & movement, 💰 Money & spending, 🍋 The five senses, 🌟 What matters (1,560 questions and votes in all).

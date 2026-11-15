@@ -114,8 +114,16 @@ await desk.waitForSelector("#card-overlay:not(.hidden)", { timeout: 10000 });
 check(true, "Space spins the wheel");
 await desk.keyboard.press("Enter"); await desk.waitForTimeout(600);
 check((await desk.evaluate(() => state.journal.length)) === 1, "Enter means answered");
-await desk.click(".game-actions .text-size-btn");
-check((await desk.evaluate(() => document.documentElement.style.fontSize)) === "115%", "text size grows");
+await desk.click(".game-actions .text-size-btn"); await desk.waitForTimeout(350);
+check(await desk.isVisible("#size-bar.open"), "text size: the bar slides up");
+await desk.click('#size-presets [data-size="150"]');
+check((await desk.evaluate(() => document.documentElement.style.fontSize)) === "150%", "text size: 150 %");
+await desk.fill("#size-range", "180");
+check((await desk.evaluate(() => document.documentElement.style.fontSize)) === "180%", "text size: the slider");
+await desk.click('#size-presets [data-size="100"]');
+check((await desk.evaluate(() => document.documentElement.style.fontSize)) === "", "text size: back to 100 % in one tap");
+await desk.keyboard.press("Escape"); await desk.waitForTimeout(350);
+check(!(await desk.isVisible("#size-bar")), "text size: the bar closes");
 await desk.goto(BASE); await desk.waitForSelector(".subject", { state: "attached" });
 check(!(await desk.isVisible("#quick-hint")), "the quick start hint goes away once played");
 
