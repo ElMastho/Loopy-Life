@@ -202,7 +202,7 @@ button { font-family: inherit; cursor: pointer; }
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   width: 26%; aspect-ratio: 1; border-radius: 50%; border: 5px solid #fff;
   background: radial-gradient(circle at 35% 30%, #fff3c4, var(--gold) 60%, #f4a261);
-  color: var(--bg1); font-weight: 700; font-size: clamp(14px, 3.5vw, 20px); container-type: inline-size; letter-spacing: .05em;
+  color: var(--bg1); font-weight: 700; font-size: clamp(14px, 3.5vw, 20px); letter-spacing: .05em;
   box-shadow: 0 6px 18px rgba(0,0,0,.4); transition: transform .15s;
 }
 .spin-btn:active { transform: translate(-50%, -50%) scale(.92); }
