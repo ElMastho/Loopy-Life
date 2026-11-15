@@ -47,6 +47,7 @@ async function setup(p, game, names) {
   await p.goto(BASE); await p.evaluate(() => localStorage.clear());
   await p.goto(BASE); await p.waitForSelector(".subject", { state: "attached" });
   while ((await p.$$("#players-list input")).length < names.length) await p.click("#add-player");
+  while ((await p.$$("#players-list input")).length > names.length) await p.click("#players-list .player-row:last-child .remove");
   const ins = await p.$$("#players-list input");
   for (let i = 0; i < names.length; i++) await ins[i].fill(names[i]);
   await p.click(".next-step"); await p.click(`.game-card[data-game="${game}"]`); await p.waitForTimeout(150);
