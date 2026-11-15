@@ -25,7 +25,7 @@ self.addEventListener("fetch", (e) => {
   // the page itself is always revalidated, so a new version shows up on the next opening
   const fresh = sameOrigin && (req.mode === "navigate" || url.pathname.endsWith(".html") || url.pathname.endsWith("/"));
   e.respondWith(
-    fetch(req, fresh ? { cache: "no-cache" } : undefined)
+    (fresh ? fetch(req.url, { cache: "no-cache", credentials: "same-origin" }) : fetch(req)) // a navigate request cannot take options
       .then((res) => {
         if (res && (res.ok || res.type === "opaque")) {
           const copy = res.clone();
