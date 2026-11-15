@@ -546,3 +546,7 @@ button { font-family: inherit; cursor: pointer; }
 .story-actions .btn.danger.sure { background: #e8505b; color: #fff; }
 .story-rename { display: flex; gap: 6px; width: 100%; margin-top: 4px; }
 .story-rename input { flex: 1; min-width: 0; font: inherit; padding: 8px 10px; border-radius: 10px; border: 2px solid rgba(43,27,74,.15); }
+
+/* home: "continue a story" buttons stacked, all the same width */
+.continue-panel .resume { flex-direction: column; align-items: stretch; max-width: 360px; margin: 0 auto; }
+.continue-panel .resume .btn { width: 100%; }
