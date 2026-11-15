@@ -69,8 +69,24 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
+## Tests
+
+Every pull request and every push to `main` runs [the tests](.github/workflows/tests.yml) on GitHub:
+
+```sh
+python3 tools/check_data.py      # the question bank: unique ids, both languages, depths
+python3 tools/check_release.py   # the same version everywhere, every file kept offline
+node tests/smoke.mjs             # plays a few turns of every game in a real browser
+```
+
+The browser test needs Playwright once: `npm install --no-save playwright && npx playwright install chromium`.
+
 ## Hosting
 
 Plain HTML, CSS and JavaScript with no build step, served by GitHub Pages from the `main` branch root.
 
 On every release, run `python3 tools/release.py patch` (a fix), `minor` (a new feature or subject) or `major` (a big change): versions follow [semantic versioning](https://semver.org/) (`1.2.0`). It sets the version in `js/config.js` and `version.json` (the app compares them to offer the update), the `?v=` of every file in `index.html`, and the cache name and offline file list in `sw.js`, and adds a heading to [`CHANGELOG.md`](CHANGELOG.md) to fill in.
+
+## Licence
+
+Free to play, all rights reserved: the code is public to be read, but the questions, texts, code and images belong to the author and may not be copied or reused without permission. See [LICENSE](LICENSE).

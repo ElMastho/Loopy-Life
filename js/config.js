@@ -3,7 +3,7 @@
 "use strict";
 
 const STORAGE_KEY = "loopy-know-each-other-v1";
-const APP_VERSION = "1.1.1"; // semantic version (major.minor.patch); set by tools/release.py with version.json
+const APP_VERSION = "1.1.2"; // semantic version (major.minor.patch); set by tools/release.py with version.json
 const POINTS = { 1: 10, 2: 20, 3: 30 };
 const LEVEL_UP = 100; // connection points per level
 const PASSES = 3;
