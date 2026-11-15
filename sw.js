@@ -1,6 +1,6 @@
 // Offline support: always try the network first (so updates show up at once),
 // and fall back to the last copy saved here when there is no connection.
-const CACHE = "loopy-life-v18";
+const CACHE = "loopy-life-v19";
 const CORE = ["./", "index.html", "style.css?v=18", "app.js?v=18", "data/questions.json?v=18", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png"];
 
 self.addEventListener("install", (e) => {
@@ -22,8 +22,10 @@ self.addEventListener("fetch", (e) => {
   const sameOrigin = url.origin === self.location.origin;
   const isFont = /fonts\.(googleapis|gstatic)\.com$/.test(url.hostname);
   if (!sameOrigin && !isFont) return;
+  // the page itself is always revalidated, so a new version shows up on the next opening
+  const fresh = sameOrigin && (req.mode === "navigate" || url.pathname.endsWith(".html") || url.pathname.endsWith("/"));
   e.respondWith(
-    fetch(req)
+    fetch(req, fresh ? { cache: "no-cache" } : undefined)
       .then((res) => {
         if (res && (res.ok || res.type === "opaque")) {
           const copy = res.clone();
