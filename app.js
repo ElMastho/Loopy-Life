@@ -6,6 +6,7 @@
   "use strict";
 
   const STORAGE_KEY = "loopy-know-each-other-v1";
+  const APP_VERSION = 20; // bump with version.json and the ?v= of the files on every release
   const POINTS = { 1: 10, 2: 20, 3: 30 };
   const LEVEL_UP = 100; // connection points per level
   const PASSES = 3;
@@ -93,6 +94,16 @@
       close: "Close",
       langToggle: "🇫🇷 Français",
       gamesTwo: "🥂 For two",
+      updTitle: "🔄 App version",
+      updInstalled: "Installed version: {v}",
+      updChecking: "Checking for a new version…",
+      updLatest: "✅ You have the latest version.",
+      updNew: "✨ Version {v} is available.",
+      updOffline: "Can't check right now (no connection?).",
+      updForce: "🔄 Force the update",
+      updKeep: "Your stories and your current game are kept.",
+      updBanner: "✨ A new version is available",
+      updNow: "Update",
       storyName: "📖 Name your story (optional)",
       storyNamePh: "e.g. Our first summer",
       storiesBtn: "📚 Our stories",
@@ -372,6 +383,16 @@
       close: "Fermer",
       langToggle: "🇬🇧 English",
       gamesTwo: "🥂 À deux",
+      updTitle: "🔄 Version de l'appli",
+      updInstalled: "Version installée : {v}",
+      updChecking: "Recherche d'une nouvelle version…",
+      updLatest: "✅ Vous avez la dernière version.",
+      updNew: "✨ La version {v} est disponible.",
+      updOffline: "Impossible de vérifier pour l'instant (pas de connexion ?).",
+      updForce: "🔄 Forcer la mise à jour",
+      updKeep: "Vos histoires et votre partie en cours sont conservées.",
+      updBanner: "✨ Une nouvelle version est disponible",
+      updNow: "Mettre à jour",
       storyName: "📖 Donnez un nom à votre histoire (facultatif)",
       storyNamePh: "ex. Notre premier été",
       storiesBtn: "📚 Nos histoires",
@@ -2914,6 +2935,41 @@
     applyLanguage();
   }
 
+  /* ------------------------------------------------------------------ */
+  /* Version and updates                                                */
+  /* ------------------------------------------------------------------ */
+  // The version on the server, read past every cache; null when offline.
+  async function latestVersion() {
+    try {
+      const res = await fetch(`version.json?t=${Date.now()}`, { cache: "no-store" });
+      if (!res.ok) return null;
+      return Number((await res.json()).version) || null;
+    } catch (e) { return null; }
+  }
+
+  // Drops the service worker and its caches, then reloads from the network. Stories (IndexedDB) and the current game stay.
+  async function forceUpdate() {
+    try { if (state) save(); } catch (e) { /* ignore */ }
+    try {
+      if ("serviceWorker" in navigator) await Promise.all((await navigator.serviceWorker.getRegistrations()).map((r) => r.unregister()));
+      if ("caches" in window) await Promise.all((await caches.keys()).map((k) => caches.delete(k)));
+    } catch (e) { /* ignore */ }
+    location.replace(`${location.pathname}?u=${Date.now()}`);
+  }
+
+  async function openUpdate() {
+    $("#upd-installed").textContent = t("updInstalled", { v: APP_VERSION });
+    $("#upd-status").textContent = t("updChecking");
+    $("#update-overlay").classList.remove("hidden");
+    const v = await latestVersion();
+    $("#upd-status").textContent = v == null ? t("updOffline") : v > APP_VERSION ? t("updNew", { v }) : t("updLatest");
+  }
+
+  async function checkForUpdate() {
+    const v = await latestVersion();
+    if (v && v > APP_VERSION) $("#update-banner").hidden = false;
+  }
+
   async function boot() {
     applyLanguage();
     initInstall();
@@ -2925,7 +2981,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=19", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=20", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {
@@ -2951,6 +3007,15 @@
     }
     if (saved && saved.version === 1 && saved.active && Array.isArray(saved.players)) resumeSaved(saved);
     setTimeout(() => FX.sparkleEl($(".hero h1")), 400);
+    $("#version-btn").textContent = `v${APP_VERSION}`;
+    $("#version-btn").addEventListener("click", openUpdate);
+    $("#upd-close").addEventListener("click", () => $("#update-overlay").classList.add("hidden"));
+    $("#update-overlay").addEventListener("click", (e) => { if (e.target.id === "update-overlay") $("#update-overlay").classList.add("hidden"); });
+    $("#upd-force").addEventListener("click", forceUpdate);
+    $("#update-now").addEventListener("click", forceUpdate);
+    $("#update-later").addEventListener("click", () => ($("#update-banner").hidden = true));
+    setTimeout(checkForUpdate, 1500);
+    document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") checkForUpdate(); });
   }
 
   boot();

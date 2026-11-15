@@ -550,3 +550,18 @@ button { font-family: inherit; cursor: pointer; }
 /* home: "continue a story" buttons stacked, all the same width */
 .continue-panel .resume { flex-direction: column; align-items: stretch; max-width: 360px; margin: 0 auto; }
 .continue-panel .resume .btn { width: 100%; }
+
+/* version and update */
+.version-btn { color: var(--muted); font-size: .85rem; padding: 2px 4px; text-decoration: underline dotted; }
+.update-card { max-width: 380px; }
+.update-card h2 { margin: 0 0 10px; }
+.upd-line { margin: 4px 0; color: #2a1b4a; }
+.upd-status { font-weight: 600; }
+.upd-keep { font-size: .85rem; color: #6b5a8e; margin: 10px 0 14px; }
+.update-banner {
+  position: fixed; left: 50%; top: calc(10px + env(safe-area-inset-top)); transform: translateX(-50%); z-index: 60;
+  display: flex; align-items: center; gap: 10px; width: max-content; max-width: calc(100vw - 24px);
+  background: #fff; color: #2a1b4a; border-radius: 99px; padding: 6px 6px 6px 16px; box-shadow: 0 8px 28px rgba(0,0,0,.35); font-size: .92rem; font-weight: 600;
+}
+.update-x { border: 0; background: none; color: #6b5a8e; font-size: 1rem; padding: 6px 8px; cursor: pointer; }
+.update-banner .btn { white-space: nowrap; flex: none; }
