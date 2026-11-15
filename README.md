@@ -19,8 +19,8 @@ Starting a game takes three steps: **1. Players** (or continue a saved story), *
    - 🔁 The others answered the same question too: same points for them
 5. Each player has 3 passes. Every 50 points per player together raises your **connection level** (with fireworks).
 6. Option **🔮 Guess for each other** (on the home screen): before each answer, the others guess out loud what the player will say. A right guess earns +25, and the player gets +10 when nobody guessed.
-7. Option **🗳️ Who of us?** (on by default): some wheel segments, and a button under the tree, give a vote instead of a question. On 3, everyone points at a player: +5 each for voting, +10 for the player(s) with the most votes, +5 each if it was unanimous.
-8. Option **🎭 Challenges** (on by default): sometimes a small challenge instead of a question. +20 when done, +5 each if everyone laughed. "Another one" is free.
+7. Option **🗳️ Who of us?** (off by default; the game suggests the options if you start without looking at them): some wheel segments, and a button under the tree, give a vote instead of a question. On 3, everyone points at a player: +5 each for voting, +10 for the player(s) with the most votes, +5 each if it was unanimous.
+8. Option **🎭 Challenges** (off by default): sometimes a small challenge instead of a question. +20 when done, +5 each if everyone laughed. "Another one" is free.
 9. Option **🎲 Random next player**: nobody knows who answers next. From 5 players the card shows a single "Who guessed it?" row of names and the scoreboard scrolls sideways.
 10. **🏅 Badges**: 19 badges to unlock together during a story (saved in the `.loopy` file).
 11. **Our story** keeps every question you answered and your notes. **Finish** shows a summary, a **🖼️ Share a picture** image (tree, level, best moment) and a text version.

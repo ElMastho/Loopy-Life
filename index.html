@@ -6,6 +6,7 @@
   <title>Loopy Life · Know Each Other</title>
   <meta name="description" content="A two-player game to get to know each other better: spin the wheel or grow a tree together.">
   <meta name="theme-color" content="#1b1440">
+  <meta name="color-scheme" content="only dark">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -145,7 +146,7 @@
           </span>
         </label>
         <label class="option-row" for="who-mode">
-          <input id="who-mode" type="checkbox" checked>
+          <input id="who-mode" type="checkbox">
           <span class="switch" aria-hidden="true"></span>
           <span class="option-text">
             <strong data-i18n="whoModeTitle"></strong>
@@ -153,7 +154,7 @@
           </span>
         </label>
         <label class="option-row" for="dare-mode">
-          <input id="dare-mode" type="checkbox" checked>
+          <input id="dare-mode" type="checkbox">
           <span class="switch" aria-hidden="true"></span>
           <span class="option-text">
             <strong data-i18n="dareModeTitle"></strong>
@@ -299,6 +300,19 @@
     </div>
   </div>
 
+  <!-- ============ OPTIONS SUGGESTION (when starting without looking at the options) ============ -->
+  <div id="suggest-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="suggest-title">
+    <div class="card journal-card suggest-card">
+      <h2 id="suggest-title" data-i18n="suggestTitle">One last thing?</h2>
+      <p class="suggest-text" data-i18n="suggestText">These options can spice up the game. Tap the ones you want.</p>
+      <div id="suggest-list" class="suggest-list"></div>
+      <div class="card-actions">
+        <button id="suggest-back" class="btn ghost" type="button" data-i18n="backStep">← Back</button>
+        <button id="suggest-go" class="btn primary" type="button" data-i18n="startGame">🚀 Let's go!</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ RULES ============ -->
   <div id="rules-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="rules-title">
     <div class="card journal-card rules-card">
@@ -313,6 +327,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>

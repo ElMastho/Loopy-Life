@@ -89,6 +89,8 @@
       gamesDiscover: "🌱 Get to know each other",
       gamesFun: "🎉 Just for fun",
       changeGame: "Change",
+      suggestTitle: "One last thing?",
+      suggestText: "These options can spice up the game. Tap the ones you want, or start without them.",
       rulesFor: "How to play: {game}",
       rulesAll: "📜 All the rules",
       rulesPass: "<h3>🔄 Passing</h3><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p>",
@@ -289,6 +291,8 @@
       gamesDiscover: "🌱 Pour se découvrir",
       gamesFun: "🎉 Pour rigoler",
       changeGame: "Changer",
+      suggestTitle: "Une dernière chose ?",
+      suggestText: "Ces options peuvent pimenter la partie. Touche celles que tu veux, ou lance sans.",
       rulesFor: "Règles : {game}",
       rulesAll: "📜 Toutes les règles",
       rulesPass: "<h3>🔄 Passer</h3><p>La question ne plaît pas ? <b>🔄 Passer</b> la remplace par une autre sur le même thème. Chaque joueur a <b>3 passes</b>.</p>",
@@ -709,6 +713,31 @@
     $$(".game-card").forEach((c) => c.classList.toggle("on", c.dataset.game === setupGame));
   }
   let setupGuessMode = false;
+  let optionsTouched = false;
+  const OPTION_IDS = ["guess-mode", "who-mode", "dare-mode", "random-turn"];
+
+  // The option rows that apply to the chosen game, as toggles mirroring the real switches.
+  function openSuggest() {
+    const list = $("#suggest-list");
+    list.innerHTML = "";
+    OPTION_IDS.forEach((id) => {
+      const input = $("#" + id);
+      const row = input.closest(".option-row");
+      if (row.hidden) return;
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "suggest-opt" + (input.checked ? " on" : "");
+      b.innerHTML = `<span class="tick" aria-hidden="true"></span><span><strong>${row.querySelector("strong").innerHTML}</strong><small>${row.querySelector("small").innerHTML}</small></span>`;
+      b.addEventListener("click", () => {
+        input.checked = !input.checked;
+        input.dispatchEvent(new Event("change"));
+        b.classList.toggle("on", input.checked);
+        if (input.checked) FX.sparkleEl(b);
+      });
+      list.appendChild(b);
+    });
+    $("#suggest-overlay").classList.remove("hidden");
+  }
   let setupNames = ["", ""];
 
   function readPlayerInputs() {
@@ -794,7 +823,15 @@
         goStep(3);
       })
     );
+    OPTION_IDS.forEach((id) => $("#" + id).addEventListener("change", () => (optionsTouched = true)));
+    $("#suggest-back").addEventListener("click", () => $("#suggest-overlay").classList.add("hidden"));
+    $("#suggest-go").addEventListener("click", () => { $("#suggest-overlay").classList.add("hidden"); $("#start-btn").click(); });
     $("#start-btn").addEventListener("click", () => {
+      if (!optionsTouched) {
+        optionsTouched = true; // suggest once, then start as chosen
+        openSuggest();
+        return;
+      }
       const subjects = selectedSubjects();
       if (!subjects.length) {
         $("#setup-error").textContent = t("pickOne");
@@ -1126,6 +1163,12 @@
     return b;
   }
 
+  // "1. Do this. 2. Then that." -> a numbered list
+  function setSteps(el, text) {
+    const parts = text.split(/(?:^|\s)\d\.\s/).map((x) => x.trim()).filter(Boolean);
+    el.innerHTML = parts.length > 1 ? `<ol>${parts.map((x) => `<li>${esc(x)}</li>`).join("")}</ol>` : esc(text);
+  }
+
   function renderFunGame() {
     const { player: p, game } = current;
     const os = others(p);
@@ -1136,7 +1179,7 @@
     row.innerHTML = "";
 
     if (game === "bluff") {
-      step.textContent = t("bluffStep", { name });
+      setSteps(step, t("bluffStep", { name }));
       const secret = el("div", "secret" + (current.peek ? " open" : ""));
       if (current.peek) {
         secret.appendChild(el("p", "secret-text " + (current.bluff ? "lie" : "truth"), esc(t(current.bluff ? "bluffLie" : "bluffTruth"))));
@@ -1176,7 +1219,7 @@
     }
 
     // bet
-    step.textContent = t("betStep", { name });
+    setSteps(step, t("betStep", { name }));
     const list = el("div", "bets");
     os.forEach((o) => {
       const bet = current.bets[o] || 1;
@@ -2179,7 +2222,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=9", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=10", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {
