@@ -8,7 +8,7 @@
 // Sections of rulesBody, in order: 0 goal, 1 players, 2 starting, 3 discovery games, 4 fun games,
 // 5 points, 6 bonuses, 7 connection, 8 guess option, 9 who of us, 10 challenges, 11 big groups,
 // 12 badges, 13 share, 14 install, 15 saving.
-const R = { goal: 0, discover: 3, fun: 4, points: 5, bonuses: 6, connection: 7, guess: 8, who: 9, dare: 10, big: 11, badges: 12, saving: 15, date: 16, couple: 17, car: 18, adult: 19, speed: 20, voice: 21 };
+const R = { goal: 0, discover: 3, fun: 4, points: 5, bonuses: 6, connection: 7, guess: 8, who: 9, dare: 10, big: 11, badges: 12, saving: 15, date: 16, couple: 17, car: 18, adult: 19, speed: 20, voice: 21, coffee: 22, team: 23 };
 let rulesFull = true;
 
 function ruleSections() {
@@ -28,6 +28,7 @@ function contextRules() {
   const sec = ruleSections();
   const g = gameOf(state);
   if (g === "speed") return [sec[R.speed], sec[R.voice], sec[R.connection], sec[R.badges], sec[R.saving]].join("");
+  if (g === "team") return [sec[R.team], sec[R.voice], sec[R.connection], sec[R.badges], sec[R.saving]].join("");
   const fun = FUN_GAMES.includes(g);
   const parts = [gameRule(sec, g), sec[R.points]];
   if (fun) parts.push(t("rulesPass"));

@@ -11,16 +11,16 @@ function wheelIds() {
   if (state.whoMode) extras.push("__who");
   if (state.dareMode) extras.push("__dare");
   const g = gameOf(state);
-  const duo = DUO_GAMES.includes(g);
-  if (!extras.length && !duo) return state.subjects.slice();
+  const own = { date: "__date", couple: "__couple", coffee: "__work" }[g];
+  if (!extras.length && !own) return state.subjects.slice();
   const nS = state.subjects.length;
   const reps = Math.max(1, Math.ceil(nS / 6)); // about 1 extra per 3 subjects
   const slots = [];
   for (let r = 0; r < reps; r++) slots.push(...extras);
-  if (duo) {
-    // a first date or a couple: about a third of the wheel is their own questions, plus a few +18 segments
-    const own = g === "couple" ? "__couple" : "__date";
-    const nOwn = Math.max(2, Math.ceil(nS / 2));
+  if (own) {
+    // a first date or a couple: about a third of the wheel is their own questions, plus a few +18 segments;
+    // a coffee break: about half the wheel is work-life questions
+    const nOwn = g === "coffee" ? Math.max(3, nS) : Math.max(2, Math.ceil(nS / 2));
     const nSpicy = state.adult ? Math.max(1, Math.ceil(nS / 6)) : 0;
     const pool = [];
     for (let i = 0; i < nOwn + nSpicy; i++) pool.push(nSpicy && i % Math.ceil((nOwn + nSpicy) / nSpicy) === 1 ? "__spicy" : own);

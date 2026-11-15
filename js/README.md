@@ -16,6 +16,7 @@ No build step: `index.html` loads these files as plain scripts, in this order. T
 | `card.js` | The question card, bonuses, reading aloud |
 | `turns.js` | Fun games (bluff, duel, bet), votes, challenges, scoring a turn, passing |
 | `speed.js` | Speed game: countdown, pause, streaks |
+| `team.js` | Icebreaker: one question for the whole team on a shared screen, keyboard control |
 | `wheel.js` | The wheel |
 | `tree.js` | The tree |
 | `journal.js` | Our story, the summary, `.loopy` and text files |

@@ -8,6 +8,7 @@
 let setupDepth = "mixed";
 let setupTimer = 15;
 let setupGame = null;
+let setupTeamTimer = 0;
 
 function goStep(n) {
   if (n === 3 && setupGame && !gameAllowed(setupGame, $$("#players-list input").length)) setupGame = null;
@@ -34,11 +35,13 @@ const GAME_FIT = {
   bet: { min: 2, best: [3, 6] },
   car: { min: 2, max: 7, best: [0, 0], why: "carMax" },
   speed: { min: 2, best: [3, 8] },
+  coffee: { min: 2, max: 8, best: [2, 6], why: "coffeeMax" },
+  team: { min: 3, best: [6, 99], why: "teamMin" },
 };
 const gameAllowed = (g, n) => n >= GAME_FIT[g].min && n <= (GAME_FIT[g].max || 99);
 const gameBest = (g, n) => n >= GAME_FIT[g].best[0] && n <= GAME_FIT[g].best[1];
 // Section order on step 2: what suits the group comes first, what doesn't apply goes last.
-const GROUP_ORDER = (n) => (n === 2 ? ["two", "discover", "fun", "road"] : n <= 7 ? ["fun", "discover", "road", "two"] : ["discover", "fun", "road", "two"]);
+const GROUP_ORDER = (n) => (n === 2 ? ["two", "discover", "fun", "road", "work"] : n <= 7 ? ["fun", "discover", "road", "work", "two"] : ["discover", "fun", "work", "road", "two"]);
 
 function renderGameChoice() {
   const n = $$("#players-list input").length;
@@ -72,24 +75,28 @@ function renderChosenGame() {
   $("#chosen-game").innerHTML = `<span class="mode-emoji">${GAME_EMOJI[setupGame]}</span><span><strong>${esc(t("g_" + setupGame))}</strong><small>${esc(t("g_" + setupGame + "Desc"))}</small>${fun && nP < 3 ? `<small class="warn">${esc(t("needThree"))}</small>` : ""}</span>`;
   const duo = DUO_GAMES.includes(setupGame), car = setupGame === "car";
   if (duo && nP !== 2) $("#chosen-game").querySelector("span:last-child").insertAdjacentHTML("beforeend", `<small class="warn">${esc(t("needTwo"))}</small>`);
-  const speed = setupGame === "speed";
-  $("#guess-option").hidden = fun || speed; // fun games guess their own way, no time to guess in the speed game; on by default in the couple game
+  const speed = setupGame === "speed", work = isWorkGame(setupGame), team = setupGame === "team";
+  // between colleagues, only the subjects that stay comfortable at work
+  $$("#subject-grid .subject").forEach((b) => (b.hidden = work && !WORK_SUBJECTS.includes(b.dataset.id)));
+  updateSubjectsSummary();
+  $("#team-timer-panel").hidden = !team;
+  $("#guess-option").hidden = fun || speed || team; // fun games guess their own way, no time to guess in the speed game; on by default in the couple game
   $("#timer-panel").hidden = !speed;
-  $("#who-option").hidden = duo || car || speed || nP < 3; // nobody points while driving; at 2 a vote just points at the other
+  $("#who-option").hidden = duo || car || speed || team || nP < 3; // nobody points while driving; at 2 a vote just points at the other
   if ($("#who-option").hidden) $("#who-mode").checked = false;
-  $("#dare-option").hidden = car || speed; // no challenges in a car, no time for them in the speed game
+  $("#dare-option").hidden = car || speed || work; // no challenges in a car, no time in the speed game, not at work
   $("#random-option").hidden = duo || nP < 3; // at 2, the next player is always the other one
   if ($("#random-option").hidden) $("#random-turn").checked = false;
   $("#adult-option").hidden = !duo;
   $("#car-panel").hidden = !car;
   $("#voice-option").hidden = !("speechSynthesis" in window);
-  const pace = { date: "paceDate", tree: "paceTree", car: "paceCar" }[setupGame];
+  const pace = { date: "paceDate", tree: "paceTree", car: "paceCar", coffee: "paceWork", team: "paceWork" }[setupGame];
   $("#depth-hint").hidden = !pace;
   if (pace) $("#depth-hint").textContent = t(pace);
   $("#depth-choice").hidden = setupGame === "date" || setupGame === "tree"; // these two set their own pace
   $("#depth-panel").hidden = speed; // speed questions are short and light
-  $('#depth-choice [data-depth="deep"]').hidden = car;
-  if (car && setupDepth === "deep") $('#depth-choice [data-depth="mixed"]').click();
+  $('#depth-choice [data-depth="deep"]').hidden = car || work;
+  if ((car || work) && setupDepth === "deep") $('#depth-choice [data-depth="mixed"]').click();
   if (car) renderDriverChoice();
   $$(".game-card").forEach((c) => c.classList.toggle("on", c.dataset.game === setupGame));
 }
@@ -192,12 +199,12 @@ function renderSubjectGrid(selected) {
 }
 
 function updateSubjectsSummary() {
-  const n = DB.subjects.length, k = selectedSubjects().length;
+  const n = $$("#subject-grid .subject:not([hidden])").length, k = selectedSubjects().length;
   $("#subjects-summary").textContent = k === n ? t("subjectsAll", { n }) : t("subjectsSome", { k, n });
 }
 
 function selectedSubjects() {
-  return $$("#subject-grid .subject.on").map((b) => b.dataset.id);
+  return $$("#subject-grid .subject.on:not([hidden])").map((b) => b.dataset.id);
 }
 
 const storyName = () => ($("#story-name").value || "").trim().slice(0, 40);
@@ -223,6 +230,12 @@ function initSetup() {
   });
 
   $("#guess-mode").addEventListener("change", (e) => (setupGuessMode = e.target.checked));
+  $$("#team-timer-choice button").forEach((b) =>
+    b.addEventListener("click", () => {
+      setupTeamTimer = Number(b.dataset.time);
+      $$("#team-timer-choice button").forEach((x) => x.classList.toggle("on", x === b));
+    })
+  );
   $$("#timer-choice button").forEach((b) =>
     b.addEventListener("click", () => {
       setupTimer = Number(b.dataset.time);

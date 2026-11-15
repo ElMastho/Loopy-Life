@@ -6,7 +6,7 @@
 /* Game state                                                         */
 /* ------------------------------------------------------------------ */
 function newGame(players, subjects, depth, game) {
-  const mode = game === "tree" ? "tree" : game === "speed" ? "speed" : "wheel";
+  const mode = game === "tree" ? "tree" : game === "speed" ? "speed" : game === "team" ? "team" : "wheel";
   state = {
     version: 1,
     id: newId(),
@@ -19,12 +19,12 @@ function newGame(players, subjects, depth, game) {
     depth,
     mode,
     game,
-    guessMode: setupGuessMode && !FUN_GAMES.includes(game) && game !== "speed",
-    timer: game === "speed" ? setupTimer : 0,
+    guessMode: setupGuessMode && !FUN_GAMES.includes(game) && game !== "speed" && game !== "team",
+    timer: game === "speed" ? setupTimer : game === "team" ? setupTeamTimer : 0,
     streak: 0,
     bestStreak: 0,
-    whoMode: !DUO_GAMES.includes(game) && game !== "car" && game !== "speed" && players.length > 2 && $("#who-mode").checked,
-    dareMode: game !== "car" && game !== "speed" && $("#dare-mode").checked,
+    whoMode: !DUO_GAMES.includes(game) && !["car", "speed", "team"].includes(game) && players.length > 2 && $("#who-mode").checked,
+    dareMode: !["car", "speed", "coffee", "team"].includes(game) && $("#dare-mode").checked,
     randomTurn: !DUO_GAMES.includes(game) && $("#random-turn").checked,
     adult: DUO_GAMES.includes(game) && $("#adult-mode").checked,
     driver: game === "car" ? setupDriver : -1,
@@ -72,7 +72,10 @@ function setMode(mode) {
   $("#view-wheel").classList.toggle("active", mode === "wheel");
   $("#view-tree").classList.toggle("active", mode === "tree");
   $("#view-speed").classList.toggle("active", mode === "speed");
+  $("#view-team").classList.toggle("active", mode === "team");
+  $("#screen-game").classList.toggle("team-mode", mode === "team");
   if (mode === "speed") renderSpeedView();
+  if (mode === "team") renderTeam(); else teamStopTimer();
   renderTree();
   if (mode === "wheel") drawWheel();
 }
@@ -160,6 +163,7 @@ function gameDepths() {
   const g = gameOf(state);
   const n = state.journal.filter((e) => !e.kind).length;
   if (g === "date") return n < 4 ? [1] : n < 10 ? (randInt(3) ? [2] : [1]) : (randInt(3) ? [2] : [3]);
+  if (isWorkGame(g)) return depthsFor(state.depth === "light" ? "light" : "mixed").map((d) => Math.min(d, 2));
   if (g === "car") return state.depth === "deep" ? [2] : depthsFor(state.depth === "mixed" ? "mixed" : state.depth).map((d) => Math.min(d, 2));
   return depthsFor(state.depth);
 }
@@ -171,6 +175,7 @@ function drawForGame(subjectId, depths) {
 
 function drawQuestion(subjectId, depths, excludeId) {
   if (POOLS[subjectId]) return drawPool(subjectId, depths, excludeId) || drawQuestion(pick(state.subjects), depths);
+  if (state && isWorkGame(gameOf(state))) depths = [1]; // between colleagues, regular subjects stay light
   let pool = unusedIn(subjectId).filter((q) => q.id !== excludeId);
   if (!pool.length) { recycle(subjectId); pool = unusedIn(subjectId).filter((q) => q.id !== excludeId); }
   let filtered = pool.filter((q) => depths.includes(q.depth));

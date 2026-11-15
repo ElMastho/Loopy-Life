@@ -1,7 +1,7 @@
 {
   "version": 4,
   "languages": ["en", "fr"],
-  "pools": ["who", "challenges", "date", "couple", "spicy", "speed"],
+  "pools": ["who", "challenges", "date", "couple", "spicy", "speed", "work"],
   "subjects": [
     {"id": "family", "name": {"en": "Family", "fr": "Famille"}, "short": {"en": "Family", "fr": "Famille"}, "emoji": "🏡", "color": "#ff5c8a"},
     {"id": "childhood", "name": {"en": "Childhood", "fr": "Enfance"}, "short": {"en": "Childhood", "fr": "Enfance"}, "emoji": "🧸", "color": "#ff9f1c"},

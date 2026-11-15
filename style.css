@@ -565,3 +565,41 @@ button { font-family: inherit; cursor: pointer; }
 }
 .update-x { border: 0; background: none; color: #6b5a8e; font-size: 1rem; padding: 6px 8px; cursor: pointer; }
 .update-banner .btn { white-space: nowrap; flex: none; }
+
+/* between colleagues: subjects that don't fit are hidden */
+.subject[hidden] { display: none; }
+
+/* icebreaker: one question for everyone, readable on a shared screen */
+#screen-game.team-mode #scoreboard, #screen-game.team-mode #turn-banner { display: none; }
+.team-start { text-align: center; padding: 30px 8px; }
+.team-start .hint { max-width: 460px; margin: 0 auto 18px; }
+.btn.big { font-size: 1.2rem; padding: 16px 28px; }
+.team-stage { display: flex; flex-direction: column; gap: 14px; }
+.team-card {
+  background: #fff; color: #2a1b4a; border-radius: 24px; padding: 22px 22px 18px; border-top: 8px solid var(--c, #9b7bff);
+  box-shadow: 0 14px 40px rgba(0,0,0,.35); animation: fadeUp .45s ease;
+}
+.team-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.team-top .chip { background: color-mix(in srgb, var(--c, #9b7bff) 18%, #fff); color: #2a1b4a; border-radius: 99px; padding: 4px 12px; font-weight: 600; }
+.team-progress { color: #6b5a8e; font-size: .9rem; }
+.team-q { font-size: clamp(1.4rem, 3.6vw, 2.6rem); font-weight: 700; line-height: 1.25; margin: 18px 0 14px; }
+.team-for { font-size: clamp(1.05rem, 2.2vw, 1.5rem); margin: 0; color: #4a3b6b; }
+.team-for b { color: #1b1030; border-radius: 10px; padding: 1px 10px; }
+.team-timer { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.team-timer-bar { flex: 1; height: 8px; border-radius: 99px; background: #eee6fb; overflow: hidden; }
+#team-timer-fill { height: 100%; width: 100%; background: var(--c, #9b7bff); transition: width .2s linear; }
+.team-timer.hurry #team-timer-fill { background: #e8505b; }
+#team-timer-num { min-width: 2.4em; text-align: right; font-weight: 700; }
+.team-names { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.team-name { border: 2px solid var(--pc); border-radius: 99px; padding: 4px 12px; font-size: .95rem; opacity: .85; }
+.team-name.now { background: var(--pc); color: #1b1030; font-weight: 700; opacity: 1; transform: scale(1.08); }
+.team-name.done { opacity: .55; }
+.team-name.skipped { opacity: .35; border-style: dashed; }
+.team-controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.team-controls .btn { min-width: 0; }
+.team-keys { display: none; font-size: .8rem; }
+@media (hover: hover) and (pointer: fine) { .team-keys { display: block; } }
+@media (min-width: 900px) {
+  #screen-game.team-mode { max-width: 1100px; }
+  .team-card { padding: 34px 40px 28px; }
+}

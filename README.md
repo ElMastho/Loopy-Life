@@ -11,6 +11,7 @@ Starting a game takes three steps: **1. Players** (or continue a saved story), *
 2. Pick a game:
    - To get to know each other: **🎡 The wheel** (random subject, random question) or **🌳 The tree** (every subject is a branch, from "roots" questions to "leaves" and "blooms"; every answer makes the tree grow).
    - For two: **🥂 First date** (questions that warm up slowly, mixing date questions with regular ones, and a free **🙈 Joker** to skip without a word) and **💑 Couple** (memories, the two of you, the future; the partner guesses each answer first).
+   - Between colleagues: **☕ Coffee break** (2 to 8, light work-life questions on the wheel) and **🎤 Icebreaker** (a whole team on a shared screen, in a video call or a meeting room: one question, everyone answers in turn; the person who leads drives it from the keyboard).
    - On the road: **🚗 Car** (a passenger holds the phone, the driver answers out loud; questions can be read aloud; no challenges).
    - Optional **🔥 +18 questions** in First date and Couple: off by default, suggestive but never explicit, behind an adults-only confirmation with a disclaimer.
    - Just for fun (best with 3 to 6): **🎭 Truth or bluff** (the app secretly tells the player to answer honestly or to bluff; +15 for each friend who saw through it, +10 to the player per friend fooled), **⚔️ Duel** (two players answer the same question, the others pick the best answer: +20, or +10 each for a tie), **🎲 The bet** (friends bet 1 to 3 on guessing the answer: +10 per point if right, -5 per point if wrong).
@@ -40,7 +41,7 @@ The questions live in [`data/`](data/), one file per subject and per kind, so a 
 
 - [`data/subjects.json`](data/subjects.json): the languages, the list of pools and the 19 subjects (name, emoji, colour).
 - `data/questions/<subject>.json`: that subject's questions (nearly 1,000 in all), each with a depth from 1 (light) to 3 (deep).
-- `data/pools/`: `date`, `couple`, `spicy` (+18) and `speed` questions, the `who` votes and the `challenges`.
+- `data/pools/`: `date`, `couple`, `spicy` (+18), `speed` and `work` (between colleagues) questions, the `who` votes and the `challenges`.
 
 Each file is a list with one entry per line:
 

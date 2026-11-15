@@ -8,6 +8,7 @@
 function initGame() {
   $("#spin-btn").addEventListener("click", spin);
   $("#speed-go").addEventListener("click", () => openSpeedCard());
+  initTeam();
   $("#pause-btn").addEventListener("click", pauseSpeed);
   $("#wheel").addEventListener("click", spin);
   $$("[data-switch]").forEach((b) => b.addEventListener("click", () => {
@@ -19,9 +20,9 @@ function initGame() {
   $("#mini-tree").addEventListener("click", openJournal);
   $("#journal-close").addEventListener("click", () => $("#journal-overlay").classList.add("hidden"));
   $("#journal-overlay").addEventListener("click", (e) => { if (e.target.id === "journal-overlay") $("#journal-overlay").classList.add("hidden"); });
-  $("#finish-btn").addEventListener("click", () => { speedPaused = true; clearTimeout(speedNext); showSummary(); });
+  $("#finish-btn").addEventListener("click", () => { speedPaused = true; clearTimeout(speedNext); teamStopTimer(); showSummary(); });
   $("#home-btn").addEventListener("click", () => {
-    speedPaused = true; clearTimeout(speedNext);
+    speedPaused = true; clearTimeout(speedNext); teamStopTimer();
     state.active = false; // reopening the app now lands on the home screen; the game stays in "Our stories"
     save();
     showResume();
@@ -79,7 +80,7 @@ async function boot() {
   DB.questions.forEach((q) => (QBYID[q.id] = q));
   Object.values(EXTRAS).forEach((x) => (SUBJ[x.id] = x));
   Object.values(POOLS).forEach((x) => (SUBJ[x.id] = x));
-  ["date", "couple", "spicy", "speed"].forEach((k) => (DB[k] || []).forEach((q) => (QBYID[q.id] = q)));
+  ["date", "couple", "spicy", "speed", "work"].forEach((k) => (DB[k] || []).forEach((q) => (QBYID[q.id] = q)));
   (DB.who || []).forEach((q) => (QBYID[q.id] = { ...q, subject: "__who" }));
   (DB.challenges || []).forEach((q) => (QBYID[q.id] = { ...q, subject: "__dare" }));
   initSetup();

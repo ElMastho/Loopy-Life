@@ -151,7 +151,8 @@ function nextTurn(player) {
 
 // Picks a vote or a challenge not used in this story, preferring ones never seen on this device.
 function drawExtra(kind, excludeId) {
-  const list = kind === "who" ? DB.who || [] : DB.challenges || [];
+  let list = kind === "who" ? DB.who || [] : DB.challenges || [];
+  if (kind === "who" && isWorkGame(gameOf(state))) list = list.filter((x) => !WHO_NOT_AT_WORK.includes(x.id));
   const used = new Set(state.used);
   let pool = list.filter((x) => !used.has(x.id) && x.id !== excludeId);
   if (!pool.length) {
