@@ -107,3 +107,5 @@ async function boot() {
 }
 
 boot();
+// The wheel face is drawn once: draw it again when the Fredoka font has arrived.
+if (document.fonts) document.fonts.ready.then(() => { if (state && state.mode === "wheel" && $("#wheel")) drawWheel(); });
