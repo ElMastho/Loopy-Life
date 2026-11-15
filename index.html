@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=23">
+  <link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -192,14 +192,6 @@
         <h2 data-i18n="driverTitle">🚗 Who's driving?</h2>
         <p class="panel-hint" data-i18n="driverHint">The driver answers out loud and never touches the phone.</p>
         <div id="driver-choice" class="driver-choice"></div>
-        <label class="option-row" for="voice-mode">
-          <input id="voice-mode" type="checkbox" checked>
-          <span class="switch" aria-hidden="true"></span>
-          <span class="option-text">
-            <strong data-i18n="voiceTitle"></strong>
-            <small data-i18n="voiceDesc"></small>
-          </span>
-        </label>
       </section>
 
       <section class="panel">
@@ -234,6 +226,14 @@
           <span class="option-text">
             <strong data-i18n="dareModeTitle"></strong>
             <small data-i18n="dareModeDesc"></small>
+          </span>
+        </label>
+        <label class="option-row" for="voice-mode" id="voice-option">
+          <input id="voice-mode" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+          <span class="option-text">
+            <strong data-i18n="voiceTitle"></strong>
+            <small data-i18n="voiceDesc"></small>
           </span>
         </label>
         <label class="option-row" for="random-turn" id="random-option">
@@ -479,6 +479,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=23"></script>
+  <script src="app.js?v=24"></script>
 </body>
 </html>
