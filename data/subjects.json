@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "languages": ["en", "fr"],
   "pools": ["who", "challenges", "date", "couple", "spicy", "speed"],
   "subjects": [
@@ -17,6 +17,10 @@
     {"id": "travel", "name": {"en": "Travel & Places", "fr": "Voyages & lieux"}, "short": {"en": "Travel", "fr": "Voyages"}, "emoji": "✈️", "color": "#277da1"},
     {"id": "daily", "name": {"en": "Daily Life & Habits", "fr": "Quotidien & habitudes"}, "short": {"en": "Daily life", "fr": "Quotidien"}, "emoji": "☕", "color": "#7b6cf6"},
     {"id": "whatif", "name": {"en": "What If…", "fr": "Et si…"}, "short": {"en": "What if", "fr": "Et si"}, "emoji": "🔮", "color": "#b5179e"},
-    {"id": "imagination", "name": {"en": "Imagination & Scenarios", "fr": "Imaginaire & scénarios"}, "short": {"en": "Imagine", "fr": "Imaginaire"}, "emoji": "🌈", "color": "#06d6a0"}
+    {"id": "imagination", "name": {"en": "Imagination & Scenarios", "fr": "Imaginaire & scénarios"}, "short": {"en": "Imagine", "fr": "Imaginaire"}, "emoji": "🌈", "color": "#06d6a0"},
+    {"id": "fantasy", "name": {"en": "Fantasy & magic", "fr": "Fantastique & magie"}, "short": {"en": "Fantasy", "fr": "Fantastique"}, "emoji": "🐉", "color": "#5e60ce"},
+    {"id": "nature", "name": {"en": "Nature & animals", "fr": "Nature & animaux"}, "short": {"en": "Nature", "fr": "Nature"}, "emoji": "🌿", "color": "#52b788"},
+    {"id": "humor", "name": {"en": "Laughs & stories", "fr": "Fous rires & anecdotes"}, "short": {"en": "Laughs", "fr": "Fous rires"}, "emoji": "😂", "color": "#f4a300"},
+    {"id": "future", "name": {"en": "Tomorrow's world", "fr": "Le monde de demain"}, "short": {"en": "Tomorrow", "fr": "Demain"}, "emoji": "🛸", "color": "#00b4d8"}
   ]
 }

@@ -56,5 +56,14 @@
   {"id": "family-055", "subject": "family", "depth": 2, "text": {"en": "What question would you like to ask your grandparents about their youth?", "fr": "Quelle question aimerais-tu poser à tes grands-parents sur leur jeunesse ?"}},
   {"id": "family-056", "subject": "family", "depth": 3, "text": {"en": "What do you think your parents sacrificed for you?", "fr": "Qu'est-ce que tes parents ont sacrifié pour toi, selon toi ?"}},
   {"id": "family-057", "subject": "family", "depth": 3, "text": {"en": "What would you like to repair in your family if you could?", "fr": "Qu'aimerais-tu réparer dans ta famille si tu le pouvais ?"}},
-  {"id": "family-058", "subject": "family", "depth": 3, "text": {"en": "How has your idea of \"family\" changed since you were a child?", "fr": "Comment ton idée de la « famille » a-t-elle changé depuis ton enfance ?"}}
+  {"id": "family-058", "subject": "family", "depth": 3, "text": {"en": "How has your idea of \"family\" changed since you were a child?", "fr": "Comment ton idée de la « famille » a-t-elle changé depuis ton enfance ?"}},
+  {"id": "family-059", "subject": "family", "depth": 1, "text": {"en": "Which family member has the most surprising job or hobby?", "fr": "Quel membre de ta famille a le métier ou la passion la plus surprenante ?"}},
+  {"id": "family-060", "subject": "family", "depth": 1, "text": {"en": "What nickname has your family given you?", "fr": "Quel surnom ta famille t'a-t-elle donné ?"}},
+  {"id": "family-061", "subject": "family", "depth": 1, "text": {"en": "Who in your family tells the best stories?", "fr": "Qui, dans ta famille, raconte le mieux les histoires ?"}},
+  {"id": "family-062", "subject": "family", "depth": 2, "text": {"en": "What would your family's reality show be called?", "fr": "Comment s'appellerait la téléréalité de ta famille ?"}},
+  {"id": "family-063", "subject": "family", "depth": 2, "text": {"en": "Which trait of one of your grandparents do you see in yourself?", "fr": "Quel trait d'un de tes grands-parents retrouves-tu chez toi ?"}},
+  {"id": "family-064", "subject": "family", "depth": 2, "text": {"en": "Which family rule would you abolish, and which one would you invent?", "fr": "Quelle règle familiale abolirais-tu, et laquelle inventerais-tu ?"}},
+  {"id": "family-065", "subject": "family", "depth": 3, "text": {"en": "What does your family not know how to say to each other?", "fr": "Qu'est-ce que ta famille ne sait pas se dire ?"}},
+  {"id": "family-066", "subject": "family", "depth": 3, "text": {"en": "Do you feel you've found your place in your family?", "fr": "As-tu l'impression d'avoir trouvé ta place dans ta famille ?"}},
+  {"id": "family-067", "subject": "family", "depth": 3, "text": {"en": "Which family story would you like to pass on so it's never forgotten?", "fr": "Quelle histoire de famille aimerais-tu transmettre pour qu'elle ne soit jamais oubliée ?"}}
 ]

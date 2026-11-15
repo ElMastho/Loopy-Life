@@ -3,7 +3,7 @@
 "use strict";
 
 const STORAGE_KEY = "loopy-know-each-other-v1";
-const APP_VERSION = 25; // bump with version.json and the ?v= of the files on every release
+const APP_VERSION = 26; // bump with version.json and the ?v= of the files on every release
 const POINTS = { 1: 10, 2: 20, 3: 30 };
 const LEVEL_UP = 100; // connection points per level
 const PASSES = 3;

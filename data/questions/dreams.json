@@ -45,5 +45,14 @@
   {"id": "dreams-044", "subject": "dreams", "depth": 2, "text": {"en": "Which dream do you keep postponing?", "fr": "Quel rêve repousses-tu sans cesse ?"}},
   {"id": "dreams-045", "subject": "dreams", "depth": 3, "text": {"en": "What would you regret not having tried at the end of your life?", "fr": "Que regretterais-tu de ne pas avoir tenté à la fin de ta vie ?"}},
   {"id": "dreams-046", "subject": "dreams", "depth": 3, "text": {"en": "What dream did someone else have for you that you didn't want?", "fr": "Quel rêve quelqu'un avait-il pour toi et que tu ne voulais pas ?"}},
-  {"id": "dreams-047", "subject": "dreams", "depth": 3, "text": {"en": "What would make you feel your life was a success, honestly?", "fr": "Qu'est-ce qui te ferait sentir que ta vie est réussie, honnêtement ?"}}
+  {"id": "dreams-047", "subject": "dreams", "depth": 3, "text": {"en": "What would make you feel your life was a success, honestly?", "fr": "Qu'est-ce qui te ferait sentir que ta vie est réussie, honnêtement ?"}},
+  {"id": "dreams-048", "subject": "dreams", "depth": 1, "text": {"en": "Which world record would you like to hold?", "fr": "Quel record du monde aimerais-tu détenir ?"}},
+  {"id": "dreams-049", "subject": "dreams", "depth": 1, "text": {"en": "What would you name your boat, your restaurant or your band?", "fr": "Comment appellerais-tu ton bateau, ton restaurant ou ton groupe de musique ?"}},
+  {"id": "dreams-050", "subject": "dreams", "depth": 1, "text": {"en": "Which experience do you dream of having once: skydiving, the opera, a safari…?", "fr": "Quelle expérience rêves-tu de vivre une fois : saut en parachute, opéra, safari… ?"}},
+  {"id": "dreams-051", "subject": "dreams", "depth": 2, "text": {"en": "Which childhood dream did you actually make come true?", "fr": "Quel rêve d'enfant as-tu vraiment réalisé ?"}},
+  {"id": "dreams-052", "subject": "dreams", "depth": 2, "text": {"en": "Who would you like to make proud?", "fr": "Qui aimerais-tu rendre fier ?"}},
+  {"id": "dreams-053", "subject": "dreams", "depth": 2, "text": {"en": "What do you dream of making with your own hands one day?", "fr": "Que rêves-tu de fabriquer de tes mains un jour ?"}},
+  {"id": "dreams-054", "subject": "dreams", "depth": 3, "text": {"en": "Which dream have you left behind, and what replaced it?", "fr": "Quel rêve as-tu laissé derrière toi, et qu'est-ce qui l'a remplacé ?"}},
+  {"id": "dreams-055", "subject": "dreams", "depth": 3, "text": {"en": "Which dream would you rather share with someone you love than achieve alone?", "fr": "Quel rêve préférerais-tu partager avec quelqu'un que tu aimes plutôt que réaliser seul ?"}},
+  {"id": "dreams-056", "subject": "dreams", "depth": 3, "text": {"en": "What would you dare to do if you were sure to be loved no matter what?", "fr": "Qu'oserais-tu faire si tu étais sûr d'être aimé quoi qu'il arrive ?"}}
 ]

@@ -46,5 +46,14 @@
   {"id": "friendship-045", "subject": "friendship", "depth": 2, "text": {"en": "What's the best way to cheer you up when you're down?", "fr": "Quelle est la meilleure façon de te remonter le moral quand ça ne va pas ?"}},
   {"id": "friendship-046", "subject": "friendship", "depth": 3, "text": {"en": "What would you want me to do if you were going through a hard time?", "fr": "Que voudrais-tu que je fasse si tu traversais une période difficile ?"}},
   {"id": "friendship-047", "subject": "friendship", "depth": 3, "text": {"en": "What do you think I don't see about myself?", "fr": "Qu'est-ce que je ne vois pas chez moi, selon toi ?"}},
-  {"id": "friendship-048", "subject": "friendship", "depth": 3, "text": {"en": "When did you feel closest to me?", "fr": "Quand t'es-tu senti le plus proche de moi ?"}}
+  {"id": "friendship-048", "subject": "friendship", "depth": 3, "text": {"en": "When did you feel closest to me?", "fr": "Quand t'es-tu senti le plus proche de moi ?"}},
+  {"id": "friendship-049", "subject": "friendship", "depth": 1, "text": {"en": "Which friend would you call to help you move house at 6 a.m.?", "fr": "Quel ami appellerais-tu pour t'aider à déménager à 6 h du matin ?"}},
+  {"id": "friendship-050", "subject": "friendship", "depth": 1, "text": {"en": "What would be the theme song of our friendship?", "fr": "Quelle serait la chanson de notre amitié ?"}},
+  {"id": "friendship-051", "subject": "friendship", "depth": 1, "text": {"en": "Which of your friends has the most unexpected life story?", "fr": "Lequel de tes amis a le parcours le plus inattendu ?"}},
+  {"id": "friendship-052", "subject": "friendship", "depth": 2, "text": {"en": "Have you ever made a friend in an unlikely place? Tell me.", "fr": "T'es-tu déjà fait un ami dans un endroit improbable ? Raconte."}},
+  {"id": "friendship-053", "subject": "friendship", "depth": 2, "text": {"en": "What do your friends come to you for?", "fr": "Pour quoi tes amis viennent-ils te voir ?"}},
+  {"id": "friendship-054", "subject": "friendship", "depth": 2, "text": {"en": "How has your idea of friendship changed with age?", "fr": "Comment ta vision de l'amitié a-t-elle changé avec l'âge ?"}},
+  {"id": "friendship-055", "subject": "friendship", "depth": 3, "text": {"en": "Which friend do you owe a thank-you you've never said?", "fr": "À quel ami dois-tu un merci que tu n'as jamais dit ?"}},
+  {"id": "friendship-056", "subject": "friendship", "depth": 3, "text": {"en": "Which friendship saved you, in a way?", "fr": "Quelle amitié t'a sauvé, d'une certaine façon ?"}},
+  {"id": "friendship-057", "subject": "friendship", "depth": 3, "text": {"en": "What would you like us to still be doing together in twenty years?", "fr": "Que voudrais-tu qu'on fasse encore ensemble dans vingt ans ?"}}
 ]

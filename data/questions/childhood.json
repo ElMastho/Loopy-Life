@@ -51,5 +51,14 @@
   {"id": "childhood-050", "subject": "childhood", "depth": 2, "text": {"en": "What did you imagine the adult world was like?", "fr": "Comment imaginais-tu le monde des adultes ?"}},
   {"id": "childhood-051", "subject": "childhood", "depth": 3, "text": {"en": "When did you feel really proud of yourself as a child?", "fr": "Quand t'es-tu senti vraiment fier de toi quand tu étais enfant ?"}},
   {"id": "childhood-052", "subject": "childhood", "depth": 3, "text": {"en": "What did the child you were need to hear more often?", "fr": "Qu'avait besoin d'entendre plus souvent l'enfant que tu étais ?"}},
-  {"id": "childhood-053", "subject": "childhood", "depth": 3, "text": {"en": "Is there something from your childhood you have never told anyone?", "fr": "Y a-t-il quelque chose de ton enfance que tu n'as jamais raconté à personne ?"}}
+  {"id": "childhood-053", "subject": "childhood", "depth": 3, "text": {"en": "Is there something from your childhood you have never told anyone?", "fr": "Y a-t-il quelque chose de ton enfance que tu n'as jamais raconté à personne ?"}},
+  {"id": "childhood-054", "subject": "childhood", "depth": 1, "text": {"en": "Which song did you love singing as a kid?", "fr": "Quelle chanson adorais-tu chanter quand tu étais enfant ?"}},
+  {"id": "childhood-055", "subject": "childhood", "depth": 1, "text": {"en": "Did you have an imaginary friend or an invented world?", "fr": "Avais-tu un ami imaginaire ou un monde inventé ?"}},
+  {"id": "childhood-056", "subject": "childhood", "depth": 1, "text": {"en": "What was your favorite dish at your grandparents' or at the school canteen?", "fr": "Quel était ton plat préféré chez tes grands-parents ou à la cantine ?"}},
+  {"id": "childhood-057", "subject": "childhood", "depth": 2, "text": {"en": "What did you do with your pocket money?", "fr": "Que faisais-tu de ton argent de poche ?"}},
+  {"id": "childhood-058", "subject": "childhood", "depth": 2, "text": {"en": "What was the biggest adventure of your childhood?", "fr": "Quelle a été la plus grande aventure de ton enfance ?"}},
+  {"id": "childhood-059", "subject": "childhood", "depth": 2, "text": {"en": "Which injustice from your childhood do you still remember?", "fr": "Quelle injustice de ton enfance te reste en mémoire ?"}},
+  {"id": "childhood-060", "subject": "childhood", "depth": 3, "text": {"en": "Which quality did you have as a child that you've since lost?", "fr": "Quelle qualité avais-tu enfant et as-tu perdue depuis ?"}},
+  {"id": "childhood-061", "subject": "childhood", "depth": 3, "text": {"en": "Who made you feel special as a child, and how?", "fr": "Qui te faisait te sentir unique quand tu étais enfant, et comment ?"}},
+  {"id": "childhood-062", "subject": "childhood", "depth": 3, "text": {"en": "What did you learn too early, or too late?", "fr": "Qu'as-tu appris trop tôt, ou trop tard ?"}}
 ]
