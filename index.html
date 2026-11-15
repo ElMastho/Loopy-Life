@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -164,6 +164,7 @@
 
       <section class="panel" id="depth-panel">
         <h2 data-i18n="howDeep">How deep?</h2>
+        <p class="panel-hint" id="depth-hint" hidden></p>
         <div class="segmented" id="depth-choice">
           <button type="button" data-depth="light" data-i18n="light">🌤️ Light</button>
           <button type="button" data-depth="mixed" class="on" data-i18n="mixed">🌗 Mixed</button>
@@ -285,6 +286,7 @@
       <button class="btn ghost save-story" type="button" data-i18n="saveStory">💾 Save the story</button>
       <button class="btn ghost badges-open" type="button" data-i18n="badgesBtn">🏅 Badges</button>
       <button class="btn ghost rules-open" type="button" data-i18n="rulesBtn">❓ Rules</button>
+      <button id="home-btn" class="btn ghost" type="button" data-i18n="home">🏠 Home</button>
       <button id="finish-btn" class="btn ghost" type="button" data-i18n="finish">🏁 Finish</button>
       <button id="lang-btn" class="btn ghost" type="button">🇫🇷 Français</button>
     </div>
@@ -410,6 +412,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=14"></script>
+  <script src="app.js?v=15"></script>
 </body>
 </html>
