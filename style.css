@@ -519,3 +519,4 @@ button { font-family: inherit; cursor: pointer; }
 .card.late { animation: shake .4s ease; }
 .card.late .for-who { color: #e8505b; font-weight: 700; font-size: 1.3rem; }
 @keyframes shake { 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+.speed-who { font-size: 1.3rem; font-weight: 600; margin: 0 0 4px; }
