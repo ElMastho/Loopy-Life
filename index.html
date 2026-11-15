@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="style.css?v=18">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -45,6 +45,8 @@
         <h2 data-i18n="who">Who's playing?</h2>
         <div id="players-list" class="players-list"></div>
         <button id="add-player" class="btn ghost small add-player" type="button" data-i18n="addPlayer">+ Add a player</button>
+        <label class="story-name-label" for="story-name" data-i18n="storyName">📖 Name your story (optional)</label>
+        <input id="story-name" class="text-input" type="text" maxlength="40" autocomplete="off" data-i18n-ph="storyNamePh">
       </section>
       <div class="step-nav">
         <button class="btn primary next-step" type="button" data-go="2" data-i18n="nextStep">Next →</button>
@@ -55,6 +57,7 @@
           <button id="resume-btn" class="btn ghost" type="button">↩︎ Resume last game</button>
         </p>
         <p class="resume">
+          <button id="stories-btn" class="btn ghost" type="button" data-i18n="storiesBtn">📚 Our stories</button>
           <button id="load-story" class="btn ghost" type="button" data-i18n="loadStory">📂 Continue a saved story</button>
           <input id="story-file" type="file" accept=".loopy" hidden>
           <button id="install-btn" class="btn ghost" type="button" data-i18n="installApp" hidden>📲 Install the app</button>
@@ -405,8 +408,15 @@
   <div id="suggest-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="suggest-title">
     <div class="card journal-card suggest-card">
       <h2 id="suggest-title" data-i18n="suggestTitle">One last thing?</h2>
-      <p class="suggest-text" data-i18n="suggestText">These options can spice up the game. Tap the ones you want.</p>
-      <div id="suggest-list" class="suggest-list"></div>
+      <div id="suggest-name-box" class="suggest-name">
+        <h3 data-i18n="suggestName">Give your story a name?</h3>
+        <p class="suggest-text" data-i18n="suggestNameHint"></p>
+        <input id="suggest-name" class="text-input light" type="text" maxlength="40" autocomplete="off" data-i18n-ph="storyNamePh">
+      </div>
+      <div id="suggest-opts-box">
+        <p class="suggest-text" data-i18n="suggestText">These options can spice up the game. Tap the ones you want.</p>
+        <div id="suggest-list" class="suggest-list"></div>
+      </div>
       <div class="card-actions">
         <button id="suggest-back" class="btn ghost" type="button" data-i18n="backStep">← Back</button>
         <button id="suggest-go" class="btn primary" type="button" data-i18n="startGame">🚀 Let's go!</button>
@@ -426,6 +436,19 @@
     </div>
   </div>
 
+  <!-- ============ OUR STORIES ============ -->
+  <div id="stories-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="stories-title">
+    <div class="card journal-card stories-card">
+      <div class="card-top">
+        <h2 id="stories-title" data-i18n="storiesTitle">📚 Our stories</h2>
+        <button id="stories-close" class="btn ghost small" type="button" data-i18n="close">Close</button>
+      </div>
+      <p class="stories-info" data-i18n="storiesInfo"></p>
+      <input id="stories-search" class="text-input light" type="search" autocomplete="off" data-i18n-ph="storiesSearch">
+      <ul id="stories-list" class="stories-list"></ul>
+    </div>
+  </div>
+
   <!-- ============ RULES ============ -->
   <div id="rules-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="rules-title">
     <div class="card journal-card rules-card">
@@ -440,6 +463,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=17"></script>
+  <script src="app.js?v=18"></script>
 </body>
 </html>

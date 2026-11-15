@@ -93,6 +93,24 @@
       close: "Close",
       langToggle: "🇫🇷 Français",
       gamesTwo: "🥂 For two",
+      storyName: "📖 Name your story (optional)",
+      storyNamePh: "e.g. Our first summer",
+      storiesBtn: "📚 Our stories",
+      storiesTitle: "📚 Our stories",
+      storiesInfo: "ℹ️ Your stories are kept in this browser only, on this device. If you clear your browsing data or uninstall the app, they disappear. For the stories that matter, also tap 💾 Save to keep a .loopy file somewhere safe.",
+      storiesSearch: "Search a name, a player, a question, a note…",
+      storiesEmpty: "No story yet: play a first game!",
+      storiesNone: "Nothing found.",
+      stResume: "▶️ Resume",
+      stReview: "📖 Look back",
+      stRename: "✏️ Rename",
+      stSave: "💾 Save",
+      stDelete: "🗑️ Delete",
+      stDeleteSure: "🗑️ Sure? Tap again",
+      stAnswers: "{n} answers",
+      stDeleted: "🗑️ Story deleted.",
+      suggestName: "Give your story a name?",
+      suggestNameHint: "To find it easily in 📚 Our stories. You can leave it empty.",
       g_speed: "Speed",
       g_speedDesc: "A short question, a few seconds to answer. No time to think: just be spontaneous!",
       g_speedPlayers: "👥 From 2",
@@ -273,7 +291,7 @@
       rules: "Rules",
       rulesBtn: "❓ Rules",
       rulesTitle: "How to play",
-      rulesBody: "<h3>🎯 The goal</h3><p>Get to know each other better by answering questions you would never ask in everyday conversation. There are no wrong answers.</p><h3>👥 Players</h3><p>Two players by default. Add as many friends as you like with <b>+ Add a player</b>. Everyone takes turns answering, one after the other.</p><h3>🧭 Starting a game</h3><p>Three steps: <b>1. Players</b> (or continue a saved story), <b>2. Game</b>, <b>3. Settings</b> (subjects, depth and the options that fit that game), then <b>🚀 Let's go!</b></p><h3>🌱 Games to get to know each other</h3><ul><li><b>🎡 The wheel</b>: the wheel picks a subject, then a random question.</li><li><b>🌳 The tree</b>: pick a subject (a branch). It starts with simple <b>roots</b> 🌱 questions, then unlocks deeper <b>leaves</b> 🌿 and <b>blooms</b> 🌸 after two answers at each level.</li></ul><h3>🎉 Games just for fun (best with 3 to 6)</h3><ul><li><b>🎭 Truth or bluff</b>: the player taps <b>🤫 Look alone</b> and secretly sees whether to answer honestly or invent a believable answer. The others vote out loud “truth” or “bluff”, then tap <b>Reveal</b>. Each friend who saw through it gets <b>+20</b>, and the player gets <b>+10</b> for each friend fooled.</li><li><b>⚔️ Duel</b>: two players answer the same question. The others pick the best answer (most sincere, funniest… you decide): the winner gets <b>+20</b>, or <b>+10</b> each for a tie. Both duelists get the question's points.</li><li><b>🎲 The bet</b>: before the player answers, each friend bets <b>1, 2 or 3</b> on guessing the answer and says their guess. Right guess: <b>+10 per point bet</b>. Wrong: <b>−5 per point bet</b>.</li></ul><h3>⭐ Points</h3><p>The player whose turn it is answers out loud and gets <b>+10</b> (🌤️ light), <b>+20</b> (🌗 deeper) or <b>+30</b> (🌊 deep) when you tap <b>Answered!</b></p><h3>🎁 Bonuses: when to tap them</h3><p>Before tapping <b>Answered!</b>, tap every bonus that happened (several can be on at once):</p><ul><li><b>🎯 [name] guessed it</b>: tap it when that friend said what the answer would be <i>before</i> it was given, and was right. They get <b>+20</b>. Best way to play: the others guess first, then the player answers.</li><li><b>😮 Didn't know that!</b>: tap it when the answer taught the listeners something they really didn't know about the player. Everyone gets <b>+5</b>.</li><li><b>🔁 [name] answered too</b> (with 3+ players: <b>everyone else answered too</b>): tap it when the others also answered the same question for themselves. They get the same points as the player.</li></ul><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p><h3>🎆 Connection level</h3><p>All your points add up to a shared connection level. Level up for fireworks. <b>📖 Our story</b> keeps every question and note, and <b>🏁 Finish</b> shows your summary.</p><h3>🔮 Guess for each other (option)</h3><p>Turn it on at the start of a story. Before the player answers, everyone else says out loud what they think the answer will be. Then the player answers. Tap <b>🎯 [name] guessed right</b> for each friend who got it (<b>+20</b> each). If nobody got it, tap <b>😏 Nobody guessed</b>: the player gets <b>+10</b> for surprising everyone.</p><h3>🗳️ Who of us? (option)</h3><p>Sometimes the wheel (or the 🗳️ button under the tree) gives a vote instead of a question. Count to 3 and everyone points at the player who fits best. Everyone gets <b>+5</b> for voting. Tap the player(s) with the most votes (<b>+10</b> each), and <b>🤝 Unanimous</b> if everyone pointed at the same person (<b>+5</b> each).</p><h3>🎭 Challenges (option)</h3><p>Sometimes the player gets a small challenge instead of a question. Tap <b>✅ Challenge done</b> if they did it (<b>+20</b>), and <b>😂 Everyone laughed</b> if it was a hit (<b>+5</b> each). Don't like it? <b>🔄 Another one</b> is free.</p><h3>👥 Big groups</h3><p>From 5 players, the card shows one <b>🎯 Who guessed it?</b> row with everyone's names. With <b>🎲 Random next player</b>, nobody knows who answers next. Votes and challenges keep everyone in the game.</p><h3>🏅 Badges</h3><p>Unlock badges together as you play: deep moments, good guesses, votes, challenges, a tree in full bloom… See them with <b>🏅 Badges</b>.</p><h3>🖼️ Share a picture</h3><p>At the end, <b>🖼️ Share a picture</b> makes an image of your tree, your level and your best moment to send to the group.</p><h3>📲 Install the app</h3><p>On Android or a computer, tap <b>📲 Install the app</b> on the home screen. On iPhone, tap Share, then <b>Add to Home Screen</b>. It then works without a connection.</p><h3>💾 Saving a story</h3><p>Each group of friends has its own story. Tap <b>💾 Save the story</b> (in the game or at the end) to download a <b>.loopy</b> file. Next time, tap <b>📂 Continue a saved story</b> on the home screen and pick that file: names, scores, your tree and the questions already asked all come back. Questions already asked on this device, in any story, come last, so a new story starts with fresh questions.</p><h3>🥂 First date</h3><p>For two people meeting for the first time. Questions start light and get a little deeper as you go, mixing date questions with the regular ones. The <b>🙈 Joker</b> swaps a question without a word, as often as you like. No bluff, no pressure.</p><h3>💑 Couple</h3><p>For two people already together: memories, the two of you, the future. Before each answer, your partner guesses out loud what you'll say: <b>🎯 guessed right</b> gives them <b>+20</b>, and if they missed, <b>😏 Nobody guessed</b> gives you <b>+10</b>.</p><h3>🚗 Car</h3><p>A passenger holds the phone and taps; the driver plays by voice only and never touches the screen. Pick the driver in the settings. With <b>🔊 Read the questions aloud</b>, the phone reads each question (tap 🔊 on the card to hear it again). Light and medium questions, quick rounds; no challenges or votes in the car.</p><h3>🔥 +18 questions (option)</h3><p>Only in First date and Couple, off by default. They are about attraction and intimacy, suggestive but never explicit, and they have their own 🔥 segments on the wheel. Turning them on asks every player to confirm they are adults and agree. Anyone can skip a question at any time. You use them at your own responsibility: the author of the game accepts no liability for how they are used.</p><h3>⚡ Speed</h3><p>Short questions, one player after the other. The player taps <b>⚡ GO</b> to discover their question: as soon as it appears, a countdown starts (10, 15 or 20 seconds, set in the settings): answer out loud, whatever comes to mind first, then tap <b>Answered!</b> An answer in time is worth <b>+10</b>, plus one point per second left. When time runs out, it is <b>too late</b>: no points, and it is the next player's turn. Answers in a row in time make a <b>🔥 streak</b>. <b>⏸</b> pauses the game, and <b>🔄 Pass</b> is free.</p>",
+      rulesBody: "<h3>🎯 The goal</h3><p>Get to know each other better by answering questions you would never ask in everyday conversation. There are no wrong answers.</p><h3>👥 Players</h3><p>Two players by default. Add as many friends as you like with <b>+ Add a player</b>. Everyone takes turns answering, one after the other.</p><h3>🧭 Starting a game</h3><p>Three steps: <b>1. Players</b> (or continue a saved story), <b>2. Game</b>, <b>3. Settings</b> (subjects, depth and the options that fit that game), then <b>🚀 Let's go!</b></p><h3>🌱 Games to get to know each other</h3><ul><li><b>🎡 The wheel</b>: the wheel picks a subject, then a random question.</li><li><b>🌳 The tree</b>: pick a subject (a branch). It starts with simple <b>roots</b> 🌱 questions, then unlocks deeper <b>leaves</b> 🌿 and <b>blooms</b> 🌸 after two answers at each level.</li></ul><h3>🎉 Games just for fun (best with 3 to 6)</h3><ul><li><b>🎭 Truth or bluff</b>: the player taps <b>🤫 Look alone</b> and secretly sees whether to answer honestly or invent a believable answer. The others vote out loud “truth” or “bluff”, then tap <b>Reveal</b>. Each friend who saw through it gets <b>+20</b>, and the player gets <b>+10</b> for each friend fooled.</li><li><b>⚔️ Duel</b>: two players answer the same question. The others pick the best answer (most sincere, funniest… you decide): the winner gets <b>+20</b>, or <b>+10</b> each for a tie. Both duelists get the question's points.</li><li><b>🎲 The bet</b>: before the player answers, each friend bets <b>1, 2 or 3</b> on guessing the answer and says their guess. Right guess: <b>+10 per point bet</b>. Wrong: <b>−5 per point bet</b>.</li></ul><h3>⭐ Points</h3><p>The player whose turn it is answers out loud and gets <b>+10</b> (🌤️ light), <b>+20</b> (🌗 deeper) or <b>+30</b> (🌊 deep) when you tap <b>Answered!</b></p><h3>🎁 Bonuses: when to tap them</h3><p>Before tapping <b>Answered!</b>, tap every bonus that happened (several can be on at once):</p><ul><li><b>🎯 [name] guessed it</b>: tap it when that friend said what the answer would be <i>before</i> it was given, and was right. They get <b>+20</b>. Best way to play: the others guess first, then the player answers.</li><li><b>😮 Didn't know that!</b>: tap it when the answer taught the listeners something they really didn't know about the player. Everyone gets <b>+5</b>.</li><li><b>🔁 [name] answered too</b> (with 3+ players: <b>everyone else answered too</b>): tap it when the others also answered the same question for themselves. They get the same points as the player.</li></ul><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p><h3>🎆 Connection level</h3><p>All your points add up to a shared connection level. Level up for fireworks. <b>📖 Our story</b> keeps every question and note, and <b>🏁 Finish</b> shows your summary.</p><h3>🔮 Guess for each other (option)</h3><p>Turn it on at the start of a story. Before the player answers, everyone else says out loud what they think the answer will be. Then the player answers. Tap <b>🎯 [name] guessed right</b> for each friend who got it (<b>+20</b> each). If nobody got it, tap <b>😏 Nobody guessed</b>: the player gets <b>+10</b> for surprising everyone.</p><h3>🗳️ Who of us? (option)</h3><p>Sometimes the wheel (or the 🗳️ button under the tree) gives a vote instead of a question. Count to 3 and everyone points at the player who fits best. Everyone gets <b>+5</b> for voting. Tap the player(s) with the most votes (<b>+10</b> each), and <b>🤝 Unanimous</b> if everyone pointed at the same person (<b>+5</b> each).</p><h3>🎭 Challenges (option)</h3><p>Sometimes the player gets a small challenge instead of a question. Tap <b>✅ Challenge done</b> if they did it (<b>+20</b>), and <b>😂 Everyone laughed</b> if it was a hit (<b>+5</b> each). Don't like it? <b>🔄 Another one</b> is free.</p><h3>👥 Big groups</h3><p>From 5 players, the card shows one <b>🎯 Who guessed it?</b> row with everyone's names. With <b>🎲 Random next player</b>, nobody knows who answers next. Votes and challenges keep everyone in the game.</p><h3>🏅 Badges</h3><p>Unlock badges together as you play: deep moments, good guesses, votes, challenges, a tree in full bloom… See them with <b>🏅 Badges</b>.</p><h3>🖼️ Share a picture</h3><p>At the end, <b>🖼️ Share a picture</b> makes an image of your tree, your level and your best moment to send to the group.</p><h3>📲 Install the app</h3><p>On Android or a computer, tap <b>📲 Install the app</b> on the home screen. On iPhone, tap Share, then <b>Add to Home Screen</b>. It then works without a connection.</p><h3>💾 Saving a story</h3><p>Each group of friends has its own story, and every story is kept in the app: <b>📚 Our stories</b> on the home screen lists them all, with a search (names, players, questions, notes), and lets you resume, look back, rename or delete one. You can name a story on the first step. They are kept in this browser only: clearing your browsing data erases them, so for the stories that matter, also save a file. Tap <b>💾 Save the story</b> (in the game or at the end) to download a <b>.loopy</b> file. Next time, tap <b>📂 Continue a saved story</b> on the home screen and pick that file: names, scores, your tree and the questions already asked all come back. Questions already asked on this device, in any story, come last, so a new story starts with fresh questions.</p><h3>🥂 First date</h3><p>For two people meeting for the first time. Questions start light and get a little deeper as you go, mixing date questions with the regular ones. The <b>🙈 Joker</b> swaps a question without a word, as often as you like. No bluff, no pressure.</p><h3>💑 Couple</h3><p>For two people already together: memories, the two of you, the future. Before each answer, your partner guesses out loud what you'll say: <b>🎯 guessed right</b> gives them <b>+20</b>, and if they missed, <b>😏 Nobody guessed</b> gives you <b>+10</b>.</p><h3>🚗 Car</h3><p>A passenger holds the phone and taps; the driver plays by voice only and never touches the screen. Pick the driver in the settings. With <b>🔊 Read the questions aloud</b>, the phone reads each question (tap 🔊 on the card to hear it again). Light and medium questions, quick rounds; no challenges or votes in the car.</p><h3>🔥 +18 questions (option)</h3><p>Only in First date and Couple, off by default. They are about attraction and intimacy, suggestive but never explicit, and they have their own 🔥 segments on the wheel. Turning them on asks every player to confirm they are adults and agree. Anyone can skip a question at any time. You use them at your own responsibility: the author of the game accepts no liability for how they are used.</p><h3>⚡ Speed</h3><p>Short questions, one player after the other. The player taps <b>⚡ GO</b> to discover their question: as soon as it appears, a countdown starts (10, 15 or 20 seconds, set in the settings): answer out loud, whatever comes to mind first, then tap <b>Answered!</b> An answer in time is worth <b>+10</b>, plus one point per second left. When time runs out, it is <b>too late</b>: no points, and it is the next player's turn. Answers in a row in time make a <b>🔥 streak</b>. <b>⏸</b> pauses the game, and <b>🔄 Pass</b> is free.</p>",
       nQuestions: "{n} questions",
       pickOne: "Pick at least one subject 🙂",
       resume: "↩︎ Resume {names} ({n} answered)",
@@ -354,6 +372,24 @@
       close: "Fermer",
       langToggle: "🇬🇧 English",
       gamesTwo: "🥂 À deux",
+      storyName: "📖 Donnez un nom à votre histoire (facultatif)",
+      storyNamePh: "ex. Notre premier été",
+      storiesBtn: "📚 Nos histoires",
+      storiesTitle: "📚 Nos histoires",
+      storiesInfo: "ℹ️ Vos histoires sont gardées uniquement dans ce navigateur, sur cet appareil. Si vous effacez les données de navigation ou désinstallez l'appli, elles disparaissent. Pour les histoires qui comptent, touchez aussi 💾 Sauvegarder pour garder un fichier .loopy en lieu sûr.",
+      storiesSearch: "Chercher un nom, un joueur, une question, une note…",
+      storiesEmpty: "Pas encore d'histoire : lancez une première partie !",
+      storiesNone: "Rien trouvé.",
+      stResume: "▶️ Reprendre",
+      stReview: "📖 Revoir",
+      stRename: "✏️ Renommer",
+      stSave: "💾 Sauvegarder",
+      stDelete: "🗑️ Supprimer",
+      stDeleteSure: "🗑️ Sûr ? Touche encore",
+      stAnswers: "{n} réponses",
+      stDeleted: "🗑️ Histoire supprimée.",
+      suggestName: "Donner un nom à votre histoire ?",
+      suggestNameHint: "Pour la retrouver facilement dans 📚 Nos histoires. Vous pouvez laisser vide.",
       g_speed: "Rapidité",
       g_speedDesc: "Une question courte, quelques secondes pour répondre. Pas le temps de réfléchir : place à la spontanéité !",
       g_speedPlayers: "👥 Dès 2",
@@ -534,7 +570,7 @@
       rules: "Règles",
       rulesBtn: "❓ Règles",
       rulesTitle: "Comment jouer",
-      rulesBody: "<h3>🎯 Le but</h3><p>Mieux se connaître en répondant à des questions qu'on ne se pose jamais au quotidien. Il n'y a pas de mauvaise réponse.</p><h3>👥 Joueurs</h3><p>Deux joueurs par défaut. Ajoutez autant d'amis que vous voulez avec <b>+ Ajouter un joueur</b>. Chacun répond à son tour, l'un après l'autre.</p><h3>🧭 Lancer une partie</h3><p>Trois étapes : <b>1. Joueurs</b> (ou reprendre une histoire sauvegardée), <b>2. Jeu</b>, <b>3. Réglages</b> (thèmes, profondeur et options utiles pour ce jeu), puis <b>🚀 C'est parti !</b></p><h3>🌱 Jeux pour se découvrir</h3><ul><li><b>🎡 La roue</b> : la roue choisit un thème, puis une question au hasard.</li><li><b>🌳 L'arbre</b> : choisissez un thème (une branche). On commence par des questions simples, les <b>racines</b> 🌱, puis on débloque des <b>feuilles</b> 🌿 et des <b>fleurs</b> 🌸 plus profondes après deux réponses à chaque niveau.</li></ul><h3>🎉 Jeux pour rigoler (idéal de 3 à 6)</h3><ul><li><b>🎭 Vrai ou bluff</b> : le joueur touche <b>🤫 Regarde seul</b> et découvre en secret s'il doit répondre sincèrement ou inventer une réponse crédible. Les autres votent à voix haute « vrai » ou « bluff », puis touchez <b>Révéler</b>. Chaque ami qui a vu juste gagne <b>+20</b>, et le joueur gagne <b>+10</b> par ami berné.</li><li><b>⚔️ Duel</b> : deux joueurs répondent à la même question. Les autres choisissent la meilleure réponse (la plus sincère, la plus drôle… à vous de voir) : le gagnant remporte <b>+20</b>, ou <b>+10</b> chacun en cas d'égalité. Les deux duellistes gagnent les points de la question.</li><li><b>🎲 Le pari</b> : avant que le joueur réponde, chaque ami parie <b>1, 2 ou 3</b> sur sa capacité à deviner la réponse et dit sa proposition. Bonne réponse : <b>+10 par point misé</b>. Mauvaise : <b>−5 par point misé</b>.</li></ul><h3>⭐ Points</h3><p>Le joueur dont c'est le tour répond à voix haute et gagne <b>+10</b> (🌤️ léger), <b>+20</b> (🌗 plus profond) ou <b>+30</b> (🌊 profond) quand vous touchez <b>Répondu !</b></p><h3>🎁 Les bonus : quand les toucher</h3><p>Avant de toucher <b>Répondu !</b>, touchez chaque bonus qui s'est produit (plusieurs peuvent être activés) :</p><ul><li><b>🎯 [prénom] a deviné</b> : touchez-le quand cet ami a dit quelle serait la réponse <i>avant</i> qu'elle soit donnée, et avait raison. Il gagne <b>+20</b>. Le mieux : les autres devinent d'abord, puis le joueur répond.</li><li><b>😮 Je ne savais pas !</b> : touchez-le quand la réponse a appris aux autres quelque chose qu'ils ne savaient vraiment pas sur le joueur. Tout le monde gagne <b>+5</b>.</li><li><b>🔁 [prénom] a répondu aussi</b> (à 3 joueurs ou plus : <b>tous les autres ont répondu aussi</b>) : touchez-le quand les autres ont aussi répondu à la même question pour eux-mêmes. Ils gagnent les mêmes points que le joueur.</li></ul><p>La question ne vous plaît pas ? <b>🔄 Passer</b> la remplace par une autre du même thème. Passez autant de fois que vous voulez.</p><h3>🎆 Niveau de connexion</h3><p>Tous vos points s'additionnent dans un niveau de connexion commun. Chaque niveau gagné déclenche un feu d'artifice. <b>📖 Notre histoire</b> garde chaque question et note, et <b>🏁 Terminer</b> affiche votre bilan.</p><h3>🔮 Devine pour l'autre (option)</h3><p>À activer au début d'une histoire. Avant que le joueur réponde, tous les autres disent à voix haute ce qu'il va répondre selon eux. Ensuite, le joueur répond. Touchez <b>🎯 [prénom] a bien deviné</b> pour chaque ami qui avait raison (<b>+20</b> chacun). Si personne n'a trouvé, touchez <b>😏 Personne n'a deviné</b> : le joueur gagne <b>+10</b> pour avoir surpris tout le monde.</p><h3>🗳️ Qui de nous ? (option)</h3><p>Parfois la roue (ou le bouton 🗳️ sous l'arbre) donne un vote à la place d'une question. Comptez jusqu'à 3 et tout le monde pointe le joueur qui correspond le mieux. Tout le monde gagne <b>+5</b> pour avoir voté. Touchez le ou les joueurs qui ont eu le plus de votes (<b>+10</b> chacun), et <b>🤝 Unanimité</b> si tout le monde a pointé la même personne (<b>+5</b> chacun).</p><h3>🎭 Défis (option)</h3><p>Parfois le joueur reçoit un petit défi à la place d'une question. Touchez <b>✅ Défi réussi</b> s'il l'a fait (<b>+20</b>), et <b>😂 Tout le monde a ri</b> si ça a marché (<b>+5</b> chacun). Le défi ne plaît pas ? <b>🔄 Une autre</b> est gratuit.</p><h3>👥 Grands groupes</h3><p>À partir de 5 joueurs, la carte affiche une seule ligne <b>🎯 Qui a deviné ?</b> avec les prénoms de tout le monde. Avec <b>🎲 Joueur suivant au hasard</b>, personne ne sait qui répond ensuite. Les votes et les défis font participer tout le monde.</p><h3>🏅 Badges</h3><p>Débloquez des badges ensemble en jouant : moments profonds, bonnes devinettes, votes, défis, arbre en fleurs… Retrouvez-les avec <b>🏅 Badges</b>.</p><h3>🖼️ Partager une image</h3><p>À la fin, <b>🖼️ Partager une image</b> crée une image de votre arbre, de votre niveau et de votre meilleur moment à envoyer au groupe.</p><h3>📲 Installer l'appli</h3><p>Sur Android ou un ordinateur, touchez <b>📲 Installer l'appli</b> sur l'écran d'accueil. Sur iPhone, touchez Partager, puis <b>Sur l'écran d'accueil</b>. Elle marche ensuite sans connexion.</p><h3>💾 Sauvegarder une histoire</h3><p>Chaque groupe d'amis a sa propre histoire. Touchez <b>💾 Sauvegarder l'histoire</b> (pendant la partie ou à la fin) pour télécharger un fichier <b>.loopy</b>. La prochaine fois, touchez <b>📂 Reprendre une histoire sauvegardée</b> sur l'écran d'accueil et choisissez ce fichier : prénoms, scores, votre arbre et les questions déjà posées reviennent. Les questions déjà posées sur cet appareil, dans n'importe quelle histoire, passent en dernier : une nouvelle histoire commence avec des questions inédites.</p><h3>🥂 Premier rendez-vous</h3><p>Pour deux personnes qui se rencontrent. Les questions commencent légères et deviennent un peu plus profondes au fil de la partie, en mélangeant questions de rendez-vous et questions habituelles. Le <b>🙈 Joker</b> change la question sans rien dire, autant de fois que vous voulez. Pas de bluff, pas de pression.</p><h3>💑 Couple</h3><p>Pour deux personnes déjà ensemble : souvenirs, vous deux, l'avenir. Avant chaque réponse, l'autre devine à voix haute ce que vous allez dire : <b>🎯 a bien deviné</b> lui rapporte <b>+20</b>, et s'il s'est trompé, <b>😏 Personne n'a deviné</b> vous rapporte <b>+10</b>.</p><h3>🚗 Voiture</h3><p>Un passager tient le téléphone et touche l'écran ; le conducteur joue uniquement à la voix et ne touche jamais l'écran. Choisissez le conducteur dans les réglages. Avec <b>🔊 Lire les questions à voix haute</b>, le téléphone lit chaque question (touchez 🔊 sur la carte pour la réécouter). Questions légères et moyennes, manches rapides ; pas de défis ni de votes en voiture.</p><h3>🔥 Questions +18 (option)</h3><p>Uniquement en Premier rendez-vous et en Couple, désactivées par défaut. Elles parlent de séduction et d'intimité, de façon suggestive mais jamais explicite, et ont leurs propres cases 🔥 sur la roue. Les activer demande à tous les joueurs de confirmer qu'ils sont majeurs et d'accord. Chacun peut passer une question à tout moment. Vous les utilisez sous votre propre responsabilité : l'auteur du jeu décline toute responsabilité quant à leur usage.</p><h3>⚡ Rapidité</h3><p>Des questions courtes, un joueur après l'autre. Le joueur touche <b>⚡ GO</b> pour découvrir sa question : dès qu'elle s'affiche, un compte à rebours démarre (10, 15 ou 20 secondes, au choix dans les réglages) : réponds à voix haute ce qui te vient en premier, puis touche <b>Répondu !</b> Une réponse dans les temps rapporte <b>+10</b>, plus un point par seconde restante. Quand le temps est écoulé, c'est <b>trop tard</b> : pas de points, et c'est au joueur suivant. Les réponses à la suite dans les temps font une <b>🔥 série</b>. <b>⏸</b> met le jeu en pause, et <b>🔄 Passer</b> est gratuit.</p>",
+      rulesBody: "<h3>🎯 Le but</h3><p>Mieux se connaître en répondant à des questions qu'on ne se pose jamais au quotidien. Il n'y a pas de mauvaise réponse.</p><h3>👥 Joueurs</h3><p>Deux joueurs par défaut. Ajoutez autant d'amis que vous voulez avec <b>+ Ajouter un joueur</b>. Chacun répond à son tour, l'un après l'autre.</p><h3>🧭 Lancer une partie</h3><p>Trois étapes : <b>1. Joueurs</b> (ou reprendre une histoire sauvegardée), <b>2. Jeu</b>, <b>3. Réglages</b> (thèmes, profondeur et options utiles pour ce jeu), puis <b>🚀 C'est parti !</b></p><h3>🌱 Jeux pour se découvrir</h3><ul><li><b>🎡 La roue</b> : la roue choisit un thème, puis une question au hasard.</li><li><b>🌳 L'arbre</b> : choisissez un thème (une branche). On commence par des questions simples, les <b>racines</b> 🌱, puis on débloque des <b>feuilles</b> 🌿 et des <b>fleurs</b> 🌸 plus profondes après deux réponses à chaque niveau.</li></ul><h3>🎉 Jeux pour rigoler (idéal de 3 à 6)</h3><ul><li><b>🎭 Vrai ou bluff</b> : le joueur touche <b>🤫 Regarde seul</b> et découvre en secret s'il doit répondre sincèrement ou inventer une réponse crédible. Les autres votent à voix haute « vrai » ou « bluff », puis touchez <b>Révéler</b>. Chaque ami qui a vu juste gagne <b>+20</b>, et le joueur gagne <b>+10</b> par ami berné.</li><li><b>⚔️ Duel</b> : deux joueurs répondent à la même question. Les autres choisissent la meilleure réponse (la plus sincère, la plus drôle… à vous de voir) : le gagnant remporte <b>+20</b>, ou <b>+10</b> chacun en cas d'égalité. Les deux duellistes gagnent les points de la question.</li><li><b>🎲 Le pari</b> : avant que le joueur réponde, chaque ami parie <b>1, 2 ou 3</b> sur sa capacité à deviner la réponse et dit sa proposition. Bonne réponse : <b>+10 par point misé</b>. Mauvaise : <b>−5 par point misé</b>.</li></ul><h3>⭐ Points</h3><p>Le joueur dont c'est le tour répond à voix haute et gagne <b>+10</b> (🌤️ léger), <b>+20</b> (🌗 plus profond) ou <b>+30</b> (🌊 profond) quand vous touchez <b>Répondu !</b></p><h3>🎁 Les bonus : quand les toucher</h3><p>Avant de toucher <b>Répondu !</b>, touchez chaque bonus qui s'est produit (plusieurs peuvent être activés) :</p><ul><li><b>🎯 [prénom] a deviné</b> : touchez-le quand cet ami a dit quelle serait la réponse <i>avant</i> qu'elle soit donnée, et avait raison. Il gagne <b>+20</b>. Le mieux : les autres devinent d'abord, puis le joueur répond.</li><li><b>😮 Je ne savais pas !</b> : touchez-le quand la réponse a appris aux autres quelque chose qu'ils ne savaient vraiment pas sur le joueur. Tout le monde gagne <b>+5</b>.</li><li><b>🔁 [prénom] a répondu aussi</b> (à 3 joueurs ou plus : <b>tous les autres ont répondu aussi</b>) : touchez-le quand les autres ont aussi répondu à la même question pour eux-mêmes. Ils gagnent les mêmes points que le joueur.</li></ul><p>La question ne vous plaît pas ? <b>🔄 Passer</b> la remplace par une autre du même thème. Passez autant de fois que vous voulez.</p><h3>🎆 Niveau de connexion</h3><p>Tous vos points s'additionnent dans un niveau de connexion commun. Chaque niveau gagné déclenche un feu d'artifice. <b>📖 Notre histoire</b> garde chaque question et note, et <b>🏁 Terminer</b> affiche votre bilan.</p><h3>🔮 Devine pour l'autre (option)</h3><p>À activer au début d'une histoire. Avant que le joueur réponde, tous les autres disent à voix haute ce qu'il va répondre selon eux. Ensuite, le joueur répond. Touchez <b>🎯 [prénom] a bien deviné</b> pour chaque ami qui avait raison (<b>+20</b> chacun). Si personne n'a trouvé, touchez <b>😏 Personne n'a deviné</b> : le joueur gagne <b>+10</b> pour avoir surpris tout le monde.</p><h3>🗳️ Qui de nous ? (option)</h3><p>Parfois la roue (ou le bouton 🗳️ sous l'arbre) donne un vote à la place d'une question. Comptez jusqu'à 3 et tout le monde pointe le joueur qui correspond le mieux. Tout le monde gagne <b>+5</b> pour avoir voté. Touchez le ou les joueurs qui ont eu le plus de votes (<b>+10</b> chacun), et <b>🤝 Unanimité</b> si tout le monde a pointé la même personne (<b>+5</b> chacun).</p><h3>🎭 Défis (option)</h3><p>Parfois le joueur reçoit un petit défi à la place d'une question. Touchez <b>✅ Défi réussi</b> s'il l'a fait (<b>+20</b>), et <b>😂 Tout le monde a ri</b> si ça a marché (<b>+5</b> chacun). Le défi ne plaît pas ? <b>🔄 Une autre</b> est gratuit.</p><h3>👥 Grands groupes</h3><p>À partir de 5 joueurs, la carte affiche une seule ligne <b>🎯 Qui a deviné ?</b> avec les prénoms de tout le monde. Avec <b>🎲 Joueur suivant au hasard</b>, personne ne sait qui répond ensuite. Les votes et les défis font participer tout le monde.</p><h3>🏅 Badges</h3><p>Débloquez des badges ensemble en jouant : moments profonds, bonnes devinettes, votes, défis, arbre en fleurs… Retrouvez-les avec <b>🏅 Badges</b>.</p><h3>🖼️ Partager une image</h3><p>À la fin, <b>🖼️ Partager une image</b> crée une image de votre arbre, de votre niveau et de votre meilleur moment à envoyer au groupe.</p><h3>📲 Installer l'appli</h3><p>Sur Android ou un ordinateur, touchez <b>📲 Installer l'appli</b> sur l'écran d'accueil. Sur iPhone, touchez Partager, puis <b>Sur l'écran d'accueil</b>. Elle marche ensuite sans connexion.</p><h3>💾 Sauvegarder une histoire</h3><p>Chaque groupe d'amis a sa propre histoire, et chaque histoire est gardée dans l'appli : <b>📚 Nos histoires</b> sur l'écran d'accueil les liste toutes, avec une recherche (noms, joueurs, questions, notes), et permet de reprendre, revoir, renommer ou supprimer une histoire. Vous pouvez nommer une histoire dès la première étape. Elles sont gardées uniquement dans ce navigateur : effacer les données de navigation les supprime, donc pour les histoires qui comptent, sauvegardez aussi un fichier. Touchez <b>💾 Sauvegarder l'histoire</b> (pendant la partie ou à la fin) pour télécharger un fichier <b>.loopy</b>. La prochaine fois, touchez <b>📂 Reprendre une histoire sauvegardée</b> sur l'écran d'accueil et choisissez ce fichier : prénoms, scores, votre arbre et les questions déjà posées reviennent. Les questions déjà posées sur cet appareil, dans n'importe quelle histoire, passent en dernier : une nouvelle histoire commence avec des questions inédites.</p><h3>🥂 Premier rendez-vous</h3><p>Pour deux personnes qui se rencontrent. Les questions commencent légères et deviennent un peu plus profondes au fil de la partie, en mélangeant questions de rendez-vous et questions habituelles. Le <b>🙈 Joker</b> change la question sans rien dire, autant de fois que vous voulez. Pas de bluff, pas de pression.</p><h3>💑 Couple</h3><p>Pour deux personnes déjà ensemble : souvenirs, vous deux, l'avenir. Avant chaque réponse, l'autre devine à voix haute ce que vous allez dire : <b>🎯 a bien deviné</b> lui rapporte <b>+20</b>, et s'il s'est trompé, <b>😏 Personne n'a deviné</b> vous rapporte <b>+10</b>.</p><h3>🚗 Voiture</h3><p>Un passager tient le téléphone et touche l'écran ; le conducteur joue uniquement à la voix et ne touche jamais l'écran. Choisissez le conducteur dans les réglages. Avec <b>🔊 Lire les questions à voix haute</b>, le téléphone lit chaque question (touchez 🔊 sur la carte pour la réécouter). Questions légères et moyennes, manches rapides ; pas de défis ni de votes en voiture.</p><h3>🔥 Questions +18 (option)</h3><p>Uniquement en Premier rendez-vous et en Couple, désactivées par défaut. Elles parlent de séduction et d'intimité, de façon suggestive mais jamais explicite, et ont leurs propres cases 🔥 sur la roue. Les activer demande à tous les joueurs de confirmer qu'ils sont majeurs et d'accord. Chacun peut passer une question à tout moment. Vous les utilisez sous votre propre responsabilité : l'auteur du jeu décline toute responsabilité quant à leur usage.</p><h3>⚡ Rapidité</h3><p>Des questions courtes, un joueur après l'autre. Le joueur touche <b>⚡ GO</b> pour découvrir sa question : dès qu'elle s'affiche, un compte à rebours démarre (10, 15 ou 20 secondes, au choix dans les réglages) : réponds à voix haute ce qui te vient en premier, puis touche <b>Répondu !</b> Une réponse dans les temps rapporte <b>+10</b>, plus un point par seconde restante. Quand le temps est écoulé, c'est <b>trop tard</b> : pas de points, et c'est au joueur suivant. Les réponses à la suite dans les temps font une <b>🔥 série</b>. <b>⏸</b> met le jeu en pause, et <b>🔄 Passer</b> est gratuit.</p>",
       nQuestions: "{n} questions",
       pickOne: "Choisissez au moins un thème 🙂",
       resume: "↩︎ Reprendre {names} ({n} réponses)",
@@ -604,8 +640,48 @@
   /* Storage (best effort)                                              */
   /* ------------------------------------------------------------------ */
   function save() {
+    if (!state) return;
+    if (!state.id) state.id = newId();
+    state.updatedAt = Date.now();
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) { /* ignore */ }
+    clearTimeout(save.timer);
+    const snap = state;
+    save.timer = setTimeout(() => keepStory(snap), 300);
   }
+  const newId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+
+  // Every story with at least one answer (or a name) is kept in IndexedDB, in this browser.
+  const IDB_NAME = "loopy-life", IDB_STORE = "stories";
+  let idbP = null;
+  function idb() {
+    if (!idbP) {
+      idbP = new Promise((resolve, reject) => {
+        if (!("indexedDB" in window)) return reject(new Error("no indexedDB"));
+        const req = indexedDB.open(IDB_NAME, 1);
+        req.onupgradeneeded = () => req.result.createObjectStore(IDB_STORE, { keyPath: "id" });
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      });
+      idbP.catch(() => {});
+    }
+    return idbP;
+  }
+  function idbDo(mode, fn) {
+    return idb().then((db) => new Promise((resolve, reject) => {
+      const tx = db.transaction(IDB_STORE, mode);
+      const out = fn(tx.objectStore(IDB_STORE));
+      tx.oncomplete = () => resolve(out && "result" in out ? out.result : undefined);
+      tx.onerror = () => reject(tx.error);
+    }));
+  }
+  let persistAsked = false;
+  function keepStory(st) {
+    if (!st || !st.id || (!(st.journal || []).length && !st.name)) return Promise.resolve();
+    if (!persistAsked && navigator.storage && navigator.storage.persist) { persistAsked = true; navigator.storage.persist().catch(() => {}); }
+    return idbDo("readwrite", (os) => os.put(JSON.parse(JSON.stringify(st)))).catch(() => {});
+  }
+  const allStories = () => idbDo("readonly", (os) => os.getAll()).then((l) => l || []).catch(() => null);
+  const dropStory = (id) => idbDo("readwrite", (os) => os.delete(id)).catch(() => {});
   function loadSaved() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -924,6 +1000,7 @@
     });
   }
   let optionsTouched = false;
+  let nameAsked = false;
   const OPTION_IDS = ["guess-mode", "who-mode", "dare-mode", "random-turn"];
 
   // The option rows that apply to the chosen game, as toggles mirroring the real switches.
@@ -946,6 +1023,9 @@
       });
       list.appendChild(b);
     });
+    $("#suggest-name-box").hidden = !!storyName();
+    $("#suggest-name").value = "";
+    $("#suggest-opts-box").hidden = !list.children.length;
     $("#suggest-overlay").classList.remove("hidden");
   }
   let setupNames = ["", ""];
@@ -997,6 +1077,8 @@
   function selectedSubjects() {
     return $$("#subject-grid .subject.on").map((b) => b.dataset.id);
   }
+
+  const storyName = () => ($("#story-name").value || "").trim().slice(0, 40);
 
   function initSetup() {
     renderSubjectGrid(DB.subjects.map((s) => s.id));
@@ -1052,10 +1134,15 @@
       toast(t("adultOn"), 3200);
     });
     $("#suggest-back").addEventListener("click", () => $("#suggest-overlay").classList.add("hidden"));
-    $("#suggest-go").addEventListener("click", () => { $("#suggest-overlay").classList.add("hidden"); $("#start-btn").click(); });
+    $("#suggest-go").addEventListener("click", () => {
+      $("#story-name").value = $("#suggest-name").value;
+      $("#suggest-overlay").classList.add("hidden");
+      $("#start-btn").click();
+    });
     $("#start-btn").addEventListener("click", () => {
-      if (!optionsTouched) {
+      if (!optionsTouched || (!storyName() && !nameAsked)) {
         optionsTouched = true; // suggest once, then start as chosen
+        nameAsked = true;
         openSuggest();
         return;
       }
@@ -1100,6 +1187,8 @@
     const mode = game === "tree" ? "tree" : game === "speed" ? "speed" : "wheel";
     state = {
       version: 1,
+      id: newId(),
+      name: storyName(),
       players,
       scores: players.map(() => 0),
       passes: players.map(() => PASSES),
@@ -1126,9 +1215,19 @@
       startedAt: Date.now(),
     };
     lastTreeCounts = {};
+    $("#story-name").value = ""; // the next game starts a new story
     save();
     startGame();
     setTimeout(() => toast(t("starts", { name: state.players[state.turn] })), 500);
+  }
+
+  // "“Our first summer” · 🥂 First date · 🔥 +18": the story's name, then the game when it has its own name.
+  function gameTitle() {
+    const g = gameOf(state);
+    const parts = [];
+    if (state.name) parts.push(`📖 ${state.name}`);
+    if (g !== "wheel" && g !== "tree") parts.push(`${GAME_EMOJI[g]} ${t("g_" + g)}${state.adult ? " · 🔥 +18" : ""}`);
+    return parts.join(" · ");
   }
 
   function startGame() {
@@ -1137,7 +1236,7 @@
     const g = gameOf(state);
     const named = g !== "wheel" && g !== "tree";
     $("#mode-switch").hidden = named;
-    $("#game-name").textContent = named ? `${GAME_EMOJI[g]} ${t("g_" + g)}${state.adult ? " · 🔥 +18" : ""}` : "";
+    $("#game-name").textContent = gameTitle();
     renderScoreboard();
     showScreen("screen-game");
     updateScores(false);
@@ -2265,7 +2364,7 @@
     const mins = Math.max(1, Math.round((Date.now() - state.startedAt) / 60000));
     const lvl = Math.floor(state.connection / levelSize()) + 1;
 
-    $("#summary-tagline").textContent = t("reached", { names: joinNames(state.players), n: lvl });
+    $("#summary-tagline").textContent = (state.name ? `📖 ${state.name} · ` : "") + t("reached", { names: joinNames(state.players), n: lvl });
     renderTree();
     $("#summary-discoveries").innerHTML = discoveriesHTML();
     const stat = (v, l) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`;
@@ -2319,10 +2418,10 @@
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   }
 
-  const fileBase = () => `${t("storyFile")}-${state.players.join("-")}`.replace(/[\\/:*?"<>|\s]+/g, "-");
+  const fileBase = (st = state) => (st.name ? st.name : `${t("storyFile")}-${st.players.join("-")}`).replace(/[\\/:*?"<>|\s]+/g, "-");
 
-  function saveStoryFile() {
-    downloadFile(encodeStory(state), `${fileBase()}.loopy`, "application/octet-stream");
+  function saveStoryFile(st = state) {
+    downloadFile(encodeStory(st), `${fileBase(st)}.loopy`, "application/octet-stream");
     toast(t("savedToast"), 3200);
   }
 
@@ -2349,6 +2448,7 @@
       st.game = ALL_GAMES.includes(st.game) ? st.game : st.mode;
       st.badges = Array.isArray(st.badges) ? st.badges : [];
       st.startedAt = st.startedAt || Date.now();
+      st.id = st.id || newId();
       state = st;
       lastTreeCounts = {};
       markSeen(state.used);
@@ -2359,6 +2459,106 @@
     reader.readAsText(file);
   }
 
+
+  /* ------------------------------------------------------------------ */
+  /* Our stories: every game kept in this browser                       */
+  /* ------------------------------------------------------------------ */
+  let storiesCache = [];
+  const fold = (x) => String(x || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  function storyText(st) {
+    const bits = [st.name, ...(st.players || [])];
+    (st.journal || []).forEach((j) => {
+      const q = QBYID[j.qid];
+      const txt = q ? q.text : j.text;
+      if (txt && typeof txt === "object") bits.push(...Object.values(txt)); else bits.push(txt);
+      bits.push(j.note);
+    });
+    return fold(bits.filter(Boolean).join(" \n "));
+  }
+
+  async function openStories() {
+    $("#stories-overlay").classList.remove("hidden");
+    $("#stories-search").value = "";
+    $("#stories-list").innerHTML = "";
+    const cur = loadSaved();
+    if (cur && cur.version === 1 && (cur.journal || []).length) { if (!cur.id) { cur.id = newId(); try { localStorage.setItem(STORAGE_KEY, JSON.stringify(cur)); } catch (e) { /* ignore */ } } await keepStory(cur); }
+    const list = await allStories();
+    storiesCache = (list || []).sort((a, b) => (b.updatedAt || b.startedAt || 0) - (a.updatedAt || a.startedAt || 0));
+    storiesCache.forEach((st) => (st._text = storyText(st)));
+    renderStories();
+  }
+
+  function renderStories() {
+    const q = fold($("#stories-search").value.trim());
+    const list = q ? storiesCache.filter((st) => q.split(/\s+/).every((w) => st._text.includes(w))) : storiesCache;
+    const box = $("#stories-list");
+    box.innerHTML = "";
+    if (!list.length) { box.innerHTML = `<li class="stories-empty">${esc(t(storiesCache.length ? "storiesNone" : "storiesEmpty"))}</li>`; return; }
+    list.forEach((st) => box.appendChild(storyItem(st)));
+  }
+
+  function storyItem(st) {
+    const li = el("li", "story");
+    const g = gameOf(st);
+    const size = (LEVEL_UP / 2) * Math.max(2, st.players.length);
+    const lvl = Math.floor((st.connection || 0) / size) + 1;
+    const when = new Date(st.updatedAt || st.startedAt || Date.now());
+    const date = when.toLocaleDateString(LANG === "fr" ? "fr-FR" : "en-GB", { day: "numeric", month: "short", year: "numeric" });
+    const title = st.name || joinNames(st.players);
+    const meta = [date, st.name ? joinNames(st.players) : "", t("stAnswers", { n: st.journal.length }), t("lv", { n: lvl })].filter(Boolean).join(" · ");
+    const head = el("button", "story-head", `<span class="story-emo">${GAME_EMOJI[g] || "🎡"}</span><span><b>${esc(title)}</b><small>${esc(meta)}</small></span>`);
+    head.type = "button";
+    const acts = el("div", "story-actions");
+    acts.hidden = true;
+    head.addEventListener("click", () => {
+      $$("#stories-list .story-actions").forEach((a) => { if (a !== acts) a.hidden = true; });
+      acts.hidden = !acts.hidden;
+    });
+    const btn = (label, fn, cls = "") => { const b = el("button", "btn ghost small " + cls, esc(label)); b.type = "button"; b.addEventListener("click", fn); acts.appendChild(b); return b; };
+    const open = (thenSummary) => {
+      $("#stories-overlay").classList.add("hidden");
+      const sv = JSON.parse(JSON.stringify(st));
+      delete sv._text;
+      lastTreeCounts = {};
+      resumeSaved(sv);
+      if (thenSummary) showSummary();
+    };
+    btn(t("stResume"), () => open(false), "primary");
+    btn(t("stReview"), () => open(true));
+    btn(t("stRename"), () => {
+      const row = el("div", "story-rename");
+      const input = el("input");
+      input.type = "text"; input.maxLength = 40; input.value = st.name || ""; input.placeholder = t("storyNamePh");
+      const ok = el("button", "btn primary small", "OK");
+      ok.type = "button";
+      ok.addEventListener("click", async () => {
+        st.name = input.value.trim().slice(0, 40);
+        const clean = { ...st }; delete clean._text;
+        await keepStory(clean);
+        const cur = loadSaved();
+        if (cur && cur.id === st.id) { cur.name = st.name; try { localStorage.setItem(STORAGE_KEY, JSON.stringify(cur)); } catch (e) { /* ignore */ } }
+        if (state && state.id === st.id) state.name = st.name;
+        st._text = storyText(st);
+        renderStories();
+      });
+      row.append(input, ok);
+      acts.appendChild(row);
+      input.focus();
+    });
+    btn(t("stSave"), () => { const clean = { ...st }; delete clean._text; saveStoryFile(clean); });
+    const del = btn(t("stDelete"), async () => {
+      if (!del.classList.contains("sure")) { del.classList.add("sure"); del.textContent = t("stDeleteSure"); return; }
+      await dropStory(st.id);
+      const cur = loadSaved();
+      if (cur && cur.id === st.id) { try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* ignore */ } $("#resume-row").classList.add("hidden"); }
+      storiesCache = storiesCache.filter((x) => x.id !== st.id);
+      toast(t("stDeleted"));
+      renderStories();
+    }, "danger");
+    li.append(head, acts);
+    return li;
+  }
 
   /* ------------------------------------------------------------------ */
   /* Badges                                                             */
@@ -2594,7 +2794,7 @@
       showScreen("screen-setup");
       goStep(1);
     });
-    $("#continue-btn").addEventListener("click", () => { showScreen("screen-game"); setMode(state.mode); });
+    $("#continue-btn").addEventListener("click", () => startGame());
     $("#restart-btn").addEventListener("click", () => {
       if (state) { state.active = false; save(); }
       $("#resume-row").classList.add("hidden");
@@ -2606,8 +2806,12 @@
     $$(".badges-open").forEach((b) => b.addEventListener("click", openBadges));
     $("#badges-close").addEventListener("click", () => $("#badges-overlay").classList.add("hidden"));
     $("#badges-overlay").addEventListener("click", (e) => { if (e.target.id === "badges-overlay") $("#badges-overlay").classList.add("hidden"); });
-    $$(".save-story").forEach((b) => b.addEventListener("click", saveStoryFile));
+    $$(".save-story").forEach((b) => b.addEventListener("click", () => saveStoryFile()));
     $("#load-story").addEventListener("click", () => $("#story-file").click());
+    $("#stories-btn").addEventListener("click", openStories);
+    $("#stories-close").addEventListener("click", () => $("#stories-overlay").classList.add("hidden"));
+    $("#stories-overlay").addEventListener("click", (e) => { if (e.target.id === "stories-overlay") $("#stories-overlay").classList.add("hidden"); });
+    $("#stories-search").addEventListener("input", renderStories);
     $("#story-file").addEventListener("change", (e) => {
       const f = e.target.files && e.target.files[0];
       if (f) loadStoryFile(f);
@@ -2704,7 +2908,7 @@
     renderChosenGame();
     if (!$(".step[data-step=\"2\"]").hidden) renderGameChoice();
     if (!$("#rules-overlay").classList.contains("hidden")) renderRules();
-    if (state && !["wheel", "tree"].includes(gameOf(state))) $("#game-name").textContent = `${GAME_EMOJI[gameOf(state)]} ${t("g_" + gameOf(state))}${state.adult ? " · 🔥 +18" : ""}`;
+    if (state) $("#game-name").textContent = gameTitle();
     fillCard();
   }
 
@@ -2725,7 +2929,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=17", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=18", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {
@@ -2745,6 +2949,10 @@
     applyLanguage();
     // a game that was still going when the page closed or reloaded comes straight back
     const saved = loadSaved();
+    if (saved && saved.version === 1 && Array.isArray(saved.players) && (saved.journal || []).length) {
+      if (!saved.id) { saved.id = newId(); try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch (e) { /* ignore */ } }
+      keepStory(saved);
+    }
     if (saved && saved.version === 1 && saved.active && Array.isArray(saved.players)) resumeSaved(saved);
     setTimeout(() => FX.sparkleEl($(".hero h1")), 400);
   }
