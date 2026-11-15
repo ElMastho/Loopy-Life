@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=1.3.1">
+  <link rel="stylesheet" href="style.css?v=1.4.0">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -415,6 +415,10 @@
       <h2 data-i18n="discoveries">✨ What we learned about each other</h2>
       <div id="summary-discoveries" class="discoveries"></div>
     </section>
+    <section class="panel backup-nudge" id="backup-nudge" hidden>
+      <p data-i18n="backupNudge"></p>
+      <button class="btn primary small save-story" type="button" data-i18n="saveStory">💾 Save the story</button>
+    </section>
     <section class="panel stats" id="summary-stats"></section>
     <section class="panel">
       <h2 data-i18n="storySoFar">Our story so far</h2>
@@ -450,10 +454,7 @@
       <div class="q-tools" id="q-tools">
         <button class="q-follow" id="follow-btn" type="button" data-i18n="followBtn">💬 Follow-up</button>
         <span class="q-follow-text" id="follow-text" aria-live="polite"></span>
-        <span class="q-rate">
-          <button class="rate-btn" id="like-btn" type="button" data-i18n-aria="likeQ" aria-label="Good question">👍</button>
-          <button class="rate-btn" id="dislike-btn" type="button" data-i18n-aria="dislikeQ" aria-label="Not for us">👎</button>
-        </span>
+        <button class="q-nope" id="dislike-btn" type="button" data-i18n="dislikeQ">👎 Not for us</button>
       </div>
 
       <p class="guess-step" id="guess-step" hidden></p>
@@ -533,6 +534,7 @@
         <button id="stories-close" class="btn ghost small" type="button" data-i18n="close">Close</button>
       </div>
       <p class="stories-info" data-i18n="storiesInfo"></p>
+      <p class="stories-backup"><button id="backup-all" class="btn ghost small" type="button" data-i18n="backupAll">💾 Save all our stories</button> <small id="backup-when"></small></p>
       <input id="stories-search" class="text-input light" type="search" autocomplete="off" data-i18n-ph="storiesSearch">
       <ul id="stories-list" class="stories-list"></ul>
     </div>
@@ -549,7 +551,6 @@
         <button id="upd-close" class="btn ghost" type="button" data-i18n="close">Close</button>
         <button id="upd-force" class="btn primary" type="button" data-i18n="updForce">🔄 Force the update</button>
       </div>
-      <p class="upd-ratings"><span id="ratings-count"></span> <button id="ratings-export" class="link" type="button" data-i18n="ratingsExport">📤 Save my ratings</button></p>
     </div>
   </div>
   <div id="update-banner" class="update-banner" role="status" hidden>
@@ -593,30 +594,30 @@
   <div id="toast" class="toast" aria-live="polite"></div>
 
   <!-- the game, in load order (see js/README.md) -->
-  <script src="js/config.js?v=1.3.1"></script>
-  <script src="js/i18n.js?v=1.3.1"></script>
-  <script src="js/i18n/en.js?v=1.3.1"></script>
-  <script src="js/i18n/fr.js?v=1.3.1"></script>
-  <script src="js/state.js?v=1.3.1"></script>
-  <script src="js/helpers.js?v=1.3.1"></script>
-  <script src="js/storage.js?v=1.3.1"></script>
-  <script src="js/fx.js?v=1.3.1"></script>
-  <script src="js/setup.js?v=1.3.1"></script>
-  <script src="js/game.js?v=1.3.1"></script>
-  <script src="js/card.js?v=1.3.1"></script>
-  <script src="js/turns.js?v=1.3.1"></script>
-  <script src="js/speed.js?v=1.3.1"></script>
-  <script src="js/team.js?v=1.3.1"></script>
-  <script src="js/wheel.js?v=1.3.1"></script>
-  <script src="js/tree.js?v=1.3.1"></script>
-  <script src="js/journal.js?v=1.3.1"></script>
-  <script src="js/stories.js?v=1.3.1"></script>
-  <script src="js/badges.js?v=1.3.1"></script>
-  <script src="js/share.js?v=1.3.1"></script>
-  <script src="js/install.js?v=1.3.1"></script>
-  <script src="js/rules.js?v=1.3.1"></script>
-  <script src="js/update.js?v=1.3.1"></script>
-  <script src="js/devices.js?v=1.3.1"></script>
-  <script src="js/main.js?v=1.3.1"></script>
+  <script src="js/config.js?v=1.4.0"></script>
+  <script src="js/i18n.js?v=1.4.0"></script>
+  <script src="js/i18n/en.js?v=1.4.0"></script>
+  <script src="js/i18n/fr.js?v=1.4.0"></script>
+  <script src="js/state.js?v=1.4.0"></script>
+  <script src="js/helpers.js?v=1.4.0"></script>
+  <script src="js/storage.js?v=1.4.0"></script>
+  <script src="js/fx.js?v=1.4.0"></script>
+  <script src="js/setup.js?v=1.4.0"></script>
+  <script src="js/game.js?v=1.4.0"></script>
+  <script src="js/card.js?v=1.4.0"></script>
+  <script src="js/turns.js?v=1.4.0"></script>
+  <script src="js/speed.js?v=1.4.0"></script>
+  <script src="js/team.js?v=1.4.0"></script>
+  <script src="js/wheel.js?v=1.4.0"></script>
+  <script src="js/tree.js?v=1.4.0"></script>
+  <script src="js/journal.js?v=1.4.0"></script>
+  <script src="js/stories.js?v=1.4.0"></script>
+  <script src="js/badges.js?v=1.4.0"></script>
+  <script src="js/share.js?v=1.4.0"></script>
+  <script src="js/install.js?v=1.4.0"></script>
+  <script src="js/rules.js?v=1.4.0"></script>
+  <script src="js/update.js?v=1.4.0"></script>
+  <script src="js/devices.js?v=1.4.0"></script>
+  <script src="js/main.js?v=1.4.0"></script>
 </body>
 </html>

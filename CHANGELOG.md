@@ -2,6 +2,13 @@
 
 Versions follow [semantic versioning](https://semver.org/): major.minor.patch. `python3 tools/release.py patch|minor|major` sets the next one and adds its heading here.
 
+## 1.4.0
+
+- 🖼️ Souvenir picture: the story's name and date, and up to three moments (😮 surprises, 📝 notes, the deepest answers).
+- 💾 Save all our stories in one .loopy file from "Our stories", and open it with 📂 to bring them back, here or on another device (the newer copy of a story wins).
+- At the end of a story worth keeping, a reminder to save it to a file, since it only lives in this browser.
+- Cards keep only 👎 "Not for us" (the question is replaced and never comes back on this device); 👍 and the ratings export are gone.
+
 ## 1.3.1
 
 - 🔠 Text size: a bar slides up from the bottom, with a slider (80 to 200 %) and one-tap sizes (100, 125, 150, 200 %); 100 % is always one tap away.

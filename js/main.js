@@ -46,6 +46,7 @@ function initGame() {
   $("#stories-close").addEventListener("click", () => $("#stories-overlay").classList.add("hidden"));
   $("#stories-overlay").addEventListener("click", (e) => { if (e.target.id === "stories-overlay") $("#stories-overlay").classList.add("hidden"); });
   $("#stories-search").addEventListener("input", renderStories);
+  $("#backup-all").addEventListener("click", saveAllStories);
   $("#story-file").addEventListener("change", (e) => {
     const f = e.target.files && e.target.files[0];
     if (f) loadStoryFile(f);
