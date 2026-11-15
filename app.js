@@ -6,7 +6,7 @@
   "use strict";
 
   const STORAGE_KEY = "loopy-know-each-other-v1";
-  const APP_VERSION = 22; // bump with version.json and the ?v= of the files on every release
+  const APP_VERSION = 23; // bump with version.json and the ?v= of the files on every release
   const POINTS = { 1: 10, 2: 20, 3: 30 };
   const LEVEL_UP = 100; // connection points per level
   const PASSES = 3;
@@ -984,11 +984,11 @@
     const duo = DUO_GAMES.includes(setupGame), car = setupGame === "car";
     if (duo && nP !== 2) $("#chosen-game").querySelector("span:last-child").insertAdjacentHTML("beforeend", `<small class="warn">${esc(t("needTwo"))}</small>`);
     const speed = setupGame === "speed";
-    $("#guess-option").hidden = fun || setupGame === "date" || speed; // fun games guess their own way; in the couple game it is on by default
+    $("#guess-option").hidden = fun || speed; // fun games guess their own way, no time to guess in the speed game; on by default in the couple game
     $("#timer-panel").hidden = !speed;
     $("#who-option").hidden = duo || car || speed || nP < 3; // nobody points while driving; at 2 a vote just points at the other
     if ($("#who-option").hidden) $("#who-mode").checked = false;
-    $("#dare-option").hidden = duo || car || speed; // no challenges in a car, no time for them in the speed game
+    $("#dare-option").hidden = car || speed; // no challenges in a car, no time for them in the speed game
     $("#random-option").hidden = duo || nP < 3; // at 2, the next player is always the other one
     if ($("#random-option").hidden) $("#random-turn").checked = false;
     $("#adult-option").hidden = !duo;
@@ -1230,12 +1230,12 @@
       depth,
       mode,
       game,
-      guessMode: setupGuessMode && !FUN_GAMES.includes(game) && game !== "date" && game !== "speed",
+      guessMode: setupGuessMode && !FUN_GAMES.includes(game) && game !== "speed",
       timer: game === "speed" ? setupTimer : 0,
       streak: 0,
       bestStreak: 0,
       whoMode: !DUO_GAMES.includes(game) && game !== "car" && game !== "speed" && players.length > 2 && $("#who-mode").checked,
-      dareMode: !DUO_GAMES.includes(game) && game !== "car" && game !== "speed" && $("#dare-mode").checked,
+      dareMode: game !== "car" && game !== "speed" && $("#dare-mode").checked,
       randomTurn: !DUO_GAMES.includes(game) && $("#random-turn").checked,
       adult: DUO_GAMES.includes(game) && $("#adult-mode").checked,
       driver: game === "car" ? setupDriver : -1,
@@ -1438,7 +1438,7 @@
     $("#speak-btn").hidden = !("speechSynthesis" in window) || g !== "car";
     $("#done-btn").disabled = false;
     renderBonuses();
-    if (!kind && g === "date") { const step = $("#guess-step"); step.hidden = false; step.textContent = t("dateStep"); }
+    if (!kind && g === "date" && !state.guessMode) { const step = $("#guess-step"); step.hidden = false; step.textContent = t("dateStep"); }
     $("#pass-label").textContent = kind ? t("another") : joker ? t("joker") : t("pass");
     $("#passes-wrap").hidden = true; // passing is free in every game
     $("#done-btn").textContent = kind ? t("next") : t("answered");
@@ -2997,7 +2997,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=22", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=23", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {
