@@ -339,8 +339,6 @@ function initCard() {
   $("#speak-btn").addEventListener("click", speakCurrent);
   $("#done-btn").addEventListener("click", finishQuestion);
   $("#skip-btn").addEventListener("click", passQuestion);
-  $("#like-btn").addEventListener("click", () => rateCurrent(1));
-  $("#dislike-btn").addEventListener("click", () => rateCurrent(-1));
+  $("#dislike-btn").addEventListener("click", notForUs);
   $("#follow-btn").addEventListener("click", followUp);
-  $("#ratings-export").addEventListener("click", exportRatings);
 }

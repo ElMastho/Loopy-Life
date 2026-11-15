@@ -56,15 +56,16 @@ async function makeStoryImage() {
   ctx.fillText("∞ Loopy Life", W / 2, 90);
   ctx.fillStyle = "#ffffff"; ctx.font = F(700, 64);
   ctx.fillText(t("title"), W / 2, 170);
-  ctx.fillStyle = "#c9bfe0"; ctx.font = F(500, 38);
-  wrapText(ctx, joinNames(state.players), W / 2, 230, W - 160, 46, 2);
+  ctx.fillStyle = "#c9bfe0"; ctx.font = F(500, 34);
+  const day = new Date(state.startedAt || Date.now()).toLocaleDateString(LANG === "fr" ? "fr-FR" : "en-GB", { day: "numeric", month: "long", year: "numeric" });
+  wrapText(ctx, `${state.name ? state.name + " · " : ""}${joinNames(state.players)} · ${day}`, W / 2, 230, W - 160, 42, 2);
 
   const img = await treeImage();
-  if (img) ctx.drawImage(img, (W - 600) / 2, 300, 600, 630);
+  if (img) ctx.drawImage(img, (W - 480) / 2, 282, 480, 504);
 
   const lvl = Math.floor(state.connection / levelSize()) + 1;
   ctx.fillStyle = "#ffd166"; ctx.font = F(700, 52);
-  ctx.fillText(`🎆 ${t("imgLevel", { n: lvl })}`, W / 2, 985);
+  ctx.fillText(`🎆 ${t("imgLevel", { n: lvl })}`, W / 2, 836);
 
   const j = state.journal.filter((e) => !e.kind);
   const mins = Math.max(1, Math.round((Date.now() - state.startedAt) / 60000));
@@ -74,22 +75,33 @@ async function makeStoryImage() {
     const x = x0 + i * (bw + gap);
     ctx.fillStyle = "rgba(255,255,255,.1)";
     ctx.beginPath();
-    if (ctx.roundRect) ctx.roundRect(x, 1020, bw, 120, 24); else ctx.rect(x, 1020, bw, 120);
+    if (ctx.roundRect) ctx.roundRect(x, 860, bw, 100, 24); else ctx.rect(x, 860, bw, 100);
     ctx.fill();
-    ctx.fillStyle = "#ffffff"; ctx.font = F(700, 50);
-    ctx.fillText(String(v), x + bw / 2, 1080);
-    ctx.fillStyle = "#c9bfe0"; ctx.font = F(500, 28);
-    ctx.fillText(l, x + bw / 2, 1120);
+    ctx.fillStyle = "#ffffff"; ctx.font = F(700, 46);
+    ctx.fillText(String(v), x + bw / 2, 911);
+    ctx.fillStyle = "#c9bfe0"; ctx.font = F(500, 26);
+    ctx.fillText(l, x + bw / 2, 945);
   });
 
-  const best = [...state.journal].reverse().find((e) => e.bonuses.includes("wow") || e.bonuses.includes("unanimous") || e.note)
-    || [...j].reverse().find((e) => e.depth === 3) || state.journal[state.journal.length - 1];
-  if (best) {
-    const text = QBYID[best.qid] ? qText(QBYID[best.qid]) : tr(best.text);
-    ctx.fillStyle = "#ffd166"; ctx.font = F(600, 28);
-    ctx.fillText(`✨ ${t("imgBest")}`, W / 2, 1195);
-    ctx.fillStyle = "#ffffff"; ctx.font = F(500, 34);
-    wrapText(ctx, `“${text}”`, W / 2, 1240, W - 160, 42, 2);
+  // up to three moments: what surprised us (😮), the notes, then the deepest answers
+  const marked = [...j].reverse().filter((e) => e.bonuses.includes("wow") || e.note);
+  const deepest = [...j].reverse().filter((e) => e.depth === 3 && !marked.includes(e));
+  const moments = [...marked, ...deepest].slice(0, 3);
+  if (!moments.length && state.journal.length) moments.push(state.journal[state.journal.length - 1]);
+  if (moments.length) {
+    ctx.fillStyle = "#ffd166"; ctx.font = F(600, 30);
+    ctx.fillText(`✨ ${t(moments.length > 1 ? "imgMoments" : "imgBest")}`, W / 2, 1012);
+    let y = 1058;
+    ctx.textAlign = "left";
+    moments.forEach((e) => {
+      const text = QBYID[e.qid] ? qText(QBYID[e.qid]) : tr(e.text);
+      const who = state.players[e.player] || "";
+      ctx.fillStyle = pHex(e.player || 0); ctx.font = F(600, 28);
+      ctx.fillText(`${e.bonuses.includes("wow") ? "😮" : e.note ? "📝" : "🌊"} ${who}`, 90, y);
+      ctx.fillStyle = "#ffffff"; ctx.font = F(500, 28);
+      y = wrapText(ctx, e.note ? `“${e.note}”` : text, 90, y + 36, W - 180, 34, 1) + 18;
+    });
+    ctx.textAlign = "center";
   }
   ctx.fillStyle = "rgba(255,255,255,.55)"; ctx.font = F(500, 26);
   ctx.fillText("elmastho.github.io/Loopy-Life", W / 2, H - 28);

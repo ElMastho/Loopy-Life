@@ -32,7 +32,7 @@ Starting a game takes three steps: **1. Players** (or continue a saved story), *
 8. Option **🎭 Challenges** (off by default): sometimes a small challenge instead of a question. +20 when done, +5 each if everyone laughed. "Another one" is free.
 9. Option **🎲 Random next player**: nobody knows who answers next. From 5 players the card shows a single "Who guessed it?" row of names and the scoreboard scrolls sideways.
 10. **🏅 Badges**: 19 badges to unlock together during a story (saved in the `.loopy` file).
-11. On every card: **💬 Follow-up** suggests a way to go further on the same question, **💛** marks a sensitive question (passing is always fine), **👍 / 👎** rate it on this device (👎 never brings it back there).
+11. On every card: **💬 Follow-up** suggests a way to go further on the same question, **💛** marks a sensitive question (passing is always fine), **👎 Not for us** replaces it and it never comes back on that device.
 12. Option **👨‍👩‍👧 All ages**: light or medium questions only, no love subject and no heavy or grown-up question, for a table with children.
 13. On a tablet, 🔃 turns the card for the person across; on a computer, full screen and keyboard shortcuts; 🔠 sets the text size.
 14. **Our story** keeps every question you answered and your notes. **Finish** shows a summary, a **🖼️ Share a picture** image (tree, level, best moment) and a text version.

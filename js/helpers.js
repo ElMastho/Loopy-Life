@@ -18,7 +18,7 @@ function randInt(n) {
 const pick = (arr) => arr[randInt(arr.length)];
 
 // Questions already asked on this device, in any story. New draws prefer the others.
-// Questions rated on this device: 1 = liked, -1 = "not for us" (never drawn again here).
+// Questions marked "not for us" on this device (-1): never drawn again here.
 const RATINGS_KEY = "loopy-ratings-v1";
 function ratings() {
   try { return JSON.parse(localStorage.getItem(RATINGS_KEY) || "{}") || {}; } catch (e) { return {}; }

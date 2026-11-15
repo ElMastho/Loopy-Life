@@ -21,6 +21,7 @@ function storyText(st) {
 
 async function openStories() {
   $("#stories-overlay").classList.remove("hidden");
+  paintBackupWhen();
   $("#stories-search").value = "";
   $("#stories-list").innerHTML = "";
   const cur = loadSaved();

@@ -160,6 +160,25 @@ await phone.click("#dislike-btn"); await phone.waitForTimeout(300);
 const after = await phone.evaluate((id) => ({ id: current.q.id, allowed: allowedQ(QBYID[id]) }), before);
 check(after.id !== before && !after.allowed, "👎 replaces the question and keeps it away");
 
+// Backups: the summary suggests saving a story; all the stories go in one file and come back from it.
+await play(phone, "wheel", ["Thomas", "Maya"]);
+await phone.click("#finish-btn"); await phone.waitForTimeout(500);
+check(await phone.isVisible("#backup-nudge"), "summary: suggests saving the story to a file");
+await phone.click("#restart-btn").catch(() => {}); await phone.waitForTimeout(300);
+if (await phone.isVisible("#home-btn")) await phone.click("#home-btn");
+await phone.goto(BASE); await phone.waitForSelector(".subject", { state: "attached" }); await phone.waitForTimeout(300);
+if (await phone.isVisible("#home-btn")) { await phone.click("#home-btn"); await phone.waitForTimeout(300); }
+await phone.click("#stories-btn"); await phone.waitForTimeout(400);
+const nBefore = await phone.$$eval("#stories-list > .story", (e) => e.length);
+const [dl] = await Promise.all([phone.waitForEvent("download"), phone.click("#backup-all")]);
+const backupPath = await dl.path();
+await phone.evaluate(() => new Promise((r) => { const q = indexedDB.open("loopy-life"); q.onsuccess = () => { const tx = q.result.transaction("stories", "readwrite"); tx.objectStore("stories").clear(); tx.oncomplete = r; }; }));
+await phone.click("#stories-close");
+await phone.setInputFiles("#story-file", backupPath); await phone.waitForTimeout(800);
+const nAfter = await phone.$$eval("#stories-list > .story", (e) => e.length);
+check(nBefore > 0 && nAfter === nBefore, `all stories saved and loaded back (${nBefore} → ${nAfter})`);
+await phone.click("#stories-close");
+
 // Panels and language.
 const home = async () => { await phone.goto(BASE); await phone.waitForSelector(".subject", { state: "attached" }); await phone.waitForTimeout(300); if (await phone.isVisible("#home-btn")) { await phone.click("#home-btn"); await phone.waitForTimeout(300); } };
 await home();

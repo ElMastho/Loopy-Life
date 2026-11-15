@@ -78,6 +78,7 @@ function showSummary() {
     stat(fav ? SUBJ[fav[0]].emoji : "–", fav ? esc(t("statFav", { s: sName(SUBJ[fav[0]]) })) : t("statFavNone")) +
     stat(`${mins}′`, t("statTogether"));
   $("#summary-journal").innerHTML = journalHTML();
+  $("#backup-nudge").hidden = !!state.fileSavedAt || j.length < 3; // a story worth keeping, not saved to a file yet
   showScreen("screen-summary");
   setTimeout(() => FX.fireworks(10), 300);
 }
@@ -121,12 +122,60 @@ const fileBase = (st = state) => (st.name ? st.name : `${t("storyFile")}-${st.pl
 function saveStoryFile(st = state) {
   downloadFile(encodeStory(st), `${fileBase(st)}.loopy`, "application/octet-stream");
   toast(t("savedToast"), 3200);
+  if (st === state && state) { state.fileSavedAt = Date.now(); save(); $("#backup-nudge").hidden = true; }
+}
+
+// Every story of this browser in one .loopy file, to keep them safe or move them to another device.
+const STORIES_HEADER = "LOOPY-LIFE-STORIES:1\n";
+const BACKUP_KEY = "loopy-backup-at";
+
+async function saveAllStories() {
+  const list = (await allStories()) || [];
+  if (!list.length) { toast(t("storiesEmpty"), 2400); return; }
+  const json = JSON.stringify({ app: "loopy-life-know-each-other", savedAt: new Date().toISOString(), stories: list.map((s) => { const c = { ...s }; delete c._text; return c; }) });
+  const bytes = new TextEncoder().encode(json);
+  let bin = "";
+  bytes.forEach((b) => (bin += String.fromCharCode(b)));
+  const day = new Date().toISOString().slice(0, 10);
+  downloadFile(STORIES_HEADER + btoa(bin), `loopy-life-${t("storiesFile")}-${day}.loopy`, "application/octet-stream");
+  try { localStorage.setItem(BACKUP_KEY, String(Date.now())); } catch (e) { /* ignore */ }
+  paintBackupWhen();
+  toast(t("backupDone", { n: list.length }), 3200);
+}
+
+function paintBackupWhen() {
+  let at = 0;
+  try { at = Number(localStorage.getItem(BACKUP_KEY)) || 0; } catch (e) { /* ignore */ }
+  const date = at ? new Date(at).toLocaleDateString(LANG === "fr" ? "fr-FR" : "en-GB", { day: "numeric", month: "short", year: "numeric" }) : "";
+  $("#backup-when").textContent = at ? t("backupWhen", { date }) : t("backupNever");
+}
+
+async function loadAllStories(text) {
+  const bin = atob(text.slice(STORIES_HEADER.length).trim());
+  const data = JSON.parse(new TextDecoder().decode(Uint8Array.from(bin, (c) => c.charCodeAt(0))));
+  const list = (data && Array.isArray(data.stories) ? data.stories : []).filter((st) => st && st.id && Array.isArray(st.players) && Array.isArray(st.journal));
+  if (!list.length) throw new Error("no stories");
+  const have = new Map(((await allStories()) || []).map((s) => [s.id, s]));
+  let added = 0;
+  for (const st of list) {
+    const old = have.get(st.id);
+    if (old && (old.updatedAt || 0) >= (st.updatedAt || 0)) continue; // the newer copy wins
+    await keepStory(st);
+    added++;
+  }
+  toast(t("backupLoaded", { n: list.length, k: added }), 3600);
+  FX.fireworks(4);
+  openStories();
 }
 
 function loadStoryFile(file) {
   const reader = new FileReader();
   reader.onload = () => {
     let st;
+    if (String(reader.result).startsWith(STORIES_HEADER)) {
+      loadAllStories(String(reader.result)).catch(() => toast(t("loadBad"), 3200));
+      return;
+    }
     try { st = decodeStory(String(reader.result)); } catch (e) {
       $("#setup-error").textContent = t("loadBad");
       toast(t("loadBad"), 3200);

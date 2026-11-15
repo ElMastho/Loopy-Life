@@ -45,7 +45,6 @@ function fillCard() {
   $("#q-tools").hidden = g === "speed";
   $("#follow-btn").hidden = !!kind;
   $("#follow-text").textContent = "";
-  paintRating(); // read on demand in every game; the option reads each question on its own
   $("#done-btn").disabled = false;
   renderBonuses();
   if (!kind && g === "date" && !state.guessMode) { const step = $("#guess-step"); step.hidden = false; step.textContent = t("dateStep"); }
@@ -56,20 +55,12 @@ function fillCard() {
   $("#skip-btn").disabled = false;
 }
 
-// 👍 / 👎 on the card: kept on this device; 👎 never brings the question back here.
-function paintRating() {
+// 👎 "Not for us": the question is replaced and never comes back on this device.
+function notForUs() {
   if (!current) return;
-  const r = ratings()[current.q.id] || 0;
-  $("#like-btn").classList.toggle("on", r === 1);
-  $("#dislike-btn").classList.toggle("on", r === -1);
-}
-
-function rateCurrent(value) {
-  if (!current) return;
-  const now = rate(current.q.id, value);
-  paintRating();
-  if (now === 1) { FX.sparkleEl($("#like-btn")); toast(t("likedQ"), 1400); }
-  if (now === -1) { toast(t("dislikedQ"), 1800); passQuestion(); }
+  rate(current.q.id, -1);
+  toast(t("dislikedQ"), 1800);
+  passQuestion();
 }
 
 // A follow-up to go further on the same question, without changing it.
@@ -80,22 +71,6 @@ function followUp() {
   if (list.length > 1) while (next === el.textContent) next = pick(list);
   el.textContent = next;
   FX.sparkleEl(el);
-}
-
-function ratingsSummary() {
-  const v = Object.values(ratings());
-  return t("ratingsCount", { up: v.filter((x) => x === 1).length, down: v.filter((x) => x === -1).length });
-}
-
-function exportRatings() {
-  const r = ratings();
-  const rows = Object.entries(r).map(([id, v]) => ({ id, rating: v, text: QBYID[id] ? qText(QBYID[id]) : "" }));
-  const blob = new Blob([JSON.stringify({ app: "Loopy Life", version: APP_VERSION, ratings: rows }, null, 2)], { type: "application/json" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "loopy-life-ratings.json";
-  document.body.appendChild(a); a.click(); a.remove();
-  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 
 // A chip with a player's colour dot and name, for compact rows.

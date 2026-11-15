@@ -35,8 +35,6 @@ async function forceUpdate() {
 async function openUpdate() {
   $("#upd-installed").textContent = t("updInstalled", { v: APP_VERSION });
   $("#upd-status").textContent = t("updChecking");
-  $("#ratings-count").textContent = ratingsSummary();
-  $("#ratings-export").hidden = !Object.keys(ratings()).length;
   $("#update-overlay").classList.remove("hidden");
   const v = await latestVersion();
   $("#upd-status").textContent = v == null ? t("updOffline") : compareVersions(v, APP_VERSION) > 0 ? t("updNew", { v }) : t("updLatest");
