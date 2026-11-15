@@ -520,3 +520,29 @@ button { font-family: inherit; cursor: pointer; }
 .card.late .for-who { color: #e8505b; font-weight: 700; font-size: 1.3rem; }
 @keyframes shake { 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
 .speed-who { font-size: 1.3rem; font-weight: 600; margin: 0 0 4px; }
+
+/* story name and the stories panel */
+.text-input {
+  width: 100%; font: inherit; font-size: 1.02rem; color: var(--text);
+  background: rgba(0,0,0,.25); border: 2px solid transparent; border-radius: 14px; padding: 11px 12px; outline: none;
+}
+.text-input:focus { border-color: var(--gold); }
+.text-input.light { background: rgba(43,27,74,.07); color: #2a1b4a; border-color: rgba(43,27,74,.12); }
+.text-input.light:focus { border-color: #9b7bff; }
+.story-name-label { display: block; margin: 16px 0 6px; color: var(--muted); font-size: .92rem; }
+.suggest-name { margin-bottom: 14px; }
+.suggest-name h3 { margin: 0 0 4px; font-size: 1.05rem; color: #2a1b4a; }
+.stories-info { font-size: .85rem; color: #6b5a8e; background: rgba(155,123,255,.12); border-radius: 12px; padding: 10px 12px; margin: 8px 0 12px; line-height: 1.4; }
+.stories-list { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 8px; color: #2a1b4a; }
+.stories-empty { text-align: center; opacity: .7; padding: 18px 0; }
+.story { background: rgba(43,27,74,.05); border-radius: 14px; }
+.story-head { width: 100%; display: flex; align-items: center; gap: 12px; text-align: left; background: none; border: 0; padding: 10px 12px; color: inherit; font: inherit; cursor: pointer; }
+.story-head b { display: block; font-size: 1rem; }
+.story-head small { display: block; font-size: .8rem; opacity: .7; }
+.story-emo { font-size: 1.6rem; flex: none; }
+.story-actions { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 12px 12px; }
+.story-actions .btn.ghost { color: #2a1b4a; background: rgba(43,27,74,.08); }
+.story-actions .btn.danger { color: #c0392b; }
+.story-actions .btn.danger.sure { background: #e8505b; color: #fff; }
+.story-rename { display: flex; gap: 6px; width: 100%; margin-top: 4px; }
+.story-rename input { flex: 1; min-width: 0; font: inherit; padding: 8px 10px; border-radius: 10px; border: 2px solid rgba(43,27,74,.15); }
