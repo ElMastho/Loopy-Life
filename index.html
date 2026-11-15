@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -105,6 +105,12 @@
         <h2 data-i18n="gamesFun">🎉 Just for fun</h2>
         <p class="group-note" hidden></p>
         <div class="games">
+          <button class="game-card" data-game="speed" type="button">
+            <span class="mode-emoji">⚡</span>
+            <strong data-i18n="g_speed"></strong>
+            <small data-i18n="g_speedDesc"></small>
+            <span class="g-players" data-i18n="g_speedPlayers"></span>
+          </button>
           <button class="game-card" data-game="bluff" type="button">
             <span class="mode-emoji">🎭</span>
             <strong data-i18n="g_bluff"></strong>
@@ -169,6 +175,16 @@
           <button type="button" data-depth="light" data-i18n="light">🌤️ Light</button>
           <button type="button" data-depth="mixed" class="on" data-i18n="mixed">🌗 Mixed</button>
           <button type="button" data-depth="deep" data-i18n="deep">🌊 Deep</button>
+        </div>
+      </section>
+
+      <section class="panel" id="timer-panel" hidden>
+        <h2 data-i18n="timerTitle">⏱️ Time to answer</h2>
+        <p class="panel-hint" data-i18n="timerHint"></p>
+        <div class="segmented" id="timer-choice">
+          <button type="button" data-time="5">⚡ 5 s</button>
+          <button type="button" data-time="10" class="on">10 s</button>
+          <button type="button" data-time="15">🐢 15 s</button>
         </div>
       </section>
 
@@ -281,6 +297,16 @@
       <button id="tree-surprise" class="btn ghost wide" type="button" data-i18n="surprise">🎲 Surprise us: grow any branch</button>
     </section>
 
+    <!-- Speed view -->
+    <section id="view-speed" class="view">
+      <div class="speed-wrap">
+        <p class="speed-time" id="speed-time"></p>
+        <button id="speed-go" class="speed-go" type="button">⚡ GO!</button>
+        <p class="speed-streak" id="speed-streak"></p>
+        <p class="hint" data-i18n="speedReady">Ready?</p>
+      </div>
+    </section>
+
     <div class="game-actions">
       <button id="journal-btn" class="btn ghost" type="button" data-i18n="ourStory">📖 Our story</button>
       <button class="btn ghost save-story" type="button" data-i18n="saveStory">💾 Save the story</button>
@@ -329,10 +355,12 @@
         <span class="chip" id="q-subject">Subject</span>
         <span class="card-top-right">
           <span class="depth" id="q-depth">🌤️ Light</span>
+          <button class="card-help" id="pause-btn" type="button" data-i18n-aria="pause" aria-label="Pause" hidden>⏸</button>
           <button class="card-help" id="speak-btn" type="button" data-i18n-aria="readAloud" aria-label="Read aloud" hidden>🔊</button>
           <button class="card-help rules-open" type="button" data-i18n-aria="rules" aria-label="Rules">?</button>
         </span>
       </div>
+      <div class="timer" id="timer" hidden><div class="timer-bar"><div id="timer-fill"></div></div><span id="timer-num">10</span></div>
       <p class="for-who" id="q-for">For …</p>
       <p class="q-text" id="q-text">Question</p>
 
@@ -412,6 +440,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=15"></script>
+  <script src="app.js?v=16"></script>
 </body>
 </html>

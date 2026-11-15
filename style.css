@@ -497,3 +497,25 @@ button { font-family: inherit; cursor: pointer; }
 .badges-sep { list-style: none; margin: 14px 0 6px; font-size: .85rem; opacity: .7; font-weight: 600; }
 .badge.elsewhere { opacity: .4; }
 #depth-hint + .segmented[hidden] { display: none !important; }
+
+/* speed game */
+.speed-wrap { text-align: center; padding: 26px 0 8px; }
+.speed-go {
+  width: min(58vw, 240px); aspect-ratio: 1; border-radius: 50%; border: 6px solid #fff;
+  background: radial-gradient(circle at 35% 30%, #fff3c4, #ffb703 60%, #fb8500);
+  color: var(--bg1); font-weight: 700; font-size: clamp(1.5rem, 8vw, 2.2rem); cursor: pointer;
+  box-shadow: 0 0 0 10px rgba(255,183,3,.18), 0 10px 40px rgba(255,183,3,.45); animation: pulse 1.6s ease-in-out infinite;
+}
+.speed-go:active { transform: scale(.93); }
+@keyframes pulse { 50% { box-shadow: 0 0 0 18px rgba(255,183,3,.08), 0 10px 40px rgba(255,183,3,.55); } }
+.speed-time { color: var(--muted); margin: 0 0 14px; }
+.speed-streak { color: var(--gold); font-weight: 600; font-size: 1.1rem; margin: 18px 0 4px; }
+.timer { display: flex; align-items: center; gap: 10px; margin: 6px 0 4px; }
+.timer-bar { flex: 1; height: 10px; border-radius: 99px; background: rgba(0,0,0,.12); overflow: hidden; }
+#timer-fill { height: 100%; width: 100%; background: linear-gradient(90deg, #ffb703, #fb8500); border-radius: 99px; transition: width .1s linear; }
+#timer-num { font-weight: 700; font-size: 1.6rem; min-width: 2ch; text-align: right; color: #fb8500; }
+.timer.hurry #timer-fill { background: #e8505b; }
+.timer.hurry #timer-num { color: #e8505b; animation: bump .5s ease infinite; }
+.card.late { animation: shake .4s ease; }
+.card.late .for-who { color: #e8505b; font-weight: 700; font-size: 1.3rem; }
+@keyframes shake { 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }

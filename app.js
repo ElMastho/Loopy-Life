@@ -23,17 +23,19 @@
   const BET_WIN = 10; // per point bet
   const BET_LOSS = 5; // per point bet
   const FUN_GAMES = ["bluff", "duel", "bet"];
-  const GAME_EMOJI = { wheel: "🎡", tree: "🌳", bluff: "🎭", duel: "⚔️", bet: "🎲", date: "🥂", couple: "💑", car: "🚗" };
+  const GAME_EMOJI = { speed: "⚡", wheel: "🎡", tree: "🌳", bluff: "🎭", duel: "⚔️", bet: "🎲", date: "🥂", couple: "💑", car: "🚗" };
   const DUO_GAMES = ["date", "couple"];
   const competitive = () => FUN_GAMES.includes(gameOf(state)); // only the fun games keep a per-player score
-  const ALL_GAMES = ["wheel", "tree", "bluff", "duel", "bet", "date", "couple", "car"];
+  const ALL_GAMES = ["wheel", "tree", "bluff", "duel", "bet", "date", "couple", "car", "speed"];
+  const SPEED_TIMES = [5, 10, 15]; // seconds to answer in the speed game
   // Question pools of their own, shown with a subject chip but never on the wheel.
   const POOLS = {
     __date: { id: "__date", emoji: "🥂", color: "#ff8fab", name: { en: "First date", fr: "Premier rendez-vous" }, short: { en: "Date", fr: "Rendez-vous" } },
     __couple: { id: "__couple", emoji: "💑", color: "#e07a9f", name: { en: "Us two", fr: "Nous deux" }, short: { en: "Us two", fr: "Nous deux" } },
+    __speed: { id: "__speed", emoji: "⚡", color: "#ffb703", name: { en: "Speed", fr: "Rapidité" }, short: { en: "Speed", fr: "Rapidité" } },
     __spicy: { id: "__spicy", emoji: "🔥", color: "#e8505b", name: { en: "+18", fr: "+18" }, short: { en: "+18", fr: "+18" } },
   };
-  const POOL_KEY = { __date: "date", __couple: "couple", __spicy: "spicy" };
+  const POOL_KEY = { __date: "date", __couple: "couple", __spicy: "spicy", __speed: "speed" };
   const gameOf = (st) => st.game || st.mode || "wheel"; // from this many players, the card and scoreboard switch to a compact layout
   // "Who of us?" votes and challenges behave like extra subjects on the wheel and under the tree.
   const EXTRAS = {
@@ -91,6 +93,21 @@
       close: "Close",
       langToggle: "🇫🇷 Français",
       gamesTwo: "🥂 For two",
+      g_speed: "Speed",
+      g_speedDesc: "A short question, a few seconds to answer. No time to think: just be spontaneous!",
+      g_speedPlayers: "👥 From 2",
+      timerTitle: "⏱️ Time to answer",
+      timerHint: "The question appears, the countdown starts right away.",
+      speedFor: "⚡ {name}, answer fast!",
+      speedReady: "Ready? The questions follow one another, one per player.",
+      speedGo: "⚡ GO!",
+      speedResume: "▶️ Resume",
+      speedStreak: "🔥 Streak: {n}",
+      speedBest: "best: {n}",
+      tooLate: "⏰ Too late!",
+      streakToast: "🔥 {n} answers in a row in time!",
+      pause: "Pause",
+      speedPts: "⚡ +10 · +1/s left",
       paceDate: "A first date sets its own pace: light questions first, a little deeper as you go.",
       paceTree: "The tree sets the pace, branch by branch: light roots first, then leaves, then deeper blooms.",
       paceCar: "In the car, questions stay light or medium.",
@@ -255,7 +272,7 @@
       rules: "Rules",
       rulesBtn: "❓ Rules",
       rulesTitle: "How to play",
-      rulesBody: "<h3>🎯 The goal</h3><p>Get to know each other better by answering questions you would never ask in everyday conversation. There are no wrong answers.</p><h3>👥 Players</h3><p>Two players by default. Add as many friends as you like with <b>+ Add a player</b>. Everyone takes turns answering, one after the other.</p><h3>🧭 Starting a game</h3><p>Three steps: <b>1. Players</b> (or continue a saved story), <b>2. Game</b>, <b>3. Settings</b> (subjects, depth and the options that fit that game), then <b>🚀 Let's go!</b></p><h3>🌱 Games to get to know each other</h3><ul><li><b>🎡 The wheel</b>: the wheel picks a subject, then a random question.</li><li><b>🌳 The tree</b>: pick a subject (a branch). It starts with simple <b>roots</b> 🌱 questions, then unlocks deeper <b>leaves</b> 🌿 and <b>blooms</b> 🌸 after two answers at each level.</li></ul><h3>🎉 Games just for fun (best with 3 to 6)</h3><ul><li><b>🎭 Truth or bluff</b>: the player taps <b>🤫 Look alone</b> and secretly sees whether to answer honestly or invent a believable answer. The others vote out loud “truth” or “bluff”, then tap <b>Reveal</b>. Each friend who saw through it gets <b>+20</b>, and the player gets <b>+10</b> for each friend fooled.</li><li><b>⚔️ Duel</b>: two players answer the same question. The others pick the best answer (most sincere, funniest… you decide): the winner gets <b>+20</b>, or <b>+10</b> each for a tie. Both duelists get the question's points.</li><li><b>🎲 The bet</b>: before the player answers, each friend bets <b>1, 2 or 3</b> on guessing the answer and says their guess. Right guess: <b>+10 per point bet</b>. Wrong: <b>−5 per point bet</b>.</li></ul><h3>⭐ Points</h3><p>The player whose turn it is answers out loud and gets <b>+10</b> (🌤️ light), <b>+20</b> (🌗 deeper) or <b>+30</b> (🌊 deep) when you tap <b>Answered!</b></p><h3>🎁 Bonuses: when to tap them</h3><p>Before tapping <b>Answered!</b>, tap every bonus that happened (several can be on at once):</p><ul><li><b>🎯 [name] guessed it</b>: tap it when that friend said what the answer would be <i>before</i> it was given, and was right. They get <b>+20</b>. Best way to play: the others guess first, then the player answers.</li><li><b>😮 Didn't know that!</b>: tap it when the answer taught the listeners something they really didn't know about the player. Everyone gets <b>+5</b>.</li><li><b>🔁 [name] answered too</b> (with 3+ players: <b>everyone else answered too</b>): tap it when the others also answered the same question for themselves. They get the same points as the player.</li></ul><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p><h3>🎆 Connection level</h3><p>All your points add up to a shared connection level. Level up for fireworks. <b>📖 Our story</b> keeps every question and note, and <b>🏁 Finish</b> shows your summary.</p><h3>🔮 Guess for each other (option)</h3><p>Turn it on at the start of a story. Before the player answers, everyone else says out loud what they think the answer will be. Then the player answers. Tap <b>🎯 [name] guessed right</b> for each friend who got it (<b>+20</b> each). If nobody got it, tap <b>😏 Nobody guessed</b>: the player gets <b>+10</b> for surprising everyone.</p><h3>🗳️ Who of us? (option)</h3><p>Sometimes the wheel (or the 🗳️ button under the tree) gives a vote instead of a question. Count to 3 and everyone points at the player who fits best. Everyone gets <b>+5</b> for voting. Tap the player(s) with the most votes (<b>+10</b> each), and <b>🤝 Unanimous</b> if everyone pointed at the same person (<b>+5</b> each).</p><h3>🎭 Challenges (option)</h3><p>Sometimes the player gets a small challenge instead of a question. Tap <b>✅ Challenge done</b> if they did it (<b>+20</b>), and <b>😂 Everyone laughed</b> if it was a hit (<b>+5</b> each). Don't like it? <b>🔄 Another one</b> is free.</p><h3>👥 Big groups</h3><p>From 5 players, the card shows one <b>🎯 Who guessed it?</b> row with everyone's names. With <b>🎲 Random next player</b>, nobody knows who answers next. Votes and challenges keep everyone in the game.</p><h3>🏅 Badges</h3><p>Unlock badges together as you play: deep moments, good guesses, votes, challenges, a tree in full bloom… See them with <b>🏅 Badges</b>.</p><h3>🖼️ Share a picture</h3><p>At the end, <b>🖼️ Share a picture</b> makes an image of your tree, your level and your best moment to send to the group.</p><h3>📲 Install the app</h3><p>On Android or a computer, tap <b>📲 Install the app</b> on the home screen. On iPhone, tap Share, then <b>Add to Home Screen</b>. It then works without a connection.</p><h3>💾 Saving a story</h3><p>Each group of friends has its own story. Tap <b>💾 Save the story</b> (in the game or at the end) to download a <b>.loopy</b> file. Next time, tap <b>📂 Continue a saved story</b> on the home screen and pick that file: names, scores, your tree and the questions already asked all come back. Questions already asked on this device, in any story, come last, so a new story starts with fresh questions.</p><h3>🥂 First date</h3><p>For two people meeting for the first time. Questions start light and get a little deeper as you go, mixing date questions with the regular ones. The <b>🙈 Joker</b> swaps a question without a word, as often as you like. No bluff, no pressure.</p><h3>💑 Couple</h3><p>For two people already together: memories, the two of you, the future. Before each answer, your partner guesses out loud what you'll say: <b>🎯 guessed right</b> gives them <b>+20</b>, and if they missed, <b>😏 Nobody guessed</b> gives you <b>+10</b>.</p><h3>🚗 Car</h3><p>A passenger holds the phone and taps; the driver plays by voice only and never touches the screen. Pick the driver in the settings. With <b>🔊 Read the questions aloud</b>, the phone reads each question (tap 🔊 on the card to hear it again). Light and medium questions, quick rounds; no challenges or votes in the car.</p><h3>🔥 +18 questions (option)</h3><p>Only in First date and Couple, off by default. They are about attraction and intimacy, suggestive but never explicit, and they have their own 🔥 segments on the wheel. Turning them on asks every player to confirm they are adults and agree. Anyone can skip a question at any time. You use them at your own responsibility: the author of the game accepts no liability for how they are used.</p>",
+      rulesBody: "<h3>🎯 The goal</h3><p>Get to know each other better by answering questions you would never ask in everyday conversation. There are no wrong answers.</p><h3>👥 Players</h3><p>Two players by default. Add as many friends as you like with <b>+ Add a player</b>. Everyone takes turns answering, one after the other.</p><h3>🧭 Starting a game</h3><p>Three steps: <b>1. Players</b> (or continue a saved story), <b>2. Game</b>, <b>3. Settings</b> (subjects, depth and the options that fit that game), then <b>🚀 Let's go!</b></p><h3>🌱 Games to get to know each other</h3><ul><li><b>🎡 The wheel</b>: the wheel picks a subject, then a random question.</li><li><b>🌳 The tree</b>: pick a subject (a branch). It starts with simple <b>roots</b> 🌱 questions, then unlocks deeper <b>leaves</b> 🌿 and <b>blooms</b> 🌸 after two answers at each level.</li></ul><h3>🎉 Games just for fun (best with 3 to 6)</h3><ul><li><b>🎭 Truth or bluff</b>: the player taps <b>🤫 Look alone</b> and secretly sees whether to answer honestly or invent a believable answer. The others vote out loud “truth” or “bluff”, then tap <b>Reveal</b>. Each friend who saw through it gets <b>+20</b>, and the player gets <b>+10</b> for each friend fooled.</li><li><b>⚔️ Duel</b>: two players answer the same question. The others pick the best answer (most sincere, funniest… you decide): the winner gets <b>+20</b>, or <b>+10</b> each for a tie. Both duelists get the question's points.</li><li><b>🎲 The bet</b>: before the player answers, each friend bets <b>1, 2 or 3</b> on guessing the answer and says their guess. Right guess: <b>+10 per point bet</b>. Wrong: <b>−5 per point bet</b>.</li></ul><h3>⭐ Points</h3><p>The player whose turn it is answers out loud and gets <b>+10</b> (🌤️ light), <b>+20</b> (🌗 deeper) or <b>+30</b> (🌊 deep) when you tap <b>Answered!</b></p><h3>🎁 Bonuses: when to tap them</h3><p>Before tapping <b>Answered!</b>, tap every bonus that happened (several can be on at once):</p><ul><li><b>🎯 [name] guessed it</b>: tap it when that friend said what the answer would be <i>before</i> it was given, and was right. They get <b>+20</b>. Best way to play: the others guess first, then the player answers.</li><li><b>😮 Didn't know that!</b>: tap it when the answer taught the listeners something they really didn't know about the player. Everyone gets <b>+5</b>.</li><li><b>🔁 [name] answered too</b> (with 3+ players: <b>everyone else answered too</b>): tap it when the others also answered the same question for themselves. They get the same points as the player.</li></ul><p>Don't like the question? <b>🔄 Pass</b> swaps it for another one on the same subject. Each player has <b>3 passes</b>.</p><h3>🎆 Connection level</h3><p>All your points add up to a shared connection level. Level up for fireworks. <b>📖 Our story</b> keeps every question and note, and <b>🏁 Finish</b> shows your summary.</p><h3>🔮 Guess for each other (option)</h3><p>Turn it on at the start of a story. Before the player answers, everyone else says out loud what they think the answer will be. Then the player answers. Tap <b>🎯 [name] guessed right</b> for each friend who got it (<b>+20</b> each). If nobody got it, tap <b>😏 Nobody guessed</b>: the player gets <b>+10</b> for surprising everyone.</p><h3>🗳️ Who of us? (option)</h3><p>Sometimes the wheel (or the 🗳️ button under the tree) gives a vote instead of a question. Count to 3 and everyone points at the player who fits best. Everyone gets <b>+5</b> for voting. Tap the player(s) with the most votes (<b>+10</b> each), and <b>🤝 Unanimous</b> if everyone pointed at the same person (<b>+5</b> each).</p><h3>🎭 Challenges (option)</h3><p>Sometimes the player gets a small challenge instead of a question. Tap <b>✅ Challenge done</b> if they did it (<b>+20</b>), and <b>😂 Everyone laughed</b> if it was a hit (<b>+5</b> each). Don't like it? <b>🔄 Another one</b> is free.</p><h3>👥 Big groups</h3><p>From 5 players, the card shows one <b>🎯 Who guessed it?</b> row with everyone's names. With <b>🎲 Random next player</b>, nobody knows who answers next. Votes and challenges keep everyone in the game.</p><h3>🏅 Badges</h3><p>Unlock badges together as you play: deep moments, good guesses, votes, challenges, a tree in full bloom… See them with <b>🏅 Badges</b>.</p><h3>🖼️ Share a picture</h3><p>At the end, <b>🖼️ Share a picture</b> makes an image of your tree, your level and your best moment to send to the group.</p><h3>📲 Install the app</h3><p>On Android or a computer, tap <b>📲 Install the app</b> on the home screen. On iPhone, tap Share, then <b>Add to Home Screen</b>. It then works without a connection.</p><h3>💾 Saving a story</h3><p>Each group of friends has its own story. Tap <b>💾 Save the story</b> (in the game or at the end) to download a <b>.loopy</b> file. Next time, tap <b>📂 Continue a saved story</b> on the home screen and pick that file: names, scores, your tree and the questions already asked all come back. Questions already asked on this device, in any story, come last, so a new story starts with fresh questions.</p><h3>🥂 First date</h3><p>For two people meeting for the first time. Questions start light and get a little deeper as you go, mixing date questions with the regular ones. The <b>🙈 Joker</b> swaps a question without a word, as often as you like. No bluff, no pressure.</p><h3>💑 Couple</h3><p>For two people already together: memories, the two of you, the future. Before each answer, your partner guesses out loud what you'll say: <b>🎯 guessed right</b> gives them <b>+20</b>, and if they missed, <b>😏 Nobody guessed</b> gives you <b>+10</b>.</p><h3>🚗 Car</h3><p>A passenger holds the phone and taps; the driver plays by voice only and never touches the screen. Pick the driver in the settings. With <b>🔊 Read the questions aloud</b>, the phone reads each question (tap 🔊 on the card to hear it again). Light and medium questions, quick rounds; no challenges or votes in the car.</p><h3>🔥 +18 questions (option)</h3><p>Only in First date and Couple, off by default. They are about attraction and intimacy, suggestive but never explicit, and they have their own 🔥 segments on the wheel. Turning them on asks every player to confirm they are adults and agree. Anyone can skip a question at any time. You use them at your own responsibility: the author of the game accepts no liability for how they are used.</p><h3>⚡ Speed</h3><p>Short questions, one after the other, one player after the other. As soon as the question appears, a countdown starts (5, 10 or 15 seconds, set in the settings): answer out loud, whatever comes to mind first, then tap <b>Answered!</b> An answer in time is worth <b>+10</b>, plus one point per second left. When time runs out, it is <b>too late</b>: no points, and the next question comes. Answers in a row in time make a <b>🔥 streak</b>. <b>⏸</b> pauses the game, and <b>🔄 Pass</b> is free.</p>",
       nQuestions: "{n} questions",
       pickOne: "Pick at least one subject 🙂",
       resume: "↩︎ Resume {names} ({n} answered)",
@@ -336,6 +353,21 @@
       close: "Fermer",
       langToggle: "🇬🇧 English",
       gamesTwo: "🥂 À deux",
+      g_speed: "Rapidité",
+      g_speedDesc: "Une question courte, quelques secondes pour répondre. Pas le temps de réfléchir : place à la spontanéité !",
+      g_speedPlayers: "👥 Dès 2",
+      timerTitle: "⏱️ Temps pour répondre",
+      timerHint: "La question s'affiche, le compte à rebours démarre aussitôt.",
+      speedFor: "⚡ {name}, réponds vite !",
+      speedReady: "Prêts ? Les questions s'enchaînent, un joueur après l'autre.",
+      speedGo: "⚡ GO !",
+      speedResume: "▶️ Reprendre",
+      speedStreak: "🔥 Série : {n}",
+      speedBest: "record : {n}",
+      tooLate: "⏰ Trop tard !",
+      streakToast: "🔥 {n} réponses d'affilée dans les temps !",
+      pause: "Pause",
+      speedPts: "⚡ +10 · +1/s restante",
       paceDate: "Le rendez-vous a son propre rythme : des questions légères d'abord, un peu plus profondes au fil de la partie.",
       paceTree: "L'arbre donne le rythme, branche par branche : des racines légères, puis des feuilles, puis des fleurs plus profondes.",
       paceCar: "En voiture, les questions restent légères ou moyennes.",
@@ -500,7 +532,7 @@
       rules: "Règles",
       rulesBtn: "❓ Règles",
       rulesTitle: "Comment jouer",
-      rulesBody: "<h3>🎯 Le but</h3><p>Mieux se connaître en répondant à des questions qu'on ne se pose jamais au quotidien. Il n'y a pas de mauvaise réponse.</p><h3>👥 Joueurs</h3><p>Deux joueurs par défaut. Ajoutez autant d'amis que vous voulez avec <b>+ Ajouter un joueur</b>. Chacun répond à son tour, l'un après l'autre.</p><h3>🧭 Lancer une partie</h3><p>Trois étapes : <b>1. Joueurs</b> (ou reprendre une histoire sauvegardée), <b>2. Jeu</b>, <b>3. Réglages</b> (thèmes, profondeur et options utiles pour ce jeu), puis <b>🚀 C'est parti !</b></p><h3>🌱 Jeux pour se découvrir</h3><ul><li><b>🎡 La roue</b> : la roue choisit un thème, puis une question au hasard.</li><li><b>🌳 L'arbre</b> : choisissez un thème (une branche). On commence par des questions simples, les <b>racines</b> 🌱, puis on débloque des <b>feuilles</b> 🌿 et des <b>fleurs</b> 🌸 plus profondes après deux réponses à chaque niveau.</li></ul><h3>🎉 Jeux pour rigoler (idéal de 3 à 6)</h3><ul><li><b>🎭 Vrai ou bluff</b> : le joueur touche <b>🤫 Regarde seul</b> et découvre en secret s'il doit répondre sincèrement ou inventer une réponse crédible. Les autres votent à voix haute « vrai » ou « bluff », puis touchez <b>Révéler</b>. Chaque ami qui a vu juste gagne <b>+20</b>, et le joueur gagne <b>+10</b> par ami berné.</li><li><b>⚔️ Duel</b> : deux joueurs répondent à la même question. Les autres choisissent la meilleure réponse (la plus sincère, la plus drôle… à vous de voir) : le gagnant remporte <b>+20</b>, ou <b>+10</b> chacun en cas d'égalité. Les deux duellistes gagnent les points de la question.</li><li><b>🎲 Le pari</b> : avant que le joueur réponde, chaque ami parie <b>1, 2 ou 3</b> sur sa capacité à deviner la réponse et dit sa proposition. Bonne réponse : <b>+10 par point misé</b>. Mauvaise : <b>−5 par point misé</b>.</li></ul><h3>⭐ Points</h3><p>Le joueur dont c'est le tour répond à voix haute et gagne <b>+10</b> (🌤️ léger), <b>+20</b> (🌗 plus profond) ou <b>+30</b> (🌊 profond) quand vous touchez <b>Répondu !</b></p><h3>🎁 Les bonus : quand les toucher</h3><p>Avant de toucher <b>Répondu !</b>, touchez chaque bonus qui s'est produit (plusieurs peuvent être activés) :</p><ul><li><b>🎯 [prénom] a deviné</b> : touchez-le quand cet ami a dit quelle serait la réponse <i>avant</i> qu'elle soit donnée, et avait raison. Il gagne <b>+20</b>. Le mieux : les autres devinent d'abord, puis le joueur répond.</li><li><b>😮 Je ne savais pas !</b> : touchez-le quand la réponse a appris aux autres quelque chose qu'ils ne savaient vraiment pas sur le joueur. Tout le monde gagne <b>+5</b>.</li><li><b>🔁 [prénom] a répondu aussi</b> (à 3 joueurs ou plus : <b>tous les autres ont répondu aussi</b>) : touchez-le quand les autres ont aussi répondu à la même question pour eux-mêmes. Ils gagnent les mêmes points que le joueur.</li></ul><p>La question ne vous plaît pas ? <b>🔄 Passer</b> la remplace par une autre du même thème. Passez autant de fois que vous voulez.</p><h3>🎆 Niveau de connexion</h3><p>Tous vos points s'additionnent dans un niveau de connexion commun. Chaque niveau gagné déclenche un feu d'artifice. <b>📖 Notre histoire</b> garde chaque question et note, et <b>🏁 Terminer</b> affiche votre bilan.</p><h3>🔮 Devine pour l'autre (option)</h3><p>À activer au début d'une histoire. Avant que le joueur réponde, tous les autres disent à voix haute ce qu'il va répondre selon eux. Ensuite, le joueur répond. Touchez <b>🎯 [prénom] a bien deviné</b> pour chaque ami qui avait raison (<b>+20</b> chacun). Si personne n'a trouvé, touchez <b>😏 Personne n'a deviné</b> : le joueur gagne <b>+10</b> pour avoir surpris tout le monde.</p><h3>🗳️ Qui de nous ? (option)</h3><p>Parfois la roue (ou le bouton 🗳️ sous l'arbre) donne un vote à la place d'une question. Comptez jusqu'à 3 et tout le monde pointe le joueur qui correspond le mieux. Tout le monde gagne <b>+5</b> pour avoir voté. Touchez le ou les joueurs qui ont eu le plus de votes (<b>+10</b> chacun), et <b>🤝 Unanimité</b> si tout le monde a pointé la même personne (<b>+5</b> chacun).</p><h3>🎭 Défis (option)</h3><p>Parfois le joueur reçoit un petit défi à la place d'une question. Touchez <b>✅ Défi réussi</b> s'il l'a fait (<b>+20</b>), et <b>😂 Tout le monde a ri</b> si ça a marché (<b>+5</b> chacun). Le défi ne plaît pas ? <b>🔄 Une autre</b> est gratuit.</p><h3>👥 Grands groupes</h3><p>À partir de 5 joueurs, la carte affiche une seule ligne <b>🎯 Qui a deviné ?</b> avec les prénoms de tout le monde. Avec <b>🎲 Joueur suivant au hasard</b>, personne ne sait qui répond ensuite. Les votes et les défis font participer tout le monde.</p><h3>🏅 Badges</h3><p>Débloquez des badges ensemble en jouant : moments profonds, bonnes devinettes, votes, défis, arbre en fleurs… Retrouvez-les avec <b>🏅 Badges</b>.</p><h3>🖼️ Partager une image</h3><p>À la fin, <b>🖼️ Partager une image</b> crée une image de votre arbre, de votre niveau et de votre meilleur moment à envoyer au groupe.</p><h3>📲 Installer l'appli</h3><p>Sur Android ou un ordinateur, touchez <b>📲 Installer l'appli</b> sur l'écran d'accueil. Sur iPhone, touchez Partager, puis <b>Sur l'écran d'accueil</b>. Elle marche ensuite sans connexion.</p><h3>💾 Sauvegarder une histoire</h3><p>Chaque groupe d'amis a sa propre histoire. Touchez <b>💾 Sauvegarder l'histoire</b> (pendant la partie ou à la fin) pour télécharger un fichier <b>.loopy</b>. La prochaine fois, touchez <b>📂 Reprendre une histoire sauvegardée</b> sur l'écran d'accueil et choisissez ce fichier : prénoms, scores, votre arbre et les questions déjà posées reviennent. Les questions déjà posées sur cet appareil, dans n'importe quelle histoire, passent en dernier : une nouvelle histoire commence avec des questions inédites.</p><h3>🥂 Premier rendez-vous</h3><p>Pour deux personnes qui se rencontrent. Les questions commencent légères et deviennent un peu plus profondes au fil de la partie, en mélangeant questions de rendez-vous et questions habituelles. Le <b>🙈 Joker</b> change la question sans rien dire, autant de fois que vous voulez. Pas de bluff, pas de pression.</p><h3>💑 Couple</h3><p>Pour deux personnes déjà ensemble : souvenirs, vous deux, l'avenir. Avant chaque réponse, l'autre devine à voix haute ce que vous allez dire : <b>🎯 a bien deviné</b> lui rapporte <b>+20</b>, et s'il s'est trompé, <b>😏 Personne n'a deviné</b> vous rapporte <b>+10</b>.</p><h3>🚗 Voiture</h3><p>Un passager tient le téléphone et touche l'écran ; le conducteur joue uniquement à la voix et ne touche jamais l'écran. Choisissez le conducteur dans les réglages. Avec <b>🔊 Lire les questions à voix haute</b>, le téléphone lit chaque question (touchez 🔊 sur la carte pour la réécouter). Questions légères et moyennes, manches rapides ; pas de défis ni de votes en voiture.</p><h3>🔥 Questions +18 (option)</h3><p>Uniquement en Premier rendez-vous et en Couple, désactivées par défaut. Elles parlent de séduction et d'intimité, de façon suggestive mais jamais explicite, et ont leurs propres cases 🔥 sur la roue. Les activer demande à tous les joueurs de confirmer qu'ils sont majeurs et d'accord. Chacun peut passer une question à tout moment. Vous les utilisez sous votre propre responsabilité : l'auteur du jeu décline toute responsabilité quant à leur usage.</p>",
+      rulesBody: "<h3>🎯 Le but</h3><p>Mieux se connaître en répondant à des questions qu'on ne se pose jamais au quotidien. Il n'y a pas de mauvaise réponse.</p><h3>👥 Joueurs</h3><p>Deux joueurs par défaut. Ajoutez autant d'amis que vous voulez avec <b>+ Ajouter un joueur</b>. Chacun répond à son tour, l'un après l'autre.</p><h3>🧭 Lancer une partie</h3><p>Trois étapes : <b>1. Joueurs</b> (ou reprendre une histoire sauvegardée), <b>2. Jeu</b>, <b>3. Réglages</b> (thèmes, profondeur et options utiles pour ce jeu), puis <b>🚀 C'est parti !</b></p><h3>🌱 Jeux pour se découvrir</h3><ul><li><b>🎡 La roue</b> : la roue choisit un thème, puis une question au hasard.</li><li><b>🌳 L'arbre</b> : choisissez un thème (une branche). On commence par des questions simples, les <b>racines</b> 🌱, puis on débloque des <b>feuilles</b> 🌿 et des <b>fleurs</b> 🌸 plus profondes après deux réponses à chaque niveau.</li></ul><h3>🎉 Jeux pour rigoler (idéal de 3 à 6)</h3><ul><li><b>🎭 Vrai ou bluff</b> : le joueur touche <b>🤫 Regarde seul</b> et découvre en secret s'il doit répondre sincèrement ou inventer une réponse crédible. Les autres votent à voix haute « vrai » ou « bluff », puis touchez <b>Révéler</b>. Chaque ami qui a vu juste gagne <b>+20</b>, et le joueur gagne <b>+10</b> par ami berné.</li><li><b>⚔️ Duel</b> : deux joueurs répondent à la même question. Les autres choisissent la meilleure réponse (la plus sincère, la plus drôle… à vous de voir) : le gagnant remporte <b>+20</b>, ou <b>+10</b> chacun en cas d'égalité. Les deux duellistes gagnent les points de la question.</li><li><b>🎲 Le pari</b> : avant que le joueur réponde, chaque ami parie <b>1, 2 ou 3</b> sur sa capacité à deviner la réponse et dit sa proposition. Bonne réponse : <b>+10 par point misé</b>. Mauvaise : <b>−5 par point misé</b>.</li></ul><h3>⭐ Points</h3><p>Le joueur dont c'est le tour répond à voix haute et gagne <b>+10</b> (🌤️ léger), <b>+20</b> (🌗 plus profond) ou <b>+30</b> (🌊 profond) quand vous touchez <b>Répondu !</b></p><h3>🎁 Les bonus : quand les toucher</h3><p>Avant de toucher <b>Répondu !</b>, touchez chaque bonus qui s'est produit (plusieurs peuvent être activés) :</p><ul><li><b>🎯 [prénom] a deviné</b> : touchez-le quand cet ami a dit quelle serait la réponse <i>avant</i> qu'elle soit donnée, et avait raison. Il gagne <b>+20</b>. Le mieux : les autres devinent d'abord, puis le joueur répond.</li><li><b>😮 Je ne savais pas !</b> : touchez-le quand la réponse a appris aux autres quelque chose qu'ils ne savaient vraiment pas sur le joueur. Tout le monde gagne <b>+5</b>.</li><li><b>🔁 [prénom] a répondu aussi</b> (à 3 joueurs ou plus : <b>tous les autres ont répondu aussi</b>) : touchez-le quand les autres ont aussi répondu à la même question pour eux-mêmes. Ils gagnent les mêmes points que le joueur.</li></ul><p>La question ne vous plaît pas ? <b>🔄 Passer</b> la remplace par une autre du même thème. Passez autant de fois que vous voulez.</p><h3>🎆 Niveau de connexion</h3><p>Tous vos points s'additionnent dans un niveau de connexion commun. Chaque niveau gagné déclenche un feu d'artifice. <b>📖 Notre histoire</b> garde chaque question et note, et <b>🏁 Terminer</b> affiche votre bilan.</p><h3>🔮 Devine pour l'autre (option)</h3><p>À activer au début d'une histoire. Avant que le joueur réponde, tous les autres disent à voix haute ce qu'il va répondre selon eux. Ensuite, le joueur répond. Touchez <b>🎯 [prénom] a bien deviné</b> pour chaque ami qui avait raison (<b>+20</b> chacun). Si personne n'a trouvé, touchez <b>😏 Personne n'a deviné</b> : le joueur gagne <b>+10</b> pour avoir surpris tout le monde.</p><h3>🗳️ Qui de nous ? (option)</h3><p>Parfois la roue (ou le bouton 🗳️ sous l'arbre) donne un vote à la place d'une question. Comptez jusqu'à 3 et tout le monde pointe le joueur qui correspond le mieux. Tout le monde gagne <b>+5</b> pour avoir voté. Touchez le ou les joueurs qui ont eu le plus de votes (<b>+10</b> chacun), et <b>🤝 Unanimité</b> si tout le monde a pointé la même personne (<b>+5</b> chacun).</p><h3>🎭 Défis (option)</h3><p>Parfois le joueur reçoit un petit défi à la place d'une question. Touchez <b>✅ Défi réussi</b> s'il l'a fait (<b>+20</b>), et <b>😂 Tout le monde a ri</b> si ça a marché (<b>+5</b> chacun). Le défi ne plaît pas ? <b>🔄 Une autre</b> est gratuit.</p><h3>👥 Grands groupes</h3><p>À partir de 5 joueurs, la carte affiche une seule ligne <b>🎯 Qui a deviné ?</b> avec les prénoms de tout le monde. Avec <b>🎲 Joueur suivant au hasard</b>, personne ne sait qui répond ensuite. Les votes et les défis font participer tout le monde.</p><h3>🏅 Badges</h3><p>Débloquez des badges ensemble en jouant : moments profonds, bonnes devinettes, votes, défis, arbre en fleurs… Retrouvez-les avec <b>🏅 Badges</b>.</p><h3>🖼️ Partager une image</h3><p>À la fin, <b>🖼️ Partager une image</b> crée une image de votre arbre, de votre niveau et de votre meilleur moment à envoyer au groupe.</p><h3>📲 Installer l'appli</h3><p>Sur Android ou un ordinateur, touchez <b>📲 Installer l'appli</b> sur l'écran d'accueil. Sur iPhone, touchez Partager, puis <b>Sur l'écran d'accueil</b>. Elle marche ensuite sans connexion.</p><h3>💾 Sauvegarder une histoire</h3><p>Chaque groupe d'amis a sa propre histoire. Touchez <b>💾 Sauvegarder l'histoire</b> (pendant la partie ou à la fin) pour télécharger un fichier <b>.loopy</b>. La prochaine fois, touchez <b>📂 Reprendre une histoire sauvegardée</b> sur l'écran d'accueil et choisissez ce fichier : prénoms, scores, votre arbre et les questions déjà posées reviennent. Les questions déjà posées sur cet appareil, dans n'importe quelle histoire, passent en dernier : une nouvelle histoire commence avec des questions inédites.</p><h3>🥂 Premier rendez-vous</h3><p>Pour deux personnes qui se rencontrent. Les questions commencent légères et deviennent un peu plus profondes au fil de la partie, en mélangeant questions de rendez-vous et questions habituelles. Le <b>🙈 Joker</b> change la question sans rien dire, autant de fois que vous voulez. Pas de bluff, pas de pression.</p><h3>💑 Couple</h3><p>Pour deux personnes déjà ensemble : souvenirs, vous deux, l'avenir. Avant chaque réponse, l'autre devine à voix haute ce que vous allez dire : <b>🎯 a bien deviné</b> lui rapporte <b>+20</b>, et s'il s'est trompé, <b>😏 Personne n'a deviné</b> vous rapporte <b>+10</b>.</p><h3>🚗 Voiture</h3><p>Un passager tient le téléphone et touche l'écran ; le conducteur joue uniquement à la voix et ne touche jamais l'écran. Choisissez le conducteur dans les réglages. Avec <b>🔊 Lire les questions à voix haute</b>, le téléphone lit chaque question (touchez 🔊 sur la carte pour la réécouter). Questions légères et moyennes, manches rapides ; pas de défis ni de votes en voiture.</p><h3>🔥 Questions +18 (option)</h3><p>Uniquement en Premier rendez-vous et en Couple, désactivées par défaut. Elles parlent de séduction et d'intimité, de façon suggestive mais jamais explicite, et ont leurs propres cases 🔥 sur la roue. Les activer demande à tous les joueurs de confirmer qu'ils sont majeurs et d'accord. Chacun peut passer une question à tout moment. Vous les utilisez sous votre propre responsabilité : l'auteur du jeu décline toute responsabilité quant à leur usage.</p><h3>⚡ Rapidité</h3><p>Des questions courtes, les unes après les autres, un joueur après l'autre. Dès que la question s'affiche, un compte à rebours démarre (5, 10 ou 15 secondes, au choix dans les réglages) : réponds à voix haute ce qui te vient en premier, puis touche <b>Répondu !</b> Une réponse dans les temps rapporte <b>+10</b>, plus un point par seconde restante. Quand le temps est écoulé, c'est <b>trop tard</b> : pas de points, et la question suivante arrive. Les réponses à la suite dans les temps font une <b>🔥 série</b>. <b>⏸</b> met le jeu en pause, et <b>🔄 Passer</b> est gratuit.</p>",
       nQuestions: "{n} questions",
       pickOne: "Choisissez au moins un thème 🙂",
       resume: "↩︎ Reprendre {names} ({n} réponses)",
@@ -786,6 +818,7 @@
   /* Setup screen                                                       */
   /* ------------------------------------------------------------------ */
   let setupDepth = "mixed";
+  let setupTimer = 10;
   let setupGame = null;
 
   function goStep(n) {
@@ -812,6 +845,7 @@
     duel: { min: 3, best: [3, 8], why: "minThree" },
     bet: { min: 2, best: [3, 6] },
     car: { min: 2, max: 7, best: [0, 0], why: "carMax" },
+    speed: { min: 2, best: [3, 8] },
   };
   const gameAllowed = (g, n) => n >= GAME_FIT[g].min && n <= (GAME_FIT[g].max || 99);
   const gameBest = (g, n) => n >= GAME_FIT[g].best[0] && n <= GAME_FIT[g].best[1];
@@ -850,10 +884,12 @@
     $("#chosen-game").innerHTML = `<span class="mode-emoji">${GAME_EMOJI[setupGame]}</span><span><strong>${esc(t("g_" + setupGame))}</strong><small>${esc(t("g_" + setupGame + "Desc"))}</small>${fun && nP < 3 ? `<small class="warn">${esc(t("needThree"))}</small>` : ""}</span>`;
     const duo = DUO_GAMES.includes(setupGame), car = setupGame === "car";
     if (duo && nP !== 2) $("#chosen-game").querySelector("span:last-child").insertAdjacentHTML("beforeend", `<small class="warn">${esc(t("needTwo"))}</small>`);
-    $("#guess-option").hidden = fun || duo; // fun games guess their own way; the couple game always guesses
-    $("#who-option").hidden = duo || car || nP < 3; // nobody points while driving; at 2 a vote just points at the other
+    const speed = setupGame === "speed";
+    $("#guess-option").hidden = fun || duo || speed; // fun games guess their own way; the couple game always guesses
+    $("#timer-panel").hidden = !speed;
+    $("#who-option").hidden = duo || car || speed || nP < 3; // nobody points while driving; at 2 a vote just points at the other
     if ($("#who-option").hidden) $("#who-mode").checked = false;
-    $("#dare-option").hidden = duo || car; // no challenges in a car
+    $("#dare-option").hidden = duo || car || speed; // no challenges in a car, no time for them in the speed game
     $("#random-option").hidden = duo || nP < 3; // at 2, the next player is always the other one
     if ($("#random-option").hidden) $("#random-turn").checked = false;
     $("#adult-option").hidden = !duo;
@@ -862,6 +898,7 @@
     $("#depth-hint").hidden = !pace;
     if (pace) $("#depth-hint").textContent = t(pace);
     $("#depth-choice").hidden = setupGame === "date" || setupGame === "tree"; // these two set their own pace
+    $("#depth-panel").hidden = speed; // speed questions are short and light
     $('#depth-choice [data-depth="deep"]').hidden = car;
     if (car && setupDepth === "deep") $('#depth-choice [data-depth="mixed"]').click();
     if (car) renderDriverChoice();
@@ -979,6 +1016,12 @@
     });
 
     $("#guess-mode").addEventListener("change", (e) => (setupGuessMode = e.target.checked));
+    $$("#timer-choice button").forEach((b) =>
+      b.addEventListener("click", () => {
+        setupTimer = Number(b.dataset.time);
+        $$("#timer-choice button").forEach((x) => x.classList.toggle("on", x === b));
+      })
+    );
     $$("#depth-choice button").forEach((b) =>
       b.addEventListener("click", () => {
         setupDepth = b.dataset.depth;
@@ -1052,7 +1095,7 @@
   /* Game state                                                         */
   /* ------------------------------------------------------------------ */
   function newGame(players, subjects, depth, game) {
-    const mode = game === "tree" ? "tree" : "wheel";
+    const mode = game === "tree" ? "tree" : game === "speed" ? "speed" : "wheel";
     state = {
       version: 1,
       players,
@@ -1063,9 +1106,12 @@
       depth,
       mode,
       game,
-      guessMode: game === "couple" || (setupGuessMode && !FUN_GAMES.includes(game) && game !== "date"),
-      whoMode: !DUO_GAMES.includes(game) && game !== "car" && players.length > 2 && $("#who-mode").checked,
-      dareMode: !DUO_GAMES.includes(game) && game !== "car" && $("#dare-mode").checked,
+      guessMode: game === "couple" || (setupGuessMode && !FUN_GAMES.includes(game) && game !== "date" && game !== "speed"),
+      timer: game === "speed" ? setupTimer : 0,
+      streak: 0,
+      bestStreak: 0,
+      whoMode: !DUO_GAMES.includes(game) && game !== "car" && game !== "speed" && players.length > 2 && $("#who-mode").checked,
+      dareMode: !DUO_GAMES.includes(game) && game !== "car" && game !== "speed" && $("#dare-mode").checked,
       randomTurn: !DUO_GAMES.includes(game) && $("#random-turn").checked,
       adult: DUO_GAMES.includes(game) && $("#adult-mode").checked,
       driver: game === "car" ? setupDriver : -1,
@@ -1102,6 +1148,8 @@
     $$("[data-switch]").forEach((b) => b.classList.toggle("on", b.dataset.switch === mode));
     $("#view-wheel").classList.toggle("active", mode === "wheel");
     $("#view-tree").classList.toggle("active", mode === "tree");
+    $("#view-speed").classList.toggle("active", mode === "speed");
+    if (mode === "speed") renderSpeedView();
     renderTree();
     if (mode === "wheel") drawWheel();
   }
@@ -1221,6 +1269,7 @@
   // Writes the current question into the card, in the current language.
   function fillCard() {
     if (!current) return;
+    const g0 = gameOf(state);
     const { q, player: p, kind } = current;
     const s = SUBJ[q.subject];
     const who = `<b style="color:${pDark(p)}">${esc(state.players[p])}</b>`;
@@ -1235,8 +1284,8 @@
       $("#q-depth").textContent = t("darePts");
       $("#q-for").innerHTML = esc(t("dareFor", { name: "\u0000" })).replace("\u0000", who);
     } else {
-      $("#q-depth").textContent = `${t("depth" + q.depth)} · +${POINTS[q.depth]}`;
-      const key = { bluff: "bluffFor", bet: "betFor" }[current.game] || "forWho";
+      $("#q-depth").textContent = g0 === "speed" ? t("speedPts") : `${t("depth" + q.depth)} · +${POINTS[q.depth]}`;
+      const key = { bluff: "bluffFor", bet: "betFor" }[current.game] || (g0 === "speed" ? "speedFor" : "forWho");
       $("#q-for").innerHTML = esc(t(key, { name: "\u0000" })).replace("\u0000", who);
       if (current.game === "duel") {
         const r = current.rival;
@@ -1248,7 +1297,10 @@
     const joker = !kind && (g === "date" || q.subject === "__spicy");
     if (g === "car" && p === state.driver) $("#q-for").innerHTML = esc(t("driverFor", { name: "\u0000" })).replace("\u0000", who);
     $("#bonus-help").hidden = !!kind || !!current.game || g === "car";
-    $("#q-note").hidden = g === "car";
+    $("#q-note").hidden = g === "car" || g === "speed";
+    $("#pause-btn").hidden = g !== "speed";
+    $("#timer").hidden = g !== "speed";
+    if (g === "speed") $("#bonus-help").hidden = true;
     $("#speak-btn").hidden = !("speechSynthesis" in window) || g !== "car";
     $("#done-btn").disabled = false;
     renderBonuses();
@@ -1285,6 +1337,11 @@
         { key: "dare", html: `<span>${esc(t("dareDone", { name: state.players[p] }))}</span>` },
         { key: "laugh", html: `<span>${esc(t("dareLaugh"))}</span>` },
       ] });
+      return paintBonuses(groups);
+    }
+    if (gameOf(state) === "speed") {
+      // no time for guesses: only "didn't know!"
+      groups.push({ chips: [{ key: "wow", html: `😮 <span>${esc(t("wow"))}</span>` }] });
       return paintBonuses(groups);
     }
     const compact = nPlayers() >= COMPACT_FROM;
@@ -1381,6 +1438,7 @@
   }
 
   function closeCard() {
+    stopTimer();
     try { if ("speechSynthesis" in window) speechSynthesis.cancel(); } catch (e) { /* ignore */ }
     $("#card-overlay").classList.add("hidden");
     current = null;
@@ -1625,6 +1683,13 @@
     if (surprised) gained[player] += SURPRISE_POINTS;
     if (bonuses.has("wow")) gained.forEach((_, i) => (gained[i] += 5));
     if (bonuses.has("both") && !current.game) os.forEach((o) => (gained[o] += base));
+    let speedLeft = null;
+    if (gameOf(state) === "speed") {
+      speedLeft = timeLeft();
+      gained[player] += speedLeft;
+      state.streak = (state.streak || 0) + 1;
+      state.bestStreak = Math.max(state.bestStreak || 0, state.streak);
+    }
 
     const size = levelSize();
     const beforeLvl = Math.floor(state.connection / size);
@@ -1640,6 +1705,7 @@
       player, bonuses: [...bonuses], note: $("#q-note").value.trim(),
       gained, t: Date.now(),
       ...(current.game ? { game: current.game } : {}),
+      ...(speedLeft != null ? { left: speedLeft } : {}),
       ...(current.game === "bluff" ? { bluff: current.bluff } : {}),
       ...(current.game === "duel" ? { rival: current.rival } : {}),
       ...(current.game === "bet" ? { bets: current.bets } : {}),
@@ -1655,6 +1721,9 @@
     if (afterLvl > beforeLvl) {
       FX.fireworks(8);
       toast(t("levelUp", { n: afterLvl + 1 }), 3200);
+    } else if (speedLeft != null && state.streak % 5 === 0) {
+      FX.fireworks(4, ["#ffb703", "#ffd166", "#ffffff"]);
+      toast(t("streakToast", { n: state.streak }));
     } else if (q.depth === 3) {
       FX.fireworks(4, [s.color, "#ffd166", "#ffffff"]);
       toast(t("deepToast"));
@@ -1671,7 +1740,11 @@
     }
     FX.sparkleEl($(`#score-${player}`), [pHex(player), "#ffd166", "#ffffff"]);
 
-    if (state.mode === "tree") {
+    if (state.mode === "speed") {
+      renderTree();
+      renderSpeedView();
+      speedNextSoon();
+    } else if (state.mode === "tree") {
       renderTree();
       const c = counts(q.subject);
       if ((q.depth === 1 && c[1] === 2) || (q.depth === 2 && c[2] === 2)) {
@@ -1699,6 +1772,7 @@
     state.used.push(current.q.id);
     markSeen([current.q.id]);
     save();
+    if (gameOf(state) === "speed") { const old = current.q.id; closeCard(); openSpeedCard(old); return; }
     const q = drawQuestion(current.q.subject, [current.q.depth], current.q.id);
     openCard(q);
   }
@@ -1707,6 +1781,108 @@
     $("#speak-btn").addEventListener("click", speakCurrent);
     $("#done-btn").addEventListener("click", finishQuestion);
     $("#skip-btn").addEventListener("click", passQuestion);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Speed: short questions in a row, a countdown on each               */
+  /* ------------------------------------------------------------------ */
+  let timerEnd = 0, timerTick = null, speedPaused = true, speedNext = null;
+
+  // Half from the speed pack, half the shortest light questions of the chosen subjects.
+  function drawSpeed(excludeId) {
+    if (randInt(2)) {
+      const subj = pick(state.subjects);
+      const used = new Set(state.used);
+      const short = DB.questions.filter((q) => q.subject === subj && q.depth === 1 && !used.has(q.id) && q.id !== excludeId && qText(q).length <= 60);
+      if (short.length) {
+        const seen = seenSet();
+        const fresh = short.filter((q) => !seen.has(q.id));
+        return pick(fresh.length ? fresh : short);
+      }
+    }
+    return drawPool("__speed", [1], excludeId);
+  }
+
+  function openSpeedCard(excludeId) {
+    if (current) return;
+    speedPaused = false;
+    clearTimeout(speedNext);
+    openCard(drawSpeed(excludeId));
+    startTimer();
+  }
+
+  // After an answer (or a late one), the next player's question comes on its own.
+  function speedNextSoon() {
+    clearTimeout(speedNext);
+    if (speedPaused) return;
+    speedNext = setTimeout(() => {
+      if (state.mode === "speed" && !speedPaused && $("#screen-game").classList.contains("active")) openSpeedCard();
+    }, 1300);
+  }
+
+  const timeLeft = () => Math.max(0, Math.ceil((timerEnd - Date.now()) / 1000));
+
+  function startTimer() {
+    stopTimer();
+    const total = (state.timer || 10) * 1000;
+    timerEnd = Date.now() + total;
+    let lastSec = -1;
+    const tick = () => {
+      const ms = Math.max(0, timerEnd - Date.now());
+      const sec = Math.ceil(ms / 1000);
+      $("#timer-fill").style.width = `${(ms / total) * 100}%`;
+      $("#timer-num").textContent = sec;
+      $("#timer").classList.toggle("hurry", sec <= 3);
+      if (sec !== lastSec && sec <= 3 && sec > 0 && navigator.vibrate) { try { navigator.vibrate(30); } catch (e) { /* ignore */ } }
+      lastSec = sec;
+      if (ms <= 0) timeUp();
+    };
+    tick();
+    timerTick = setInterval(tick, 100);
+  }
+
+  function stopTimer() {
+    clearInterval(timerTick);
+    timerTick = null;
+  }
+
+  // Too late: no points, the streak breaks, and the next player gets a question.
+  function timeUp() {
+    stopTimer();
+    if (!current) return;
+    const { q, player } = current;
+    state.used.push(q.id);
+    markSeen([q.id]);
+    state.streak = 0;
+    state.turn = nextTurn(player);
+    save();
+    $("#card").classList.add("late");
+    $("#done-btn").disabled = true;
+    $("#skip-btn").disabled = true;
+    $("#q-for").textContent = t("tooLate");
+    if (navigator.vibrate) { try { navigator.vibrate([80, 60, 80]); } catch (e) { /* ignore */ } }
+    setTimeout(() => {
+      $("#card").classList.remove("late");
+      closeCard();
+      updateScores(false);
+      renderSpeedView();
+      speedNextSoon();
+    }, 1100);
+  }
+
+  function pauseSpeed() {
+    speedPaused = true;
+    clearTimeout(speedNext);
+    closeCard();
+    renderSpeedView();
+  }
+
+  function renderSpeedView() {
+    if (!state || state.mode !== "speed") return;
+    $("#speed-go").textContent = state.journal.length ? t("speedResume") : t("speedGo");
+    $("#speed-go").hidden = !speedPaused;
+    $("#speed-streak").textContent = `${t("speedStreak", { n: state.streak || 0 })} · ${t("speedBest", { n: state.bestStreak || 0 })}`;
+    $("#speed-time").textContent = `⏱️ ${state.timer || 10} s`;
   }
 
   /* ------------------------------------------------------------------ */
@@ -2168,7 +2344,7 @@
       if (!st.subjects.length) st.subjects = DB.subjects.map((x) => x.id);
       st.tree = st.tree || {};
       st.connection = Number(st.connection) || 0;
-      st.mode = st.mode === "tree" ? "tree" : "wheel";
+      st.mode = ["tree", "speed"].includes(st.mode) ? st.mode : "wheel";
       st.game = ALL_GAMES.includes(st.game) ? st.game : st.mode;
       st.badges = Array.isArray(st.badges) ? st.badges : [];
       st.startedAt = st.startedAt || Date.now();
@@ -2207,6 +2383,7 @@
     { id: "bluffer", emoji: "🃏", name: { en: "Poker face", fr: "Bluffeur" }, desc: { en: "Fool everyone with a bluff", fr: "Berner tout le monde avec un bluff" }, test: (st) => st.journal.some((e) => e.game === "bluff" && e.bluff && st.players.length > 1 && !e.bonuses.some((b) => b.startsWith("guess:"))) },
     { id: "champion", emoji: "🏆", name: { en: "Champion", fr: "Champion" }, desc: { en: "One player wins 3 duels", fr: "Un joueur gagne 3 duels" }, test: (st) => st.players.some((_, i) => st.journal.filter((e) => e.game === "duel" && e.bonuses.includes("win:" + i)).length >= 3) },
     { id: "jackpot", emoji: "💰", name: { en: "Jackpot", fr: "Jackpot" }, desc: { en: "Win a 3-point bet", fr: "Gagner un pari à 3 points" }, test: (st) => st.journal.some((e) => e.game === "bet" && Object.entries(e.bets || {}).some(([o, v]) => v === 3 && e.bonuses.includes("guess:" + o))) },
+    { id: "lightning", emoji: "⚡", name: { en: "Lightning", fr: "Éclair" }, desc: { en: "10 answers in a row in time", fr: "10 réponses d'affilée dans les temps" }, test: (st) => (st.bestStreak || 0) >= 10 },
     { id: "fifty", emoji: "🏔️", name: { en: "Marathon", fr: "Marathon" }, desc: { en: "Play 50 cards", fr: "Jouer 50 cartes" }, test: (st) => st.journal.length >= 50 },
   ];
 
@@ -2227,7 +2404,7 @@
     bloom: (st) => st.mode === "tree", fulltree: (st) => st.mode === "tree",
     vote: (st) => st.whoMode, unanimous: (st) => st.whoMode, daredevil: (st) => st.dareMode,
     surprise: (st) => st.guessMode, bluffer: (st) => gameOf(st) === "bluff",
-    champion: (st) => gameOf(st) === "duel", jackpot: (st) => gameOf(st) === "bet",
+    champion: (st) => gameOf(st) === "duel", lightning: (st) => gameOf(st) === "speed", jackpot: (st) => gameOf(st) === "bet",
   };
 
   function openBadges() {
@@ -2396,6 +2573,8 @@
   /* ------------------------------------------------------------------ */
   function initGame() {
     $("#spin-btn").addEventListener("click", spin);
+    $("#speed-go").addEventListener("click", () => openSpeedCard());
+    $("#pause-btn").addEventListener("click", pauseSpeed);
     $("#wheel").addEventListener("click", spin);
     $$("[data-switch]").forEach((b) => b.addEventListener("click", () => {
       if (["wheel", "tree"].includes(gameOf(state))) state.game = b.dataset.switch;
@@ -2406,8 +2585,9 @@
     $("#mini-tree").addEventListener("click", openJournal);
     $("#journal-close").addEventListener("click", () => $("#journal-overlay").classList.add("hidden"));
     $("#journal-overlay").addEventListener("click", (e) => { if (e.target.id === "journal-overlay") $("#journal-overlay").classList.add("hidden"); });
-    $("#finish-btn").addEventListener("click", showSummary);
+    $("#finish-btn").addEventListener("click", () => { speedPaused = true; clearTimeout(speedNext); showSummary(); });
     $("#home-btn").addEventListener("click", () => {
+      speedPaused = true; clearTimeout(speedNext);
       save();
       showResume(state);
       showScreen("screen-setup");
@@ -2448,7 +2628,7 @@
   // Sections of rulesBody, in order: 0 goal, 1 players, 2 starting, 3 discovery games, 4 fun games,
   // 5 points, 6 bonuses, 7 connection, 8 guess option, 9 who of us, 10 challenges, 11 big groups,
   // 12 badges, 13 share, 14 install, 15 saving.
-  const R = { goal: 0, discover: 3, fun: 4, points: 5, bonuses: 6, connection: 7, guess: 8, who: 9, dare: 10, big: 11, badges: 12, saving: 15, date: 16, couple: 17, car: 18, adult: 19 };
+  const R = { goal: 0, discover: 3, fun: 4, points: 5, bonuses: 6, connection: 7, guess: 8, who: 9, dare: 10, big: 11, badges: 12, saving: 15, date: 16, couple: 17, car: 18, adult: 19, speed: 20 };
   let rulesFull = true;
 
   function ruleSections() {
@@ -2467,6 +2647,7 @@
   function contextRules() {
     const sec = ruleSections();
     const g = gameOf(state);
+    if (g === "speed") return [sec[R.speed], sec[R.connection], sec[R.badges], sec[R.saving]].join("");
     const fun = FUN_GAMES.includes(g);
     const parts = [gameRule(sec, g), sec[R.points]];
     if (fun) parts.push(t("rulesPass"));
@@ -2518,6 +2699,7 @@
       if (state.mode === "wheel") drawWheel(); else renderTree();
     }
     if (state && $("#screen-summary").classList.contains("active")) showSummary();
+    if (state) renderSpeedView();
     renderChosenGame();
     if (!$(".step[data-step=\"2\"]").hidden) renderGameChoice();
     if (!$("#rules-overlay").classList.contains("hidden")) renderRules();
@@ -2542,7 +2724,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=15", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=16", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {
@@ -2553,7 +2735,7 @@
     DB.questions.forEach((q) => (QBYID[q.id] = q));
     Object.values(EXTRAS).forEach((x) => (SUBJ[x.id] = x));
     Object.values(POOLS).forEach((x) => (SUBJ[x.id] = x));
-    ["date", "couple", "spicy"].forEach((k) => (DB[k] || []).forEach((q) => (QBYID[q.id] = q)));
+    ["date", "couple", "spicy", "speed"].forEach((k) => (DB[k] || []).forEach((q) => (QBYID[q.id] = q)));
     (DB.who || []).forEach((q) => (QBYID[q.id] = { ...q, subject: "__who" }));
     (DB.challenges || []).forEach((q) => (QBYID[q.id] = { ...q, subject: "__dare" }));
     initSetup();
