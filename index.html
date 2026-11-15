@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=14">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -244,8 +244,11 @@
     <header class="topbar">
       <div id="scoreboard" class="scoreboard"></div>
       <div class="connection">
-        <div class="conn-label"><span data-i18n="connection">Connection</span> <span id="conn-level">Lv 1</span></div>
-        <div class="conn-bar"><div id="conn-fill"></div></div>
+        <button id="mini-tree" class="mini-tree" type="button" data-i18n-aria="treeTap" aria-label="Your tree"><svg class="tree-copy" viewBox="0 0 400 420" aria-hidden="true"></svg></button>
+        <div class="conn-main">
+          <div class="conn-label"><span data-i18n="connection">Connection</span> <span id="conn-level">Lv 1</span></div>
+          <div class="conn-bar"><div id="conn-fill"></div></div>
+        </div>
       </div>
     </header>
 
@@ -294,6 +297,14 @@
       <h1 data-i18n="summaryTitle">What a conversation! 🎉</h1>
       <p class="tagline" id="summary-tagline"></p>
     </header>
+    <section class="panel summary-tree">
+      <h2 data-i18n="ourTree">🌳 Our tree</h2>
+      <svg class="tree-copy" viewBox="0 0 400 420" aria-hidden="true"></svg>
+    </section>
+    <section class="panel">
+      <h2 data-i18n="discoveries">✨ What we learned about each other</h2>
+      <div id="summary-discoveries" class="discoveries"></div>
+    </section>
     <section class="panel stats" id="summary-stats"></section>
     <section class="panel">
       <h2 data-i18n="storySoFar">Our story so far</h2>
@@ -343,6 +354,7 @@
         <h2 id="journal-title" data-i18n="ourStory">📖 Our story</h2>
         <button id="journal-close" class="btn ghost small" type="button" data-i18n="close">Close</button>
       </div>
+      <div class="tree-box"><svg class="tree-copy" viewBox="0 0 400 420" aria-hidden="true"></svg></div>
       <ol id="journal-list" class="journal"></ol>
     </div>
   </div>
@@ -398,6 +410,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=13"></script>
+  <script src="app.js?v=14"></script>
 </body>
 </html>

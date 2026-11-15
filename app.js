@@ -25,6 +25,7 @@
   const FUN_GAMES = ["bluff", "duel", "bet"];
   const GAME_EMOJI = { wheel: "🎡", tree: "🌳", bluff: "🎭", duel: "⚔️", bet: "🎲", date: "🥂", couple: "💑", car: "🚗" };
   const DUO_GAMES = ["date", "couple"];
+  const competitive = () => FUN_GAMES.includes(gameOf(state)); // only the fun games keep a per-player score
   const ALL_GAMES = ["wheel", "tree", "bluff", "duel", "bet", "date", "couple", "car"];
   // Question pools of their own, shown with a subject chip but never on the wheel.
   const POOLS = {
@@ -90,6 +91,11 @@
       close: "Close",
       langToggle: "🇫🇷 Français",
       gamesTwo: "🥂 For two",
+      ourTree: "🌳 Our tree",
+      treeTap: "Every answer grows your tree. Tap it to see your story.",
+      discoveries: "✨ What we learned about each other",
+      aboutName: "About {name}",
+      noDiscoveries: "Next time, tap 😮 I didn't know! or write a note: your discoveries will show up here.",
       bestFor: "⭐ Ideal for {n}",
       onlyTwo: "Only for 2 players",
       minThree: "From 3 players: two duelists and a judge",
@@ -325,6 +331,11 @@
       close: "Fermer",
       langToggle: "🇬🇧 English",
       gamesTwo: "🥂 À deux",
+      ourTree: "🌳 Notre arbre",
+      treeTap: "Chaque réponse fait pousser votre arbre. Touchez-le pour revoir votre histoire.",
+      discoveries: "✨ Ce qu'on a appris les uns sur les autres",
+      aboutName: "Sur {name}",
+      noDiscoveries: "La prochaine fois, touchez 😮 Je ne savais pas ! ou écrivez une note : vos découvertes apparaîtront ici.",
       bestFor: "⭐ Idéal à {n}",
       onlyTwo: "Uniquement à 2",
       minThree: "Dès 3 joueurs : deux duellistes et un juge",
@@ -1075,14 +1086,15 @@
     $$("[data-switch]").forEach((b) => b.classList.toggle("on", b.dataset.switch === mode));
     $("#view-wheel").classList.toggle("active", mode === "wheel");
     $("#view-tree").classList.toggle("active", mode === "tree");
+    renderTree();
     if (mode === "wheel") drawWheel();
-    else renderTree();
   }
 
   function renderScoreboard() {
     const board = $("#scoreboard");
     board.innerHTML = "";
     board.classList.toggle("compact", nPlayers() >= COMPACT_FROM);
+    board.classList.toggle("no-pts", !competitive());
     state.players.forEach((name, i) => {
       const el = document.createElement("div");
       el.className = "score";
@@ -1577,8 +1589,8 @@
 
   // Redraws the current view and checks badges, after any card.
   function afterTurn() {
-    if (state.mode === "tree") renderTree();
-    else drawWheel();
+    renderTree();
+    if (state.mode !== "tree") drawWheel();
     checkBadges();
   }
 
@@ -1650,6 +1662,7 @@
         setTimeout(() => toast(t(q.depth === 1 ? "unlockLeaves" : "unlockBlooms", { s: `${s.emoji} ${sName(s)}` })), 900);
       }
     } else {
+      renderTree();
       drawWheel();
     }
     checkBadges();
@@ -1953,6 +1966,17 @@
     if (total > prevTotal) { /* new growth already animated via classes */ }
 
     renderBranchList();
+    syncTreeCopies();
+  }
+
+  // The same tree, small in the top bar and big in the story and the summary. Gradient ids get a suffix per copy
+  // (a gradient defined inside a hidden svg doesn't paint).
+  function syncTreeCopies() {
+    const src = $("#tree").innerHTML;
+    $$(".tree-copy").forEach((svg, i) => {
+      svg.innerHTML = src.replace(/id="(glow|bark|soil)"/g, `id="$1-c${i}"`).replace(/url\(#(glow|bark|soil)\)/g, `url(#$1-c${i})`);
+    });
+    $("#mini-tree").hidden = state.mode === "tree";
   }
 
   function renderBranchList() {
@@ -2017,8 +2041,24 @@
   }
 
   function openJournal() {
+    renderTree();
     $("#journal-list").innerHTML = journalHTML();
     $("#journal-overlay").classList.remove("hidden");
+  }
+
+  // What the group learned: answers marked "didn't know!" or with a note, up to 3 per player, latest first.
+  function discoveriesHTML() {
+    const found = state.journal.filter((e) => !e.kind && (e.note || e.bonuses.includes("wow")));
+    if (!found.length) return `<p class="panel-hint">${esc(t("noDiscoveries"))}</p>`;
+    return state.players.map((name, i) => {
+      const mine = found.filter((e) => e.player === i).slice(-3).reverse();
+      if (!mine.length) return "";
+      const items = mine.map((e) => {
+        const text = QBYID[e.qid] ? qText(QBYID[e.qid]) : tr(e.text);
+        return `<li>${e.bonuses.includes("wow") ? "😮 " : ""}${esc(text)}${e.note ? `<span class="j-note">“${esc(e.note)}”</span>` : ""}</li>`;
+      }).join("");
+      return `<div class="disc" style="--pc:${pHex(i)}"><h3>${esc(t("aboutName", { name }))}</h3><ul>${items}</ul></div>`;
+    }).join("");
   }
 
   function showSummary() {
@@ -2036,10 +2076,12 @@
     const lvl = Math.floor(state.connection / levelSize()) + 1;
 
     $("#summary-tagline").textContent = t("reached", { names: joinNames(state.players), n: lvl });
+    renderTree();
+    $("#summary-discoveries").innerHTML = discoveriesHTML();
     const stat = (v, l) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`;
     $("#summary-stats").innerHTML =
       stat(j.length, t("statAnswered")) +
-      state.players.map((name, i) => stat(state.scores[i], esc(name))).join("") +
+      (competitive() ? state.players.map((name, i) => stat(state.scores[i], esc(name))).join("") : "") +
       stat(deep, t("statDeep")) +
       stat(wows, t("statWow")) +
       stat(guesses, t("statGuess")) +
@@ -2333,6 +2375,7 @@
     $$("[data-switch]").forEach((b) => b.addEventListener("click", () => setMode(b.dataset.switch)));
     $("#tree-surprise").addEventListener("click", (e) => growBranch(pick(state.subjects), e.currentTarget));
     $("#journal-btn").addEventListener("click", openJournal);
+    $("#mini-tree").addEventListener("click", openJournal);
     $("#journal-close").addEventListener("click", () => $("#journal-overlay").classList.add("hidden"));
     $("#journal-overlay").addEventListener("click", (e) => { if (e.target.id === "journal-overlay") $("#journal-overlay").classList.add("hidden"); });
     $("#finish-btn").addEventListener("click", showSummary);
@@ -2465,7 +2508,7 @@
     $("#rules-overlay").addEventListener("click", (e) => { if (e.target.id === "rules-overlay") $("#rules-overlay").classList.add("hidden"); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("#rules-overlay").classList.add("hidden"); });
     try {
-      const res = await fetch("data/questions.json?v=13", { cache: "no-cache" });
+      const res = await fetch("data/questions.json?v=14", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       DB = await res.json();
     } catch (e) {

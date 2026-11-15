@@ -474,3 +474,21 @@ button { font-family: inherit; cursor: pointer; }
 .game-card.off:hover, .game-card.off:active { transform: none; }
 .game-card.off .g-players { opacity: 1; }
 .group-off h2 { opacity: .6; }
+
+/* the tree as the common thread: small in the top bar, big in the story and the summary */
+.connection { display: flex; align-items: center; gap: 10px; }
+.conn-main { flex: 1; }
+.mini-tree { flex: 0 0 auto; width: 52px; height: 54px; padding: 0; border: 0; border-radius: 14px; background: rgba(255,255,255,.08); cursor: pointer; overflow: hidden; }
+.mini-tree svg { width: 100%; height: 100%; display: block; }
+.mini-tree:active { transform: scale(.94); }
+.tree-box { background: linear-gradient(#1b1440, #43206e); border-radius: 16px; margin-top: 10px; }
+.tree-box svg, .summary-tree svg { width: 100%; max-width: 360px; display: block; margin: 0 auto; }
+.discoveries { display: flex; flex-direction: column; gap: 14px; }
+.disc h3 { margin: 0 0 6px; color: var(--pc); font-size: 1rem; }
+.disc ul { margin: 0; padding-left: 1.2em; }
+.disc li { margin-bottom: 8px; line-height: 1.35; }
+.disc .j-note { display: block; font-style: italic; opacity: .8; }
+/* outside the fun games, players have no individual score: the chips only show whose turn it is */
+.scoreboard.no-pts .pts { display: none; }
+.scoreboard.no-pts .score .who { font-size: 1rem; color: var(--text, #fff); }
+.scoreboard.no-pts .score.active .who { color: var(--pc); font-weight: 600; }
