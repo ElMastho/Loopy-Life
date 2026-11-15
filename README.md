@@ -15,6 +15,7 @@ Starting a game takes three steps: **1. Players** (or continue a saved story), *
 1. Enter the players' names (tap **+ Add a player** for groups).
 2. Pick a game:
    - To get to know each other: **🎡 The wheel** (random subject, random question) or **🌳 The tree** (every subject is a branch, from "roots" questions to "leaves" and "blooms"; every answer makes the tree grow).
+   - For a birthday, a farewell or a newcomer: **🎂 In the spotlight** (from 3 players: everyone answers questions about the person in the spotlight, who gets questions of their own).
    - For two: **🥂 First date** (questions that warm up slowly, mixing date questions with regular ones, and a free **🙈 Joker** to skip without a word) and **💑 Couple** (memories, the two of you, the future; the partner guesses each answer first).
    - Between colleagues: **☕ Coffee break** (2 to 8, light work-life questions on the wheel) and **🎤 Icebreaker** (a whole team on a shared screen, in a video call or a meeting room: one question, everyone answers in turn; the person who leads drives it from the keyboard).
    - On the road: **🚗 Car** (a passenger holds the phone, the driver answers out loud; questions can be read aloud; no challenges).

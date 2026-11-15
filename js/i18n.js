@@ -20,7 +20,13 @@ function t(key, vars = {}) {
 const tr = (v) => (v && typeof v === "object" ? v[LANG] ?? v.en : v); // bilingual field -> current language
 const sName = (s) => tr(s.name);
 const sShort = (s) => tr(s.short) || sName(s);
-const qText = (q) => tr(q.text);
+// "{name}" in a question is the person in the spotlight (the 🎂 game).
+const qText = (q) => {
+  const s = tr(q.text);
+  if (!s.includes("{name}")) return s;
+  const star = state && gameOf(state) === "honor" ? state.players[state.star] : "";
+  return s.split("{name}").join(star || t("theStar"));
+};
 
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));

@@ -37,6 +37,7 @@ const GAME_FIT = {
   speed: { min: 2, best: [3, 8] },
   coffee: { min: 2, max: 8, best: [2, 6], why: "coffeeMax" },
   team: { min: 3, best: [6, 99], why: "teamMin" },
+  honor: { min: 3, best: [4, 12], why: "minThree" },
 };
 const gameAllowed = (g, n) => n >= GAME_FIT[g].min && n <= (GAME_FIT[g].max || 99);
 const gameBest = (g, n) => n >= GAME_FIT[g].best[0] && n <= GAME_FIT[g].best[1];
@@ -100,6 +101,8 @@ function renderChosenGame() {
   $('#depth-choice [data-depth="deep"]').hidden = car || work || family;
   if ((car || work || family) && setupDepth === "deep") $('#depth-choice [data-depth="mixed"]').click();
   if (car) renderDriverChoice();
+  $("#honor-panel").hidden = setupGame !== "honor";
+  if (setupGame === "honor") renderStarChoice();
   $$(".game-card").forEach((c) => c.classList.toggle("on", c.dataset.game === setupGame));
 }
 let setupGuessMode = false;
@@ -121,6 +124,22 @@ function renderDriverChoice() {
     b.className = "driver" + (i === setupDriver ? " on" : "");
     b.textContent = i < 0 ? n : `🚗 ${n}`;
     b.addEventListener("click", () => { setupDriver = i; renderDriverChoice(); });
+    box.appendChild(b);
+  });
+}
+// 🎂 who is in the spotlight: a birthday, a farewell, a newcomer…
+let setupStar = 0;
+function renderStarChoice() {
+  const names = $$("#players-list input").map((el, i) => el.value.trim() || t("playerN", { n: i + 1 }));
+  if (setupStar >= names.length) setupStar = 0;
+  const box = $("#star-choice");
+  box.innerHTML = "";
+  names.forEach((n, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "driver" + (i === setupStar ? " on" : "");
+    b.textContent = `🎂 ${n}`;
+    b.addEventListener("click", () => { setupStar = i; renderStarChoice(); });
     box.appendChild(b);
   });
 }

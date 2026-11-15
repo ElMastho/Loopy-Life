@@ -2,7 +2,8 @@
 
 Every entry needs a unique id, a text in every language, and (for subject questions)
 the subject of its file and a depth of 1, 2 or 3. "sensitive": true (a gentle note on the card)
-and "mature": true (left out of the all-ages option) are optional. Prints a count per file.
+and "mature": true (left out of the all-ages option) are optional, and so is "star": true
+(in the spotlight pool: a question for the person in the spotlight). Prints a count per file.
 """
 import json
 import os
@@ -41,7 +42,7 @@ def check_entries(path, items, langs, subject=None, depth=False):
                 errors.append(f"{where} ({qid}): no {lang} text")
         if subject and q.get("subject") != subject:
             errors.append(f"{where} ({qid}): subject should be {subject}")
-        for flag in ("sensitive", "mature"):
+        for flag in ("sensitive", "mature", "star"):
             if flag in q and q[flag] is not True:
                 errors.append(f"{where} ({qid}): {flag} should be true or left out")
         if depth and q.get("depth") not in (1, 2, 3):

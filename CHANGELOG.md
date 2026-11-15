@@ -2,6 +2,10 @@
 
 Versions follow [semantic versioning](https://semver.org/): major.minor.patch. `python3 tools/release.py patch|minor|major` sets the next one and adds its heading here.
 
+## 1.5.0
+
+- 🎂 New game, In the spotlight (from 3 players): for a birthday, a farewell or a newcomer. Pick the person in the spotlight; about half the wheel is questions about them, which everyone else answers (a memory, what they taught you, what you wish them), and on their own turn they get 12 questions of their own. 40 new questions.
+
 ## 1.4.0
 
 - 🖼️ Souvenir picture: the story's name and date, and up to three moments (😮 surprises, 📝 notes, the deepest answers).
