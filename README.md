@@ -67,4 +67,4 @@ python3 -m http.server 8000
 
 Plain HTML, CSS and JavaScript with no build step, served by GitHub Pages from the `main` branch root.
 
-On every release, run `python3 tools/release.py <new version>`: it sets the version in `js/config.js` and `version.json` (the app compares them to offer the update), the `?v=` of every file in `index.html`, and the cache name and offline file list in `sw.js`.
+On every release, run `python3 tools/release.py patch` (a fix), `minor` (a new feature or subject) or `major` (a big change): versions follow [semantic versioning](https://semver.org/) (`1.2.0`). It sets the version in `js/config.js` and `version.json` (the app compares them to offer the update), the `?v=` of every file in `index.html`, and the cache name and offline file list in `sw.js`, and adds a heading to [`CHANGELOG.md`](CHANGELOG.md) to fill in.
