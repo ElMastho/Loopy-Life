@@ -95,7 +95,6 @@ function renderChosenGame() {
 }
 let setupGuessMode = false;
 let guessBeforeCouple = false;
-let voiceBeforeCar = false;
 function setGuessMode(on) {
   setupGuessMode = on;
   $("#guess-mode").checked = on;
@@ -243,11 +242,9 @@ function initSetup() {
       if (card.classList.contains("off")) { FX.sparkleEl(card.querySelector(".g-players"), ["#ff9aa2", "#ffffff"]); return; }
       const was = setupGame;
       setupGame = card.dataset.game;
-      // The couple game starts with "guess for each other" on, the car with "read aloud"; both can be turned off.
+      // The couple game starts with "guess for each other" on; it can be turned off.
       if (setupGame === "couple" && was !== "couple") { guessBeforeCouple = setupGuessMode; setGuessMode(true); }
       else if (setupGame !== "couple" && was === "couple") setGuessMode(guessBeforeCouple);
-      if (setupGame === "car" && was !== "car") { voiceBeforeCar = $("#voice-mode").checked; $("#voice-mode").checked = true; }
-      else if (setupGame !== "car" && was === "car") $("#voice-mode").checked = voiceBeforeCar;
       FX.sparkleEl(card);
       goStep(3);
     })

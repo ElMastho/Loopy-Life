@@ -40,7 +40,7 @@ function fillCard() {
   $("#pause-btn").hidden = g !== "speed";
   $("#timer").hidden = g !== "speed";
   if (g === "speed") $("#bonus-help").hidden = true;
-  $("#speak-btn").hidden = !state.voice;
+  $("#speak-btn").hidden = !("speechSynthesis" in window); // read on demand in every game; the option reads each question on its own
   $("#done-btn").disabled = false;
   renderBonuses();
   if (!kind && g === "date" && !state.guessMode) { const step = $("#guess-step"); step.hidden = false; step.textContent = t("dateStep"); }
