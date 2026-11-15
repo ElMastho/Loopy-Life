@@ -10,6 +10,7 @@ function journalBy(j) {
   return j.kind === "who" ? t("allVoted") : j.kind === "dare" ? t("dareBy", { name: state.players[j.player] })
     : j.game === "duel" ? t("duelBy", { a: state.players[j.player], b: state.players[j.rival] })
     : j.game === "bluff" ? t("bluffBy", { name: t("answeredBy", { name: state.players[j.player] }), x: t(j.bluff ? "bluffLieShort" : "bluffTruthShort") })
+    : j.game === "team" ? t("teamBy", { names: joinNames((j.answered || []).map((i) => state.players[i])) })
     : t("answeredBy", { name: state.players[j.player] });
 }
 
@@ -141,7 +142,7 @@ function loadStoryFile(file) {
     if (!st.subjects.length) st.subjects = DB.subjects.map((x) => x.id);
     st.tree = st.tree || {};
     st.connection = Number(st.connection) || 0;
-    st.mode = ["tree", "speed"].includes(st.mode) ? st.mode : "wheel";
+    st.mode = ["tree", "speed", "team"].includes(st.mode) ? st.mode : "wheel";
     st.game = ALL_GAMES.includes(st.game) ? st.game : st.mode;
     st.badges = Array.isArray(st.badges) ? st.badges : [];
     st.startedAt = st.startedAt || Date.now();

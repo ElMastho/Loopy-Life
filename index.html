@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=1.0.0">
+  <link rel="stylesheet" href="style.css?v=1.1.0">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -131,6 +131,24 @@
           </button>
         </div>
         </div>
+        <div class="game-group" data-group="work">
+        <h2 data-i18n="gamesWork">💼 Between colleagues</h2>
+        <p class="group-note" hidden></p>
+        <div class="games">
+          <button class="game-card" data-game="coffee" type="button">
+            <span class="mode-emoji">☕</span>
+            <strong data-i18n="g_coffee"></strong>
+            <small data-i18n="g_coffeeDesc"></small>
+            <span class="g-players" data-i18n="g_coffeePlayers"></span>
+          </button>
+          <button class="game-card" data-game="team" type="button">
+            <span class="mode-emoji">🎤</span>
+            <strong data-i18n="g_team"></strong>
+            <small data-i18n="g_teamDesc"></small>
+            <span class="g-players" data-i18n="g_teamPlayers"></span>
+          </button>
+        </div>
+        </div>
         <div class="game-group" data-group="road">
         <h2 data-i18n="gamesRoad">🚗 On the road</h2>
         <p class="group-note" hidden></p>
@@ -185,6 +203,16 @@
           <button type="button" data-time="10">⚡ 10 s</button>
           <button type="button" data-time="15" class="on">15 s</button>
           <button type="button" data-time="20">🐢 20 s</button>
+        </div>
+      </section>
+
+      <section class="panel" id="team-timer-panel" hidden>
+        <h2 data-i18n="teamTimerTitle">⏱️ Time per person</h2>
+        <p class="panel-hint" data-i18n="teamTimerHint"></p>
+        <div class="segmented" id="team-timer-choice">
+          <button type="button" data-time="0" class="on" data-i18n="teamTimerOff">None</button>
+          <button type="button" data-time="30">30 s</button>
+          <button type="button" data-time="60">60 s</button>
         </div>
       </section>
 
@@ -304,6 +332,37 @@
         <button id="speed-go" class="speed-go" type="button">⚡ GO!</button>
         <p class="speed-streak" id="speed-streak"></p>
         <p class="hint" data-i18n="speedReady">Ready?</p>
+      </div>
+    </section>
+
+    <!-- Icebreaker view: one question for everyone, on a shared screen -->
+    <section id="view-team" class="view">
+      <div class="team-start" id="team-start">
+        <p class="hint" data-i18n="teamReady">The person who leads shares this screen.</p>
+        <button id="team-go" class="btn primary big" type="button" data-i18n="teamGo">🎤 First question</button>
+      </div>
+      <div class="team-stage" id="team-stage" hidden>
+        <div class="team-card" id="team-card">
+          <div class="team-top">
+            <span class="chip" id="team-subject"></span>
+            <span class="team-progress" id="team-progress"></span>
+          </div>
+          <p class="team-q" id="team-q"></p>
+          <p class="team-for" id="team-for"></p>
+          <div class="team-timer" id="team-timer" hidden><div class="team-timer-bar"><div id="team-timer-fill"></div></div><span id="team-timer-num"></span></div>
+        </div>
+        <div class="team-names" id="team-names"></div>
+        <div class="team-controls">
+          <button id="team-prev" class="btn ghost" type="button" aria-label="←">◀</button>
+          <button id="team-skip" class="btn ghost" type="button" data-i18n="teamSkip">🙊 Pass</button>
+          <button id="team-answered" class="btn primary" type="button" data-i18n="teamAnswered">✅ Answered · next</button>
+        </div>
+        <div class="team-controls">
+          <button id="team-new" class="btn ghost" type="button" data-i18n="teamNew">🔄 Another question</button>
+          <button id="team-speak" class="btn ghost" type="button" data-i18n-aria="readAloud" aria-label="Read aloud">🔊</button>
+          <button id="team-full" class="btn ghost" type="button" data-i18n="teamFull">⛶ Full screen</button>
+        </div>
+        <p class="hint team-keys" data-i18n="teamKeys"></p>
       </div>
     </section>
 
@@ -480,28 +539,29 @@
   <div id="toast" class="toast" aria-live="polite"></div>
 
   <!-- the game, in load order (see js/README.md) -->
-  <script src="js/config.js?v=1.0.0"></script>
-  <script src="js/i18n.js?v=1.0.0"></script>
-  <script src="js/i18n/en.js?v=1.0.0"></script>
-  <script src="js/i18n/fr.js?v=1.0.0"></script>
-  <script src="js/state.js?v=1.0.0"></script>
-  <script src="js/helpers.js?v=1.0.0"></script>
-  <script src="js/storage.js?v=1.0.0"></script>
-  <script src="js/fx.js?v=1.0.0"></script>
-  <script src="js/setup.js?v=1.0.0"></script>
-  <script src="js/game.js?v=1.0.0"></script>
-  <script src="js/card.js?v=1.0.0"></script>
-  <script src="js/turns.js?v=1.0.0"></script>
-  <script src="js/speed.js?v=1.0.0"></script>
-  <script src="js/wheel.js?v=1.0.0"></script>
-  <script src="js/tree.js?v=1.0.0"></script>
-  <script src="js/journal.js?v=1.0.0"></script>
-  <script src="js/stories.js?v=1.0.0"></script>
-  <script src="js/badges.js?v=1.0.0"></script>
-  <script src="js/share.js?v=1.0.0"></script>
-  <script src="js/install.js?v=1.0.0"></script>
-  <script src="js/rules.js?v=1.0.0"></script>
-  <script src="js/update.js?v=1.0.0"></script>
-  <script src="js/main.js?v=1.0.0"></script>
+  <script src="js/config.js?v=1.1.0"></script>
+  <script src="js/i18n.js?v=1.1.0"></script>
+  <script src="js/i18n/en.js?v=1.1.0"></script>
+  <script src="js/i18n/fr.js?v=1.1.0"></script>
+  <script src="js/state.js?v=1.1.0"></script>
+  <script src="js/helpers.js?v=1.1.0"></script>
+  <script src="js/storage.js?v=1.1.0"></script>
+  <script src="js/fx.js?v=1.1.0"></script>
+  <script src="js/setup.js?v=1.1.0"></script>
+  <script src="js/game.js?v=1.1.0"></script>
+  <script src="js/card.js?v=1.1.0"></script>
+  <script src="js/turns.js?v=1.1.0"></script>
+  <script src="js/speed.js?v=1.1.0"></script>
+  <script src="js/team.js?v=1.1.0"></script>
+  <script src="js/wheel.js?v=1.1.0"></script>
+  <script src="js/tree.js?v=1.1.0"></script>
+  <script src="js/journal.js?v=1.1.0"></script>
+  <script src="js/stories.js?v=1.1.0"></script>
+  <script src="js/badges.js?v=1.1.0"></script>
+  <script src="js/share.js?v=1.1.0"></script>
+  <script src="js/install.js?v=1.1.0"></script>
+  <script src="js/rules.js?v=1.1.0"></script>
+  <script src="js/update.js?v=1.1.0"></script>
+  <script src="js/main.js?v=1.1.0"></script>
 </body>
 </html>
