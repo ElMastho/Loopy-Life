@@ -151,7 +151,7 @@ function nextTurn(player) {
 
 // Picks a vote or a challenge not used in this story, preferring ones never seen on this device.
 function drawExtra(kind, excludeId) {
-  let list = kind === "who" ? DB.who || [] : DB.challenges || [];
+  let list = (kind === "who" ? DB.who || [] : DB.challenges || []).filter(allowedQ);
   if (kind === "who" && isWorkGame(gameOf(state))) list = list.filter((x) => !WHO_NOT_AT_WORK.includes(x.id));
   const used = new Set(state.used);
   let pool = list.filter((x) => !used.has(x.id) && x.id !== excludeId);
@@ -339,4 +339,8 @@ function initCard() {
   $("#speak-btn").addEventListener("click", speakCurrent);
   $("#done-btn").addEventListener("click", finishQuestion);
   $("#skip-btn").addEventListener("click", passQuestion);
+  $("#like-btn").addEventListener("click", () => rateCurrent(1));
+  $("#dislike-btn").addEventListener("click", () => rateCurrent(-1));
+  $("#follow-btn").addEventListener("click", followUp);
+  $("#ratings-export").addEventListener("click", exportRatings);
 }

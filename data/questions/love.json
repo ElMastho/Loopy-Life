@@ -29,7 +29,7 @@
   {"id": "love-028", "subject": "love", "depth": 2, "text": {"en": "What's a relationship pattern you've noticed in yourself?", "fr": "Quel schéma remarques-tu chez toi dans tes relations ?"}},
   {"id": "love-029", "subject": "love", "depth": 3, "text": {"en": "What's your biggest fear when it comes to love?", "fr": "Quelle est ta plus grande peur en amour ?"}},
   {"id": "love-030", "subject": "love", "depth": 3, "text": {"en": "Have you ever had your heart truly broken? How did you heal?", "fr": "As-tu déjà eu le cœur vraiment brisé ? Comment t'en es-tu remis ?"}},
-  {"id": "love-031", "subject": "love", "depth": 3, "text": {"en": "What's something you've never forgiven in love, or never forgiven yourself for?", "fr": "Qu'est-ce que tu n'as jamais pardonné en amour, ou jamais pardonné à toi-même ?"}},
+  {"id": "love-031", "subject": "love", "depth": 3, "text": {"en": "What's something you've never forgiven in love, or never forgiven yourself for?", "fr": "Qu'est-ce que tu n'as jamais pardonné en amour, ou jamais pardonné à toi-même ?"}, "sensitive": true},
   {"id": "love-032", "subject": "love", "depth": 3, "text": {"en": "When have you felt the most loved in your entire life?", "fr": "Quand t'es-tu senti le plus aimé de toute ta vie ?"}},
   {"id": "love-033", "subject": "love", "depth": 3, "text": {"en": "What do you think makes you hard to love, and what makes you easy to love?", "fr": "Qu'est-ce qui te rend difficile à aimer, et qu'est-ce qui te rend facile à aimer ?"}},
   {"id": "love-034", "subject": "love", "depth": 3, "text": {"en": "Is there someone you still think about who you never told how you felt?", "fr": "Y a-t-il quelqu'un à qui tu penses encore et à qui tu n'as jamais dit ce que tu ressentais ?"}},

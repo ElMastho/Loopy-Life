@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=1.2.0">
+  <link rel="stylesheet" href="style.css?v=1.3.0">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -244,6 +244,14 @@
             <small data-i18n="adultDesc"></small>
           </span>
         </label>
+        <label class="option-row" for="family-mode" id="family-option">
+          <input id="family-mode" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+          <span class="option-text">
+            <strong data-i18n="familyTitle"></strong>
+            <small data-i18n="familyDesc"></small>
+          </span>
+        </label>
         <label class="option-row" for="guess-mode" id="guess-option">
           <input id="guess-mode" type="checkbox">
           <span class="switch" aria-hidden="true"></span>
@@ -438,6 +446,15 @@
       <div class="timer" id="timer" hidden><div class="timer-bar"><div id="timer-fill"></div></div><span id="timer-num">10</span></div>
       <p class="for-who" id="q-for">For …</p>
       <p class="q-text" id="q-text">Question</p>
+      <p class="q-sens" id="q-sens" data-i18n="sensitiveNote" hidden></p>
+      <div class="q-tools" id="q-tools">
+        <button class="q-follow" id="follow-btn" type="button" data-i18n="followBtn">💬 Follow-up</button>
+        <span class="q-follow-text" id="follow-text" aria-live="polite"></span>
+        <span class="q-rate">
+          <button class="rate-btn" id="like-btn" type="button" data-i18n-aria="likeQ" aria-label="Good question">👍</button>
+          <button class="rate-btn" id="dislike-btn" type="button" data-i18n-aria="dislikeQ" aria-label="Not for us">👎</button>
+        </span>
+      </div>
 
       <p class="guess-step" id="guess-step" hidden></p>
       <div class="bonus-row" id="bonus-row"></div>
@@ -532,6 +549,7 @@
         <button id="upd-close" class="btn ghost" type="button" data-i18n="close">Close</button>
         <button id="upd-force" class="btn primary" type="button" data-i18n="updForce">🔄 Force the update</button>
       </div>
+      <p class="upd-ratings"><span id="ratings-count"></span> <button id="ratings-export" class="link" type="button" data-i18n="ratingsExport">📤 Save my ratings</button></p>
     </div>
   </div>
   <div id="update-banner" class="update-banner" role="status" hidden>
@@ -555,30 +573,30 @@
   <div id="toast" class="toast" aria-live="polite"></div>
 
   <!-- the game, in load order (see js/README.md) -->
-  <script src="js/config.js?v=1.2.0"></script>
-  <script src="js/i18n.js?v=1.2.0"></script>
-  <script src="js/i18n/en.js?v=1.2.0"></script>
-  <script src="js/i18n/fr.js?v=1.2.0"></script>
-  <script src="js/state.js?v=1.2.0"></script>
-  <script src="js/helpers.js?v=1.2.0"></script>
-  <script src="js/storage.js?v=1.2.0"></script>
-  <script src="js/fx.js?v=1.2.0"></script>
-  <script src="js/setup.js?v=1.2.0"></script>
-  <script src="js/game.js?v=1.2.0"></script>
-  <script src="js/card.js?v=1.2.0"></script>
-  <script src="js/turns.js?v=1.2.0"></script>
-  <script src="js/speed.js?v=1.2.0"></script>
-  <script src="js/team.js?v=1.2.0"></script>
-  <script src="js/wheel.js?v=1.2.0"></script>
-  <script src="js/tree.js?v=1.2.0"></script>
-  <script src="js/journal.js?v=1.2.0"></script>
-  <script src="js/stories.js?v=1.2.0"></script>
-  <script src="js/badges.js?v=1.2.0"></script>
-  <script src="js/share.js?v=1.2.0"></script>
-  <script src="js/install.js?v=1.2.0"></script>
-  <script src="js/rules.js?v=1.2.0"></script>
-  <script src="js/update.js?v=1.2.0"></script>
-  <script src="js/devices.js?v=1.2.0"></script>
-  <script src="js/main.js?v=1.2.0"></script>
+  <script src="js/config.js?v=1.3.0"></script>
+  <script src="js/i18n.js?v=1.3.0"></script>
+  <script src="js/i18n/en.js?v=1.3.0"></script>
+  <script src="js/i18n/fr.js?v=1.3.0"></script>
+  <script src="js/state.js?v=1.3.0"></script>
+  <script src="js/helpers.js?v=1.3.0"></script>
+  <script src="js/storage.js?v=1.3.0"></script>
+  <script src="js/fx.js?v=1.3.0"></script>
+  <script src="js/setup.js?v=1.3.0"></script>
+  <script src="js/game.js?v=1.3.0"></script>
+  <script src="js/card.js?v=1.3.0"></script>
+  <script src="js/turns.js?v=1.3.0"></script>
+  <script src="js/speed.js?v=1.3.0"></script>
+  <script src="js/team.js?v=1.3.0"></script>
+  <script src="js/wheel.js?v=1.3.0"></script>
+  <script src="js/tree.js?v=1.3.0"></script>
+  <script src="js/journal.js?v=1.3.0"></script>
+  <script src="js/stories.js?v=1.3.0"></script>
+  <script src="js/badges.js?v=1.3.0"></script>
+  <script src="js/share.js?v=1.3.0"></script>
+  <script src="js/install.js?v=1.3.0"></script>
+  <script src="js/rules.js?v=1.3.0"></script>
+  <script src="js/update.js?v=1.3.0"></script>
+  <script src="js/devices.js?v=1.3.0"></script>
+  <script src="js/main.js?v=1.3.0"></script>
 </body>
 </html>

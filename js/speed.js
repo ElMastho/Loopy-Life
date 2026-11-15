@@ -12,7 +12,7 @@ function drawSpeed(excludeId) {
   if (randInt(2)) {
     const subj = pick(state.subjects);
     const used = new Set(state.used);
-    const short = DB.questions.filter((q) => q.subject === subj && q.depth === 1 && !used.has(q.id) && q.id !== excludeId && qText(q).length <= 60);
+    const short = DB.questions.filter((q) => q.subject === subj && q.depth === 1 && allowedQ(q) && !used.has(q.id) && q.id !== excludeId && qText(q).length <= 60);
     if (short.length) {
       const seen = seenSet();
       const fresh = short.filter((q) => !seen.has(q.id));

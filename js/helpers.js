@@ -18,6 +18,26 @@ function randInt(n) {
 const pick = (arr) => arr[randInt(arr.length)];
 
 // Questions already asked on this device, in any story. New draws prefer the others.
+// Questions rated on this device: 1 = liked, -1 = "not for us" (never drawn again here).
+const RATINGS_KEY = "loopy-ratings-v1";
+function ratings() {
+  try { return JSON.parse(localStorage.getItem(RATINGS_KEY) || "{}") || {}; } catch (e) { return {}; }
+}
+function rate(id, value) {
+  const r = ratings();
+  if (r[id] === value) delete r[id]; else r[id] = value;
+  try { localStorage.setItem(RATINGS_KEY, JSON.stringify(r)); } catch (e) { /* ignore */ }
+  return r[id] || 0;
+}
+// Can this question come up in the current story? Not if it was rated "not for us",
+// nor, in an all-ages game, if it is too heavy or too grown-up for children.
+function allowedQ(q) {
+  if (!q) return false;
+  if (ratings()[q.id] === -1) return false;
+  if (state && state.family && (q.sensitive || q.mature || q.depth === 3 || FAMILY_OFF_SUBJECTS.includes(q.subject))) return false;
+  return true;
+}
+
 const SEEN_KEY = "loopy-seen-v1";
 function seenSet() {
   try { return new Set(JSON.parse(localStorage.getItem(SEEN_KEY) || "[]")); } catch (e) { return new Set(); }
