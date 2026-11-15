@@ -28,6 +28,7 @@ function newGame(players, subjects, depth, game) {
     dareMode: !["car", "speed", "coffee", "team"].includes(game) && $("#dare-mode").checked,
     randomTurn: !DUO_GAMES.includes(game) && $("#random-turn").checked,
     adult: DUO_GAMES.includes(game) && $("#adult-mode").checked,
+    family: !FAMILY_GAMES_OFF.includes(game) && $("#family-mode").checked,
     driver: game === "car" ? setupDriver : -1,
     voice: $("#voice-mode").checked && "speechSynthesis" in window,
     badges: [],
@@ -131,7 +132,7 @@ function depthsFor(pref) {
 
 function unusedIn(subjectId) {
   const used = new Set(state.used);
-  return DB.questions.filter((q) => q.subject === subjectId && !used.has(q.id));
+  return DB.questions.filter((q) => q.subject === subjectId && !used.has(q.id) && allowedQ(q));
 }
 
 function recycle(subjectId) {
@@ -142,7 +143,7 @@ function recycle(subjectId) {
 
 // A question from one of the date / couple / +18 pools, not used in this story if possible.
 function drawPool(poolId, depths, excludeId) {
-  let list = DB[POOL_KEY[poolId]] || [];
+  let list = (DB[POOL_KEY[poolId]] || []).filter(allowedQ);
   if (poolId === "__spicy") list = list.filter((q) => q.modes.includes(gameOf(state)));
   const used = new Set(state.used);
   let pool = list.filter((q) => !used.has(q.id) && q.id !== excludeId);

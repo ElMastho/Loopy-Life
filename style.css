@@ -631,3 +631,15 @@ button { font-family: inherit; cursor: pointer; }
   #card .q-text { font-size: clamp(1.8rem, 2.6vw, 2.5rem); }
   #card .for-who { font-size: 1.15rem; }
 }
+
+/* ---------- the card: sensitive note, follow-up, rating ---------- */
+.q-sens { margin: -6px 0 10px; font-size: .88rem; color: #8a5a00; background: #fff3cf; border-radius: 12px; padding: 6px 10px; }
+.q-tools { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: -4px 0 12px; }
+.q-follow { border: none; background: #efe6fa; color: #4a3570; border-radius: 999px; padding: 5px 11px; font-size: .85rem; }
+.q-follow-text { flex: 1 1 140px; font-size: .95rem; font-weight: 600; color: #5b3fa0; font-style: italic; }
+.q-follow-text:empty { flex: 1 1 0; }
+.q-rate { display: inline-flex; gap: 4px; margin-left: auto; }
+.rate-btn { border: 2px solid transparent; background: transparent; border-radius: 999px; font-size: 1rem; padding: 2px 7px; opacity: .55; filter: grayscale(.6); transition: all .2s; }
+.rate-btn:hover { opacity: .9; }
+.rate-btn.on { opacity: 1; filter: none; border-color: #c9b6ec; background: #fff; }
+.upd-ratings { font-size: .85rem; color: #6b5a8e; text-align: center; margin: 12px 0 0; }

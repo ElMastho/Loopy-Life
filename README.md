@@ -10,7 +10,7 @@ It is the first seed of **Loopy Life**, the life-organization extension of Loopy
 
 ## How to play
 
-Starting a game takes three steps: **1. Players** (or continue a saved story), **2. Game**, **3. Settings** (subjects, depth and the options that fit that game).
+Starting a game takes three steps: **1. Players** (or continue a saved story), **2. Game**, **3. Settings** (subjects, depth and, folded under Options, what fits that game). In a hurry, **⚡ Play now** on step 1 starts the wheel with every subject.
 
 1. Enter the players' names (tap **+ Add a player** for groups).
 2. Pick a game:
@@ -32,7 +32,10 @@ Starting a game takes three steps: **1. Players** (or continue a saved story), *
 8. Option **🎭 Challenges** (off by default): sometimes a small challenge instead of a question. +20 when done, +5 each if everyone laughed. "Another one" is free.
 9. Option **🎲 Random next player**: nobody knows who answers next. From 5 players the card shows a single "Who guessed it?" row of names and the scoreboard scrolls sideways.
 10. **🏅 Badges**: 19 badges to unlock together during a story (saved in the `.loopy` file).
-11. **Our story** keeps every question you answered and your notes. **Finish** shows a summary, a **🖼️ Share a picture** image (tree, level, best moment) and a text version.
+11. On every card: **💬 Follow-up** suggests a way to go further on the same question, **💛** marks a sensitive question (passing is always fine), **👍 / 👎** rate it on this device (👎 never brings it back there).
+12. Option **👨‍👩‍👧 All ages**: light or medium questions only, no love subject and no heavy or grown-up question, for a table with children.
+13. On a tablet, 🔃 turns the card for the person across; on a computer, full screen and keyboard shortcuts; 🔠 sets the text size.
+14. **Our story** keeps every question you answered and your notes. **Finish** shows a summary, a **🖼️ Share a picture** image (tree, level, best moment) and a text version.
 
 The site can be installed as an app (📲 button on Android and computers, Share > Add to Home Screen on iPhone) and then works offline.
 
@@ -44,7 +47,7 @@ Each group of friends can keep its own story: **💾 Save the story** downloads 
 
 The questions live in [`data/`](data/), one file per subject and per kind, so a subject can be read and extended on its own:
 
-- [`data/subjects.json`](data/subjects.json): the languages, the list of pools and the 19 subjects (name, emoji, colour).
+- [`data/subjects.json`](data/subjects.json): the languages, the list of pools and the 24 subjects (name, emoji, colour).
 - `data/questions/<subject>.json`: that subject's questions (nearly 1,000 in all), each with a depth from 1 (light) to 3 (deep).
 - `data/pools/`: `date`, `couple`, `spicy` (+18), `speed` and `work` (between colleagues) questions, the `who` votes and the `challenges`.
 
@@ -54,7 +57,7 @@ Each file is a list with one entry per line:
 {"id": "family-001", "subject": "family", "depth": 1, "text": {"en": "How many people are in your family, and who are they?", "fr": "Combien de personnes compte ta famille, et qui sont-elles ?"}}
 ```
 
-To add questions, add lines with a unique `id`, the file's `subject`, a `depth` of 1, 2 or 3 and the text in both languages, then run `python3 tools/check_data.py` (unique ids, both languages, depths). A new subject is a new file plus an entry in `subjects.json`.
+To add questions, add lines with a unique `id`, the file's `subject`, a `depth` of 1, 2 or 3 and the text in both languages, then run `python3 tools/check_data.py` (unique ids, both languages, depths). Optional flags: `"sensitive": true` (a gentle note on the card) and `"mature": true` (left out of the all-ages option). A new subject is a new file plus an entry in `subjects.json`.
 
 ## The code
 

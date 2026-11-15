@@ -2,6 +2,15 @@
 
 Versions follow [semantic versioning](https://semver.org/): major.minor.patch. `python3 tools/release.py patch|minor|major` sets the next one and adds its heading here.
 
+## 1.3.0
+
+- Five new subjects, 140 questions: 🎬 Pop culture, ⚽ Sport & movement, 💰 Money & spending, 🍋 The five senses, 🌟 What matters (1,560 questions and votes in all).
+- 💬 Follow-up on every card: a way to go further on the same question (why, an example, the story behind it).
+- 💛 Sensitive questions (grief, heartbreak, shame…) say that passing is always fine.
+- 👍 / 👎 on every card, kept on the device: 👎 replaces the question and never brings it back there. The version panel can save the ratings to a file.
+- 👨‍👩‍👧 All ages option: light or medium questions only, no love subject, no heavy or grown-up question.
+- 24 near-duplicate questions rewritten (the speed, date and couple pools no longer repeat the subjects).
+
 ## 1.2.0
 
 - ⚡ Play now: from step 1, the wheel with every subject, nothing to set (suggested on a first visit).

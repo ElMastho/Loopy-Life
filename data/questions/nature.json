@@ -22,7 +22,7 @@
   {"id": "nature-021", "subject": "nature", "depth": 2, "text": {"en": "Which season matches your mood these days?", "fr": "Quelle saison correspond à ton humeur en ce moment ?"}},
   {"id": "nature-022", "subject": "nature", "depth": 2, "text": {"en": "When did you last feel tiny in front of nature?", "fr": "Quand t'es-tu senti tout petit face à la nature pour la dernière fois ?"}},
   {"id": "nature-023", "subject": "nature", "depth": 2, "text": {"en": "Do you think animals have feelings like ours?", "fr": "Penses-tu que les animaux ont des émotions comme les nôtres ?"}},
-  {"id": "nature-024", "subject": "nature", "depth": 2, "text": {"en": "Is there an animal you were really sad to lose? Tell me about it.", "fr": "Y a-t-il un animal que tu as eu beaucoup de peine à perdre ? Raconte-moi."}},
+  {"id": "nature-024", "subject": "nature", "depth": 2, "text": {"en": "Is there an animal you were really sad to lose? Tell me about it.", "fr": "Y a-t-il un animal que tu as eu beaucoup de peine à perdre ? Raconte-moi."}, "sensitive": true},
   {"id": "nature-025", "subject": "nature", "depth": 2, "text": {"en": "What would you grow if you had a big garden?", "fr": "Que ferais-tu pousser si tu avais un grand jardin ?"}},
   {"id": "nature-026", "subject": "nature", "depth": 2, "text": {"en": "Which patch of nature from your childhood has changed or disappeared?", "fr": "Quel coin de nature de ton enfance a changé ou disparu ?"}},
   {"id": "nature-027", "subject": "nature", "depth": 2, "text": {"en": "Which animal behavior seems very human to you?", "fr": "Quel comportement animal te paraît très humain ?"}},

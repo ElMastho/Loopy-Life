@@ -3,7 +3,7 @@
 "use strict";
 
 const STORAGE_KEY = "loopy-know-each-other-v1";
-const APP_VERSION = "1.2.0"; // semantic version (major.minor.patch); set by tools/release.py with version.json
+const APP_VERSION = "1.3.0"; // semantic version (major.minor.patch); set by tools/release.py with version.json
 const POINTS = { 1: 10, 2: 20, 3: 30 };
 const LEVEL_UP = 100; // connection points per level
 const PASSES = 3;
@@ -26,9 +26,12 @@ const DUO_GAMES = ["date", "couple"];
 const competitive = () => FUN_GAMES.includes(gameOf(state)); // only the fun games keep a per-player score
 const ALL_GAMES = ["wheel", "tree", "bluff", "duel", "bet", "date", "couple", "car", "speed", "coffee", "team"];
 // Between colleagues: light and medium questions only, from the work pack and a few safe subjects.
+// With children (the all-ages option): love stays out, and so do the date, couple and +18 pools.
+const FAMILY_OFF_SUBJECTS = ["love", "__date", "__couple", "__spicy"];
+const FAMILY_GAMES_OFF = ["date", "couple", "coffee", "team"];
 const WORK_GAMES = ["coffee", "team"];
 const isWorkGame = (g) => WORK_GAMES.includes(g);
-const WORK_SUBJECTS = ["passions", "tastes", "travel", "daily", "personality", "humor", "future", "fantasy", "nature", "imagination", "whatif"];
+const WORK_SUBJECTS = ["passions", "tastes", "travel", "daily", "personality", "humor", "future", "fantasy", "nature", "imagination", "whatif", "popculture", "sport", "senses"];
 const WHO_NOT_AT_WORK = ["who-016", "who-018", "who-024", "who-049", "who-053"]; // votes that are too personal between colleagues
 const TEAM_TIMES = [0, 30, 60]; // seconds per person in the icebreaker (0: no countdown)
 const SPEED_TIMES = [10, 15, 20]; // seconds to answer in the speed game

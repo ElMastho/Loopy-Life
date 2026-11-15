@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "languages": ["en", "fr"],
   "pools": ["who", "challenges", "date", "couple", "spicy", "speed", "work"],
   "subjects": [
@@ -21,6 +21,11 @@
     {"id": "fantasy", "name": {"en": "Fantasy & magic", "fr": "Fantastique & magie"}, "short": {"en": "Fantasy", "fr": "Fantastique"}, "emoji": "🐉", "color": "#5e60ce"},
     {"id": "nature", "name": {"en": "Nature & animals", "fr": "Nature & animaux"}, "short": {"en": "Nature", "fr": "Nature"}, "emoji": "🌿", "color": "#52b788"},
     {"id": "humor", "name": {"en": "Laughs & stories", "fr": "Fous rires & anecdotes"}, "short": {"en": "Laughs", "fr": "Fous rires"}, "emoji": "😂", "color": "#f4a300"},
-    {"id": "future", "name": {"en": "Tomorrow's world", "fr": "Le monde de demain"}, "short": {"en": "Tomorrow", "fr": "Demain"}, "emoji": "🛸", "color": "#00b4d8"}
+    {"id": "future", "name": {"en": "Tomorrow's world", "fr": "Le monde de demain"}, "short": {"en": "Tomorrow", "fr": "Demain"}, "emoji": "🛸", "color": "#00b4d8"},
+    {"id": "popculture", "name": {"en": "Pop culture", "fr": "Culture pop"}, "short": {"en": "Pop", "fr": "Pop"}, "emoji": "🎬", "color": "#d6336c"},
+    {"id": "sport", "name": {"en": "Sport & movement", "fr": "Sport & mouvement"}, "short": {"en": "Sport", "fr": "Sport"}, "emoji": "⚽", "color": "#2f9e44"},
+    {"id": "money", "name": {"en": "Money & spending", "fr": "Argent & dépenses"}, "short": {"en": "Money", "fr": "Argent"}, "emoji": "💰", "color": "#d4a106"},
+    {"id": "senses", "name": {"en": "The five senses", "fr": "Les cinq sens"}, "short": {"en": "Senses", "fr": "Sens"}, "emoji": "🍋", "color": "#74b816"},
+    {"id": "meaning", "name": {"en": "What matters", "fr": "Ce qui compte"}, "short": {"en": "Matters", "fr": "Essentiel"}, "emoji": "🌟", "color": "#e8590c"}
   ]
 }

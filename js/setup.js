@@ -77,7 +77,9 @@ function renderChosenGame() {
   if (duo && nP !== 2) $("#chosen-game").querySelector("span:last-child").insertAdjacentHTML("beforeend", `<small class="warn">${esc(t("needTwo"))}</small>`);
   const speed = setupGame === "speed", work = isWorkGame(setupGame), team = setupGame === "team";
   // between colleagues, only the subjects that stay comfortable at work
-  $$("#subject-grid .subject").forEach((b) => (b.hidden = work && !WORK_SUBJECTS.includes(b.dataset.id)));
+  const family = $("#family-mode").checked && !FAMILY_GAMES_OFF.includes(setupGame);
+  $$("#subject-grid .subject").forEach((b) => (b.hidden = (work && !WORK_SUBJECTS.includes(b.dataset.id)) || (family && FAMILY_OFF_SUBJECTS.includes(b.dataset.id))));
+  $("#family-option").hidden = FAMILY_GAMES_OFF.includes(setupGame);
   updateSubjectsSummary();
   $("#team-timer-panel").hidden = !team;
   $("#guess-option").hidden = fun || speed || team; // fun games guess their own way, no time to guess in the speed game; on by default in the couple game
@@ -95,8 +97,8 @@ function renderChosenGame() {
   if (pace) $("#depth-hint").textContent = t(pace);
   $("#depth-choice").hidden = setupGame === "date" || setupGame === "tree"; // these two set their own pace
   $("#depth-panel").hidden = speed; // speed questions are short and light
-  $('#depth-choice [data-depth="deep"]').hidden = car || work;
-  if ((car || work) && setupDepth === "deep") $('#depth-choice [data-depth="mixed"]').click();
+  $('#depth-choice [data-depth="deep"]').hidden = car || work || family;
+  if ((car || work || family) && setupDepth === "deep") $('#depth-choice [data-depth="mixed"]').click();
   if (car) renderDriverChoice();
   $$(".game-card").forEach((c) => c.classList.toggle("on", c.dataset.game === setupGame));
 }
@@ -124,7 +126,7 @@ function renderDriverChoice() {
 }
 let optionsTouched = false;
 let nameAsked = false;
-const OPTION_IDS = ["guess-mode", "who-mode", "dare-mode", "random-turn", "voice-mode"];
+const OPTION_IDS = ["family-mode", "guess-mode", "who-mode", "dare-mode", "random-turn", "voice-mode"];
 
 // The option rows that apply to the chosen game, as toggles mirroring the real switches.
 function openSuggest() {
@@ -263,6 +265,7 @@ function initSetup() {
     })
   );
   OPTION_IDS.forEach((id) => $("#" + id).addEventListener("change", () => (optionsTouched = true)));
+  $("#family-mode").addEventListener("change", (e) => { renderChosenGame(); if (e.target.checked) toast(t("familyOn"), 2600); });
   $("#adult-mode").addEventListener("change", (e) => {
     optionsTouched = true;
     if (e.target.checked) { e.target.checked = false; $("#adult-overlay").classList.remove("hidden"); }

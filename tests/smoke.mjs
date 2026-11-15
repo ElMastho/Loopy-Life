@@ -126,6 +126,32 @@ await tablet.click("#spin-btn"); await tablet.waitForSelector("#card-overlay:not
 await tablet.click("#flip-btn");
 check(await tablet.evaluate(() => document.querySelector("#card").classList.contains("flipped")), "tablet: the card turns around");
 
+// All ages: no love subject, no deep, sensitive or grown-up question can come up.
+await phone.goto(BASE); await phone.evaluate(() => localStorage.clear());
+await phone.goto(BASE); await phone.waitForSelector(".subject", { state: "attached" });
+await phone.click(".next-step"); await phone.click('.game-card[data-game="wheel"]'); await phone.waitForTimeout(150);
+await phone.click("#more-options summary"); await phone.click('label[for="family-mode"]');
+check(await phone.isHidden('#subject-grid .subject[data-id="love"]'), "all ages: the love subject is left out");
+await phone.click("#start-btn"); await phone.waitForTimeout(250);
+if (await phone.isVisible("#suggest-overlay")) await phone.click("#suggest-go");
+await phone.waitForTimeout(300);
+const familyOk = await phone.evaluate(() => {
+  const all = [...DB.questions, ...(DB.who || []), ...(DB.challenges || [])];
+  const bad = all.filter((q) => allowedQ(q) && (q.sensitive || q.mature || q.depth === 3 || q.subject === "love"));
+  const drawn = Array.from({ length: 200 }, () => drawQuestion(pick(state.subjects), depthsFor("mixed")));
+  return state.family && !bad.length && drawn.every((q) => q && !q.sensitive && !q.mature && q.depth < 3 && q.subject !== "love");
+});
+check(familyOk, "all ages: 200 draws stay suitable for children");
+
+// The card: a follow-up, and 👎 replaces the question for good.
+await phone.click("#spin-btn"); await phone.waitForSelector("#card-overlay:not(.hidden)", { timeout: 10000 });
+await phone.click("#follow-btn");
+check((await phone.textContent("#follow-text")).length > 2, "follow-up shown on the card");
+const before = await phone.evaluate(() => current.q.id);
+await phone.click("#dislike-btn"); await phone.waitForTimeout(300);
+const after = await phone.evaluate((id) => ({ id: current.q.id, allowed: allowedQ(QBYID[id]) }), before);
+check(after.id !== before && !after.allowed, "👎 replaces the question and keeps it away");
+
 // Panels and language.
 const home = async () => { await phone.goto(BASE); await phone.waitForSelector(".subject", { state: "attached" }); await phone.waitForTimeout(300); if (await phone.isVisible("#home-btn")) { await phone.click("#home-btn"); await phone.waitForTimeout(300); } };
 await home();
