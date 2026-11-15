@@ -8688,5 +8688,727 @@
     "fr": "Quel est le message le plus osé que tu aies eu envie de m'envoyer ?"
    }
   }
+ ],
+ "speed": [
+  {
+   "id": "speed-001",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Coffee or tea?",
+    "fr": "Café ou thé ?"
+   }
+  },
+  {
+   "id": "speed-002",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Sea or mountains?",
+    "fr": "Mer ou montagne ?"
+   }
+  },
+  {
+   "id": "speed-003",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Early bird or night owl?",
+    "fr": "Lève-tôt ou couche-tard ?"
+   }
+  },
+  {
+   "id": "speed-004",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Sweet or savory?",
+    "fr": "Sucré ou salé ?"
+   }
+  },
+  {
+   "id": "speed-005",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Cats or dogs?",
+    "fr": "Chats ou chiens ?"
+   }
+  },
+  {
+   "id": "speed-006",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "City or countryside?",
+    "fr": "Ville ou campagne ?"
+   }
+  },
+  {
+   "id": "speed-007",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Books or films?",
+    "fr": "Livres ou films ?"
+   }
+  },
+  {
+   "id": "speed-008",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Summer or winter?",
+    "fr": "Été ou hiver ?"
+   }
+  },
+  {
+   "id": "speed-009",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Text or call?",
+    "fr": "Message ou appel ?"
+   }
+  },
+  {
+   "id": "speed-010",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Party or quiet night in?",
+    "fr": "Soirée de folie ou soirée canapé ?"
+   }
+  },
+  {
+   "id": "speed-011",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Plan everything or improvise?",
+    "fr": "Tout prévoir ou improviser ?"
+   }
+  },
+  {
+   "id": "speed-012",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Shower in the morning or at night?",
+    "fr": "Douche le matin ou le soir ?"
+   }
+  },
+  {
+   "id": "speed-013",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Pizza or sushi?",
+    "fr": "Pizza ou sushis ?"
+   }
+  },
+  {
+   "id": "speed-014",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Past or future: where would you travel?",
+    "fr": "Passé ou futur : où voyagerais-tu ?"
+   }
+  },
+  {
+   "id": "speed-015",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Fly or be invisible?",
+    "fr": "Voler ou être invisible ?"
+   }
+  },
+  {
+   "id": "speed-016",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Sunrise or sunset?",
+    "fr": "Lever ou coucher de soleil ?"
+   }
+  },
+  {
+   "id": "speed-017",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Hot or cold weather?",
+    "fr": "Chaleur ou fraîcheur ?"
+   }
+  },
+  {
+   "id": "speed-018",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Sneakers or flip-flops?",
+    "fr": "Baskets ou tongs ?"
+   }
+  },
+  {
+   "id": "speed-019",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Car, train or plane?",
+    "fr": "Voiture, train ou avion ?"
+   }
+  },
+  {
+   "id": "speed-020",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Football or tennis?",
+    "fr": "Foot ou tennis ?"
+   }
+  },
+  {
+   "id": "speed-021",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite color, right now?",
+    "fr": "Ta couleur préférée, tout de suite ?"
+   }
+  },
+  {
+   "id": "speed-022",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your comfort food?",
+    "fr": "Ton plat réconfort ?"
+   }
+  },
+  {
+   "id": "speed-023",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "The last song you listened to?",
+    "fr": "La dernière chanson que tu as écoutée ?"
+   }
+  },
+  {
+   "id": "speed-024",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "The last thing that made you laugh?",
+    "fr": "La dernière chose qui t'a fait rire ?"
+   }
+  },
+  {
+   "id": "speed-025",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite word?",
+    "fr": "Ton mot préféré ?"
+   }
+  },
+  {
+   "id": "speed-026",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "One word to describe today?",
+    "fr": "Un mot pour décrire ta journée ?"
+   }
+  },
+  {
+   "id": "speed-027",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "One word to describe yourself?",
+    "fr": "Un mot pour te décrire ?"
+   }
+  },
+  {
+   "id": "speed-028",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your dream job as a kid?",
+    "fr": "Ton métier de rêve quand tu étais enfant ?"
+   }
+  },
+  {
+   "id": "speed-029",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite season?",
+    "fr": "Ta saison préférée ?"
+   }
+  },
+  {
+   "id": "speed-030",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your go-to karaoke song?",
+    "fr": "Ta chanson de karaoké ?"
+   }
+  },
+  {
+   "id": "speed-031",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "The best smell in the world?",
+    "fr": "La meilleure odeur du monde ?"
+   }
+  },
+  {
+   "id": "speed-032",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "A film you could watch again and again?",
+    "fr": "Un film que tu pourrais revoir en boucle ?"
+   }
+  },
+  {
+   "id": "speed-033",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite dessert?",
+    "fr": "Ton dessert préféré ?"
+   }
+  },
+  {
+   "id": "speed-034",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "A country you'd move to tomorrow?",
+    "fr": "Un pays où tu partirais vivre demain ?"
+   }
+  },
+  {
+   "id": "speed-035",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your hidden talent?",
+    "fr": "Ton talent caché ?"
+   }
+  },
+  {
+   "id": "speed-036",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your guilty pleasure?",
+    "fr": "Ton plaisir coupable ?"
+   }
+  },
+  {
+   "id": "speed-037",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "The app you open the most?",
+    "fr": "L'appli que tu ouvres le plus ?"
+   }
+  },
+  {
+   "id": "speed-038",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite emoji?",
+    "fr": "Ton emoji préféré ?"
+   }
+  },
+  {
+   "id": "speed-039",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "A superpower you'd want?",
+    "fr": "Un super-pouvoir que tu voudrais ?"
+   }
+  },
+  {
+   "id": "speed-040",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "A famous person you'd have dinner with?",
+    "fr": "Une célébrité avec qui tu dînerais ?"
+   }
+  },
+  {
+   "id": "speed-041",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your best quality?",
+    "fr": "Ta plus grande qualité ?"
+   }
+  },
+  {
+   "id": "speed-042",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your worst habit?",
+    "fr": "Ta pire manie ?"
+   }
+  },
+  {
+   "id": "speed-043",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "What are you afraid of?",
+    "fr": "De quoi as-tu peur ?"
+   }
+  },
+  {
+   "id": "speed-044",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "The best gift you ever got?",
+    "fr": "Le plus beau cadeau que tu as reçu ?"
+   }
+  },
+  {
+   "id": "speed-045",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite cartoon as a kid?",
+    "fr": "Ton dessin animé préféré enfant ?"
+   }
+  },
+  {
+   "id": "speed-046",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "The first thing you do in the morning?",
+    "fr": "La première chose que tu fais le matin ?"
+   }
+  },
+  {
+   "id": "speed-047",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your perfect breakfast?",
+    "fr": "Ton petit-déjeuner parfait ?"
+   }
+  },
+  {
+   "id": "speed-048",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "A sound that makes you happy?",
+    "fr": "Un bruit qui te rend heureux ?"
+   }
+  },
+  {
+   "id": "speed-049",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "What do you always have in your bag?",
+    "fr": "Qu'as-tu toujours dans ton sac ?"
+   }
+  },
+  {
+   "id": "speed-050",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "The last photo on your phone?",
+    "fr": "La dernière photo de ton téléphone ?"
+   }
+  },
+  {
+   "id": "speed-051",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite animal?",
+    "fr": "Ton animal préféré ?"
+   }
+  },
+  {
+   "id": "speed-052",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "A place where you feel at home?",
+    "fr": "Un endroit où tu te sens chez toi ?"
+   }
+  },
+  {
+   "id": "speed-053",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite holiday memory, in one sentence?",
+    "fr": "Ton meilleur souvenir de vacances, en une phrase ?"
+   }
+  },
+  {
+   "id": "speed-054",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Who would you call first with big news?",
+    "fr": "Qui appellerais-tu en premier pour une grande nouvelle ?"
+   }
+  },
+  {
+   "id": "speed-055",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "A skill you'd learn overnight?",
+    "fr": "Une compétence que tu apprendrais en une nuit ?"
+   }
+  },
+  {
+   "id": "speed-056",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your dream weekend, in three words?",
+    "fr": "Ton week-end de rêve, en trois mots ?"
+   }
+  },
+  {
+   "id": "speed-057",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Something you can't live without?",
+    "fr": "Une chose dont tu ne peux pas te passer ?"
+   }
+  },
+  {
+   "id": "speed-058",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite thing about this group?",
+    "fr": "Ce que tu préfères dans ce groupe ?"
+   }
+  },
+  {
+   "id": "speed-059",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "The best advice you ever got?",
+    "fr": "Le meilleur conseil qu'on t'ait donné ?"
+   }
+  },
+  {
+   "id": "speed-060",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "A word your friends would use for you?",
+    "fr": "Un mot que tes amis utiliseraient pour toi ?"
+   }
+  },
+  {
+   "id": "speed-061",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "What would you do with a free day tomorrow?",
+    "fr": "Que ferais-tu d'une journée libre demain ?"
+   }
+  },
+  {
+   "id": "speed-062",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite meal of the day?",
+    "fr": "Ton repas préféré de la journée ?"
+   }
+  },
+  {
+   "id": "speed-063",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "A smell that brings back your childhood?",
+    "fr": "Une odeur qui te rappelle ton enfance ?"
+   }
+  },
+  {
+   "id": "speed-064",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "The last time you danced?",
+    "fr": "La dernière fois que tu as dansé ?"
+   }
+  },
+  {
+   "id": "speed-065",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your biggest pet peeve?",
+    "fr": "Ce qui t'agace le plus ?"
+   }
+  },
+  {
+   "id": "speed-066",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your lucky number?",
+    "fr": "Ton chiffre porte-bonheur ?"
+   }
+  },
+  {
+   "id": "speed-067",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Mountains, beach or city trip?",
+    "fr": "Montagne, plage ou week-end en ville ?"
+   }
+  },
+  {
+   "id": "speed-068",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Spicy food: yes or no?",
+    "fr": "Épicé : oui ou non ?"
+   }
+  },
+  {
+   "id": "speed-069",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite board game?",
+    "fr": "Ton jeu de société préféré ?"
+   }
+  },
+  {
+   "id": "speed-070",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "A habit you're proud of?",
+    "fr": "Une habitude dont tu es fier ?"
+   }
+  },
+  {
+   "id": "speed-071",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Something on your bucket list?",
+    "fr": "Une chose sur ta liste de rêves ?"
+   }
+  },
+  {
+   "id": "speed-072",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "The best concert or show you've seen?",
+    "fr": "Le meilleur concert ou spectacle que tu as vu ?"
+   }
+  },
+  {
+   "id": "speed-073",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Your favorite way to relax?",
+    "fr": "Ta façon préférée de te détendre ?"
+   }
+  },
+  {
+   "id": "speed-074",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "The last thing you learned?",
+    "fr": "La dernière chose que tu as apprise ?"
+   }
+  },
+  {
+   "id": "speed-075",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Complete: I'm happiest when…",
+    "fr": "Complète : je suis le plus heureux quand…"
+   }
+  },
+  {
+   "id": "speed-076",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Complete: I could never…",
+    "fr": "Complète : je ne pourrais jamais…"
+   }
+  },
+  {
+   "id": "speed-077",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Complete: my friends think I'm…",
+    "fr": "Complète : mes amis pensent que je suis…"
+   }
+  },
+  {
+   "id": "speed-078",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Complete: this year, I want to…",
+    "fr": "Complète : cette année, je veux…"
+   }
+  },
+  {
+   "id": "speed-079",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Complete: as a kid, I used to…",
+    "fr": "Complète : enfant, j'avais l'habitude de…"
+   }
+  },
+  {
+   "id": "speed-080",
+   "subject": "__speed",
+   "depth": 1,
+   "text": {
+    "en": "Complete: the best day of my life was…",
+    "fr": "Complète : le plus beau jour de ma vie, c'était…"
+   }
+  }
  ]
 }
