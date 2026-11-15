@@ -27,7 +27,7 @@ function gameRule(sections, game) {
 function contextRules() {
   const sec = ruleSections();
   const g = gameOf(state);
-  if (g === "speed") return [sec[R.speed], state.voice ? sec[R.voice] : "", sec[R.connection], sec[R.badges], sec[R.saving]].join("");
+  if (g === "speed") return [sec[R.speed], sec[R.voice], sec[R.connection], sec[R.badges], sec[R.saving]].join("");
   const fun = FUN_GAMES.includes(g);
   const parts = [gameRule(sec, g), sec[R.points]];
   if (fun) parts.push(t("rulesPass"));
@@ -38,7 +38,7 @@ function contextRules() {
   if (state.adult) parts.push(sec[R.adult]);
   if (state.whoMode) parts.push(sec[R.who]);
   if (state.dareMode) parts.push(sec[R.dare]);
-  if (state.voice && g !== "car") parts.push(sec[R.voice]);
+  if (g !== "car") parts.push(sec[R.voice]); // the 🔊 button is on every card
   if (nPlayers() >= COMPACT_FROM || state.randomTurn) parts.push(sec[R.big]);
   parts.push(sec[R.connection], sec[R.badges], sec[R.saving]);
   return parts.join("");
