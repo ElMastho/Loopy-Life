@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=19">
+  <link rel="stylesheet" href="style.css?v=20">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -253,7 +253,7 @@
       </div>
     </div>
 
-    <footer class="foot"><span data-i18n="footer">First seed of <strong>Loopy Life</strong></span> · <span id="q-count">…</span></footer>
+    <footer class="foot"><span data-i18n="footer">First seed of <strong>Loopy Life</strong></span> · <span id="q-count">…</span> · <button id="version-btn" class="link version-btn" type="button" data-i18n-aria="updTitle" aria-label="App version">v</button></footer>
   </main>
 
   <!-- ============ GAME ============ -->
@@ -446,6 +446,25 @@
     </div>
   </div>
 
+  <!-- ============ VERSION & UPDATE ============ -->
+  <div id="update-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="upd-title">
+    <div class="card journal-card update-card">
+      <h2 id="upd-title" data-i18n="updTitle">🔄 App version</h2>
+      <p id="upd-installed" class="upd-line"></p>
+      <p id="upd-status" class="upd-line upd-status"></p>
+      <p class="upd-keep" data-i18n="updKeep"></p>
+      <div class="card-actions">
+        <button id="upd-close" class="btn ghost" type="button" data-i18n="close">Close</button>
+        <button id="upd-force" class="btn primary" type="button" data-i18n="updForce">🔄 Force the update</button>
+      </div>
+    </div>
+  </div>
+  <div id="update-banner" class="update-banner" role="status" hidden>
+    <span data-i18n="updBanner">✨ A new version is available</span>
+    <button id="update-now" class="btn primary small" type="button" data-i18n="updNow">Update</button>
+    <button id="update-later" class="update-x" type="button" aria-label="✕">✕</button>
+  </div>
+
   <!-- ============ RULES ============ -->
   <div id="rules-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="rules-title">
     <div class="card journal-card rules-card">
@@ -460,6 +479,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
 
-  <script src="app.js?v=19"></script>
+  <script src="app.js?v=20"></script>
 </body>
 </html>
