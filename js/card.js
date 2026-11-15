@@ -156,6 +156,7 @@ function openCard(q, kind) {
   card.style.setProperty("--c", s.color);
   $("#card-overlay").style.setProperty("--c", s.color);
 
+  card.classList.remove("flipped");
   $("#card-overlay").classList.remove("hidden");
   // restart the flip animation
   card.style.animation = "none"; void card.offsetWidth; card.style.animation = "";
@@ -181,4 +182,5 @@ function closeCard() {
   try { if ("speechSynthesis" in window) speechSynthesis.cancel(); } catch (e) { /* ignore */ }
   $("#card-overlay").classList.add("hidden");
   current = null;
+  if (document.activeElement && document.activeElement.blur) document.activeElement.blur(); // the keyboard drives the game again
 }

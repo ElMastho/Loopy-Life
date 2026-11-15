@@ -2,6 +2,15 @@
 
 Versions follow [semantic versioning](https://semver.org/): major.minor.patch. `python3 tools/release.py patch|minor|major` sets the next one and adds its heading here.
 
+## 1.2.0
+
+- ⚡ Play now: from step 1, the wheel with every subject, nothing to set (suggested on a first visit).
+- The options are folded under Options on step 3; the essentials (subjects, depth) stay in view.
+- Tablet: 🔃 turns the card around for the person across the table; bigger card and wheel on big screens.
+- Computer: full screen, and the keyboard in every game (Space spin or draw, Enter answered, P pass, R read aloud, V turn the card, J our story, F full screen).
+- 🔠 Text size (100 to 150 %), in the game and on the home screen.
+- With "reduce motion" turned on in the device, the wheel spins in about a second.
+
 ## 1.1.2
 
 - Automatic tests on every change: the question bank, the version and offline files, and a browser that plays every game.

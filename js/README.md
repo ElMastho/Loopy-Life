@@ -26,6 +26,7 @@ No build step: `index.html` loads these files as plain scripts, in this order. T
 | `install.js` | Install as an app |
 | `rules.js` | Rules (full or for the current game) and language switch |
 | `update.js` | Version panel and update banner |
+| `devices.js` | Playing on any device: quick start, text size, full screen, keyboard shortcuts, turning the card on a tablet |
 | `main.js` | Wiring of the buttons and start-up (`boot()`) |
 
 A new file goes in `index.html` at the right place; `tools/release.py` then adds it to the offline list in `sw.js`.

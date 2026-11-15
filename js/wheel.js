@@ -132,7 +132,8 @@ function spin() {
   const delta = (((target - wheelAngle) % TAU) + TAU) % TAU;
   const from = wheelAngle;
   const to = wheelAngle + TAU * (5 + Math.floor(Math.random() * 3)) + delta;
-  const dur = 4200 + Math.random() * 900;
+  const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const dur = reduced ? 1200 : 4200 + Math.random() * 900;
   const t0 = performance.now();
   const ease = (t) => 1 - Math.pow(1 - t, 4);
 
