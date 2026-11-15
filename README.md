@@ -1,5 +1,10 @@
 # Loopy Life · Know Each Other
 
+> ### 🎮 [Play now → elmastho.github.io/Loopy-Life](https://elmastho.github.io/Loopy-Life/)
+> Free, in your browser, on a phone, a tablet or a computer. Nothing to install. In English and French.
+>
+> 🇫🇷 **Pour jouer : [elmastho.github.io/Loopy-Life](https://elmastho.github.io/Loopy-Life/)** (gratuit, dans le navigateur, rien à installer).
+
 A small game to get to know your friends better (2 players by default, add as many as you want), beyond work and small talk. Available in English and French (switch on the home screen or during the game).
 It is the first seed of **Loopy Life**, the life-organization extension of Loopy Lines.
 
