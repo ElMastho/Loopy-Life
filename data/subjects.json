@@ -1,0 +1,22 @@
+{
+  "version": 3,
+  "languages": ["en", "fr"],
+  "pools": ["who", "challenges", "date", "couple", "spicy", "speed"],
+  "subjects": [
+    {"id": "family", "name": {"en": "Family", "fr": "Famille"}, "short": {"en": "Family", "fr": "Famille"}, "emoji": "🏡", "color": "#ff5c8a"},
+    {"id": "childhood", "name": {"en": "Childhood", "fr": "Enfance"}, "short": {"en": "Childhood", "fr": "Enfance"}, "emoji": "🧸", "color": "#ff9f1c"},
+    {"id": "youth", "name": {"en": "School & Teen Years", "fr": "École & adolescence"}, "short": {"en": "Teen years", "fr": "Ado"}, "emoji": "🎒", "color": "#e9c46a"},
+    {"id": "love", "name": {"en": "Relationships", "fr": "Relations"}, "short": {"en": "Relationships", "fr": "Relations"}, "emoji": "🫂", "color": "#e76f51"},
+    {"id": "friendship", "name": {"en": "Friendship & Us", "fr": "L'amitié & nous"}, "short": {"en": "Us", "fr": "Nous"}, "emoji": "🤝", "color": "#4cc9f0"},
+    {"id": "work", "name": {"en": "Work & Career", "fr": "Travail & carrière"}, "short": {"en": "Work", "fr": "Travail"}, "emoji": "💼", "color": "#4361ee"},
+    {"id": "dreams", "name": {"en": "Dreams & Future", "fr": "Rêves & avenir"}, "short": {"en": "Dreams", "fr": "Rêves"}, "emoji": "🚀", "color": "#9d4edd"},
+    {"id": "values", "name": {"en": "Values & Beliefs", "fr": "Valeurs & convictions"}, "short": {"en": "Values", "fr": "Valeurs"}, "emoji": "🧭", "color": "#2a9d8f"},
+    {"id": "personality", "name": {"en": "Personality", "fr": "Personnalité"}, "short": {"en": "Me", "fr": "Moi"}, "emoji": "🪞", "color": "#f72585"},
+    {"id": "passions", "name": {"en": "Hobbies & Passions", "fr": "Loisirs & passions"}, "short": {"en": "Passions", "fr": "Passions"}, "emoji": "🎨", "color": "#70c050"},
+    {"id": "tastes", "name": {"en": "Favorites & Tastes", "fr": "Goûts & préférences"}, "short": {"en": "Tastes", "fr": "Goûts"}, "emoji": "🍕", "color": "#f3722c"},
+    {"id": "travel", "name": {"en": "Travel & Places", "fr": "Voyages & lieux"}, "short": {"en": "Travel", "fr": "Voyages"}, "emoji": "✈️", "color": "#277da1"},
+    {"id": "daily", "name": {"en": "Daily Life & Habits", "fr": "Quotidien & habitudes"}, "short": {"en": "Daily life", "fr": "Quotidien"}, "emoji": "☕", "color": "#7b6cf6"},
+    {"id": "whatif", "name": {"en": "What If…", "fr": "Et si…"}, "short": {"en": "What if", "fr": "Et si"}, "emoji": "🔮", "color": "#b5179e"},
+    {"id": "imagination", "name": {"en": "Imagination & Scenarios", "fr": "Imaginaire & scénarios"}, "short": {"en": "Imagine", "fr": "Imaginaire"}, "emoji": "🌈", "color": "#06d6a0"}
+  ]
+}

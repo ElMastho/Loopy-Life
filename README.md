@@ -36,19 +36,27 @@ Each group of friends can keep its own story: **💾 Save the story** downloads 
 
 ## The question bank
 
-All questions live in [`data/questions.json`](data/questions.json): 15 subjects (including Imagination & Scenarios), 700+ questions in English and French, each with a depth from 1 (light) to 3 (deep). The same file holds the `date`, `couple` and `spicy` (+18, with the `modes` they appear in) pools, the `who` votes and the `challenges` (`{ "id", "text": { "en", "fr" } }`).
+The questions live in [`data/`](data/), one file per subject and per kind, so a subject can be read and extended on its own:
+
+- [`data/subjects.json`](data/subjects.json): the languages, the list of pools and the 15 subjects (name, emoji, colour).
+- `data/questions/<subject>.json`: that subject's questions (700+ in all), each with a depth from 1 (light) to 3 (deep).
+- `data/pools/`: `date`, `couple`, `spicy` (+18) and `speed` questions, the `who` votes and the `challenges`.
+
+Each file is a list with one entry per line:
 
 ```json
-{ "id": "family-001", "subject": "family", "depth": 1,
-  "text": { "en": "How many people are in your family, and who are they?",
-            "fr": "Combien de personnes compte ta famille, et qui sont-elles ?" } }
+{"id": "family-001", "subject": "family", "depth": 1, "text": {"en": "How many people are in your family, and who are they?", "fr": "Combien de personnes compte ta famille, et qui sont-elles ?"}}
 ```
 
-To add questions, add entries with a unique `id`, an existing `subject` id, a `depth` of 1, 2 or 3, and the text in both languages. Interface texts are in the `STR` table at the top of `app.js`.
+To add questions, add lines with a unique `id`, the file's `subject`, a `depth` of 1, 2 or 3 and the text in both languages, then run `python3 tools/check_data.py` (unique ids, both languages, depths). A new subject is a new file plus an entry in `subjects.json`.
+
+## The code
+
+Plain HTML, CSS and JavaScript with no build step. The game is split into small scripts in [`js/`](js/) (setup, card, wheel, tree, speed, badges…); [`js/README.md`](js/README.md) says what each one does. Interface texts are in `js/i18n/en.js` and `js/i18n/fr.js`.
 
 ## Run locally
 
-The page loads the JSON with `fetch`, so open it through a small web server rather than as a file:
+The page loads the questions with `fetch`, so open it through a small web server rather than as a file:
 
 ```sh
 python3 -m http.server 8000
@@ -59,4 +67,4 @@ python3 -m http.server 8000
 
 Plain HTML, CSS and JavaScript with no build step, served by GitHub Pages from the `main` branch root.
 
-When you change `app.js`, `style.css` or `data/questions.json`, bump the `?v=` number in `index.html` and in the `fetch` call in `app.js`, so browsers load the new files instead of a cached copy. Also update the same version in `CACHE` and `CORE` in `sw.js` (the offline copy).
+On every release, run `python3 tools/release.py <new version>`: it sets the version in `js/config.js` and `version.json` (the app compares them to offer the update), the `?v=` of every file in `index.html`, and the cache name and offline file list in `sw.js`.
