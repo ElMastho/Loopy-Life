@@ -36,7 +36,7 @@ function fillCard() {
   const joker = !kind && (g === "date" || q.subject === "__spicy");
   if (g === "honor" && p === state.star && !kind) $("#q-for").innerHTML = esc(t("starFor", { name: "\u0000" })).replace("\u0000", who);
   if (g === "car" && p === state.driver) $("#q-for").innerHTML = esc(t("driverFor", { name: "\u0000" })).replace("\u0000", who);
-  $("#bonus-help").hidden = !!kind || !!current.game || g === "car";
+  $("#bonus-help").hidden = !!kind || !!current.game || g === "car" || g === "debate"; // the debate has its own tip
   $("#q-note").hidden = g === "car" || g === "speed";
   $("#pause-btn").hidden = g !== "speed";
   $("#timer").hidden = g !== "speed";
@@ -48,6 +48,10 @@ function fillCard() {
   $("#follow-text").textContent = "";
   $("#done-btn").disabled = false;
   renderBonuses();
+  if (!kind && g === "debate") {
+    $("#q-for").innerHTML = esc(t("debateFor", { name: "\u0000" })).replace("\u0000", who);
+    const step = $("#guess-step"); step.hidden = false; step.textContent = t("debateStep");
+  }
   if (!kind && g === "date" && !state.guessMode) { const step = $("#guess-step"); step.hidden = false; step.textContent = t("dateStep"); }
   $("#pass-label").textContent = kind ? t("another") : joker ? t("joker") : t("pass");
   $("#passes-wrap").hidden = true; // passing is free in every game

@@ -38,6 +38,7 @@ const GAME_FIT = {
   coffee: { min: 2, max: 8, best: [2, 6], why: "coffeeMax" },
   team: { min: 3, best: [6, 99], why: "teamMin" },
   honor: { min: 3, best: [4, 12], why: "minThree" },
+  debate: { min: 2, best: [5, 99] },
 };
 const gameAllowed = (g, n) => n >= GAME_FIT[g].min && n <= (GAME_FIT[g].max || 99);
 const gameBest = (g, n) => n >= GAME_FIT[g].best[0] && n <= GAME_FIT[g].best[1];
@@ -87,7 +88,7 @@ function renderChosenGame() {
   $("#timer-panel").hidden = !speed;
   $("#who-option").hidden = duo || car || speed || team || nP < 3; // nobody points while driving; at 2 a vote just points at the other
   if ($("#who-option").hidden) $("#who-mode").checked = false;
-  $("#dare-option").hidden = car || speed || work; // no challenges in a car, no time in the speed game, not at work
+  $("#dare-option").hidden = car || speed || work || setupGame === "debate"; // no challenges in a car, no time in the speed game, not at work
   $("#random-option").hidden = duo || nP < 3; // at 2, the next player is always the other one
   if ($("#random-option").hidden) $("#random-turn").checked = false;
   $("#adult-option").hidden = !duo;
@@ -102,6 +103,10 @@ function renderChosenGame() {
   if ((car || work || family) && setupDepth === "deep") $('#depth-choice [data-depth="mixed"]').click();
   if (car) renderDriverChoice();
   $("#honor-panel").hidden = setupGame !== "honor";
+  const debate = setupGame === "debate";
+  $("#debate-panel").hidden = !debate;
+  $("#debate-heavy").hidden = family; // not with children
+  if (debate) { $("#subjects-panel").hidden = true; $("#depth-panel").hidden = true; } else $("#subjects-panel").hidden = false;
   if (setupGame === "honor") renderStarChoice();
   $$(".game-card").forEach((c) => c.classList.toggle("on", c.dataset.game === setupGame));
 }
@@ -288,6 +293,23 @@ function initSetup() {
   $("#adult-mode").addEventListener("change", (e) => {
     optionsTouched = true;
     if (e.target.checked) { e.target.checked = false; $("#adult-overlay").classList.remove("hidden"); }
+  });
+  // 🏛️ society and 🗳️ politics: off by default, and everyone agrees before turning them on
+  let debateAsk = null;
+  ["society", "politics"].forEach((k) => $(`#${k}-mode`).addEventListener("change", (e) => {
+    optionsTouched = true;
+    if (!e.target.checked) return;
+    e.target.checked = false;
+    debateAsk = k;
+    $("#debate-warn-title").textContent = t(`${k}WarnTitle`);
+    $("#debate-warn-text").innerHTML = t("debateWarnText");
+    $("#debate-overlay").classList.remove("hidden");
+  }));
+  $("#debate-cancel").addEventListener("click", () => $("#debate-overlay").classList.add("hidden"));
+  $("#debate-ok").addEventListener("click", () => {
+    if (debateAsk) $(`#${debateAsk}-mode`).checked = true;
+    $("#debate-overlay").classList.add("hidden");
+    toast(t(`${debateAsk}On`), 3200);
   });
   $("#adult-cancel").addEventListener("click", () => { $("#adult-mode").checked = false; $("#adult-overlay").classList.add("hidden"); });
   $("#adult-ok").addEventListener("click", () => {
