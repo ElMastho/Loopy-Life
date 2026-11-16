@@ -31,6 +31,7 @@ function newGame(players, subjects, depth, game) {
     family: !FAMILY_GAMES_OFF.includes(game) && $("#family-mode").checked,
     driver: game === "car" ? setupDriver : -1,
     star: game === "honor" ? Math.min(setupStar, players.length - 1) : -1,
+    parents: game === "parents" ? [...setupParents].filter((i) => i < players.length).sort() : [],
     society: game === "debate" && !$("#family-mode").checked && $("#society-mode").checked,
     politics: game === "debate" && !$("#family-mode").checked && $("#politics-mode").checked,
     voice: $("#voice-mode").checked && "speechSynthesis" in window,
@@ -146,7 +147,7 @@ function recycle(subjectId) {
 
 // A question from one of the date / couple / +18 pools, not used in this story if possible.
 function drawPool(poolId, depths, excludeId) {
-  let list = (DB[POOL_KEY[poolId]] || []).filter(allowedQ);
+  let list = (DB[POOL_KEY[poolId]] || []).filter((q) => allowedQ(q) && (!q.subject || q.subject === poolId)); // one file can hold several pools
   if (poolId === "__spicy") list = list.filter((q) => q.modes.includes(gameOf(state)));
   if (poolId === "__honor") list = list.filter((q) => !!q.star === (state.turn === state.star)); // the others talk about them, they get their own
   const used = new Set(state.used);

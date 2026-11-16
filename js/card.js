@@ -48,6 +48,13 @@ function fillCard() {
   $("#follow-text").textContent = "";
   $("#done-btn").disabled = false;
   renderBonuses();
+  if (!kind && g === "parents" && current.target != null) {
+    const tw = `<b style="color:${pDark(current.target)}">${esc(state.players[current.target])}</b>`;
+    if (current.asker >= 0) {
+      const aw = `<b style="color:${pDark(current.asker)}">${esc(state.players[current.asker])}</b>`;
+      $("#q-for").innerHTML = esc(t("askFor", { a: "\u0001", b: "\u0002" })).replace("\u0001", aw).replace("\u0002", tw);
+    } else $("#q-for").innerHTML = esc(t("forWho", { name: "\u0000" })).replace("\u0000", tw);
+  }
   if (!kind && g === "debate") {
     $("#q-for").innerHTML = esc(t("debateFor", { name: "\u0000" })).replace("\u0000", who);
     const step = $("#guess-step"); step.hidden = false; step.textContent = t("debateStep");
@@ -174,6 +181,13 @@ function openCard(q, kind) {
     if (g === "bluff") { current.bluff = randInt(2) === 1; current.peek = false; current.revealed = false; }
     if (g === "duel") { const os = others(state.turn); current.rival = os[randInt(os.length)]; }
     if (g === "bet") current.bets = {};
+  }
+  if (!kind && g === "parents" && PARENT_CHAPTERS.includes(q.subject)) {
+    // a parent's life: a child asks, a parent answers
+    const ps = state.parents.length ? state.parents : [0];
+    const kids = state.players.map((_, i) => i).filter((i) => !ps.includes(i));
+    if (ps.includes(state.turn)) { current.target = state.turn; current.asker = kids.length ? pick(kids) : -1; }
+    else { current.asker = state.turn; current.target = pick(ps); }
   }
   fillCard();
 

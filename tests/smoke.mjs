@@ -91,7 +91,7 @@ for (const [game, names] of [
   ["wheel", ["Thomas", "Maya"]], ["tree", ["Thomas", "Maya"]], ["bluff", ["A", "B", "C"]],
   ["duel", ["A", "B", "C"]], ["bet", ["A", "B", "C"]], ["date", ["Thomas", "Maya"]],
   ["couple", ["Thomas", "Maya"]], ["car", ["A", "B", "C"]], ["speed", ["A", "B"]], ["coffee", ["A", "B", "C", "D"]],
-  ["debate", ["A", "B", "C", "D", "E"]], ["honor", ["Lou", "Sam", "Noa"]],
+  ["parents", ["Mum", "Dad", "Léa"]], ["debate", ["A", "B", "C", "D", "E"]], ["honor", ["Lou", "Sam", "Noa"]],
 ]) await play(phone, game, names);
 
 // In the spotlight: the others get questions about that person, who gets their own.
@@ -107,6 +107,24 @@ const spot = await phone.evaluate(() => {
 });
 check(spot.others && spot.own, "spotlight: the others talk about them, they get their own questions");
 check(spot.named, "spotlight: questions name the person in the spotlight");
+
+// Parents & kids: on a chapter of a parent's life, a child asks and a parent answers.
+await setupOnly(phone, "parents", ["Mum", "Dad", "Léa"]);
+await phone.click("#parents-choice .driver:nth-child(2)"); await phone.waitForTimeout(100);
+await phone.click("#start-btn"); await phone.waitForTimeout(250);
+if (await phone.isVisible("#suggest-overlay")) await phone.click("#suggest-go");
+await phone.waitForTimeout(300);
+const fam = await phone.evaluate(() => {
+  let ok = true;
+  for (let k = 0; k < 30; k++) {
+    state.turn = k % 3;
+    openCard(drawQuestion(pick(PARENT_CHAPTERS), [1, 2]));
+    if (!state.parents.includes(current.target) || current.asker !== 2) ok = false;
+    closeCard();
+  }
+  return { ok, parents: state.parents.join(",") };
+});
+check(fam.parents === "0,1" && fam.ok, `parents & kids: the child asks, a parent answers (${fam.parents})`);
 
 // Debate: everyday debates only, until the whole group agrees to society or politics.
 await setup(phone, "debate", ["A", "B", "C"]);
