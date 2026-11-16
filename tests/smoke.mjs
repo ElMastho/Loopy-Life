@@ -56,6 +56,17 @@ async function setup(p, game, names) {
   await p.waitForTimeout(300);
 }
 
+// Players and game chosen, stopped on the settings step.
+async function setupOnly(p, game, names) {
+  await p.goto(BASE); await p.evaluate(() => localStorage.clear());
+  await p.goto(BASE); await p.waitForSelector(".subject", { state: "attached" });
+  while ((await p.$$("#players-list input")).length < names.length) await p.click("#add-player");
+  while ((await p.$$("#players-list input")).length > names.length) await p.click("#players-list .player-row:last-child .remove");
+  const ins = await p.$$("#players-list input");
+  for (let i = 0; i < names.length; i++) await ins[i].fill(names[i]);
+  await p.click(".next-step"); await p.click(`.game-card[data-game="${game}"]`); await p.waitForTimeout(150);
+}
+
 async function play(p, game, names) {
   await setup(p, game, names);
   let answered = 0;
@@ -80,7 +91,7 @@ for (const [game, names] of [
   ["wheel", ["Thomas", "Maya"]], ["tree", ["Thomas", "Maya"]], ["bluff", ["A", "B", "C"]],
   ["duel", ["A", "B", "C"]], ["bet", ["A", "B", "C"]], ["date", ["Thomas", "Maya"]],
   ["couple", ["Thomas", "Maya"]], ["car", ["A", "B", "C"]], ["speed", ["A", "B"]], ["coffee", ["A", "B", "C", "D"]],
-  ["honor", ["Lou", "Sam", "Noa"]],
+  ["debate", ["A", "B", "C", "D", "E"]], ["honor", ["Lou", "Sam", "Noa"]],
 ]) await play(phone, game, names);
 
 // In the spotlight: the others get questions about that person, who gets their own.
@@ -96,6 +107,22 @@ const spot = await phone.evaluate(() => {
 });
 check(spot.others && spot.own, "spotlight: the others talk about them, they get their own questions");
 check(spot.named, "spotlight: questions name the person in the spotlight");
+
+// Debate: everyday debates only, until the whole group agrees to society or politics.
+await setup(phone, "debate", ["A", "B", "C"]);
+const calm = await phone.evaluate(() => [...new Set(wheelIds())].filter((id) => id !== "__who").sort().join(","));
+check(calm === "__debate", `debate: everyday debates only by default (${calm})`);
+await setupOnly(phone, "debate", ["A", "B", "C"]);
+await phone.click('label[for="politics-mode"]'); await phone.waitForTimeout(150);
+check(await phone.isVisible("#debate-overlay"), "debate: politics asks everyone to agree first");
+check(!(await phone.isChecked("#politics-mode")), "debate: politics stays off until confirmed");
+await phone.click("#debate-ok"); await phone.waitForTimeout(150);
+check(await phone.isChecked("#politics-mode"), "debate: politics on once confirmed");
+await phone.click("#start-btn"); await phone.waitForTimeout(250);
+if (await phone.isVisible("#suggest-overlay")) await phone.click("#suggest-go");
+await phone.waitForTimeout(300);
+const ids = await phone.evaluate(() => [...new Set(wheelIds())].filter((id) => id !== "__who").sort().join(","));
+check(ids === "__debate,__politics", `debate: politics segments on the wheel (${ids})`);
 
 // The wheel stops on the subject of the card it opens.
 await setup(phone, "wheel", ["Thomas", "Maya"]);

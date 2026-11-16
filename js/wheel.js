@@ -7,6 +7,17 @@
 /* ------------------------------------------------------------------ */
 // Wheel segments: the chosen subjects, with votes and challenges spread between them.
 function wheelIds() {
+  if (gameOf(state) === "debate") {
+    // everyday debates, with society and politics segments only when the group turned them on
+    const ids = [];
+    for (let i = 0; i < 8; i++) {
+      ids.push("__debate");
+      if (state.society && i % 2 === 0) ids.push("__society");
+      if (state.politics && i % 2 === 1) ids.push("__politics");
+      if (state.whoMode && i === 4) ids.push("__who");
+    }
+    return ids;
+  }
   const extras = [];
   if (state.whoMode) extras.push("__who");
   if (state.dareMode) extras.push("__dare");

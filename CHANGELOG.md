@@ -2,6 +2,11 @@
 
 Versions follow [semantic versioning](https://semver.org/): major.minor.patch. `python3 tools/release.py patch|minor|major` sets the next one and adds its heading here.
 
+## 1.6.0
+
+- 🗣️ New game, Debate (from 2 players, great in a big group): get to know each other through what you think. The wheel gives a debate question; everyone shows a thumb up, down or sideways, then the player opens and everyone gives their view. 40 everyday-life debates, always on.
+- 🏛️ Society debates (30) and 🗳️ Politics (30): off by default, each turned on only after the whole group agrees it can heat up; they get their own segments on the wheel. Not offered with the all-ages option.
+
 ## 1.5.0
 
 - 🎂 New game, In the spotlight (from 3 players): for a birthday, a farewell or a newcomer. Pick the person in the spotlight; about half the wheel is questions about them, which everyone else answers (a memory, what they taught you, what you wish them), and on their own turn they get 12 questions of their own. 40 new questions.

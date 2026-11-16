@@ -25,12 +25,14 @@ function newGame(players, subjects, depth, game) {
     streak: 0,
     bestStreak: 0,
     whoMode: !DUO_GAMES.includes(game) && !["car", "speed", "team"].includes(game) && players.length > 2 && $("#who-mode").checked,
-    dareMode: !["car", "speed", "coffee", "team"].includes(game) && $("#dare-mode").checked,
+    dareMode: !["car", "speed", "coffee", "team", "debate"].includes(game) && $("#dare-mode").checked,
     randomTurn: !DUO_GAMES.includes(game) && $("#random-turn").checked,
     adult: DUO_GAMES.includes(game) && $("#adult-mode").checked,
     family: !FAMILY_GAMES_OFF.includes(game) && $("#family-mode").checked,
     driver: game === "car" ? setupDriver : -1,
     star: game === "honor" ? Math.min(setupStar, players.length - 1) : -1,
+    society: game === "debate" && !$("#family-mode").checked && $("#society-mode").checked,
+    politics: game === "debate" && !$("#family-mode").checked && $("#politics-mode").checked,
     voice: $("#voice-mode").checked && "speechSynthesis" in window,
     badges: [],
     used: [],
@@ -51,7 +53,7 @@ function gameTitle() {
   const g = gameOf(state);
   const parts = [];
   if (state.name) parts.push(`📖 ${state.name}`);
-  if (g !== "wheel" && g !== "tree") parts.push(`${GAME_EMOJI[g]} ${t("g_" + g)}${state.adult ? " · 🔥 +18" : ""}`);
+  if (g !== "wheel" && g !== "tree") parts.push(`${GAME_EMOJI[g]} ${t("g_" + g)}${state.adult ? " · 🔥 +18" : ""}${state.society ? " · 🏛️" : ""}${state.politics ? " · 🗳️" : ""}`);
   return parts.join(" · ");
 }
 
@@ -166,6 +168,7 @@ function drawPool(poolId, depths, excludeId) {
 function gameDepths() {
   const g = gameOf(state);
   const n = state.journal.filter((e) => !e.kind).length;
+  if (g === "debate") return [1, 2, 3]; // the wheel's segment sets the weight: everyday life, society or politics
   if (g === "date") return n < 4 ? [1] : n < 10 ? (randInt(3) ? [2] : [1]) : (randInt(3) ? [2] : [3]);
   if (isWorkGame(g)) return depthsFor(state.depth === "light" ? "light" : "mixed").map((d) => Math.min(d, 2));
   if (g === "car") return state.depth === "deep" ? [2] : depthsFor(state.depth === "mixed" ? "mixed" : state.depth).map((d) => Math.min(d, 2));
