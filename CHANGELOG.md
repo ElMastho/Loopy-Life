@@ -2,6 +2,10 @@
 
 Versions follow [semantic versioning](https://semver.org/): major.minor.patch. `python3 tools/release.py patch|minor|major` sets the next one and adds its heading here.
 
+## 1.7.0
+
+- 👪 New game, Parents & kids (from 2, all generations): get to know your parents beyond being parents. Pick the parents in the settings; the wheel goes through the chapters of their life (🧸 childhood, 🎸 teenage years, 💞 how they met, 🌍 before us, 👶 becoming a parent), where a child asks and a parent answers, plus 🏡 Our family questions for everyone. 62 gentle but real questions, never made for debate.
+
 ## 1.6.0
 
 - 🗣️ New game, Debate (from 2 players, great in a big group): get to know each other through what you think. The wheel gives a debate question; everyone shows a thumb up, down or sideways, then the player opens and everyone gives their view. 40 everyday-life debates, always on.

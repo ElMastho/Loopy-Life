@@ -7,6 +7,14 @@
 /* ------------------------------------------------------------------ */
 // Wheel segments: the chosen subjects, with votes and challenges spread between them.
 function wheelIds() {
+  if (gameOf(state) === "parents") {
+    // the chapters of a parent's life, twice around, with our family in between
+    const ids = [];
+    for (let r = 0; r < 2; r++) ids.push(...PARENT_CHAPTERS, "__home");
+    if (state.whoMode) ids.splice(6, 0, "__who");
+    if (state.dareMode) ids.push("__dare");
+    return ids;
+  }
   if (gameOf(state) === "debate") {
     // everyday debates, with society and politics segments only when the group turned them on
     const ids = [];

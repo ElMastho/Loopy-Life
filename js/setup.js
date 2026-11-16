@@ -39,6 +39,7 @@ const GAME_FIT = {
   team: { min: 3, best: [6, 99], why: "teamMin" },
   honor: { min: 3, best: [4, 12], why: "minThree" },
   debate: { min: 2, best: [5, 99] },
+  parents: { min: 2, best: [3, 8] },
 };
 const gameAllowed = (g, n) => n >= GAME_FIT[g].min && n <= (GAME_FIT[g].max || 99);
 const gameBest = (g, n) => n >= GAME_FIT[g].best[0] && n <= GAME_FIT[g].best[1];
@@ -106,7 +107,9 @@ function renderChosenGame() {
   const debate = setupGame === "debate";
   $("#debate-panel").hidden = !debate;
   $("#debate-heavy").hidden = family; // not with children
-  if (debate) { $("#subjects-panel").hidden = true; $("#depth-panel").hidden = true; } else $("#subjects-panel").hidden = false;
+  if (debate) { $("#subjects-panel").hidden = true; $("#depth-panel").hidden = true; } else $("#subjects-panel").hidden = setupGame === "parents";
+  $("#parents-panel").hidden = setupGame !== "parents";
+  if (setupGame === "parents") renderParentsChoice();
   if (setupGame === "honor") renderStarChoice();
   $$(".game-card").forEach((c) => c.classList.toggle("on", c.dataset.game === setupGame));
 }
@@ -145,6 +148,29 @@ function renderStarChoice() {
     b.className = "driver" + (i === setupStar ? " on" : "");
     b.textContent = `🎂 ${n}`;
     b.addEventListener("click", () => { setupStar = i; renderStarChoice(); });
+    box.appendChild(b);
+  });
+}
+// 👪 who are the parents (one or more); the others are their children
+let setupParents = new Set([0]);
+function renderParentsChoice() {
+  const names = $$("#players-list input").map((el, i) => el.value.trim() || t("playerN", { n: i + 1 }));
+  setupParents = new Set([...setupParents].filter((i) => i < names.length));
+  if (!setupParents.size) setupParents.add(0);
+  const box = $("#parents-choice");
+  box.innerHTML = "";
+  names.forEach((n, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    const on = setupParents.has(i);
+    b.className = "driver" + (on ? " on" : "");
+    b.textContent = `${on ? "👪" : "🧒"} ${n}`;
+    b.setAttribute("aria-pressed", String(on));
+    b.addEventListener("click", () => {
+      if (on && setupParents.size === 1) return; // at least one parent
+      on ? setupParents.delete(i) : setupParents.add(i);
+      renderParentsChoice();
+    });
     box.appendChild(b);
   });
 }
