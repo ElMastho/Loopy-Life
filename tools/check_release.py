@@ -1,7 +1,8 @@
 """Checks that a release is consistent: python3 tools/check_release.py
 
 The version must be the same in js/config.js, version.json, every ?v= of index.html and the
-service worker; the service worker must keep every script, style and question file offline;
+service worker; the service worker must keep every script, style, font, icon and question file offline,
+and the page must load nothing from another site;
 CHANGELOG.md must have a heading for the version. Run tools/release.py to fix most of it.
 """
 import json
@@ -37,6 +38,15 @@ index = json.loads(read("data/subjects.json"))
 needed |= {"data/subjects.json"}
 needed |= {f"data/questions/{s['id']}.json" for s in index["subjects"]}
 needed |= {f"data/pools/{p}.json" for p in index["pools"]}
+needed |= {f"fonts/{f}" for f in os.listdir(os.path.join(ROOT, "fonts")) if f.endswith(".woff2")}
+needed |= {"./", "index.html", "manifest.webmanifest"}
+needed |= set(re.findall(r'"src": "([^"]+)"', read("manifest.webmanifest")))
+# the game must open without internet: no style, script, font or icon from another site
+for tag in re.findall(r"<(?:link|script)\b[^>]*>", html):
+    if re.search(r'(?:src|href)="(?:https?:)?//', tag) and 'rel="canonical"' not in tag:
+        errors.append(f"index.html loads a file from another site, which breaks offline: {tag}")
+if re.search(r"url\((?:['\"])?(?:https?:)?//", read("style.css")):
+    errors.append("style.css loads a file from another site, which breaks offline")
 for path in sorted(needed - core):
     errors.append(f"sw.js does not keep {path} offline")
 for path in sorted(core):

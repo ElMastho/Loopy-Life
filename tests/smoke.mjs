@@ -16,7 +16,7 @@ catch { playwright = createRequire(process.env.PLAYWRIGHT_MODULES || "/opt/node2
 
 // A tiny static server for the folder.
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json",
-  ".webmanifest": "application/manifest+json", ".png": "image/png", ".svg": "image/svg+xml" };
+  ".webmanifest": "application/manifest+json", ".png": "image/png", ".svg": "image/svg+xml", ".woff2": "font/woff2" };
 const server = http.createServer((req, res) => {
   const rel = decodeURIComponent(new globalThis.URL(req.url, "http://x").pathname).replace(/^\/+/, "") || "index.html";
   const file = path.join(ROOT, rel);
@@ -34,8 +34,8 @@ const browser = await playwright.chromium.launch(process.env.CHROMIUM_PATH ? { e
 
 async function newPage(viewport, extra = {}) {
   const ctx = await browser.newContext({ locale: "fr-FR", viewport, ...extra });
-  // Google Fonts may be out of reach in CI: never wait for it.
-  await ctx.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
+  // The game must never need another site (it has to open offline): any such request fails the test.
+  await ctx.route((u) => !u.href.startsWith(BASE), (r) => { errs.push(`request to another site: ${r.request().url()}`); r.abort(); });
   const p = await ctx.newPage();
   p.on("pageerror", (e) => errs.push(e.message));
   p.on("console", (m) => { if (m.type() === "error" && !/net::ERR_FAILED|Failed to load resource/.test(m.text())) errs.push(m.text()); });
@@ -250,6 +250,25 @@ check((await phone.$$eval("#rules-body h3", (e) => e.length)) > 5, "rules panel"
 await home();
 await phone.click('[data-lang="en"]:visible'); await phone.waitForTimeout(200);
 check((await phone.textContent("h1")).includes("Know Each Other"), "language switch to English");
+
+// Offline: once every file is saved, the game opens and plays with no network at all.
+{
+  const ctx = await browser.newContext({ locale: "fr-FR", viewport: { width: 390, height: 844 } });
+  const p = await ctx.newPage();
+  p.on("pageerror", (e) => errs.push(e.message));
+  await p.goto(BASE); await p.waitForSelector(".subject", { state: "attached" });
+  await p.waitForSelector("#offline-badge:not([hidden])", { timeout: 30000 }).catch(() => {});
+  check(await p.isVisible("#offline-badge"), "offline: ✈️ shows once the whole game is saved");
+  const saved = await p.evaluate(async () => (await caches.keys()).includes(`loopy-life-v${APP_VERSION}`) && (await (await caches.open(`loopy-life-v${APP_VERSION}`)).keys()).length);
+  check(saved >= 70, `offline: ${saved} files saved, every question file included`);
+  await ctx.setOffline(true);
+  await p.goto(BASE + "?u=1"); await p.waitForSelector(".subject", { state: "attached", timeout: 10000 }).catch(() => {});
+  const bank = await p.evaluate(() => ({ n: DB.questions.length, pools: ["society", "politics", "parents", "spicy"].every((k) => Array.isArray(DB[k]) && DB[k].length) })).catch(() => ({ n: 0 }));
+  check(bank.n > 1000 && bank.pools, `offline: the game opens with every question (${bank.n}) and every pool, even those off by default`);
+  const font = await p.evaluate(async () => { await document.fonts.ready; return document.fonts.check('600 16px "Fredoka"'); });
+  check(font, "offline: the Fredoka font is there");
+  await ctx.close();
+}
 
 check(errs.length === 0, `no page errors${errs.length ? ": " + errs.join(" | ") : ""}`);
 await browser.close();

@@ -2,6 +2,14 @@
 
 Versions follow [semantic versioning](https://semver.org/): major.minor.patch. `python3 tools/release.py patch|minor|major` sets the next one and adds its heading here.
 
+## 1.8.0
+
+- ✈️ Truly offline: on the first visit the whole game is saved on the device (page, styles, scripts, icons and every question file, even the ones behind an option), and after that it opens and plays without internet, installed on the home screen or not.
+- The Fredoka font now ships with the game instead of coming from Google Fonts, so nothing is loaded from another site.
+- With a weak signal the game no longer hangs on a blank screen: it waits at most 3.5 seconds for the network, then opens the saved copy.
+- "✈️ Works offline" in the footer once everything is saved (and a one-time message), and the version panel says how many files are saved.
+- Updating downloads the whole new version first, then reloads on it, so the game stays playable offline.
+
 ## 1.7.0
 
 - 👪 New game, Parents & kids (from 2, all generations): get to know your parents beyond being parents. Pick the parents in the settings; the wheel goes through the chapters of their life (🧸 childhood, 🎸 teenage years, 💞 how they met, 🌍 before us, 👶 becoming a parent), where a child asks and a parent answers, plus 🏡 Our family questions for everyone. 62 gentle but real questions, never made for debate.

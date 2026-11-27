@@ -60,6 +60,7 @@ function initGame() {
 async function boot() {
   applyLanguage();
   initInstall();
+  initOffline();
   $$("[data-lang]").forEach((b) => b.addEventListener("click", () => setLanguage(b.dataset.lang)));
   $("#lang-btn").addEventListener("click", () => setLanguage(LANG === "fr" ? "en" : "fr"));
   $$(".rules-open").forEach((b) => b.addEventListener("click", openRules));
@@ -98,7 +99,7 @@ async function boot() {
   $("#upd-close").addEventListener("click", () => $("#update-overlay").classList.add("hidden"));
   $("#update-overlay").addEventListener("click", (e) => { if (e.target.id === "update-overlay") $("#update-overlay").classList.add("hidden"); });
   $("#upd-force").addEventListener("click", forceUpdate);
-  $("#update-now").addEventListener("click", forceUpdate);
+  $("#update-now").addEventListener("click", applyUpdate);
   $("#update-later").addEventListener("click", () => ($("#update-banner").hidden = true));
   setTimeout(checkForUpdate, 1500);
   document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") checkForUpdate(); });
