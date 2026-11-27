@@ -18,14 +18,12 @@
   <meta name="theme-color" content="#1b1440">
   <meta name="color-scheme" content="only dark">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Loopy Life">
-  <link rel="stylesheet" href="style.css?v=1.7.0">
+  <link rel="stylesheet" href="style.css?v=1.8.0">
 </head>
 <body>
   <canvas id="fx" aria-hidden="true"></canvas>
@@ -354,7 +352,7 @@
       </div>
     </div>
 
-    <footer class="foot"><span data-i18n="footer">First seed of <strong>Loopy Life</strong></span> · <span id="q-count">…</span> · <button class="link text-size-btn" type="button" data-i18n-aria="textSize" aria-label="Text size">🔠 <span class="text-size-val">100 %</span></button> · <button id="version-btn" class="link version-btn" type="button" data-i18n-aria="updTitle" aria-label="App version">v</button></footer>
+    <footer class="foot"><span data-i18n="footer">First seed of <strong>Loopy Life</strong></span> · <span id="q-count">…</span> · <button class="link text-size-btn" type="button" data-i18n-aria="textSize" aria-label="Text size">🔠 <span class="text-size-val">100 %</span></button> · <button id="version-btn" class="link version-btn" type="button" data-i18n-aria="updTitle" aria-label="App version">v</button><span id="offline-badge" class="offline-badge" hidden> · <span data-i18n="offBadge">✈️ Works offline</span></span></footer>
   </main>
 
   <!-- ============ GAME ============ -->
@@ -611,6 +609,7 @@
       <h2 id="upd-title" data-i18n="updTitle">🔄 App version</h2>
       <p id="upd-installed" class="upd-line"></p>
       <p id="upd-status" class="upd-line upd-status"></p>
+      <p id="upd-offline" class="upd-line"></p>
       <p class="upd-keep" data-i18n="updKeep"></p>
       <div class="card-actions">
         <button id="upd-close" class="btn ghost" type="button" data-i18n="close">Close</button>
@@ -659,30 +658,30 @@
   <div id="toast" class="toast" aria-live="polite"></div>
 
   <!-- the game, in load order (see js/README.md) -->
-  <script src="js/config.js?v=1.7.0"></script>
-  <script src="js/i18n.js?v=1.7.0"></script>
-  <script src="js/i18n/en.js?v=1.7.0"></script>
-  <script src="js/i18n/fr.js?v=1.7.0"></script>
-  <script src="js/state.js?v=1.7.0"></script>
-  <script src="js/helpers.js?v=1.7.0"></script>
-  <script src="js/storage.js?v=1.7.0"></script>
-  <script src="js/fx.js?v=1.7.0"></script>
-  <script src="js/setup.js?v=1.7.0"></script>
-  <script src="js/game.js?v=1.7.0"></script>
-  <script src="js/card.js?v=1.7.0"></script>
-  <script src="js/turns.js?v=1.7.0"></script>
-  <script src="js/speed.js?v=1.7.0"></script>
-  <script src="js/team.js?v=1.7.0"></script>
-  <script src="js/wheel.js?v=1.7.0"></script>
-  <script src="js/tree.js?v=1.7.0"></script>
-  <script src="js/journal.js?v=1.7.0"></script>
-  <script src="js/stories.js?v=1.7.0"></script>
-  <script src="js/badges.js?v=1.7.0"></script>
-  <script src="js/share.js?v=1.7.0"></script>
-  <script src="js/install.js?v=1.7.0"></script>
-  <script src="js/rules.js?v=1.7.0"></script>
-  <script src="js/update.js?v=1.7.0"></script>
-  <script src="js/devices.js?v=1.7.0"></script>
-  <script src="js/main.js?v=1.7.0"></script>
+  <script src="js/config.js?v=1.8.0"></script>
+  <script src="js/i18n.js?v=1.8.0"></script>
+  <script src="js/i18n/en.js?v=1.8.0"></script>
+  <script src="js/i18n/fr.js?v=1.8.0"></script>
+  <script src="js/state.js?v=1.8.0"></script>
+  <script src="js/helpers.js?v=1.8.0"></script>
+  <script src="js/storage.js?v=1.8.0"></script>
+  <script src="js/fx.js?v=1.8.0"></script>
+  <script src="js/setup.js?v=1.8.0"></script>
+  <script src="js/game.js?v=1.8.0"></script>
+  <script src="js/card.js?v=1.8.0"></script>
+  <script src="js/turns.js?v=1.8.0"></script>
+  <script src="js/speed.js?v=1.8.0"></script>
+  <script src="js/team.js?v=1.8.0"></script>
+  <script src="js/wheel.js?v=1.8.0"></script>
+  <script src="js/tree.js?v=1.8.0"></script>
+  <script src="js/journal.js?v=1.8.0"></script>
+  <script src="js/stories.js?v=1.8.0"></script>
+  <script src="js/badges.js?v=1.8.0"></script>
+  <script src="js/share.js?v=1.8.0"></script>
+  <script src="js/install.js?v=1.8.0"></script>
+  <script src="js/rules.js?v=1.8.0"></script>
+  <script src="js/update.js?v=1.8.0"></script>
+  <script src="js/devices.js?v=1.8.0"></script>
+  <script src="js/main.js?v=1.8.0"></script>
 </body>
 </html>

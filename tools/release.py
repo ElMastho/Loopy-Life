@@ -8,7 +8,7 @@ Versions follow semantic versioning (major.minor.patch):
 Sets the version everywhere it lives, so phones get the new files right away:
 - APP_VERSION in js/config.js and version.json (the update banner compares the two),
 - the ?v= of every file in index.html,
-- the cache name and the offline file list (CORE) in sw.js, rebuilt from index.html and data/.
+- the cache name and the offline file list (CORE) in sw.js, rebuilt from index.html, data/ and fonts/.
 Also adds a heading for the new version at the top of CHANGELOG.md, to fill in.
 """
 import json
@@ -65,14 +65,16 @@ def main():
     html = re.sub(r"\?v=[0-9.]+", f"?v={v}", read("index.html"))
     write("index.html", html)
 
-    # everything the page needs offline: the page, its styles and scripts, the question bank, the icons
+    # everything the page needs offline: the page, its styles and scripts, the question bank (every
+    # subject and every pool, even those behind an option), the fonts and the icons
     assets = re.findall(r'(?:src|href)="([^"]+\?v=[0-9.]+)"', html)
     data = ["data/subjects.json"]
     index = json.loads(read("data/subjects.json"))
     data += [f"data/questions/{s['id']}.json" for s in index["subjects"]]
     data += [f"data/pools/{p}.json" for p in index["pools"]]
     core = ["./", "index.html"] + assets + [f"{d}?v={v}" for d in data]
-    core += ["manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png"]
+    core += sorted(f"fonts/{f}" for f in os.listdir(os.path.join(ROOT, "fonts")) if f.endswith(".woff2"))
+    core += ["manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"]
     for path in core:
         clean = path.split("?")[0]
         if clean not in ("./",) and not os.path.exists(os.path.join(ROOT, clean)):

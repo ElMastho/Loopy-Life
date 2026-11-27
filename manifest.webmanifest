@@ -2,6 +2,7 @@
   "name": "Loopy Life · Know Each Other",
   "short_name": "Loopy Life",
   "description": "A game for friends to get to know each other: spin the wheel, vote, take challenges and grow a tree together.",
+  "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
